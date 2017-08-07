@@ -21,10 +21,6 @@ app.use(async (ctx, next) => {
 
 app.use(render);
 
-app.use(ctx => {
-  ctx.body = 'Hello World2';
-});
-
 const PORT = 3000;
 app.listen(PORT);
 console.log('Server running at http://localhost:3000');
