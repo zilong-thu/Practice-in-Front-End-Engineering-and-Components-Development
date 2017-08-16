@@ -1,41 +1,10 @@
 const pify = require('pify');
-const glob = require('glob');
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-
-function getEntryObj() {
-  /**
-   * files: [
-   *   './client/pages/home/index.js',
-   *   './client/pages/explore/index.js'
-   * ]
-   */
-  const files = glob.sync('./client/pages/**/index.js');
-
-  /**
-   * {
-   *   'home/index': './client/pages/home/index.js'
-   * }
-   */
-  const entryObj = {};
-
-  const reg = /\.\/client\/(pages\/.+)\.js/;
-
-  files.forEach(file => {
-    let res = reg.exec(file);
-    if (res && res[1]) {
-      let key = res[1];
-      let val = file;
-      entryObj[key] = val;
-    }
-  });
-
-  return entryObj;
-}
+const getWebpackEntryObj = require('./server/utils/get-entry.js');
 
 
 module.exports = {
-  entry: getEntryObj(),
+  entry: getWebpackEntryObj(),
   output: {
     path: path.resolve(__dirname, './build'),
     filename: '[name].js',
@@ -48,7 +17,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js[x]?$/,
+        test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
