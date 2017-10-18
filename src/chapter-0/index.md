@@ -27,10 +27,36 @@
 
 ### Homebrew
 
-[Homebrew](https://brew.sh/) 是 MacOS 上最好的软件管理工具之一。通过在终端运行下面的命令，可以安装 Homebrew：
+Homebrew 是 MacOS 上最好的开源软件管理工具，最初 Max Howell 在 2009 年用 Ruby 语言开发，现在则有十多个开发者一起维护其核心代码。用户不需要安装 Ruby，因为它早已在 MacOS 中预装好了。通过在终端运行下面的命令，可以安装 Homebrew：
 
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+Homebrew 会将程序安装到其自己的目录下（在 Mac 中，通常位于 `/usr/local/Cellar` 目录下），然后将其可执行文件链接到 `/usr/local` 目录下。以 `wget` 程序为例，安装时执行：
+
+```
+brew install wget
+```
+
+wget 会被解压到 `/usr/local/Cellar/wget` 中：
+
+```
+Cellar
+└── wget
+    └── 1.18
+        ├── README
+        ├── bin
+        │   └── wget
+        ├── ...
+```
+
+而在 `/usr/local/bin` 目录中，会创建一个软连接 `wget` 指向 `/usr/local/Cellar/wget/1.18/bin/wget`：
+
+```
+$ cd /usr/local
+$ ls -l bin | grep wget
+wget -> ../Cellar/wget/1.18/bin/wget
 ```
 
 ### Git
