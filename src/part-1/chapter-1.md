@@ -74,3 +74,5 @@ Git 是一款强大的分布式版本管理系统，Linus Torvalds 在 2005 年3
 
 ### Node & nvm
 
+Node.js 由 Ryan Dahl 在 2009 年开发出来。在过去的8年里，Node.js 及其生态圈的发展可以用突飞猛进、日新月日来形容。前端开发者通常用 Node.js 来进行文件构建（例如 gulp、webpack 一类的构建工具）、提供页面服务（例如 express.js、koa.js 这样的服务器端框架）。
+
