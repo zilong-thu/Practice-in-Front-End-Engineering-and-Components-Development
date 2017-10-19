@@ -76,3 +76,23 @@ Git 是一款强大的分布式版本管理系统，Linus Torvalds 在 2005 年3
 
 Node.js 由 Ryan Dahl 在 2009 年开发出来。在过去的8年里，Node.js 及其生态圈的发展可以用突飞猛进、日新月日来形容。前端开发者通常用 Node.js 来进行文件构建（例如 gulp、webpack 一类的构建工具）、提供页面服务（例如 express.js、koa.js 这样的服务器端框架）。
 
+我们可以直接下载安装 Node.js，不过更好的方式是使用 `nvm`（Node.js version manager） 工具来管理系统里的 Node.js 版本。安装 nvm：
+
+```
+$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
+```
+
+可以使用 nvm 方便地安装、切换当前会话使用的 Node.js 版本：
+
+```
+# 安装某个版本的 Node.js
+$ nvm install 8.7.0
+
+# 查看当前系统已安装的所有 Node.js 版本
+$ nvm ls
+
+# 使用某个已安装了的 Node.js 版本
+$ nvm use 6.9.5
+```
+
+nvm 的更多用法可以参考其官网，或者运行 `man nvm` 来获得帮助。
