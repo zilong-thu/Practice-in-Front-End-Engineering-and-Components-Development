@@ -76,6 +76,8 @@ wget -> ../Cellar/wget/1.18/bin/wget
 
 Git 是一款强大的分布式版本管理系统，Linus Torvalds 在 2005 年3月开始开发，最初是用于管理 Linux 的内核代码。2005年6月，Linus 将 Git 项目的维护权转交给了 Junio Hamano，后者向 Git 贡献了最多的源码。
 
+安装 Git ：TODO
+
 
 ### Node.js & NVM
 
