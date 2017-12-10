@@ -12,7 +12,7 @@ require([
 
   if (_ && (typeof _.chunk === 'function')) {
     var res = _.chunk(['a', 'b', 'c', 'd'], 2);
-    str += '\nLodash.js seems fine too. _.chunk gives this result: ' + JSON.stringify(res, null, 2);
+    str += '\nLodash.js seems fine too. \n_.chunk gives this result: ' + JSON.stringify(res);
   }
 
   console.log(str);
