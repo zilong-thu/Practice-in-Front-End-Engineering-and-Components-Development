@@ -4,11 +4,11 @@ JavaScript 模块系统旨在解决大中型前端应用脚本管理与加载问
 
 ## 刀耕火种时代
 
+## CommonJS
 
 ## AMD 时代
 
 
-## CMD 时代
 
 
 ## ESM 时代
