@@ -8,3 +8,6 @@
 * [第二部分](part-2/index.md)
   * [模块系统](part-2/chapter-1.md)
 * [第三部分](part-2/index.md)
+* [附录](appendix)
+  * [Git 基本使用](01-git-intro.md)
+  * [Web 浏览器组成原理](02-about-web-browsers.md)

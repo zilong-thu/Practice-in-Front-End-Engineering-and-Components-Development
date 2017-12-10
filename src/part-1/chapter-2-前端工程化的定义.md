@@ -36,7 +36,7 @@ Subversion（2000年）、Git（2005年） 都是免费开源软件，Git 出现
 
 Git 的使用入门、原理请参加附录A。读者如果希望更深入地学习 Git 知识，那么 Scott Chacon 和 Ben Straub 所著的 Pro Git（2nd Edition, 2014）可能是目前最好的 Git 学习资料，任何人都可以在网上免费阅读此书：https://git-scm.com/book/en/v2。此外，乔恩·罗力格（Jon Loeliger）与马修·麦卡洛（Matthew McCullough）合著的《Git版本控制管理（第2版）》也不错。
 
-## 模块化开发
+## 模块系统与模块化开发
 
 Web 前端一开始是没有模块化开发概念的：简单地写一些 JavaScript 脚本，放到一个文件里，然后在 HTML 文件中通过 `<script>` 标签引入它就可以了。不过后来每个页面所需的 JavaScript 代码量不断增长，即便可以容忍通过同一个文件加载 JavaScript，源代码在同一个文件中进行开发也是非常难受的。我们希望一个页面有一个入口 JavaScript 文件，不妨叫做 `index.js`，然后它在里面去声明、加载自己依赖的其他 JavaScript 脚本——这便是模块化开发的初衷。模块化开发的其他好处还有代码易于维护、方便多人开发、减小系统耦合度、提升代码复用能力等。
 
