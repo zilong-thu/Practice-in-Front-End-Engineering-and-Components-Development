@@ -7,7 +7,8 @@ requirejs.config({
 require([
   '/js/lodash.min.js',
   'jquery',
-], function(_, $) {
+  '/utils/amd-lib-1.js',
+], function(_, $, amdLib_1) {
   var str = 'I am using main.js, and I am loaded.';
 
   if (_ && (typeof _.chunk === 'function')) {
@@ -21,4 +22,8 @@ require([
   if (typeof $ === 'function') {
     $('[data-role="jquery-container"]').html('jQuery is loaded too.');
   }
+
+  console.log('amd-lib-1 => ', amdLib_1);
+  console.log('requirejs define => ', define);
+  console.log(Object.keys(define));
 });
