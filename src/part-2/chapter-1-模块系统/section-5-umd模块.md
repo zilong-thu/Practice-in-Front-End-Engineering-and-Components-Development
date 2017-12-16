@@ -14,10 +14,10 @@
 }));
 ```
 
-UMD 代表了这样的模块设计理念：无论是浏览器环境，还是
 
 
-> The UMD pattern typically attempts to offer compatibility with the most popular script loaders of the day (e.g RequireJS amongst others). In many cases it uses AMD as a base, with special-casing added to handle CommonJS compatibility.
-> 
-> -- https://github.com/umdjs/umd
+
+> UMD 模块试图对当前最流行的那些脚本加载器（例如 RequireJS）提供足够好的兼容性。很多情况下，它使用 AMD 为基础，并对特殊情况处理以提供 CommonJS 兼容性。
+>
+> -- 译自 https://github.com/umdjs/umd
 
