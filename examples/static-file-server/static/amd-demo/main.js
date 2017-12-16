@@ -4,7 +4,7 @@ requirejs.config({
   }
 });
 
-require([
+define([
   '/js/lodash.min.js',
   'jquery',
   '/utils/amd-lib-1.js',
@@ -19,6 +19,7 @@ require([
   console.log(str);
   document.getElementById('console').innerHTML = str;
 
+  console.log('typeof $ => ', typeof $);
   if (typeof $ === 'function') {
     $('[data-role="jquery-container"]').html('jQuery is loaded too.');
   }

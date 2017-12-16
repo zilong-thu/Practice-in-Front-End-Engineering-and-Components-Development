@@ -80,7 +80,7 @@ require([
 
 1. 它首先根据指定的目录 `/js/require.js` 加载 `require.js`
 2. 加载完成后，`require.js` 会在所有的 `script` 标签里寻找 `data-main` 属性指定的路径文件作为下一个将要加载的脚本，在这里，就是 `/amd-demo/main.js`
-3. 开始加载 `/amd-demo/main.js`，加载后，解析并执行它，如果发现它有其他依赖，那么先加载所有的依赖（递归）并完成后，再执行 `/amd-demo/main.js` 里面 require 的回调函数。
+3. 开始加载 `/amd-demo/main.js`，加载后，解析并执行它，如果发现它有其他依赖，那么先加载所有的依赖（递归）并完成后，再执行 `/amd-demo/main.js` 里面 `require` 的回调函数。
 
 
 ## 关键技术与原理
