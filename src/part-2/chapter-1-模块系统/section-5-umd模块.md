@@ -39,9 +39,9 @@ console.log(an_undefined_token);
 
 但是 `typeof` 运算符有所不同，`typeof an_undefined_token` 并不会报任何错，而是输出 `undefined`。利用 JS 的这个运算符，我们可以在脚本加载后立即执行模块头部代码，利用特性检测来判断环境中存在的是哪种模块系统。
 
-- 如果`exports`是个对象
-- 
-
+- 如果 `exports` 是个对象，而且 `module` 也存在，那么运行工程函数，拿到其返回值，然后像任何一个 NodeJS 模块一样，将返回值赋给 `module.exports`。
+- 如果 `define` 是个函数，而且 `define` 上面存在 `amd` 属性（RequireJS 的特性，表示这是一个 AMD 加载器），那么使用 `define` 函数将模块工厂函数加到队列里。
+- 如果上面两个特性检测都失败，就在全局对象上面挂载该模块的返回值。
 
 
 > UMD 模块试图对当前最流行的那些脚本加载器（例如 RequireJS）提供足够好的兼容性。很多情况下，它使用 AMD 为基础，并对特殊情况处理以提供 CommonJS 兼容性。
