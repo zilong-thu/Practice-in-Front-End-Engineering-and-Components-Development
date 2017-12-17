@@ -2123,6 +2123,8 @@ var requirejs, require, define;
         } else {
             globalDefQueue.push([name, deps, callback]);
         }
+        // console.log('name, deps, callback => ', name, deps, callback);
+        console.log('globalDefQueue => ', globalDefQueue);
     };
 
     define.amd = {
