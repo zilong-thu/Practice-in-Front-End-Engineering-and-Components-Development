@@ -66,3 +66,5 @@ customElements.define('my-clock', MyClock, {extends: 'p'});
 
 + 样式可否被父文档修改？CSS
 + 父文档如何与组件进行交互？函数式
+
+
