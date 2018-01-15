@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <template>
+    <style type="text/css">
+      :host {
+        display: block;
+      }
+
+      :host .x-image {
+        position: relative;
+        display: block;
+        margin: 0;
+        padding: 0;
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+    <div class="x-image">
+      <img src="" height="200" />
+      <div>some text goes here.</div>
+    </div>
+  </template>
+
+  <script type="text/javascript">
+  (function(doc) {
+    let XImage = Object.create(HTMLElement.prototype, {
+      height: {
+        get: function() {
+          return this._height;
+        },
+        set: function(h) {
+          this._height = h;
+          this.$img.style.height = h + 'px';
+        }
+      },
+
+      width: {
+        get: function() {
+          return this._width;
+        },
+        set: function(w) {
+          this._width = h;
+          this.$img.style.width = w + 'px';
+        }
+      },
+
+      src: {
+        get: function() {
+          return this._src;
+        },
+        set: function(src) {
+          this._src = src;
+          this.$img.setAttribute('src', src);
+        }
+      }
+    });
+
+    XImage.createdCallBack = function() {
+      let shadowRoot = this.createShadowRoot();
+      let template = doc.querySelector('template');
+      let node = doc.importNode(template.content, true);
+
+      this.$img = node.querySelector('img');
+
+      let height = this._height || Number(this.getAttribute('height'));
+      let width = this._width || Number(this.getAttribute('width'));
+      let src = this._src || Number(this.getAttribute('src'));
+
+      this.src = src;
+      this.height = height;
+      this.width = width;
+
+      shadowRoot.appendChild(node);
+      console.log('success');
+    };
+
+    doc.registerElement('x-image', {prototype: XImage});
+  })(document.currentScript.ownerDocument);
+  </script>
+
+
+</body>
+</html>
