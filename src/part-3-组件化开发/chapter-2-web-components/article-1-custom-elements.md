@@ -19,8 +19,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
   <style type="text/css">
     my-clock {
-      display: block;
-      height: 100px;
+      display: inline-block;
       border: 1px solid #ccc;
       border-radius: 5px;
       padding: 10px;
@@ -38,6 +37,11 @@
 上面的 HTML 文件比较简单，我们使用了自定义的 `<my-clock></my-clock>` 标签，并且引用了定义了该标签对应的组件的 JavaScript 文件 `my-clock.js`。后者的内容如下：
 
 ```javascript my-clock.js
+function getTimeStr() {
+  var time = new Date();
+  return time.toString();
+}
+
 class MyClock extends HTMLElement {
   constructor() {
     super();
@@ -47,14 +51,13 @@ class MyClock extends HTMLElement {
     var shadow = this.attachShadow({mode: 'open'});
 
     var text = document.createElement('span');
-    text.textContent = new Date();
+    text.textContent = getTimeStr();
 
     shadow.appendChild(text);
 
     setInterval(function() {
-      var time = new Date();
-      text.textContent = time.toString();
-    }, 1000);
+      text.textContent = getTimeStr();
+    }, 250);
   }
 }
 
