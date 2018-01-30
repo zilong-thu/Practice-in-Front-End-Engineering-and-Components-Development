@@ -24,3 +24,4 @@ Google在2013年发布了一个基于Web组件的程序库“Polymer”<sup>[3]<
 [1] https://fronteers.nl/congres/2011/sessions/web-components-and-model-driven-views-alex-russell
 [2] https://www.w3.org/standards/techs/components#w3c_all
 [3] https://www.polymer-project.org/
+[4] https://vaadin.com/blog/web-components-in-production-use-are-we-there-yet-

@@ -1,4 +1,4 @@
-# Web Components 入门示例
+# 自定义元素（customElements）
 
 ## 纯展示组件：一个时钟挂件
 
@@ -9,6 +9,12 @@
 │   ├── index.html
 │   └── my-clock.js
 ```
+
+我们的目标是使用自定义元素（customElements）API，获得一个可以展示当前时间的日期组件，效果如【图1】所示：
+
+<img src="./images/clock-text.png" style="width: 160px;" title="时钟挂件效果" />
+
+使用时，只需在 `index.html` 里引入 `my-clock.js`，然后直接使用标签 `<my-clock></my-clock>`，或者 `<my-clock/>` 就可以了。
 
 ```html
 <!DOCTYPE html>
@@ -24,6 +30,9 @@
       border-radius: 5px;
       padding: 10px;
       margin: 10px;
+      font-size: 24px;
+      font-weight: bold;
+      font-family: monospace;
     }
   </style>
 </head>
@@ -34,9 +43,9 @@
 </html>
 ```
 
-上面的 HTML 文件比较简单，我们使用了自定义的 `<my-clock></my-clock>` 标签，并且引用了定义了该标签对应的组件的 JavaScript 文件 `my-clock.js`。后者的内容如下：
+上面的 HTML 文件比较简单，我们使用了自定义的 `<my-clock></my-clock>` 标签，并且引用了定义了该标签对应的组件的 JavaScript 文件 `my-clock.js`。JS 文件的内容如下：
 
-```javascript my-clock.js
+```javascript
 /**
  * 时钟组件示例-v1
  */
@@ -160,6 +169,15 @@ customElements.define('my-clock', MyClock, {extends: 'div'});
 })();
 ```
 
+## 浏览器兼容性
+
+**Custom Elements v1** 是指 Supports "Autonomous custom elements" but not "Customized built-in elements"
+
+| Firefox (Gecko) | Chrome       | IE         | Safari | Opera |
+|-----------------|--------------|------------|--------|-------|
+| No support      | 59.0         | No support | 10.1   | 47    |
+| **Android**     |**iOS Safari**|            |        |       |
+| 62              | 10.3         |            |        |       |
 
 ## 问题
 

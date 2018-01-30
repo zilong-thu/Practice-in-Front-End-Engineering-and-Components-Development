@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shadow DOM</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <link rel="stylesheet" type="text/css" href="./index.css">
+</head>
+<body>
+  <p id="hostElement"></p>
+  <script>
+    // create shadow DOM on the <p> element above
+    const p = document.querySelector('#hostElement');
+    const shadowRoot = p.attachShadow({mode: 'closed'});
+    shadowRoot.innerHTML = `
+      <style>div { text-decoration: underline; }</style>
+      <div>Here is some new text</div>
+    `;
+    console.log('shadowRoot: ', shadowRoot);
+  </script>
+</body>
+</html>
