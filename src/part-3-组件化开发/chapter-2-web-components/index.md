@@ -6,10 +6,10 @@ Web Components 是W3C正在向HTML和DOM规范添加的一套功能<sup>[1]</sup
 
 四个子规范：
 
-+ HTML Templates   —  允许文档包含惰性的DOM块
-+ HTML Imports     —  将HTML文档导入其他文档的声明方法
 + Custom Elements  —  定义新HTML元素的API
 + Shadow DOM       —  封装的DOM和样式，配以组合化
++ HTML Templates   —  允许文档包含惰性的DOM块
++ HTML Imports     —  将HTML文档导入其他文档的声明方法
 
 ## 浏览器支持度
 

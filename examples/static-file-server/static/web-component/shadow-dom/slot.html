@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+  <ul id="contacts">
+    <li>
+      <span slot="fullName">Commit Queue</span>
+      (<a slot="email" href="mailto:commit-queue@webkit.org">commit-queue@webkit.org</a>)<br>
+      <span slot="address">One Infinite Loop, Cupertino, CA 95014</span>
+    </li>
+    <li>
+      <span slot="fullName">Commit 2</span>
+      (<a slot="email" href="mailto:commit-queue@webkit.org">commit-queue@webkit.org</a>)<br>
+      <span slot="address">One Infinite Loop, Cupertino, CA 95014</span>
+    </li>
+  </ul>
+
+  <template id="contact-template">
+    <style>
+        :host { border: solid 1px #ccc; border-radius: 0.5rem; padding: 0.5rem; margin: 0.5rem; }
+        b { display: inline-block; width: 5rem; }
+    </style>
+    <b>Name</b>:
+    <slot name="fullName">
+      <slot name="firstName"></slot>
+      <slot name="lastName"></slot>
+    </slot><br>
+    <b>Email</b>: <slot name="email">Unknown</slot><br>
+    <b>Address</b>: <slot name="address">Unknown</slot>
+  </template>
+
+<script>
+  window.addEventListener('DOMContentLoaded', function () {
+    var contacts = document.getElementById('contacts').children;
+    var template = document.getElementById('contact-template').content;
+    for (var i = 0; i < contacts.length; i++)
+      contacts[i].attachShadow({mode: 'closed'}).appendChild(template.cloneNode(true));
+  });
+</script>
+</body>
+</html>

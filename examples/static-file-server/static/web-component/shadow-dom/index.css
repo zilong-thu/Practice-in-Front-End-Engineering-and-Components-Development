@@ -2,3 +2,10 @@ html, body {
   font-size: 14px;
   color: #333;
 }
+
+input {
+  margin: 20px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  padding: 5px;
+}

@@ -8,10 +8,11 @@
 </head>
 <body>
   <p id="hostElement"></p>
+  <input type="text" name="hello">
   <script>
     // create shadow DOM on the <p> element above
     const p = document.querySelector('#hostElement');
-    const shadowRoot = p.attachShadow({mode: 'closed'});
+    const shadowRoot = p.attachShadow({mode: 'open'});
     shadowRoot.innerHTML = `
       <style>div { text-decoration: underline; }</style>
       <div>Here is some new text</div>
