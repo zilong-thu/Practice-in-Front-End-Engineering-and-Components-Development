@@ -20,6 +20,10 @@ Web Components 是W3C正在向HTML和DOM规范添加的一套功能<sup>[1]</sup
 
 **Firefox** 实现了 HTML Templates，并且允许开发者模式下开启 Shadow DOM 和 Custom Elements。FireFox 对 HTML 导入有所顾虑，因为他们觉得这个功能与 ES6 的模块化有太多重叠之处，打算观望一阵子。Regardless of this, Wilson Page from Mozilla concluded in a June blog post that “we’re optimistic the end is near. All major vendors are on board, enthusiastic, and investing significant time to help resolve the remaining issues.”
 
+**Safari（WebKit）**目前原生支持 HTML 模板、 Shadow DOM 以及自定义元素API。至于 HTML Imports，WebKit与 FireFox 观点一致，即认为模板导入应该交给 ES6 的模块系统来处理，因此他们目前没有着手支持此特性。
+
+微软的 Edge 13 浏览器开始支持 HTML 模板。
+
 ## 框架
 
 Google在2013年发布了一个基于Web组件的程序库“Polymer”<sup>[3]</sup>。
