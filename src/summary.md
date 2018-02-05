@@ -16,7 +16,7 @@
   * [前端资源构建](part-2/index.md)
 * [第三部分-组件化开发](part-3/index.md)
   * [组件化历史]()
-  * [jQuery + AMD]()
+  * [jQuery + AMD](part-3/chapter-2-amd-jquery/index.md)
   * [web components技术](part-3/chapter-2-web-components/index.md)
     * [自定义元素](part-3/chapter-2-web-components/article-1-custom-elements.md)
     * [Shadow DOM](part-3/chapter-2-web-components/article-2-shadow-dom.md)
