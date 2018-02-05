@@ -20,3 +20,10 @@ npm install -g gitbook-cli
 ```
 gitbook serve
 ```
+
+
+## 统计 src 目录下的字数
+
+```
+find . -type f -name "*.md"  | xargs  cat | wc -w
+```
