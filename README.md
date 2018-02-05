@@ -22,8 +22,10 @@ gitbook serve
 ```
 
 
-## 统计 src 目录下的字数
+## 统计字数
+
+关心的是 src 目录下的字符数。主要用到的命令是 `find` 与 `wc`，给 `wc` 指定的参数是 `-m`，表明我们关心的是字符数。
 
 ```
-find . -type f -name "*.md"  | xargs  cat | wc -w
+find . -type f -name "*.md"  | xargs wc -m
 ```
