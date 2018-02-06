@@ -3,6 +3,7 @@
 > 令人激动的是，ECMAScript 6 中点点滴滴的变化全都致力于解决开发者实际工作中遇到的问题。
 > —— Nicholas C. Zakas
 
+前面所提到的所有模块化解决方案，都是利用 JavaScript 语言本身的特性，实现的封装。而鉴于模块系统的重要性、必要性，TC39 委员会也对其标准化极为上心。2015 年推出的 ECMAScript 6 标准正式定义了 JavaScript 的模块系统。
 
 ## 工作原理
 
@@ -61,6 +62,11 @@ lib module is loaded into memory.
 李白
 sum: 5
 ```
+
+从上面的输出结果，我们可以发现有两个特点：
+
++ 虽然 `lib.mjs` 模块被引用了两次，但是它内部只被解析、执行了一次（只打印了一次 `lib module is loaded into memory.`）。
++ 在 `my-app.mjs` 里调用 `setName` 方法，修改的实际上是 `lib.mjs` 里的 `name` 变量。`my-app.mjs` 里的 `setName` 只是对 `lib.mjs` 里的 `setName` 的引用。
 
 ### 浏览器
 
