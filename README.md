@@ -29,3 +29,15 @@ gitbook serve
 ```
 find . -type f -name "*.md"  | xargs wc -m
 ```
+
+## 制作书籍
+
+可以用 `gitbook build` 来生成静态网页版的书籍。也可以使用命令行工具 `ebook-convert` 来编译为 PDF。
+
+### ebook-convert
+
+`ebook-convert` 是 Calibre 发布的一款开源工具。[官网](https://manual.calibre-ebook.com/generated/en/ebook-convert.html)
+
++ 下载 Calibre 并且安装
++ 软连接：`ln -s /Applications/calibre.app/Contents/MacOS/ebook-convert /usr/local/bin`
++ `gitbook pdf`
