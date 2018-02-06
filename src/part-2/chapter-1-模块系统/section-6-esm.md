@@ -15,6 +15,10 @@
 
 2017年9月份，Node.js 发布了 8.5.0 版本。从这个版本开始<sup>[1]</sup>，开发者可以通过开启试验特性 `--experimental-modules` 来使用原生的 ESM 模块系统，而且该 JS 文件必须以 `.mjs` 作为自己的文件扩展名。官方的计划是，预计到 Node.js 10 LTS 版本会默认支持 ESM，开发者就不必再借助于命令行参数来开启它了。
 
+CommonJS 模块的 `__dirname`、`__filename` 也不会作为全局变量提供给模块。
+
+** Node.js ESM 示例**
+
 文件目录：
 
 ```

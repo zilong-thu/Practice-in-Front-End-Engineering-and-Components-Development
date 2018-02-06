@@ -19,6 +19,7 @@ JavaScript 是一门非常强大的面向对象语言，拥有多个执行最快
 
 
 
+
 ## 参考资料
 
 [1] CommonJS官网, http://www.commonjs.org/
