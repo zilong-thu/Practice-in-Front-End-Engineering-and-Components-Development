@@ -17,6 +17,13 @@
 
 CommonJS 模块的 `__dirname`、`__filename` 也不会作为全局变量提供给模块。
 
+Node.js 对 CommonJS 与 ESM 进行了较严格的区分，CommonJS 的 `require()` 不可用于加载 ESM 文件。
+
+```
+# 不支持的写法
+require('./foo.mjs');
+```
+
 ** Node.js ESM 示例**
 
 文件目录：
