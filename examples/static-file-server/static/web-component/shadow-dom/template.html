@@ -4,14 +4,52 @@
   <title></title>
 </head>
 <body>
+  <table id="producttable">
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>名称</td>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 现有数据可以可选地包括在这里 -->
+    </tbody>
+  </table>
 
-  <template>
-    <div id="time"></div>
-    <script type="text/javascript">
-      var now = new Date();
-      document.getElementById('time').innerHTML = String(now);
-    </script>
+  <template id="productrow">
+    <tr>
+      <td class="record"></td>
+      <td></td>
+    </tr>
   </template>
 
+<script type="text/javascript">
+  // 通过检查来测试浏览器是否支持HTML模板元素
+  // 用于保存模板元素的内容属性。
+  if ('content' in document.createElement('template')) {
+
+    // 使用现有的HTML tbody实例化表和该行与模板
+    let t = document.querySelector('#productrow'),
+    td = t.content.querySelectorAll("td");
+    td[0].textContent = "01";
+    td[1].textContent = "模板-内容-随便写点什么";
+
+    // 克隆新行并将其插入表中
+    let tb = document.getElementsByTagName("tbody");
+    let clone = document.importNode(t.content, true);
+    tb[0].appendChild(clone);
+
+    // 创建一个新行
+    td[0].textContent = "02";
+    td[1].textContent = "另外一个名字";
+
+    // 克隆新行并将其插入表中
+    let clone2 = document.importNode(t.content, true);
+    tb[0].appendChild(clone2);
+
+  } else {
+    // 找到另一种方法来添加行到表，因为不支持HTML模板元素。
+  }
+</script>
 </body>
 </html>
