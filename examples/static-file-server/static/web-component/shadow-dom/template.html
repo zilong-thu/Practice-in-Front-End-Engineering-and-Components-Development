@@ -35,9 +35,9 @@
     td[1].textContent = "模板-内容-随便写点什么";
 
     // 克隆新行并将其插入表中
-    let tb = document.getElementsByTagName("tbody");
+    let tb = document.getElementsByTagName("tbody")[0];
     let clone = document.importNode(t.content, true);
-    tb[0].appendChild(clone);
+    tb.appendChild(clone);
 
     // 创建一个新行
     td[0].textContent = "02";
@@ -45,7 +45,7 @@
 
     // 克隆新行并将其插入表中
     let clone2 = document.importNode(t.content, true);
-    tb[0].appendChild(clone2);
+    tb.appendChild(clone2);
 
   } else {
     // 找到另一种方法来添加行到表，因为不支持HTML模板元素。
