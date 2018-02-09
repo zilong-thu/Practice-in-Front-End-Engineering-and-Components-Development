@@ -2,65 +2,84 @@
 
 Web Components 规范里的 HTML 模板（HTML Template）是指浏览器新增对标签 `<template>` 的支持，以便用户能够在其中声明任意的 HTML 片段。
 
-```
-var tpl        = document.createElement('template');
-var tplContent = tpl.content;
+
+## 为何需要`<template>`？
+
+模板最初是服务端技术栈的一部分，例如 PHP，Django，Ruby on Rails，都有各自的模板系统，用于将数据与HTML结构组合为浏览器端可识别的HTML文档。即便是后来的 Node.js，也有不少模板系统可用，例如 nunjucks、esj、jade、handlebars 等等。
+
+目前的技术栈下，后端服务（不包括Node.js这样的视图类后端服务）越来越专注于数据处理，客户端则渐渐地承担更多的用户交互与视图渲染。各类前端 MVC 框架（例如 Angular.js，Backbone.js）都重度使用前端模板进行页面或组件渲染。在没有 `<template>` 的时候，声明模板有下面3种方式常见方式。
+
+**使用 `<div>` 标签**
+
+第一种方式是声明一个不可见的 `<div>` 标签，将模板放置于其中，如下所示。这个方式有个致命问题：其内部如果有图片、样式、脚本，那么都会被浏览器解析并且按相应规则加载或执行，即使这些资源都还没有用到。
+
+```html
+<!-- 模板容器 div 内联样式设为 'display:none' 以避免显示在页面中 -->
+<div style="display:none;">
+  <div>
+    <h1>Web Components</h1>
+    <img src="http://webcomponents.org/img/logo.svg">
+  </div>
+</div>
 ```
 
+**使用 `<script>` 标签**
+
+另外一个办法是使用 `<script>` 标签并且将其 `type` 声明为 `text/template` 而非 `text/javascript`。
+
+In the following example, the template content is stored inside of a script tag. The down side of this approach is that the templates will be converted into DOM elements using .innerHTML, which could introduce a cross site scripting vulnerability if an adequate sanity check is not performed.
+
+```html
+<script type="text/template">
+  <div>
+    <h1>Web Components</h1>
+    <img src="http://webcomponents.org/img/logo.svg">
+  </div>
+</script>
+```
+
+**JavaScript字符串**
+
+这个大家再也熟悉不过了，就是在 JavaScript 代码里进行大量的字符串拼接，生成 HTML 字符串，然后通过设置 `innerHTML` 的方式将其注入到 DOM 树中。
+
+## 示例
 
 下面是一个使用 `<template>` 编程的示例。
 
 ```
-/**
- * 注：本示例来自 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/template)
- */
+<div id="host">加载中……</div>
 
-<table id="producttable">
-  <thead>
-    <tr>
-      <td>ID</td>
-      <td>名称</td>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- 现有数据可以可选地包括在这里 -->
-  </tbody>
-</table>
-
-<template id="productrow">
-  <tr>
-    <td class="record"></td>
-    <td></td>
-  </tr>
+<template id="template">
+  <style>
+    img {
+      border-radius: 4px;
+      width: 200px;
+    }
+  </style>
+  <div>
+    <h2>模板内容-《指环王》海报</h2>
+    <img src="http://p0.meituan.net/movie/67054c906fbe38eb3a3131550381b472863767.jpg.webp">
+  </div>
 </template>
 
-<script type="text/javascript">
-  // 通过检查来测试浏览器是否支持HTML模板元素
-  // 用于保存模板元素的内容属性。
-  if ('content' in document.createElement('template')) {
-    // 使用现有的HTML tbody实例化表和该行与模板
-    let t = document.querySelector('#productrow'),
-    td = t.content.querySelectorAll("td");
-    td[0].textContent = "01";
-    td[1].textContent = "模板-内容-随便写点什么";
-
-    // 克隆新行并将其插入表中
-    let tb = document.getElementsByTagName("tbody")[0];
-    let clone = document.importNode(t.content, true);
-    tb.appendChild(clone);
-
-    // 创建一个新行
-    td[0].textContent = "02";
-    td[1].textContent = "另外一个名字";
-
-    // 克隆新行并将其插入表中
-    let clone2 = document.importNode(t.content, true);
-    tb.appendChild(clone2);
-
-  } else {
-    // 找到另一种方法来添加行到表，因为不支持HTML模板元素。
-  }
+<script>
+  setTimeout(function() {
+    var template = document.querySelector('#template');
+    var clonedNode = document.importNode(template.content, true);
+    var host = document.querySelector('#host');
+    host.innerHTML = '';
+    host.appendChild(clonedNode);
+  }, 2000);
 </script>
+```
+
+上面的代码在浏览器中解析执行后，会先显示“加载中……”文字，约2秒后，模板里的内容被插入到主文档里进行渲染。
+
+<img src="./images/template-2.jpg">
+
+```
+var tpl        = document.createElement('template');
+var tplContent = tpl.content;
 ```
 
 

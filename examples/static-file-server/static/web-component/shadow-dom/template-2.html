@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+    body {padding: 20px 10px;}
+    h2 {font-size: 18px;}
+  </style>
+</head>
+<body>
+
+<div id="host">加载中……</div>
+
+<template id="template">
+  <style>
+    img {border-radius: 4px; width: 200px;}
+  </style>
+  <div>
+    <h2>模板内容-《指环王》海报</h2>
+    <img src="http://p0.meituan.net/movie/67054c906fbe38eb3a3131550381b472863767.jpg.webp">
+  </div>
+</template>
+
+<script>
+  setTimeout(function() {
+    var template = document.querySelector('#template');
+    var clonedNode = document.importNode(template.content, true);
+    var host = document.querySelector('#host');
+    host.innerHTML = '';
+    host.appendChild(clonedNode);
+  }, 2000);
+</script>
+</body>
+</html>
