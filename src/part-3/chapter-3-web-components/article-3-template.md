@@ -65,13 +65,15 @@ In the following example, the template content is stored inside of a script tag.
 <script>
   setTimeout(function() {
     var template = document.querySelector('#template');
-    var clonedNode = document.importNode(template.content, true);
+    var clonedNode = document.importNode(template.content, true);  // ①
     var host = document.querySelector('#host');
     host.innerHTML = '';
     host.appendChild(clonedNode);
   }, 2000);
 </script>
 ```
+
+① 处用到的 `document.importNode()` 方法，会接收模板内容节点，然后返回一个该节点的深拷贝（第二个参数 `true` 表明了要使用深拷贝）。这有点类似于`document.createElement()`。
 
 上面的代码在浏览器中解析执行后，会先显示“加载中……”文字，约2秒后，模板里的内容被插入到主文档里进行渲染。可以看到`<style>`会对主文档有影响。
 
@@ -81,6 +83,10 @@ In the following example, the template content is stored inside of a script tag.
 ## 关于数据绑定
 
 大多数前端 MVC/MVVM 框架的模板都支持数据绑定，对开发非常方便。`<template>` 则不支持这样的特性，它只是提供了模板内容的隔离而已。
+
+## 浏览器支持情况
+
+
 
 ## 参考资料
 

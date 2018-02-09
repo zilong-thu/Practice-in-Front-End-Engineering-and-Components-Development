@@ -21,6 +21,7 @@
     * [自定义元素](part-3/chapter-3-web-components/article-1-custom-elements.md)
     * [Shadow DOM](part-3/chapter-3-web-components/article-2-shadow-dom.md)
     * [HTML template](part-3/chapter-3-web-components/article-3-template.md)
+    * [HTML Imports](part-3/chapter-3-web-components/article-4-html-imports.md)
   * [Polymer](part-3/chapter-4-polymer/index.md)
   * [React](part-3/chapter-5-react/index.md)
   * [Vue](part-3/chapter-6-vue/index.md)
