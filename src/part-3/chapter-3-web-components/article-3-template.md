@@ -62,3 +62,8 @@ var tplContent = tpl.content;
   }
 </script>
 ```
+
+
+## 参考资料
+
++ [Introduction to the template elements | webcomponents.org](https://www.webcomponents.org/community/articles/introduction-to-template-element)
