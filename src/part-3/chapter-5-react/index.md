@@ -37,6 +37,27 @@ Douglas Crockford 在《JavaScript语言精粹》一书里，指出了 JavaScrip
 
 > JSX 是基于 XML 风格对 ECMAScript 进行的语法扩展。它不打算被任何引擎或浏览器实现，**也不必被纳入到 ECMAScript 标准当中**。它应当通过各种预处理器（编译器，transpilers）转换为标准的 ECMAScript 代码。<sup>[3]</sup>
 
+在 React 中，下面这样的 JSX 代码，
+
+```
+<div className="sidebar" />
+```
+
+将被翻译为标准的 ECMAScript 代码：
+
+```
+React.createElement(
+  'div',
+  {className: 'sidebar'},
+  null
+)
+```
+
+关于 JSX 与 HTML/XML 的关系，Facebook 的 JSX 规范里如此解释：
+
+> 这个规范（指 JSX）并不打算去遵循任何 XML 或者 HTML 规范。JSX 是作为 ECMAScript 的一种特性来设计的。只是为了让大家便于上手，才设计得为 XML 语法风格。<sup>[3]</sup>
+
+
 ## 参考资料
 
 
