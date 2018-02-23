@@ -31,12 +31,14 @@ XHP 的这个特性实际上体现了服务器端开发对于可复用的自定�
 
 ## JSX
 
+Douglas Crockford 在《JavaScript语言精粹》一书里，指出了 JavaScript 的诸多设计缺陷，整理出一个“优雅”的子集。E4X 虽然已经不复存在，但是有些好的特性依然影响着后来的开发者。React 的 JSX 就是这样的产物：它不再期望被各浏览器厂商进行原生实现，而只是规定了一些方便书写 HTML 元素或自定义元素的语法接口。
 
+> JSX is an XML-like syntax extension to ECMAScript without any defined semantics. It's NOT intended to be implemented by engines or browsers. It's NOT a proposal to incorporate JSX into the ECMAScript spec itself. It's intended to be used by various preprocessors (transpilers) to transform these tokens into standard ECMAScript.
 
 ## 参考资料
 
 
-+ []()
-+ [ECMAScript for XML | wikipedia](https://en.wikipedia.org/wiki/ECMAScript_for_XML)
 + [XHP: Introduction | HHVM](https://docs.hhvm.com/hack/XHP/introduction)
++ [ECMAScript for XML | wikipedia](https://en.wikipedia.org/wiki/ECMAScript_for_XML)
++ [Draft: JSX Specification](https://facebook.github.io/jsx/)
 
