@@ -1,8 +1,10 @@
 # React 组件化开发
 
+React 诞生于 2011 年，由 Facebook 的一位员工 Jordan Walke 发明。在 Facebook 的新闻流产品中使用了一段时间后，Instagram 也使用该框架进行了部分业务构建。2013 年 3 月，在美国 JS 开发者大会上，Facebook 将 React 的代码正式开源。React 只处理用户界面相关的逻辑，对应着 MVC（Model-View-Controller） 架构里的 V（View）。
+
 ## 起源
 
-React 发源自 Facebook 的 PHP 框架 XHP<sup>[1]</sup>。XHP 扩展了 PHP 的语法，使得在 PHP 代码中可以直接使用 XML 字面量来表达 HTML 模板/元素等，也可以很方便地自定义可复用的 HTML 元素。Facebook 将其在 GitHub 上进行了开源。后来统一交给 HHVM 团队进行维护。
+Jordan Walke 创造 React 的灵感来自 Facebook 的 PHP 框架 XHP<sup>[1]</sup>。XHP 扩展了 PHP 的语法，使得在 PHP 代码中可以直接使用 XML 字面量来表达 HTML 模板/元素等，也可以很方便地自定义可复用的 HTML 元素。Facebook 将其在 GitHub 上进行了开源。后来统一交给 HHVM 团队进行维护。
 
 使用传统的 PHP 语法，一个简单的页面可能是这样子：
 
