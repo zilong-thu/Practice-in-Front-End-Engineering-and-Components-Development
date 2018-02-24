@@ -8,9 +8,9 @@ Facebook 推出的 ECMAScript 编译器 Babel <sup>[1]</sup> 名字源于巴别�
 
 Babel.js 的愿景如传说中那座塔一样，使得我们可以直接按照最新的 ECMAScript 标准书写代码，然后由它来翻译为浏览器已普遍支持的 ECMAScript 5。本质上讲，Babel 就是一款 JavaScript 编译器。
 
-Babel 并非第一个将源码编译为具有更好兼容性的 JavaScript 代码的编译器，在它之前，就有 CoffeeScript 这样的 ECMAScript 方言及配套预处理器存在<sup>[2]</sup>。CoffeeScript 采用了许多非常优秀的语法，例如箭头函数（Arrow Functions）、解构赋值（Destructuring Assignment）、异步函数（Async Functions）等等。但是随着 ECMAScript 第6版在 2015 年正式发布，CoffeeScript 大部分特性都在标准中得到了支持，这款小而美的 ECMAScript 方言也完成了它的历史使命，逐渐淡出开发者的视野。
+Babel 并非第一个将源码编译为具有更好兼容性的 JavaScript 代码的编译器。在它之前，就有 CoffeeScript 这样的 ECMAScript 方言及配套预处理器存在<sup>[2][3]</sup>。CoffeeScript 诞生于2009年，它借鉴了 Ruby、Python 与 Haskell 等语言中许多优秀的语法，例如箭头函数（Arrow Functions）、解构赋值（Destructuring Assignment）、异步函数（Async Functions）等等，增强了 ECMAScript 的简洁性和可读性。但是随着 ECMAScript 第6版在 2015 年正式发布，CoffeeScript 大部分特性都在标准中得到了支持，这款小而美的 ECMAScript 方言也算完成了它最重要的历史使命。
 
-## 体验Babel
+## 体验 Babel
 
 可以在 Babel 的官网（https://babeljs.io/repl/）中体验编译前后代码的差异。
 
@@ -51,3 +51,4 @@ var brr = arr.map(function (ele) {
 
 1. [Babel 官网](https://babeljs.io/)
 2. [CoffeeScript 官网](http://coffeescript.org/)
+3. [CoffeeScript | 维基百科](https://zh.wikipedia.org/wiki/CoffeeScript)

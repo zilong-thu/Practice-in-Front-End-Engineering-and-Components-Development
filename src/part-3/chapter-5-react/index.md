@@ -16,7 +16,7 @@ Jordan Walke 创造 React 的灵感来自 Facebook 的 PHP 框架 XHP<sup>[1]</s
 
 使用传统的 PHP 语法，一个简单的页面可能是这样子：
 
-```
+```php
 <?php
 $href = 'http://www.facebook.com';
 echo "<a href=$href>Facebook</a>";
@@ -24,7 +24,7 @@ echo "<a href=$href>Facebook</a>";
 
 但是如果借助 XHP 扩展，页面可以这样写：
 
-```
+```php
 <?php
 $href = 'http://www.facebook.com';
 echo <a href={$href}>Facebook</a>;
@@ -49,13 +49,13 @@ Douglas Crockford 在《JavaScript语言精粹》一书里，指出了 JavaScrip
 
 在 React 中，下面这样的 JSX 代码，
 
-```
+```html
 <div className="sidebar" />
 ```
 
 将被翻译为标准的 ECMAScript 代码：
 
-```
+```javascript
 React.createElement(
   'div',
   {className: 'sidebar'},
