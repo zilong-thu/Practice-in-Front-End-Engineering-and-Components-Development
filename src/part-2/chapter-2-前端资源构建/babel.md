@@ -1,12 +1,14 @@
 # Babel
 
-Facebook 推出的 ECMAScript 编译器 Babel.js 名字源于巴别塔（Tower of Babel）的故事，这个故事则起源于《圣经·旧约·创世记》（Book of Genesis）第11章：
+Facebook 推出的 ECMAScript 编译器 Babel <sup>[1]</sup> 名字源于巴别塔（Tower of Babel）的故事，这个故事则起源于《圣经·旧约·创世记》（Book of Genesis）第11章：
 
 > 大洪水过后，人类使用着同一种语言，当时人们联合起来兴建希望能通往天堂的高塔；为了阻止人类的计划，上帝让人类说不同的语言，使人类相互之间不能沟通，计划因此失败，人类自此各散东西。此故事试图为世上出现不同语言和种族提供解释。
 
 <img src="./images/Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_(Vienna)_Google_Art_Project.jpg" >
 
-Babel.js 的愿景如传说中那座塔一样，使得我们可以直接按照最新的 ECMAScript 标准书写代码，然后由它来翻译为浏览器已普遍支持的 ECMAScript 5。
+Babel.js 的愿景如传说中那座塔一样，使得我们可以直接按照最新的 ECMAScript 标准书写代码，然后由它来翻译为浏览器已普遍支持的 ECMAScript 5。本质上讲，Babel 就是一款 JavaScript 编译器。
+
+Babel 并非第一个将源码编译为具有更好兼容性的 JavaScript 代码的编译器，在它之前，就有 CoffeeScript 这样的 ECMAScript 方言及配套预处理器存在<sup>[2]</sup>。CoffeeScript 采用了许多非常优秀的语法，例如箭头函数（Arrow Functions）、解构赋值（Destructuring Assignment）、异步函数（Async Functions）等等。但是随着 ECMAScript 第6版在 2015 年正式发布，CoffeeScript 大部分特性都在标准中得到了支持，这款小而美的 ECMAScript 方言也完成了它的历史使命，逐渐淡出开发者的视野。
 
 ## 体验Babel
 
@@ -19,7 +21,7 @@ const arr = [1, 2, 3, 4];
 const brr = arr.map(ele => ele * ele);
 ```
 
-设置输入语言为 es2016，目标代码的运行环境为浏览器（> 2%, ie 11, safari > 9），那么 Babel 会将其编译为：
+设置输入语言为 es2016，目标代码的运行环境为浏览器（例如 `> 2%, ie 11, safari > 9`），那么 Babel 会将其编译为：
 
 ```
 "use strict";
@@ -44,3 +46,8 @@ var brr = arr.map(function (ele) {
 
 ## 工作原理
 
+
+## 参考资料
+
+1. [Babel 官网](https://babeljs.io/)
+2. [CoffeeScript 官网](http://coffeescript.org/)
