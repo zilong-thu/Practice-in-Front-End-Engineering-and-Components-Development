@@ -42,7 +42,7 @@ HTML 文件：
 </html>
 ```
 
-主 JavaScript 入口文件：
+下面是主 JavaScript 入口文件 `index.js`。做的事情比较简单：加载`jquery`、`clock.js`，然后调用 `Clock` 函数显示时钟：
 
 ```javascript
 define([
@@ -97,7 +97,7 @@ define([], function() {
 
   /**
    * 最终被输出的构造函数
-   * @param {Object} [props]
+   * @param {Object} [props] 形如：
    *   {
    *     container: DOMElement,
    *   }
