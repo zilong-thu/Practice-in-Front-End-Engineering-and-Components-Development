@@ -137,3 +137,7 @@ define([], function() {
   font-family: monospace;
 }
 ```
+
+效果：
+
+<img src="../chapter-3-web-components/images/clock-text.png" style="width: 160px;" title="时钟挂件效果" />
