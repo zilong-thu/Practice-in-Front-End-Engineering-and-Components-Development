@@ -7,5 +7,5 @@ Another notable feature is the use of a "virtual Document Object Model", or "vir
 
 ## 从 JSX 到 DOM
 
-
+在表达树形结构时，XML 风格的语法要比 JavaScript 的多层对象表达方式清晰地多。
 

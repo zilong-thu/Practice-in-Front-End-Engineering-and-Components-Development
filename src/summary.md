@@ -44,4 +44,5 @@
 * [附录](part-5/index.md)
   * [Git 基本使用](part-5/01-git-intro.md)
   * [Web 浏览器工作原理](part-5/02-about-web-browsers.md)
-* [参考资料](part-6/index.md)
+  * [Lambda 演算](part-5/02-lambda-calculus.md)
+* [参考资料](part-6-ref/index.md)
