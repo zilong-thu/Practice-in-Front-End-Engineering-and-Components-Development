@@ -1,18 +1,6 @@
 # Shadow DOM
 
 
-## 浏览器支持
-
-Shadow DOM v0 版本在 Chrome/Opera 浏览器中得到了支持，其他浏览器厂商则跳过 v0，直接开始实现 v1 版本的 Shadow DOM。
-
-IE 11 及更早的 IE 浏览器均不支持此特性。微软的 Edge 浏览器对 Shadow DOM 的支持还处于考虑阶段。在 [1] 这里可以看到其对于此特性的描述与状态。
-
-Firefox 对此特性的支持正在开发中。
-
-Opera: Support since 40
-Safari: partial support, 10.1+
-
-iOS Safari, partial support, 10.2+
 
 ## 基本概念
 
@@ -82,6 +70,18 @@ document.getElementsByTagName('input')[0].attachShadow({mode: 'open'});
 HTML 的 `<slot>` 元素是Web Components 技术的重要组成部分。`<slot>` 是组件内部的占位符，用户可以使用自己的标记来填充它，这样一来，我们可以创建独立的 DOM 树，然后将他们整合到一起。
 
 
+## 浏览器支持情况
+
+Shadow DOM v0 版本在 Chrome/Opera 浏览器中得到了支持，其他浏览器厂商则跳过 v0，直接开始实现 v1 版本的 Shadow DOM。
+
+IE 11 及更早的 IE 浏览器均不支持此特性。微软的 Edge 浏览器对 Shadow DOM 的支持还处于考虑阶段。在 [1] 这里可以看到其对于此特性的描述与状态。
+
+Firefox 对此特性的支持正在开发中。
+
+Opera: Support since 40
+Safari: partial support, 10.1+
+
+iOS Safari, partial support, 10.2+
 
 
 ## 参考资料

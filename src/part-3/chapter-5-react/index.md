@@ -1,6 +1,6 @@
 # React 组件化开发
 
-React 诞生于 2011 年，由 Facebook 的一位员工 Jordan Walke 发明。在 Facebook 的新闻流产品中使用了一段时间后，Instagram 也使用该框架进行了部分业务构建。2013 年 3 月，在美国 JS 开发者大会上，Facebook 将 React 的代码正式开源。React 只处理用户界面相关的逻辑，对应着 MVC（Model-View-Controller） 架构里的 V（View）。
+React 诞生于 2011 年，由 Facebook 的一位员工 Jordan Walke 发明。在 Facebook 的新闻流产品中使用了一段时间后，Instagram 也使用该框架进行了部分业务构建。2013 年 3 月，在美国 JS 开发者大会上，Facebook 将 React 的代码正式开源。React 只处理用户界面相关的逻辑，对应着 MVC（Model-View-Controller） 架构里的 V（View）。在众多框架中，React 利用纯粹的 JavaScript 践行着组件化的开发理念。
 
 React 具有这些著名的特性：
 
