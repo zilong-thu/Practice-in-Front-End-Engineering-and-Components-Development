@@ -86,8 +86,15 @@ In the following example, the template content is stored inside of a script tag.
 
 ## 浏览器支持情况
 
+总体来说，`<template>` 元素在各浏览器中的支持度很不错<sup>[2]</sup>。除了 IE/Edge，其他的浏览器的近期版本都可以放心地使用 `<template>` 特性。
 
+| Firefox (Gecko) | Chrome       | IE          | Safari | Opera |
+|-----------------|--------------|-------------|--------|-------|
+| 22              | 35           | 均不支持     | 10.1   | 22    |
+| **Android**     |**iOS Safari**| **Edge**    |        |       |
+| 4.4             | 9.2          | 13, 部分支持 |        |       |
 
 ## 参考资料
 
-+ [Introduction to the template elements | webcomponents.org](https://www.webcomponents.org/community/articles/introduction-to-template-element)
+1. [Introduction to the template elements | webcomponents.org](https://www.webcomponents.org/community/articles/introduction-to-template-element)
+2. [caniuse template](https://caniuse.com/#search=template)
