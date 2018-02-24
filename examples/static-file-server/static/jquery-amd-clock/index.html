@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery+AMD组件化时钟示例</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <link rel="stylesheet" type="text/css" href="/jquery-amd-clock/index.css">
+</head>
+<body>
+  <h1>jQuery+AMD组件化时钟示例</h1>
+
+  <div id="clock-container"></div>
+
+  <script data-main="/jquery-amd-clock/index.js" src="/js/require.js"></script>
+  <script type="text/javascript">
+    requirejs.config({
+      paths: {
+        'jquery': '/js/jquery-3.2.1'
+      }
+    });
+  </script>
+</body>
+</html>

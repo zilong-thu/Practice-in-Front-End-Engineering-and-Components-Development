@@ -33,12 +33,6 @@ function getTimeStr() {
   var weekDesc = '周' + weekZNArray[time.getDay()];
 
   return {
-    year,
-    month,
-    day,
-    hour,
-    minute,
-    second,
     weekDesc: weekDesc,
     date: `${year}-${month}-${day}`,
     time: str,
