@@ -18,16 +18,28 @@ jquery-amd-clock
 HTML 文件：
 
 ```html
-<div id="clock-container"></div>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery+AMD组件化时钟示例</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/jquery-amd-clock/index.css">
+</head>
+<body>
+  <h1>jQuery+AMD组件化时钟示例</h1>
 
-<script data-main="/jquery-amd-clock/index.js" src="/js/require.js"></script>
-<script type="text/javascript">
-  requirejs.config({
-    paths: {
-      'jquery': '/js/jquery-3.2.1'
-    }
-  });
-</script>
+  <div id="clock-container"></div>
+
+  <script data-main="/jquery-amd-clock/index.js" src="/js/require.js"></script>
+  <script type="text/javascript">
+    requirejs.config({
+      paths: {
+        'jquery': '/js/jquery-3.2.1'
+      }
+    });
+  </script>
+</body>
+</html>
 ```
 
 主 JavaScript 入口文件：
