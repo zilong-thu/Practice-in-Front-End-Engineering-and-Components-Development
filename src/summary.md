@@ -2,7 +2,8 @@
 
 * [第一部分-概述](part-1/index.md)
   * [前端简史](part-1/前端简史.md)
-  * [JavaScript语言发展概况](part-1/chapter-4-JavaScript语言发展概况.md)
+  * [JavaScript语言发展概况](part-1/chapter-4/index.md)
+    * [JavaScript编译原理](part-1/chapter-4/javascript-compiling.md)
   * [前端工程化](part-1/chapter-2-前端工程化的定义.md)
   * [前端组件化](part-1/chapter-3.md)
 * [第二部分-工程化实践](part-2/index.md)
