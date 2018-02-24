@@ -18,6 +18,7 @@
     * [Gulp](part-2/chapter-2-前端资源构建/gulp.md)
     * [Babel](part-2/chapter-2-前端资源构建/babel.md)
     * [Webpack](part-2/chapter-2-前端资源构建/webpack.md)
+  * [代码的组织与管理](part-2/chapter-3/index.md)
 * [第三部分-组件化开发](part-3/index.md)
   * [组件化历史]()
   * [jQuery + AMD](part-3/chapter-2-amd-jquery/index.md)
