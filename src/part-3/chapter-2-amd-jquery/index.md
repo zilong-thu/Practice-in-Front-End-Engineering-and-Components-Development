@@ -49,7 +49,7 @@ define([
   'jquery',
   '/jquery-amd-clock/clock.js',
 ], function($, Clock) {
-  var cl = new Clock({
+  var cl = Clock({
     container: $('#clock-container')[0],
   });
 });
@@ -114,6 +114,7 @@ define([], function() {
     function display() {
       var now = getTimeStr();
 
+      // 这里我们借助 ES6 的模板字符串，来声明所需要的 HTML 片段
       $div.innerHTML = `
         <div class="my-clock">
           <div>${now.time}</div>
@@ -153,3 +154,7 @@ define([], function() {
 效果：
 
 <img src="../chapter-3-web-components/images/clock-text.png" style="width: 160px;" title="时钟挂件效果" />
+
+## 分析
+
+`clock.js` 模块输出的是一个函数 `Clock`，要在文档里显示一个时钟，用户只需要调用这个函数，传入要显示时钟的容器元素对象就可以了。使用者不需要关心如何操作 DOM，这个细节由 `Clock` 函数完成了。
