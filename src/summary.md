@@ -23,7 +23,7 @@
   * [前端测试](part-2/chapter-5-test/index.md)
 * [第三部分-组件化开发](part-3/index.md)
   * [组件化历史]()
-  * [jQuery + AMD](part-3/chapter-2-amd-jquery/index.md)
+  * [面向对象的组件化开发](part-3/chapter-2-amd-jquery/index.md)
   * [web components技术](part-3/chapter-3-web-components/index.md)
     * [自定义元素](part-3/chapter-3-web-components/article-1-custom-elements.md)
     * [Shadow DOM](part-3/chapter-3-web-components/article-2-shadow-dom.md)
