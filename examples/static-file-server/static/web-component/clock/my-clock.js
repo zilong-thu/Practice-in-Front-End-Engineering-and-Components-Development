@@ -49,8 +49,9 @@ class MyClock extends HTMLElement {
 
     var $div = document.createElement('div');
 
-    function display() {
+    var display = () => {
       var now = getTimeStr();
+      this.value = now;
 
       $div.innerHTML = `
         <div>${now.time}</div>
@@ -64,6 +65,10 @@ class MyClock extends HTMLElement {
     setInterval(function() {
       display();
     }, 500);
+  }
+
+  getValue() {
+    return this.value;
   }
 }
 

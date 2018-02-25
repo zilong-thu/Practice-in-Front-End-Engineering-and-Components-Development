@@ -10,40 +10,11 @@
 │   └── my-clock.js
 ```
 
-我们的目标是使用自定义元素（customElements）API，获得一个可以展示当前时间的日期组件，效果如【图1】所示：
+我们的目标是使用自定义元素（customElements）API，获得一个可以展示当前时间的日期组件，效果如下图所示：
 
 <img src="./images/clock-text.png" style="width: 160px;" title="时钟挂件效果" />
 
-使用时，只需在 `index.html` 里引入 `my-clock.js`，然后直接使用标签 `<my-clock></my-clock>`，或者 `<my-clock/>` 就可以了。
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>纯展示组件：一个时钟挂件</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-  <style type="text/css">
-    my-clock {
-      display: inline-block;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      padding: 10px;
-      margin: 10px;
-      font-size: 24px;
-      font-weight: bold;
-      font-family: monospace;
-    }
-  </style>
-</head>
-<body>
-  <my-clock></my-clock>
-  <script type="text/javascript" src="./my-clock.js"></script>
-</body>
-</html>
-```
-
-上面的 HTML 文件比较简单，我们使用了自定义的 `<my-clock></my-clock>` 标签，并且引用了定义了该标签对应的组件的 JavaScript 文件 `my-clock.js`。JS 文件的内容如下：
+时钟组件 `clock.js` 文件的内容如下：
 
 ```javascript
 /**
@@ -124,12 +95,6 @@ function getTimeStr() {
   var weekDesc = '周' + weekZNArray[time.getDay()];
 
   return {
-    year,
-    month,
-    day,
-    hour,
-    minute,
-    second,
     weekDesc: weekDesc,
     date: `${year}-${month}-${day}`,
     time: str,
@@ -146,10 +111,10 @@ class MyClock extends HTMLElement {
 
     var $div = document.createElement('div');
 
-    function display() {
+    var display = () => {
       var now = getTimeStr();
+      this.value = now;
 
-      // 留意这里的区别，使用了 innerHTML 一次性插入更多内容
       $div.innerHTML = `
         <div>${now.time}</div>
         <div style="font-size: 12px; font-weight: normal; padding-top: 5px;">${now.date + ' ' + now.weekDesc}</div>
@@ -163,11 +128,55 @@ class MyClock extends HTMLElement {
       display();
     }, 500);
   }
+
+  getValue() {
+    return this.value;
+  }
 }
 
 customElements.define('my-clock', MyClock, {extends: 'div'});
 })();
 ```
+
+使用时，只需在 `index.html` 里引入 `my-clock.js`，然后直接使用标签 `<my-clock></my-clock>`，或者 `<my-clock/>` 就可以了。如下所示。
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>纯展示组件：一个时钟挂件</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <style type="text/css">
+    my-clock {
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 10px;
+      font-size: 24px;
+      font-weight: bold;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <my-clock id="first-clock"></my-clock>
+
+  <script type="text/javascript" src="./my-clock.js"></script>
+  <script type="text/javascript">
+    var firstClock = document.getElementById('first-clock');
+    var val = firstClock.getValue();
+
+    // 这两行都会打印形如 {weekDesc: "周日", date: "2018-02-25", time: "10:23:02"} 的对象
+    console.log(val);
+    console.log(firstClock.value);
+  </script>
+</body>
+</html>
+```
+
+上面的 HTML 文件比较简单，我们使用了自定义的 `<my-clock></my-clock>` 标签，并且引用了定义了该标签对应的组件的 JavaScript 文件 `my-clock.js`。而且，由于在上面的 `clock.js` v2 版本里，我们给 `<my-clock>` 元素添加了自定义的属性 `value` 和方法 `getValue`，因此，在 HTML 在主脚本里，我们可以获取到 `<my-clock id="first-clock"></my-clock>` DOM 元素 `firstClock`，然后直接访问相应的自定义属性或方法。
 
 ## 浏览器支持情况
 

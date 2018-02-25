@@ -19,13 +19,19 @@
   <link rel="stylesheet" type="text/css" href="./index.css">
 </head>
 <body>
-  <my-clock></my-clock>
+  <my-clock id="first-clock"></my-clock>
 
   <div>第二个时钟</div>
 
   <my-clock></my-clock>
 
-  <!-- <script type="text/javascript" src="/web-component/clock/my-clock.js"></script> -->
-  <script type="text/javascript" src="./my-clock.js"></script>
+<!-- <script type="text/javascript" src="/web-component/clock/my-clock.js"></script> -->
+<script type="text/javascript" src="./my-clock.js"></script>
+<script type="text/javascript">
+  var firstClock = document.getElementById('first-clock');
+  var val = firstClock.getValue();
+  console.log(val);
+  console.log(firstClock.value);
+</script>
 </body>
 </html>
