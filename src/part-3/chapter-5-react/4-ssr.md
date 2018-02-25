@@ -112,6 +112,14 @@ $ babel-node ./server/index.js
 
 <img src="./images/react-ssr.png" style="max-width: 400px; border: 1px solid #ccc;">
 
+## 常见问题
+
+### 组件生命周期
+
+### 在组件中发起异步请求
+
+### 性能评估
+
 ## 参考资料
 
 1. 示例代码，https://github.com/zilong-thu/react-ssr-intro
