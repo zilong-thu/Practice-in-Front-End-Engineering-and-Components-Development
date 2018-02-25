@@ -1,9 +1,12 @@
 # 服务端渲染
 
-使用 `ReactDOMServer`（来自`react-dom/server`）将组件渲染为字符串，那么组件就只会调用位于 `render` 之前的那些组件生命周期方法，即：
+有时候，出于 SEO 等因素的考虑，需要在服务端进行页面渲染（即 Server Side Render，SSR）。借助虚拟 DOM，React 支持使用 `ReactDOMServer`（来自`react-dom/server`）将组件树渲染为字符串。此时，组件就只会调用位于 `render` 之前的那些组件生命周期方法，即：
 
 + `constructor`
 + `componentWillMount`
+
+## 原理
+
 
 ## 基本使用
 
