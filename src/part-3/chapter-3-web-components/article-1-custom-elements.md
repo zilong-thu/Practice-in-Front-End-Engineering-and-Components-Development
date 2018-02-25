@@ -178,6 +178,8 @@ customElements.define('my-clock', MyClock, {extends: 'div'});
 
 上面的 HTML 文件比较简单，我们使用了自定义的 `<my-clock></my-clock>` 标签，并且引用了定义了该标签对应的组件的 JavaScript 文件 `my-clock.js`。而且，由于在上面的 `clock.js` v2 版本里，我们给 `<my-clock>` 元素添加了自定义的属性 `value` 和方法 `getValue`，因此，在 HTML 在主脚本里，我们可以获取到 `<my-clock id="first-clock"></my-clock>` DOM 元素 `firstClock`，然后直接访问相应的自定义属性或方法。
 
+### 自定义事件
+
 ## 浏览器支持情况
 
 **Custom Elements v1** 是指 Supports "Autonomous custom elements" but not "Customized built-in elements"
