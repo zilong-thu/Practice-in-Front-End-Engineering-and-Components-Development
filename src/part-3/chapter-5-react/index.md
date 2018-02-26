@@ -49,18 +49,24 @@ Douglas Crockford 在《JavaScript语言精粹》一书里，指出了 JavaScrip
 
 在 React 中，下面这样的 JSX 代码，
 
-```html
-<div className="sidebar" />
+```javascript
+var bar = <div className="sidebar"><strong>Hello World.</strong></div>;
 ```
 
-将被翻译为标准的 ECMAScript 代码：
+将被编译为标准的 ECMAScript 代码（使用 babel 编译，需要设置 `babel-preset-react`）：
 
 ```javascript
-React.createElement(
-  'div',
-  {className: 'sidebar'},
-  null
-)
+"use strict";
+
+var bar = React.createElement(
+  "div",                   // 标签名
+  {className: "sidebar"},  // 属性
+  React.createElement(     // 子元素
+    "strong",       // 标签名
+    null,           // 属性
+    "Hello World."  // 子元素/内容
+  )
+);
 ```
 
 关于 JSX 与 HTML/XML 的关系，Facebook 的 JSX 规范里如此解释：
