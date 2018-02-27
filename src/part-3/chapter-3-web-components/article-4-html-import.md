@@ -68,4 +68,16 @@ HTML Import 需要通过声明了 `rel="import"` 属性的 `<link>` 元素来导
 
 ### 跨域引用
 
+除了使用相对路径来引入同一个域下的 HTML 页面，还可以使用 URL 引入其他域下的文档，例如：
+
+```
+<link rel="import" href="http://borninsummer.com/">
+```
+
+### 样式影响
+
+目前的草案里，有一章节是“9. Style processing with Imports”，描述了被引用的文档的样式要对主文档产生影响。这种样式的变化通常出乎意料，可能会对主文档造成较严重影响。因此，草案的撰写人们计划将这一章节从 HTML Imports 提案中移除（https://github.com/TakayoshiKochi/deprecate-style-in-html-imports）。
+
+### 事件
+
 ## 浏览器支持情况
