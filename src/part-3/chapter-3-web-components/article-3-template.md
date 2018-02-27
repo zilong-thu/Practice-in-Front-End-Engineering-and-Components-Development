@@ -72,8 +72,7 @@ In the following example, the template content is stored inside of a script tag.
     host.appendChild(clonedNode);
   }, 2000);
 
-  // ②
-  // 查看 template 的类型描述
+  // ② 查看 template 的类型描述
   console.log(String(template));         // "[object HTMLTemplateElement]"
   console.log(String(template.content)); // "[object DocumentFragment]"
 </script>
@@ -81,9 +80,9 @@ In the following example, the template content is stored inside of a script tag.
 
 上面的代码在浏览器中解析执行后，会先显示“加载中……”文字，约2秒后，模板里的内容被插入到主文档里进行渲染。可以看到`<style>`会对主文档有影响。
 
-① 处用到的 `document.importNode()` 方法，会接收模板内容节点，然后返回一个该节点的深拷贝（第二个参数 `true` 表明了要使用深拷贝）。这有点类似于`document.createElement()`。
-
 <img src="./images/template-2.jpg">
+
+① 处用到的 `document.importNode()` 方法，会接收模板内容节点，然后返回一个该节点的深拷贝（第二个参数 `true` 表明了要使用深拷贝）。这有点类似于`document.createElement()`。
 
 ② 处我们通过调用 `template` 和 `template.content` 的 `toString()` 原型方法（`String(some_object)` 的作用就是如此），来查看该对象的字符串描述。可以了解到，模板元素 `<template>` 继承自 `HTMLTemplateElement`，而 `<template>` 的属性 `content` 则继承自 `DocumentFragment`（这个类的细节可以参考<sup>[2]</sup>）。这个细节也可以从 W3C 的接口定义中一窥大概（参考资料<sup>[3]</sup>）：
 
