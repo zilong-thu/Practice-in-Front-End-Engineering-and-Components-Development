@@ -78,6 +78,21 @@ HTML Import 需要通过声明了 `rel="import"` 属性的 `<link>` 元素来导
 
 目前的草案里，有一章节是“9. Style processing with Imports”，描述了被引用的文档的样式要对主文档产生影响。这种样式的变化通常出乎意料，可能会对主文档造成较严重影响。因此，草案的撰写人们计划将这一章节从 HTML Imports 提案中移除（https://github.com/TakayoshiKochi/deprecate-style-in-html-imports）。
 
+在上面的示例中，如果 `other.html` 中用 `<style>` 元素声明了一些样式规则，例如
+
+```
+<style type="text/css">
+  body {text-shadow: 0 0 2px #333;}
+</style>
+```
+
+那么主文档也会立即在引入 `other.html` 文档后被应用其中的样式规则：
+
+<img src="./images/import-demo-2.png"
+  style="max-width: 400px; box-shadow: 0 0 10px rgba(0,0,0,0.3);margin: 0 auto; display: block;"
+>
+
+
 ### 事件
 
 ## 浏览器支持情况
