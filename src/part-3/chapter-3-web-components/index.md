@@ -26,7 +26,7 @@ Web Components 是W3C正在向HTML和DOM规范添加的一套功能<sup>[1]</sup
 
 ## 框架
 
-Google在2013年发布了一个基于Web组件的程序库“Polymer”<sup>[3]</sup>。
+Google 在 2013 年发布了一个基于 Web 组件的程序库“Polymer”<sup>[3]</sup>。
 
 ## 参考资料
 

@@ -3,8 +3,27 @@
 <head>
   <title>HTML Imports</title>
   <link rel="import" href="./part.html">
+  <link rel="import" href="http://borninsummer.com/">
 </head>
 <body>
-
+  <h1 style="padding: 20px;">HTML Imports Demo</h1>
+  <div id="part-container"></div>
+  <div id="blog-container"></div>
 </body>
 </html>
+
+<script type="text/javascript">
+(function() {
+  var linkEleList = document.querySelectorAll('link[rel="import"]');
+  var extDocPart = linkEleList[0].import;
+  var extDocBlog = linkEleList[1].import;
+
+  document.getElementById('part-container').appendChild(
+    extDocPart.querySelector('div').cloneNode(true)
+  );
+
+  document.getElementById('blog-container').appendChild(
+    extDocBlog.querySelector('body').cloneNode(true)
+  );
+})();
+</script>
