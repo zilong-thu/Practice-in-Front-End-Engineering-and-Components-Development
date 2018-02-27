@@ -98,6 +98,11 @@ TakayoshiKochi 称，在 Chrome 67 版本之后，被引入的文档的样式将
 
 ## 浏览器支持情况
 
+| Firefox (Gecko) | Chrome       | IE         | Safari | Opera   |
+|-----------------|--------------|------------|--------|---------|
+| No support      | 61.0         | No support |        | Support |
+| **Android**     |**iOS Safari**|            |        |         |
+|                 |              |            |        |         |
 
 ## 参考资料
 
