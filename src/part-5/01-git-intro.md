@@ -8,6 +8,8 @@
 
 ## Git 工作流
 
+在多人协同开发时，Git 工作流程就显得尤为重要。Vincent Driessen 在2010年的一篇文章《A successful Git branching model》<sup>[1]</sup> 介绍了在这样的场景下，如何使用 Git 进行高效开发。
+
 ## Clean Commit
 
 准确恰当的提交信息对于回溯项目开发历程、寻找特定功能的代码片段都很有帮助。
@@ -28,3 +30,7 @@ git commit -m 'add: 上传文件功能'
 # 修复了一个线上问题
 git commit -m 'fix: **页面数字取值问题'
 ```
+
+## 参考资料
+
+1. Vincent Driessen. A successful Git branching model. http://nvie.com/posts/a-successful-git-branching-model/
