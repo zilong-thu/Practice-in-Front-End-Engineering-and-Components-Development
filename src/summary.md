@@ -46,5 +46,5 @@
   * [Git 基本使用](part-5/01-git-intro.md)
   * [Web 浏览器工作原理](part-5/02-about-web-browsers.md)
   * [Lambda 演算](part-5/03-lambda-calculus.md)
-  * [不可变数据（Immutable Data）的重要性](part-5/04-immutable-data.md)
+  * [不可变数据（Immutable Data）](part-5/04-immutable-data.md)
 * [参考资料](part-6-ref/index.md)
