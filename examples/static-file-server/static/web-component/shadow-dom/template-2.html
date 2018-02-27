@@ -21,8 +21,12 @@
 </template>
 
 <script>
+  var template = document.querySelector('#template');
+
+  console.log(String(template));         // "[object HTMLTemplateElement]"
+  console.log(String(template.content)); // "[object DocumentFragment]"
+
   setTimeout(function() {
-    var template = document.querySelector('#template');
     var clonedNode = document.importNode(template.content, true);
     var host = document.querySelector('#host');
     host.innerHTML = '';
