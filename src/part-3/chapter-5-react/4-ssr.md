@@ -34,15 +34,20 @@ server
  */
 const Koa            = require('koa');
 const React          = require('react');
+const Router         = require('koa-router');
 const ReactDOMServer = require('react-dom/server');
 
 const app = new Koa();
+const router = new Router();
 
-app.use(async (ctx, next) => {
+router.get('/hello-ssr', (ctx, next) => {
   const PageFunc = require('./pages/hello-ssr/index.js').default;
-  const str = ReactDOMServer.renderToString(<PageFunc />);
-  ctx.body = str;
+  ctx.body = ReactDOMServer.renderToString(<PageFunc />);
 });
+
+app
+  .use(router.routes())
+  .use(router.allowedMethods());
 
 const port = 7002;
 app.listen(port);
@@ -105,6 +110,8 @@ export default class Part extends React.Component {
 启动服务：
 
 ```
+# 我们使用了 babel-node 来启动服务，它可以先将代码进行编译，然后在使用 node 运行
+# 这里仅仅用于演示，生产环境中并不推荐直接使用
 $ babel-node ./server/index.js
 ```
 
