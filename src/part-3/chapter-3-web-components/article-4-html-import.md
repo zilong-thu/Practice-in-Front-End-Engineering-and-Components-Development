@@ -37,9 +37,11 @@ HTML Import 需要通过声明了 `rel="import"` 属性的 `<link>` 元素来导
   var linkEleList = document.querySelectorAll('link[rel="import"]');
   var extDocOther = linkEleList[0].import;
 
-  document.getElementById('part-container').appendChild(
-    extDocOther.querySelector('div').cloneNode(true)
-  );
+  setTimeout(function() {
+    document.getElementById('part-container').appendChild(
+      extDocOther.querySelector('div').cloneNode(true)
+    );
+ }, 2000);
 })();
 </script>
 ```
@@ -62,6 +64,10 @@ HTML Import 需要通过声明了 `rel="import"` 属性的 `<link>` 元素来导
 })();
 </script>
 ```
+
+在本地的服务中访问 `index.html` 页面，观察控制台的输出，可以看到立即会打印出“子文档加载完毕”，约2秒后，主文档中显示出“子文档的内容”。效果如下图所示。
+
+<img src="./images/import-demo-1.png">
 
 ### 跨域引用
 
