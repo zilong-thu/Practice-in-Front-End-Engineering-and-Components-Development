@@ -86,7 +86,7 @@ In the following example, the template content is stored inside of a script tag.
 
 ## 浏览器支持情况
 
-总体来说，`<template>` 元素在各浏览器中的支持度很不错<sup>[2]</sup>。除了 IE/Edge，其他的浏览器的近期版本都可以放心地使用 `<template>` 特性。
+HTML template 是四个子规范中完成最早的，已经是 2014 年发布的 HTML5 标准的一部分。所以到目前，总体来说，`<template>` 元素在各浏览器中的支持度很不错<sup>[2]</sup>。除了 IE/Edge，其他的浏览器的近期版本都可以放心地使用 `<template>` 特性。
 
 | Firefox (Gecko) | Chrome       | IE          | Safari | Opera |
 |-----------------|--------------|-------------|--------|-------|
