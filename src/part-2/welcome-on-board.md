@@ -21,6 +21,14 @@ Web 前端工程师应当具备在 Unix/Linux 操作系统下进行软件开发�
 
 ### Iterm2
 
+无论开发或者运维，亦或平时进行一些简单的任务，使用终端（Terminal）都比 GUI 界面程序高效得多。MacOS 虽然自带了一个终端，却并不好用，如果不借助于 Oh-my-zsh 这样的工具，甚至都无法进行文件名称补全提示。此外，MacOS 的终端也不支持窗口分隔为多面板（Split Panes）。
+
+怀着打造一个好用的 MacOS 终端的理念，Iterm2 诞生了。它有许多方便的特性：
+
+**多个窗口**
+
+**自动补全（Autocomplete）**
+
 [Iterm2 官网](http://iterm2.com/)
 
 ### XCode

@@ -80,8 +80,9 @@ HTML Import 需要通过声明了 `rel="import"` 属性的 `<link>` 元素来导
 
 在上面的示例中，如果 `other.html` 中用 `<style>` 元素声明了一些样式规则，例如
 
-```
+```html
 <style type="text/css">
+  /* 给所有的文字添加阴影效果 */
   body {text-shadow: 0 0 2px #333;}
 </style>
 ```
