@@ -18,7 +18,13 @@ Iterm2 最常用的功能，是将当前标签分割为多个面板。例如我�
 
 <img src="../images/iterm2-autocomplete.png" style="max-width: 500px;">
 
-**随时随地召唤Iterm2（Hotkey Window）**
+**随时随地召唤 Iterm2（Hotkey Window）**
+
+在 Iterm2 的偏好设置里，可以设置一个可以随时打开的半透明终端窗口。这个功能对于随时想敲上几句命令行的开发者来说很有帮助。好比我正在浏览鸟哥的Linux私房菜网站，看到有个命令很有意思，想尝试一下。就可以通过这种方式快速“召唤”出 Iterm2（如果希望在全屏模式下也可以悬浮显示 Iterm2，需要设置其打开的方式为 `Floating Window`）：
+
+<img src="../images/iterm2-hotkey.png">
+
+**其他**
 
 此外，Iterm2 还有选择文本并复制的快捷方式，保留粘贴历史，强大的搜索，以及命令回溯功能。可以在其官网<sup>[1]</sup>获得更详细的使用说明。
 
