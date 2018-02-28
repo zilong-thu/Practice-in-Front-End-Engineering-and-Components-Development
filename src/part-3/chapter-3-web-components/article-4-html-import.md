@@ -90,7 +90,7 @@ HTML Import 需要通过声明了 `rel="import"` 属性的 `<link>` 元素来导
 那么主文档也会立即在引入 `other.html` 文档后被应用其中的样式规则（在 Chrome65 版本中测试）：
 
 <img src="./images/import-demo-2.png"
-  style="max-width: 400px; box-shadow: 0 0 10px rgba(0,0,0,0.3);margin: 0 auto; display: block;"
+  style="max-width: 400px; box-shadow: 0 0 10px rgba(0,0,0,0.3);"
 >
 
 TakayoshiKochi 称，在 Chrome 67 版本之后，被引入的文档的样式将不会再应用于主文档 <sup>[1]</sup>。

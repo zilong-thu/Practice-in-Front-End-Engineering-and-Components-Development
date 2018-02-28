@@ -1,0 +1,6 @@
+{
+  "styles": {
+    "website": "styles/common.css",
+    "pdf": "styles/common.css"
+  }
+}

@@ -29,6 +29,8 @@ Web 前端工程师应当具备在 Unix/Linux 操作系统下进行软件开发�
 
 **自动补全（Autocomplete）**
 
+<img src="./images/iterm2-autocomplete.png" style="max-width: 500px;">
+
 [Iterm2 官网](http://iterm2.com/)
 
 ### XCode
