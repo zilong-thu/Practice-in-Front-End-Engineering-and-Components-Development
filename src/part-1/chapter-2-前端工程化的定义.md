@@ -22,7 +22,7 @@ Node.js 诞生后，前端开发人员凭借自身的 JavaScript 语言优势，
 
 最原始的本地备份式版本控制。这种版本控制策略，本质上只是文件备份，最常用的方式就是将当期文件复制到另一个目录（可能会添加时间戳）。不少人也许有过类似下面这样命名文件的经历，这其实就是一种本地版本控制策略：
 
-![毕业论文命名](./images/local-vcs-demo.jpg)
+<img alt="毕业论文命名" src="./images/local-vcs-demo.jpg" style="max-width: 500px;" />
 
 ** 集中式版本控制系统（Centralized Version Control System）**
 
