@@ -27,11 +27,19 @@ Web 前端工程师应当具备在 Unix/Linux 操作系统下进行软件开发�
 
 **多个窗口**
 
+Iterm2 最常用的功能，是将当前标签分割为多个面板。例如我在写这本书的时候，将标签分为四个面板：
+
+<img src="./images/iterm2-multi-panes.png">
+
 **自动补全（Autocomplete）**
+
+输入单词的开头部分，然后按 `Cmd` 和 `;`，就可以出现自动补全提示选择框，通过上下箭头或者鼠标，可以直接选择自己想要输入的词语。如下图所示。
 
 <img src="./images/iterm2-autocomplete.png" style="max-width: 500px;">
 
-[Iterm2 官网](http://iterm2.com/)
+**随时随地召唤Iterm2（Hotkey Window）**
+
+此外，Iterm2 还有选择文本并复制的快捷方式，保留粘贴历史，强大的搜索，以及命令回溯功能。可以在其官网<sup>[1]</sup>获得更详细的使用说明。
 
 ### XCode
 
@@ -138,3 +146,8 @@ Now using node v8.4.0 (npm v5.3.0)
 ```
 
 nvm 的更多用法可以参考其官网，或者运行 `man nvm` 来获得帮助。
+
+
+## 参考资料
+
+1. [Iterm2 官网](http://iterm2.com/)
