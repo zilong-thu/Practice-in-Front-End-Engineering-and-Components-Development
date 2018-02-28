@@ -4,7 +4,9 @@ Node.js<sup>[1, 2]</sup> 是一个跨平台的 JavaScript 运行时环境，由 
 
 <img src="../images/nodejs-logo.png" style="width: 220px;">
 
-我们可以直接下载安装 Node.js，这样的话操作系统里共用一个 Node.js 程序。但是 Node.js 社区异常活跃，其开发迭代的速度非常快，更好的方式是使用 NVM（Node.js Version Manager） 来管理系统里的 Node.js，可以同时安装任意多个版本，然后在使用时指定需要的 Node.js 版本即可。NVM 实际上是一系列 shell 脚本的集合。安装 NVM （可以在其官网上找到具体的命令，地址：[https://github.com/creationix/nvm](https://github.com/creationix/nvm)）：
+### 使用 NVM
+
+我们可以直接下载安装 Node.js，这样的话操作系统里共用一个 Node.js 程序。但是 Node.js 社区异常活跃，其开发迭代的速度非常快，更好的方式是使用 NVM（Node.js Version Manager） 来管理系统里的 Node.js，可以同时安装任意多个版本，然后在使用时指定需要的 Node.js 版本即可。安装 NVM （可以在其官网上找到具体的命令，地址：[https://github.com/creationix/nvm](https://github.com/creationix/nvm)）：
 
 ```
 $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
@@ -25,6 +27,14 @@ $ nvm ls
 # 使用某个已安装了的 Node.js 版本
 $ nvm use 6.9.5
 ```
+
+**NVM 工作原理**
+
+TODO
+
+NVM 实际上是一系列 shell 脚本的集合。
+
+**`.nvmrc`描述文件**
 
 在项目的根目录下，可以通过 `.nvmrc` 文件来指定当前项目希望使用的 Node.js 版本。例如：
 
