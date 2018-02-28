@@ -75,6 +75,8 @@ wget -> ../Cellar/wget/1.18/bin/wget
 
 ### Git
 
+<img src="../images/git-logo.png" style="width: 110px;" class="fl">
+
 Git 是一款强大的分布式版本管理系统，Linus Torvalds 在 2005 年3月开始开发，最初是用于管理 Linux 的内核代码。2005年6月，Linus 将 Git 项目的维护权转交给了 Junio Hamano，后者向 Git 贡献了最多的源码。
 
 我们上面已经安装好了 Homebrew，那么安装 Git 就轻而易举了：
@@ -98,3 +100,4 @@ $ brew upgrade git
 ## 参考资料
 
 1. [Iterm2 官网](http://iterm2.com/)
+2. [Git 官网](https://git-scm.com/)

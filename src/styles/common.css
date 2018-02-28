@@ -2,3 +2,8 @@ p img {
   display: block;
   margin: 0 auto;
 }
+
+img.fl {
+  float: left;
+  margin: 0 1em 0.5em 0;
+}
