@@ -20,7 +20,7 @@ Iterm2 最常用的功能，是将当前标签分割为多个面板。例如我�
 
 **随时随地召唤 Iterm2（Hotkey Window）**
 
-在 Iterm2 的偏好设置里，可以设置一个可以随时打开的半透明终端窗口。这个功能对于随时想敲上几句命令行的开发者来说很有帮助。好比我正在浏览鸟哥的Linux私房菜网站，看到有个命令很有意思，想尝试一下。就可以通过这种方式快速“召唤”出 Iterm2（如果希望在全屏模式下也可以悬浮显示 Iterm2，需要设置其打开的方式为 `Floating Window`）：
+在 Iterm2 的偏好设置里（`Preferences` -> `Keys` -> `Create a Dedicated Hotkey Window`），可以设置一个能够通过快捷键随时打开的悬浮半透明终端窗口。这个功能对于随时想敲上几句命令行的开发者来说很有帮助。好比我正在浏览鸟哥的Linux私房菜网站，看到有个命令很有意思，想尝试一下。就可以通过这种方式快速“召唤”出 Iterm2（如果希望在全屏模式下也可以悬浮显示 Iterm2，需要设置其打开的方式为 `Floating Window`）：
 
 <img src="../images/iterm2-hotkey.png">
 
@@ -96,6 +96,8 @@ git version 2.11.0 (Apple Git-81)
 $ brew outdated
 $ brew upgrade git
 ```
+
+除了使用 `Homebrew` 安装，还可以直接在 Git 官网下载适合自己系统的二进制包进行安装。
 
 ## 参考资料
 
