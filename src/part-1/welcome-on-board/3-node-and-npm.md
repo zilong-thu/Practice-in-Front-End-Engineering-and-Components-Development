@@ -1,6 +1,6 @@
 ## Node.js 环境
 
-Node.js 由 Ryan Dahl 在 2009 年开发出来。在过去的8年里，Node.js 及其生态圈的发展可以用突飞猛进、日新月日来形容。前端开发者通常用 Node.js 来进行文件构建（例如 gulp、webpack 一类的构建工具）、提供页面服务（例如 express.js、koa.js 这样的服务器端框架）。
+Node.js<sup>[1]</sup> 由 Ryan Dahl 在 2009 年开发出来。在过去的8年里，Node.js 及其生态圈的发展可以用突飞猛进、日新月日来形容。前端开发者通常用 Node.js 来进行文件构建（例如 gulp、webpack 一类的构建工具）、提供页面服务（例如 express.js、koa.js 这样的服务器端框架），或者写一些网络、计算类的程序（例如爬虫）。
 
 我们可以直接下载安装 Node.js，这样的话操作系统里共用一个 Node.js 程序。但是 Node.js 社区异常活跃，其开发迭代的速度非常快，更好的方式是使用 NVM（Node.js Version Manager） 来管理系统里的 Node.js，可以同时安装任意多个版本，然后在使用时指定需要的 Node.js 版本即可。NVM 实际上是一系列 shell 脚本的集合。安装 NVM （可以在其官网上找到具体的命令，地址：https://github.com/creationix/nvm）：
 
@@ -31,4 +31,10 @@ Found '/path/to/project/.nvmrc' with version <8.4.0>
 Now using node v8.4.0 (npm v5.3.0)
 ```
 
-nvm 的更多用法可以参考其官网，或者运行 `man nvm` 来获得帮助。
+nvm 的更多用法可以参考其官网<sup>[2]</sup>，或者运行 `man nvm` 来获得帮助。
+
+
+### 参考资料
+
+1. [Node.js 官网](https://nodejs.org/en/)
+2. [nvm | github](https://github.com/creationix/nvm)
