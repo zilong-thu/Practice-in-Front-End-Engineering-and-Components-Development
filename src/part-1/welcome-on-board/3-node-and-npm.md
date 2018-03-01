@@ -4,7 +4,7 @@ Node.js<sup>[1, 2]</sup> 是一个跨平台的 JavaScript 运行时环境，由 
 
 <img src="../images/nodejs-logo.png" style="width: 220px;">
 
-### 使用 NVM
+### 用 NVM 管理 Node.js
 
 我们可以直接下载安装 Node.js，这样的话操作系统里共用一个 Node.js 程序。但是 Node.js 社区异常活跃，其开发迭代的速度非常快，更好的方式是使用 NVM（Node.js Version Manager） 来管理系统里的 Node.js，可以同时安装任意多个版本，然后在使用时指定需要的 Node.js 版本即可。安装 NVM （可以在其官网上找到具体的命令，地址：[https://github.com/creationix/nvm](https://github.com/creationix/nvm)）：
 
@@ -12,20 +12,29 @@ Node.js<sup>[1, 2]</sup> 是一个跨平台的 JavaScript 运行时环境，由 
 $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 ```
 
-安装好 NVM 后，就可以方便地使用 nvm 命令安装或切换当前会话使用的 Node.js 版本：
+安装好 NVM 后，就可以方便地使用 nvm 命令安装或切换当前会话使用的 Node.js 版本。NVM 的常用命令：
 
 ```
+# 从服务器查询目前所有可安装的 Node 版本
+nvm ls-remote
+
 # 查看当前安装的 nvm 程序的版本，如果安装正确，会打印 0.33.8
 $ nvm --version
 
-# 安装某个版本的 Node.js
-$ nvm install 8.7.0
+# 下载并安装某个版本的 Node.js
+$ nvm install 9.7.0
 
 # 查看当前系统已安装的所有 Node.js 版本
 $ nvm ls
 
-# 使用某个已安装了的 Node.js 版本
-$ nvm use 6.9.5
+# 在当前的会话中，使用某个已安装了的 Node.js 版本
+$ nvm use 9.7.0
+
+# 查看当前所用 Node 版本
+nvm current
+
+# 设置默认的 Node 版本
+nvm alias 9.7.0
 ```
 
 **NVM 工作原理**
@@ -47,6 +56,8 @@ Now using node v8.4.0 (npm v5.3.0)
 ```
 
 nvm 的更多用法可以参考其官网<sup>[3]</sup>，或者运行 `man nvm` 来获得帮助。
+
+### NPM - Node.js 包管理工具
 
 
 ### 参考资料
