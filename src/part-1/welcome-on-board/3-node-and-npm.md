@@ -35,6 +35,9 @@ nvm current
 
 # 设置默认的 Node 版本。这个命令会在 /.nvm/alias/default 文件中写入默认的 Node 版本号
 nvm alias default 9.7.0
+
+# 如果某个版本的 Node 因为太古老等原因，你不再使用它，可以这样卸载掉
+nvm uninstall 0.10
 ```
 
 **NVM 工作原理**
