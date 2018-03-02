@@ -52,10 +52,10 @@ NVM 实际上是一系列 shell 脚本的集合。
 
 ```
 # 在项目的根目录下运行
-$ echo "8.4.0" > .nvmrc
+$ echo "9.7.0" > .nvmrc
 $ nvm use
-Found '/path/to/project/.nvmrc' with version <8.4.0>
-Now using node v8.4.0 (npm v5.3.0)
+Found '/path/to/project/.nvmrc' with with version <9.7.0>
+Now using node v9.7.0 (npm v5.6.0)
 ```
 
 nvm 的更多用法可以参考其官网<sup>[3]</sup>，或者运行 `man nvm` 来获得帮助。
