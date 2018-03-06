@@ -40,7 +40,13 @@ $ sudo apt-get update
 $ sudo apt-get install vim
 ```
 
-## EMACS
+## Emacs
+
+<img src="../images/emacs-logo.png" style="width: 120px;">
+
+Emacs 在 1970 年代诞生于 MIT 人工智能实验室（MIT AI Lab）。Emacs 不仅仅是一个编辑器，它本质上是一个集成环境，进入到编辑器后，用户会感觉如同进入了一个功能完备的操作系统中去，因为你可以在这里收发电子邮件、通过 Telnet 登录远程主机、上 Twitter、玩游戏以及浏览网站等等。
+
+注：在程序员的世界里，Emacs 是编辑器之战的两大主角之一，另一个主角是 Vim/vi。
 
 ## VSCode
 
@@ -51,4 +57,4 @@ $ sudo apt-get install vim
 2. [Sublime Text | wikipedia](https://en.wikipedia.org/wiki/Sublime_Text)
 3. [Vim 官网](https://www.vim.org/)
 4. [Vim | wikipedia](https://zh.wikipedia.org/wiki/Vim)
-5. []()
+5. [](https://zh.wikipedia.org/wiki/Emacs)
