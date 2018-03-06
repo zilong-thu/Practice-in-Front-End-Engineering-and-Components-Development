@@ -10,6 +10,7 @@
     * [电脑、操作系统](part-1/welcome-on-board/1-computer-and-os.md)
     * [终端与常用命令行工具](part-1/welcome-on-board/2-terminals.md)
     * [Node.js环境](part-1/welcome-on-board/3-node-and-npm.md)
+    * [编辑器](part-1/welcome-on-board/4-code-editors.md)
 * [第二部分-工程化实践](part-2/index.md)
   * [模块系统](part-2/chapter-1-模块系统/section-1-概述.md)
     * [刀耕火种时代](part-2/chapter-1-模块系统/section-2-刀耕火种时代.md)

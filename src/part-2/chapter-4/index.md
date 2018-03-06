@@ -5,3 +5,5 @@
 
 + browser-sync
 + eruda
+
+safari + simulator
