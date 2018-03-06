@@ -27,7 +27,7 @@ Sublime Text 是一套跨平台的文本编辑器，支持基于Python的插件�
 
 <img src="../images/vim-logo.svg" style="width: 120px;">
 
-Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。Vim 的第一个版本由布莱姆·米勒（Bram Moolenaar）在 1991 年发布。最初的简称是 Vi IMitation，随着功能的不断增加，正式名称改成了 Vi IMproved。现在是在开放源代码方式下发行的自由软件。<sup>[4]</sup>
+Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。Vim 的第一个版本由布莱姆·米勒（Bram Moolenaar）在 1991 年发布，源码主要由 C 语言写成。最初的简称是 Vi IMitation，随着功能的不断增加，正式名称改成了 Vi IMproved。现在是在开放源代码方式下发行的自由软件。<sup>[4]</sup>
 
 MacOS X 和 Linux 系统都预装了一个可以开箱即用的轻量级 Vim。不过，要想获得更多的功能，最好还是重新安装一下：
 
@@ -44,12 +44,13 @@ $ sudo apt-get install vim
 
 <img src="../images/emacs-logo.png" style="width: 120px;">
 
-Emacs 在 1970 年代诞生于 MIT 人工智能实验室（MIT AI Lab）。Emacs 不仅仅是一个编辑器，它本质上是一个集成环境，进入到编辑器后，用户会感觉如同进入了一个功能完备的操作系统中去，因为你可以在这里收发电子邮件、通过 Telnet 登录远程主机、上 Twitter、玩游戏以及浏览网站等等。
+Emacs 在 1970 年代诞生于 MIT 人工智能实验室（MIT AI Lab），源码主要是使用 ELisp 写成。Emacs 不仅仅是一个编辑器，它本质上是一个集成环境，进入到编辑器后，用户会感觉如同进入了一个功能完备的操作系统中去，因为你可以在这里收发电子邮件、通过 Telnet 登录远程主机、上 Twitter、玩游戏以及浏览网站等等。
 
 注：在程序员的世界里，Emacs 是编辑器之战的两大主角之一，另一个主角是 Vim/vi。
 
 ## VSCode
 
+VSCode 全称 Visual Studio Code，于 2016 年正式发布。
 
 ## 参考资料
 
@@ -57,4 +58,6 @@ Emacs 在 1970 年代诞生于 MIT 人工智能实验室（MIT AI Lab）。Emacs
 2. [Sublime Text | wikipedia](https://en.wikipedia.org/wiki/Sublime_Text)
 3. [Vim 官网](https://www.vim.org/)
 4. [Vim | wikipedia](https://zh.wikipedia.org/wiki/Vim)
-5. [](https://zh.wikipedia.org/wiki/Emacs)
+5. [Emacs | wikipedia](https://zh.wikipedia.org/wiki/Emacs)
+6. [VSCode | wikipedia](https://en.wikipedia.org/wiki/Visual_Studio_Code)
+
