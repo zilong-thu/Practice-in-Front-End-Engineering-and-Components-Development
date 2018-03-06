@@ -7,3 +7,7 @@ img.fl {
   float: left;
   margin: 0 1em 0.5em 0;
 }
+
+pre {
+  border-radius: 6px;
+}
