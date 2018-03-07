@@ -46,6 +46,7 @@
   * [标准库](part-4/01-标准库.md)
   * [编码规范](part-4/02-编码规范.md)
   * [重构](part-4/03-重构.md)
+  * [前端程序员的自我成长](part-4/04-fe-self-learning.md)
 * [附录](part-5/index.md)
   * [Git 基本使用](part-5/01-git-intro.md)
   * [Web 浏览器工作原理](part-5/02-about-web-browsers.md)
