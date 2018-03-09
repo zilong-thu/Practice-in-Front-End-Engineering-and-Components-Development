@@ -48,7 +48,7 @@
 
 ### 时不时跳出舒适区
 
-人的认知领域可以划分为这三个区域：舒适区（comfort zone），学习区（或焦虑区，learning zone），以及恐慌区（panic zone）。如下图所示。
+人的认知领域可以划分为这三个区域：舒适区（comfort zone），学习区（或焦虑区，learning zone），以及恐慌区（panic zone，也叫做危险区）。如下图所示。
 
 <img src="./images/comfort-zone.png" style="width: 320px;">
 
