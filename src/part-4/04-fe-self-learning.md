@@ -68,4 +68,21 @@
 
 ### 读书
 
+编程本身是严肃的工程行为，优秀的程序员应当具备相关开发领域足够多的知识。读书是建立系统的认知和理论体系的正统之道。Stackoverflow 网站上有个著名的问题，“程序员最应该读的书有哪些？”。投票数最多的回答给出了一个长长的书单，前十名是：
+
+1. Code Complete (2nd edition) by Steve McConnell. 《代码大全》
+2. The Pragmatic Programmer. 《程序员修炼之道：从小工到专家》
+3. Structure and Interpretation of Computer Programs. 《计算机程序的构造和解释》
+4. The C Programming Language by Kernighan and Ritchie. 《C程序设计语言》
+5. Introduction to Algorithms by Cormen, Leiserson, Rivest & Stein. 《算法导论（原书第2版）》
+6. Design Patterns by the Gang of Four. 《设计模式》
+7. Refactoring: Improving the Design of Existing Code. 《重构》
+8. The Mythical Man Month. 《人月神话》
+9. The Art of Computer Programming by Donald Knuth. 《计算机程序设计艺术》
+10. Compilers: Principles, Techniques and Tools by Alfred V. Aho, Ravi Sethi and Jeffrey D. Ullman. 《编译原理》（龙书）
+
+
+## 参考资料
+
+1. [What is the single most influential book every programmer should read? | Stackoverflow](https://stackoverflow.com/questions/1711/what-is-the-single-most-influential-book-every-programmer-should-read)
 
