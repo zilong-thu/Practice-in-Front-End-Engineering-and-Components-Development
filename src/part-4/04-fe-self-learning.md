@@ -81,6 +81,19 @@
 9. The Art of Computer Programming by Donald Knuth. 《计算机程序设计艺术》
 10. Compilers: Principles, Techniques and Tools by Alfred V. Aho, Ravi Sethi and Jeffrey D. Ullman. 《编译原理》（龙书）
 
+这份书单对所有程序员都有参考意义。而在前端领域，个人推荐下列几本必读书目。
+
+1. 《JavaScript高级程序设计（第三版）》
+2. 《JavaScript权威指南》
+3. 《JavaScript语言精粹》
+4. 《高性能网站建设指南》
+5. 《高性能网站建设进阶指南》
+6. 《CSS权威指南》
+7. 《HTTP权威指南》
+8. 《深入理解ES6》
+9. 《JavaScript忍者秘籍》
+10. 《你不知道的JavaScript》系列
+
 
 ## 参考资料
 
