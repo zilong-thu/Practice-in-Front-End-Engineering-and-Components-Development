@@ -27,7 +27,7 @@ Sublime Text 是一套跨平台的文本编辑器，支持基于Python的插件�
 
 <img src="../images/vim-logo.svg" style="width: 120px;">
 
-Vim 是从 vi（Bill Joy） 发展出来的一个文本编辑器，由 Bram Moolenaar 等人开发。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。Vim 的第一个版本由布莱姆·米勒（Bram Moolenaar）在 1991 年发布，源码主要由 C 语言写成。最初的简称是 Vi IMitation，随着功能的不断增加，正式名称改成了 Vi IMproved。现在是在开放源代码方式下发行的自由软件。<sup>[4]</sup>
+Vim 是从 vi（Bill Joy） 发展出来的一个具有 TUI（Text User Interface，文本用户界面，与 GUI，即图形用户界面相对应）的编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。Vim 的第一个版本由布莱姆·米勒（Bram Moolenaar）在 1991 年发布，源码主要由 C 语言写成。最初的简称是 Vi IMitation，随着功能的不断增加，正式名称改成了 Vi IMproved。现在是在开放源代码方式下发行的自由软件。<sup>[4]</sup>
 
 Vim 对重复性操作进行了很好的优化。“对于 Vim 高手来说，Vim 能以思考的速度编辑文本”，这是对 Vim 最流行的描述。即便不把它作为自己的常用编辑器，在登录到服务器上的时候，Vim 很可能就是你唯一可用的编辑器。所以，Vim 应当作为前端程序员的必备技能之一。
 
@@ -41,6 +41,15 @@ $ brew install vim
 $ sudo apt-get update
 $ sudo apt-get install vim
 ```
+
+Vim 有四种模式（mode）：
+
+- 普通模式——Vim 的默认状态，在这里可以进行高效率的操作
+- 插入模式——一种所见即所得的状态。在普通模式下，按 `i`、`a`、`A` 等键均可进入插入模式；而按 `esc` 键，或者按组合键 `ctrl` + `[` 则可以退出插入模式，回到普通模式。
+- 可视模式——可视模式允许我们选中一块文本
+- 命令行模式
+
+在不同的模式下，即便相同的按键，也可能有不同的结果
 
 ## Emacs
 
