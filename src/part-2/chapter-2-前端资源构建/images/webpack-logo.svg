@@ -1,7 +1,7 @@
 <svg viewBox="0 0 1088 615" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <g stroke-width="1" fill="none" fill-rule="evenodd">
         <text font-family="'Source Sans Pro', sans-serif" font-size="18" font-weight="600" fill="#333333">
-            <tspan x="933.778" y="459">静态资源</tspan>
+            <tspan x="933.778" y="459">打包后的静态资源</tspan>
         </text>
         <g transform="translate(1002, 326)">
             <g>
@@ -44,9 +44,12 @@
             <path d="M499.558824,86.0616667 C499.558824,86.0616667 484.852941,91.5616667 439.908088,63.145 C394.963235,34.7283333 380.992647,8.145 380.992647,8.145" stroke-dasharray="7"></path>
             <path d="M0.477941176,170.395 C0.477941176,170.395 169.382939,98.895 447.847936,98.895" id="Shape_99_" stroke-dasharray="6"></path>
             <path d="M0.477941176,72.395 C0.477941176,72.395 169.382939,0.895 447.847936,0.895" id="Shape_99_" stroke-dasharray="6" transform="translate(224.162939, 36.645000) scale(1, -1) translate(-224.162939, -36.645000) "></path>
+            <text font-family="'Source Sans Pro', sans-serif" font-size="18" font-weight="600" fill="#333333">
+                <tspan x="24.934" y="562">webpack</tspan>
+            </text>
         </g>
         <text font-family="'Source Sans Pro', sans-serif" font-size="18" font-weight="600" fill="#333333">
-            <tspan x="24.934" y="562">相互依赖的模块</tspan>
+            <tspan x="14" y="562">相互依赖的模块</tspan>
         </text>
         <g transform="translate(228, 335)">
             <g>
