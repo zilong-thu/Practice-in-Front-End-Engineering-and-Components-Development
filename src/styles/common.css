@@ -11,3 +11,7 @@ img.fl {
 pre {
   border-radius: 6px;
 }
+
+sup {
+  font-size: 0.8em;
+}
