@@ -17,6 +17,13 @@ Hatton<sup>[1]</sup> 研究统计了代码行数与出现的 bug 数量的关系
 
 <img src="./images/hatton.png" style="width: 300px;">
 
+模块的代码行数太小，也会带来 bug 密度的提升，主要是因为模块与模块之间的 API 成本相应增加导致。例如，在一个模块中，当你需要通过追溯多个模块才能发现某个方法、依赖的来源时，这种成本就可以理解为模块间API的成本。
+
+<img src="./images/js-module-too-small.png">
+
+过多的跨模块查找，形成了模块间的 API 成本。这会干扰你的注意力，使得 bug 产生的概率增加。
+
+
 ## 参考资料
 
 1. IEEE Software. Les Hatton. “Re-examining the Defect-Density versus Component Size Distribution”. March/April 1997.
