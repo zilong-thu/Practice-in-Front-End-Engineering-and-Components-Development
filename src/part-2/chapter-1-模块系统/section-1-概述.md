@@ -25,6 +25,12 @@ Hatton<sup>[1]</sup> 研究统计了代码行数与出现的 bug 数量的关系
 
 ### 提升复用性
 
+> Don't Repeat Yourself.（不要重复自身）
+>
+> -- The Pragmatic Programmer. 《程序员修炼之道》
+
+《Unix编程艺术》里提到模块的正交性特点：在纯粹的正交性设计中，任何操作均无副作用；每个操作只改变一件事情；要修改任何一个属性，有且仅有一个方法可以使用。
+
 ## 参考资料
 
 1. IEEE Software. Les Hatton. “Re-examining the Defect-Density versus Component Size Distribution”. March/April 1997.
