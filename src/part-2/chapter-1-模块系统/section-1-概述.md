@@ -31,6 +31,8 @@ Hatton<sup>[1]</sup> 研究统计了代码行数与出现的 bug 数量的关系
 
 《Unix编程艺术》里提到模块的正交性特点：在纯粹的正交性设计中，任何操作均无副作用；每个操作只改变一件事情；要修改任何一个属性，有且仅有一个方法可以使用。
 
+“正交”是非常优雅的一个词语。在欧几里得空间里，两个向量点积为零则为正交；在物理学中，正交表现为运动的独立性。
+
 ## 参考资料
 
 1. IEEE Software. Les Hatton. “Re-examining the Defect-Density versus Component Size Distribution”. March/April 1997.
