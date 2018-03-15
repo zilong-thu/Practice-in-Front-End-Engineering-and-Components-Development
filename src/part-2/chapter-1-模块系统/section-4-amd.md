@@ -1,9 +1,20 @@
 # AMD 模块系统
 
+## 定义
 
-AMD 模块系统的经典实现库是 require.js(http://requirejs.org/)。
+AMD（Asynchronous Module Definition）即**异步模块定义**。AMD 规范中，各个依赖可以异步加载而不影响正常逻辑，非常适用于浏览器环境。AMD 规范的核心 API 只有一个简单的 `define()` 函数。
 
-## 基本使用
+```
+function define(id?, dependencies?, factory) {
+  // ...
+};
+
+define.amd = {};
+```
+
+AMD 模块系统的经典实现库是 require.js<sup>[1]</sup>。
+
+## RequireJS 的基本使用
 
 首先我们来看一下 require.js 的使用。考虑如下目录结构的静态页面服务：
 
@@ -88,3 +99,9 @@ require([
 脚本加载
 
 依赖分析、任务队列与递归加载
+
+
+## 参考资料
+
+1. AMD Spec Doc. https://github.com/amdjs/amdjs-api/blob/master/AMD.md
+2. http://requirejs.org/
