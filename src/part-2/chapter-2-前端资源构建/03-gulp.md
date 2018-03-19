@@ -31,17 +31,39 @@ $ touch gulpfile.js
     └── index.js
 ```
 
-其中，`client` 目录用于存放客户端用的源码，`build` 目录以静态文件的形式提供资源服务，我们希望构建后，`build`目录内部的结构基本与源码目录下的结构一致，如下图所示：
+其中，`./server/index.js` 定义了一个极简的静态文件服务器，将 `./build` 目录作为静态文件资源服务的根目录：
+
+```javascript
+const path   = require('path');
+const Koa    = require('koa');
+const app    = new Koa();
+const serve  = require('koa-static');
+
+// 静态文件服务目录
+const staticDir = path.join(__dirname, '../build');
+app.use(serve(staticDir));
+app.listen(9001);
+```
+
+运行
+
+```
+$ node ./server/index.js
+```
+
+即可启动该服务器。
+
+`./client` 目录则用于存放我们所有的客户端源码。我们希望构建后，`build`目录内部的结构基本与源码目录下的结构保持一致，如下图所示：
 
 <img src="./images/dir-01-client-to-build.png" style="width: 90%;">
 
 下面我们使用 Gulp.js，由浅入深，一步一步地搭建起我们的开发构建流程。
 
-### 极简版本：复制
+### 极简版本：复制与压缩
 
 ```javascript
 /**
- * gulpfile.js
+ * gulpfile-v1.js
  */
 const gulp = require('gulp');
 const copydir = require('copy-dir');
@@ -59,6 +81,8 @@ gulp.task('watch', () => {
 
 gulp.task('default', ['build-client', 'watch']);
 ```
+
+在上面这个 `gulpfile-v1.js` 配置文件里，我们定义了一个名为 `build-client` 的任务，和名为 `watch` 的任务，前者只是简单粗暴地将 `./client` 目录下的所有文件原封不动地复制到了 `./build` 目录下，后者则监听 `./client` 目录下所有文件的变动，在变动发生时执行复制任务。
 
 ## 参考资料
 
