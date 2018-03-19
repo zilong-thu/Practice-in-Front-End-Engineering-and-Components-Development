@@ -22,6 +22,7 @@
     * [Babel](part-2/chapter-2-前端资源构建/01-babel.md)
     * [Webpack](part-2/chapter-2-前端资源构建/02-webpack.md)
     * [Gulp](part-2/chapter-2-前端资源构建/03-gulp.md)
+    * [前端资源构建系统演进示例](part-2/chapter-2-前端资源构建/04-practice-usage.md)
   * [代码的组织与管理](part-2/chapter-3/index.md)
   * [开发与调试](part-2/chapter-4/index.md)
   * [前端测试](part-2/chapter-5-test/index.md)
