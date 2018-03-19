@@ -15,7 +15,11 @@ $ npm install gulp --save-dev
 $ touch gulpfile.js
 ```
 
-运行构建任务时，`node_modules/.bin/gulp` 会寻找与 `node_modules` 平级的 `gulpfile.js` 文件，从中读取任务定义然后执行。
+运行构建任务时，`node_modules/.bin/gulp` 会默认寻找与 `node_modules` 平级的 `gulpfile.js` 文件，从中读取任务定义然后执行。此外，还可以通过 `--gulpfile` 指定某个特定的 JavaScript 文件作为 gulp 任务的配置文件。例如：
+
+```
+$ gulp --gulpfile ./gulpfile-v1.js
+```
 
 前端资源的构建方式决定了开发时方方面面的体验：源码结构是否清晰，资源（图片、CSS、JS、音视频等）是否总能通过最短路径查找到，源码变动是否能够自动化刷新到浏览器中，等等。
 
@@ -75,6 +79,7 @@ gulp.task('build-client', function() {
   copydir.sync(SRC_ROOT, BUILD_ROOT);
 });
 
+// ** 是指所有深度的文件夹
 gulp.task('watch', () => {
   gulp.watch(['./client/**/*'], ['build-client']);
 });

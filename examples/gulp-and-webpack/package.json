@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "static": "node ./server/index.js",
-    "build-v1": "gulp"
+    "build-v1": "gulp --gulpfile ./gulpfile-v1.js"
   },
   "author": "",
   "license": "ISC",
