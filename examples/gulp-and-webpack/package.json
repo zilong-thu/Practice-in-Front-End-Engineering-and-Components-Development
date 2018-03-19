@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "static": "node ./server/index.js",
-    "build-v1": "gulp --gulpfile ./gulpfile-v1.js"
+    "build-v1": "gulp --gulpfile ./gulpfile-v1.js",
+    "build-v2": "gulp --gulpfile ./gulpfile-v2.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +15,8 @@
     "copy-dir": "^0.3.0",
     "fs-extra": "^5.0.0",
     "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.3",
+    "gulp-uglify": "^3.0.0",
     "webpack": "^4.1.1"
   },
   "dependencies": {

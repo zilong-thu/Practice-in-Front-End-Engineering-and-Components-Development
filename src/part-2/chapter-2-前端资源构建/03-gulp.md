@@ -63,7 +63,7 @@ $ node ./server/index.js
 
 下面我们使用 Gulp.js，由浅入深，一步一步地搭建起我们的开发构建流程。
 
-### 极简版本：复制与压缩
+### 极简版本v1：复制
 
 ```javascript
 /**
@@ -88,6 +88,10 @@ gulp.task('default', ['build-client', 'watch']);
 ```
 
 在上面这个 `gulpfile-v1.js` 配置文件里，我们定义了一个名为 `build-client` 的任务，和名为 `watch` 的任务，前者只是简单粗暴地将 `./client` 目录下的所有文件原封不动地复制到了 `./build` 目录下，后者则监听 `./client` 目录下所有文件的变动，在变动发生时执行复制任务。
+
+### 版本v2：添加压缩
+
+
 
 ## 参考资料
 
