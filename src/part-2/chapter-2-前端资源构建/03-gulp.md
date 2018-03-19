@@ -19,32 +19,21 @@ $ touch gulpfile.js
 
 前端资源的构建方式决定了开发时方方面面的体验：源码结构是否清晰，资源（图片、CSS、JS、音视频等）是否总能通过最短路径查找到，源码变动是否能够自动化刷新到浏览器中，等等。
 
-假设我们的目录结构这样设计：
+假设我们的根目录下的第一级文件结构这样设计：
 
 ```
+.
 ├── build
 ├── client
-│   ├── common
-│   │   ├── css
-│   │   ├── images
-│   │   └── js
-│   │       └── toast.js
-│   ├── explore
-│   │   └── index.html
-│   ├── home
-│   │   ├── index.css
-│   │   ├── index.html
-│   │   └── index.js
-│   └── user
-│       └── index.html
 ├── gulpfile.js
-├── package-lock.json
 ├── package.json
 └── server
     └── index.js
 ```
 
-`client` 目录用于存放客户端用的源码，`build` 目录以静态文件的形式提供资源服务，我们希望构建后，`build`目录内部的结构基本与源码目录下的结构一致。
+其中，`client` 目录用于存放客户端用的源码，`build` 目录以静态文件的形式提供资源服务，我们希望构建后，`build`目录内部的结构基本与源码目录下的结构一致，如下图所示：
+
+<img src="./images/dir-01-client-to-build.png">
 
 ```javascript
 /**
