@@ -5,11 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "static": "node ./server/index.js"
+    "static": "node ./server/index.js",
+    "build-v1": "gulp"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "copy-dir": "^0.3.0",
+    "fs-extra": "^5.0.0",
     "gulp": "^3.9.1",
     "webpack": "^4.1.1"
   },

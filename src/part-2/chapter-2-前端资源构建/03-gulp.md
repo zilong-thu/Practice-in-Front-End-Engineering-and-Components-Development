@@ -33,13 +33,31 @@ $ touch gulpfile.js
 
 其中，`client` 目录用于存放客户端用的源码，`build` 目录以静态文件的形式提供资源服务，我们希望构建后，`build`目录内部的结构基本与源码目录下的结构一致，如下图所示：
 
-<img src="./images/dir-01-client-to-build.png">
+<img src="./images/dir-01-client-to-build.png" style="width: 90%;">
+
+下面我们使用 Gulp.js，由浅入深，一步一步地搭建起我们的开发构建流程。
+
+### 极简版本：复制
 
 ```javascript
 /**
  * gulpfile.js
  */
+const gulp = require('gulp');
+const copydir = require('copy-dir');
 
+const BUILD_ROOT = './build/';
+const SRC_ROOT = './client';
+
+gulp.task('build-client', function() {
+  copydir.sync(SRC_ROOT, BUILD_ROOT);
+});
+
+gulp.task('watch', () => {
+  gulp.watch(['./client/**/*'], ['build-client']);
+});
+
+gulp.task('default', ['build-client', 'watch']);
 ```
 
 ## 参考资料
