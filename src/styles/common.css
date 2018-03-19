@@ -12,6 +12,10 @@ pre {
   border-radius: 6px;
 }
 
+pre.pre-dir {
+  font-size: .85em;
+}
+
 sup {
   font-size: 0.8em;
 }

@@ -22,24 +22,36 @@ $ touch gulpfile.js
 假设我们的目录结构这样设计：
 
 ```
-.
 ├── build
 ├── client
-│   ├── lib
-│   │   └── toast.js
-│   └── pages
-│       ├── home
-│       │   ├── index.html
-│       │   └── index.js
-│       └── user
-│           └── index.html
+│   ├── common
+│   │   ├── css
+│   │   ├── images
+│   │   └── js
+│   │       └── toast.js
+│   ├── explore
+│   │   └── index.html
+│   ├── home
+│   │   ├── index.css
+│   │   ├── index.html
+│   │   └── index.js
+│   └── user
+│       └── index.html
 ├── gulpfile.js
+├── package-lock.json
 ├── package.json
 └── server
     └── index.js
 ```
 
 `client` 目录用于存放客户端用的源码，`build` 目录以静态文件的形式提供资源服务，我们希望构建后，`build`目录内部的结构基本与源码目录下的结构一致。
+
+```javascript
+/**
+ * gulpfile.js
+ */
+
+```
 
 ## 参考资料
 
