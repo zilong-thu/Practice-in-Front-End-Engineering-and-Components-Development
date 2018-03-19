@@ -28,3 +28,4 @@ $ gulp --gulpfile ./gulpfile-v1.js
 
 1. Gulp 官网. https://gulpjs.com/
 2. GNU Make. https://www.gnu.org/software/make/
+3. [An Introduction to Gulp.js](https://www.sitepoint.com/introduction-gulp-js/)
