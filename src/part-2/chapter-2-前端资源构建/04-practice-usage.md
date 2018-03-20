@@ -34,7 +34,7 @@ app.listen(9001);
 $ node ./server/index.js
 ```
 
-即可启动该服务器。
+即可启动该服务器。此时，浏览器中访问 `http://localhost:9001/home`，服务器就会响应 `./build/home/index.html` 这个文件。
 
 `./client` 目录则用于存放我们所有的客户端源码。我们希望构建后，`build`目录内部的结构基本与源码目录下的结构保持一致，如下图所示：
 
@@ -171,7 +171,7 @@ gulp.task('js', () => {
 });
 ```
 
-通过这样的配置，我们就可以方便地使用 ESM 了。以 `./client/home` 页面为例，目录结构与 HTML 代码：
+通过这样的配置，我们就可以方便地使用 ESM 了。以 `./client/home` 页面为例，通过下面的一个小功能，测试一下打包的结果是否正确。目录结构与 HTML 代码：
 
 <img src="./images/dir-02-home.png" style="width: 200px; float: left; margin-right: 30px;">
 
@@ -183,28 +183,29 @@ gulp.task('js', () => {
   <title>Home Page</title>
 </head>
 <body>
-  <h1>欢迎来到首页！</h1>
+  <p>测试 ESM 组织源码及使用 webpack 打包 JS 代码</p>
   <pre id="output"></pre>
-  <script type="text/javascript" src="/home/index.js"></script>
+  <script src="/home/index.js"></script>
 </body>
 </html>
 ```
 
-`./home/index.js` 里，引入常用的 `underscore`，调用 `_.pick` 方法从一个对象里提取部分键值对，然后打印出来：
+`./home/index.js` 里，引入常用的 `underscore`，调用 `_.pick` 方法从一个对象里提取部分键值对，然后把新的对象插入到文档里：
 
 ```javascript
 import _ from 'underscore';
 
-
 var str = 'Hello World.';
 console.log(str);
 
-// 调用 underscore 方法
-var pickedData = _.pick({name: 'moe', age: 50, userid: 'moe1'}, 'name', 'age');
-console.log('pickedData: ', pickedData);
+// 调用 underscore 的 pick 方法
+var pickedData = _.pick({name: 'moe', age: 50, userid: 'moe1'}, ['name', 'age']);
 
 document.querySelector('#output').innerHTML = '=> ' + JSON.stringify(pickedData);
 ```
 
+如果构建的结果正确，那么我们可以在浏览器里看到这样的结果：
+
+<img src="./images/result-home-01.png" style="width: 440px; border: 1px solid #eee; border-radius: 4px;">
 
 ### 版本v4：哈希
