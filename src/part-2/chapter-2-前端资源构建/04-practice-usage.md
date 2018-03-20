@@ -2,6 +2,8 @@
 
 前端资源的构建方式决定了开发时方方面面的体验：源码结构是否清晰，资源（图片、CSS、JS、音视频等）是否总能通过最短路径查找到，源码变动是否能够自动化刷新到浏览器中，等等。
 
+### 准备工作：目录与服务
+
 假设我们的根目录下的第一级文件结构这样设计：
 
 ```
@@ -114,11 +116,9 @@ gulp.task('watch', () => {
 gulp.task('default', ['css', 'js', 'copy', 'watch']);
 ```
 
-### 版本v3：模块化
+### 版本v3：JavaScript 模块化
 
-进行了压缩，代码文件的网络传输体积变小，看上去的确很美好。然而，源码总不能只在一个文件里面写，我们还要考虑代码复用的情况（不光是 JavaScript，还有 CSS、HTML 片段）。此时，有必要引入 JavaScript 模块系统、CSS 编译系统以及 HTML 模板。
-
-**JavaScript**
+进行了压缩，代码文件的网络传输体积变小，看上去的确很美好。然而，源码总不能只在一个文件里面写，我们还要考虑代码复用的情况（不光是 JavaScript，还有 CSS、HTML 片段）。此时，有必要引入 JavaScript 模块系统、CSS 编译系统以及 HTML 模板。在版本 v3 里，我们实现 JavaScript 模块化开发及构建方案。
 
 鉴于 ECMAScript 6 Modules（下面简称 ESM）早已标准化，我们不妨以 ESM 模块系统来管理浏览器端的 JavaScript 代码，然后使用 webpack 对客户端 JS 进行依赖分析、打包、压缩等工作。
 
@@ -195,9 +195,6 @@ gulp.task('js', () => {
 ```javascript
 import _ from 'underscore';
 
-var str = 'Hello World.';
-console.log(str);
-
 // 调用 underscore 的 pick 方法
 var pickedData = _.pick({name: 'moe', age: 50, userid: 'moe1'}, ['name', 'age']);
 
@@ -208,4 +205,11 @@ document.querySelector('#output').innerHTML = '=> ' + JSON.stringify(pickedData)
 
 <img src="./images/result-home-01.png" style="width: 440px; border: 1px solid #eee; border-radius: 4px;">
 
-### 版本v4：哈希
+### 版本v4：CSS 预处理
+
+CSS 也有多种方案做到模块化、代码复用。
+
+### 版本v5：HTML 模板
+
+
+### 版本v6：哈希
