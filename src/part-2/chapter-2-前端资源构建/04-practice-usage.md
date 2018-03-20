@@ -116,6 +116,95 @@ gulp.task('default', ['css', 'js', 'copy', 'watch']);
 
 ### 版本v3：模块化
 
-进行了压缩，代码文件的网络传输体积变小，看上去的确很美好。然而，源码总不能只在一个文件里面写，我们还要考虑代码复用的情况（不光是 JavaScript，还有 CSS、HTML 片段）。此时，有必要引入模块系统了。鉴于 ECMAScript 6 Modules（下面简称 ESM）早已标准化，我们不妨以 ESM 模块系统来管理浏览器端的 JavaScript 代码。
+进行了压缩，代码文件的网络传输体积变小，看上去的确很美好。然而，源码总不能只在一个文件里面写，我们还要考虑代码复用的情况（不光是 JavaScript，还有 CSS、HTML 片段）。此时，有必要引入 JavaScript 模块系统、CSS 编译系统以及 HTML 模板。
+
+**JavaScript**
+
+鉴于 ECMAScript 6 Modules（下面简称 ESM）早已标准化，我们不妨以 ESM 模块系统来管理浏览器端的 JavaScript 代码，然后使用 webpack 对客户端 JS 进行依赖分析、打包、压缩等工作。
+
+首先，我们需要一种机制来寻找各个 JS 入口文件。简单起见，我们约定每个页面目录下的 `index.js` 文件是该页面的入口文件，那么我们可以这样声明一个函数：
+
+```javascript
+// 找到所有的 index.js 文件
+function findAllJSEntryFiles() {
+  const files = glob
+    .sync('./client/**/index.js')
+    .map(item => ({
+      path: item,
+      name: item.replace('./client/', '').replace('.js', ''),
+    }));
+
+  const pagesJsEntry = {};
+  files.forEach(item => {
+    // pagesJsEntry 形如 {
+    //   'home/index': './client/home/index.js'
+    // }
+    pagesJsEntry[item.name] = item.path;
+  });
+
+  return pagesJsEntry;
+}
+```
+
+借助函数 `findAllJSEntryFiles()`，我们在 `gulpfile-v2.js` 里定义的 `js` 任务可以更改为使用 webpack 进行构建：
+
+```javascript
+gulp.task('js', () => {
+  const conf = {
+    entry: findAllJSEntryFiles(),
+    output: {
+      filename: '[name].js',
+      chunkFilename: '[name].js',
+      path: path.resolve(__dirname, 'build'),
+    }
+  };
+
+  webpack(conf, (err, stats) => {
+    if (err || stats.hasErrors()) {
+      console.log('-- error --');
+      return;
+    }
+
+    // Done processing
+    console.log('\nwebpack 构建完成 ✔\n');
+  });
+});
+```
+
+通过这样的配置，我们就可以方便地使用 ESM 了。以 `./client/home` 页面为例，目录结构与 HTML 代码：
+
+<img src="./images/dir-02-home.png" style="width: 200px; float: left; margin-right: 30px;">
+
+```html
+<!-- ./client/home/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home Page</title>
+</head>
+<body>
+  <h1>欢迎来到首页！</h1>
+  <pre id="output"></pre>
+  <script type="text/javascript" src="/home/index.js"></script>
+</body>
+</html>
+```
+
+`./home/index.js` 里，引入常用的 `underscore`，调用 `_.pick` 方法从一个对象里提取部分键值对，然后打印出来：
+
+```javascript
+import _ from 'underscore';
+
+
+var str = 'Hello World.';
+console.log(str);
+
+// 调用 underscore 方法
+var pickedData = _.pick({name: 'moe', age: 50, userid: 'moe1'}, 'name', 'age');
+console.log('pickedData: ', pickedData);
+
+document.querySelector('#output').innerHTML = '=> ' + JSON.stringify(pickedData);
+```
+
 
 ### 版本v4：哈希
