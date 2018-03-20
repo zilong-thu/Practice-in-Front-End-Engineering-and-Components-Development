@@ -116,9 +116,11 @@ gulp.task('watch', () => {
 gulp.task('default', ['css', 'js', 'copy', 'watch']);
 ```
 
-### 版本v3：JavaScript 模块化
+### 版本v3：模块化
 
-进行了压缩，代码文件的网络传输体积变小，看上去的确很美好。然而，源码总不能只在一个文件里面写，我们还要考虑代码复用的情况（不光是 JavaScript，还有 CSS、HTML 片段）。此时，有必要引入 JavaScript 模块系统、CSS 编译系统以及 HTML 模板。在版本 v3 里，我们实现 JavaScript 模块化开发及构建方案。
+进行了压缩，代码文件的网络传输体积变小，看上去的确很美好。然而，源码总不能只在一个文件里面写，我们还要考虑代码复用的情况（不光是 JavaScript，还有 CSS、HTML）。此时，有必要引入 JavaScript 模块系统、CSS 编译系统以及 HTML 模板。在版本 v3 里，我们实现 JavaScript 和 CSS 的模块化开发及构建方案。
+
+** JavaScript 模块化开发与构建**
 
 鉴于 ECMAScript 6 Modules（下面简称 ESM）早已标准化，我们不妨以 ESM 模块系统来管理浏览器端的 JavaScript 代码，然后使用 webpack 对客户端 JS 进行依赖分析、打包、压缩等工作。
 
@@ -205,11 +207,28 @@ document.querySelector('#output').innerHTML = '=> ' + JSON.stringify(pickedData)
 
 <img src="./images/result-home-01.png" style="width: 440px; border: 1px solid #eee; border-radius: 4px;">
 
-### 版本v4：CSS 预处理
+**CSS 模块化开发与构建**
 
-CSS 也有多种方案做到模块化、代码复用。
+CSS 也有多种方案做到模块化、代码复用。这里我们选择使用 less 作为 CSS 源码的构建工具：
 
-### 版本v5：HTML 模板
+```javascript
+const gulpLess = require('gulp-less');
+
+// ...省略一些代码
+
+gulp.task('css', () => {
+  return gulp.src(`${SRC_ROOT}/**/*.css`)
+    .pipe(gulpLess())
+    .pipe(cleanCSS())
+    .pipe(gulp.dest(BUILD_ROOT));
+});
+```
+
+### 版本v4：HTML 模板
 
 
-### 版本v6：哈希
+### 版本v5：哈希
+
+
+### 版本v6：使用 CDN
+

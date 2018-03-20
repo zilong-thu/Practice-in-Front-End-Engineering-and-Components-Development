@@ -7,12 +7,15 @@ const webpack  = require('webpack');
 const copydir  = require('copy-dir');
 const cleanCSS = require('gulp-clean-css');
 const uglify   = require('gulp-uglify');
+const gulpLess = require('gulp-less');
+
 
 const BUILD_ROOT = './build/';
 const SRC_ROOT = './client';
 
 gulp.task('css', () => {
   return gulp.src(`${SRC_ROOT}/**/*.css`)
+    .pipe(gulpLess())
     .pipe(cleanCSS())
     .pipe(gulp.dest(BUILD_ROOT));
 });
