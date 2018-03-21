@@ -1,23 +1,24 @@
-const glob = require('glob');
+const crypto = require('crypto');
 
-// 找到所有的 index.js 文件
-function findAllJSEntryFiles() {
-  const files = glob
-    .sync('./client/**/index.js')
-    .map(item => ({
-      path: item,
-      name: item.replace('./client/', '').replace('.js', ''),
-    }));
 
-  const pagesJsEntry = {};
-  files.forEach(item => {
-    // pagesJsEntry 形如 {
-    //   'home/index': './client/home/index.js'
-    // }
-    pagesJsEntry[item.name] = item.path;
-  });
 
-  return pagesJsEntry;
+const input = 'I love cupcakes';
+
+const secret = 'abcdefg';
+const NUM = 100000;
+console.time('sha256');
+for (var i = 0; i < NUM; i++) {
+  const hash = crypto.createHash('sha256')
+                   .update(input)
+                   .digest('hex');
 }
+console.timeEnd('sha256');
 
-console.log(findAllJSEntryFiles());
+
+console.time('md5');
+for (var i = 0; i < NUM; i++) {
+  const hash = crypto.createHash('md5')
+    .update(input)
+    .digest('hex');
+}
+console.timeEnd('md5');

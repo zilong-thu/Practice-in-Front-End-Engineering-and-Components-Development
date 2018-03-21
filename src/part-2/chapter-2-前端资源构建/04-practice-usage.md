@@ -242,7 +242,37 @@ Cache-Control: max-age=86400
 
 **摘要算法**
 
-CSS 任务：
+根据内容计算出唯一的标识码，通常采用摘要算法。摘要算法也称散列算法、哈希算法，可以根据全部数据，计算得到定长的字符序列。好的摘要算法应当具备这样的特点：
+
++ 对于相同的输入，可以得到相同的散列值
++ 对于不同的输入，只有极低的概率会得到相同的散列值（即好的防碰撞特性）
++ 难以逆向计算，已知摘要值，难以推算出其原始的输入值
+
+摘要算法属于计算机安全领域的概念。Node.js 的核心模块 `crypto` 支持多种摘要算法（MD5、SHA-1等）。前端领域常用 MD5（Message Digest Algorithm 5，消息摘要算法-版本5） 对内容进行摘要计算。MD5 可以生成 128 位的校验值，一般用 32 位十六进制数表示。
+
+我们可以定义一个方法，对给定的文件，读取内容，然后返回其摘要值：
+
+```
+const crypto = require('crypto');
+const fs     = require('fs');
+
+// ... 省略一些代码
+
+/**
+ * 根据文件的内容，计算其 md5 摘要
+ * @param  {String} filename [文件的路径]
+ * @return {String}          [文件内容的 MD5 摘要]
+ */
+function md5File(filename) {
+  const content = fs.readFileSync(filename, {encoding: 'utf8'});
+  return crypto
+    .createHash('md5')
+    .update(content, 'utf8')
+    .digest('hex');
+}
+```
+
+**CSS 任务**
 
 ```javascript
 gulp.task('css', () => {
@@ -288,7 +318,7 @@ gulp.task('css', () => {
 });
 ```
 
-JavaScript 任务：
+**JavaScript 任务**
 
 ```javascript
 gulp.task('js', () => {
