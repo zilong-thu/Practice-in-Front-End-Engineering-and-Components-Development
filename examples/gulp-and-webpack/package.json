@@ -8,7 +8,8 @@
     "static": "node ./server/index.js",
     "build-v1": "gulp --gulpfile ./gulpfile-v1.js",
     "build-v2": "gulp --gulpfile ./gulpfile-v2.js",
-    "build-v3": "gulp --gulpfile ./gulpfile-v3.js"
+    "build-v3": "gulp --gulpfile ./gulpfile-v3.js",
+    "build-v4": "gulp --gulpfile ./gulpfile-v4.js"
   },
   "author": "",
   "license": "ISC",
