@@ -224,7 +224,7 @@ gulp.task('css', () => {
 });
 ```
 
-### 版本v5：资源版本标识
+### 版本v4：资源版本标识
 
 我们现在实现了前端 JS/CSS 资源的快速构建，然而，还面临一个问题：缓存。
 
@@ -240,7 +240,7 @@ Cache-Control: max-age=86400
 
 <img src="./images/http-cache.png">
 
-### 版本v4：HTML 模板
+### 版本v5：HTML 模板
 
 
 
