@@ -175,7 +175,7 @@ gulp.task('js', () => {
 
 通过这样的配置，我们就可以方便地使用 ESM 了。以 `./client/home` 页面为例，通过下面的一个小功能，测试一下打包的结果是否正确。目录结构与 HTML 代码：
 
-<img src="./images/dir-02-home.png" style="width: 200px; float: left; margin-right: 30px;">
+<img src="./images/dir-02-home.png" style="width: 160px; float: left; margin-right: 30px;">
 
 ```html
 <!-- ./client/home/index.html -->
