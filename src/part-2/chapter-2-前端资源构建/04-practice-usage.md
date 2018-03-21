@@ -240,6 +240,93 @@ Cache-Control: max-age=86400
 
 <img src="./images/http-cache.png">
 
+**摘要算法**
+
+CSS 任务：
+
+```javascript
+gulp.task('css', () => {
+  removeFiles(`${SRC_ROOT}/**/index-*.css`);
+
+  const stream = gulp.src(`${SRC_ROOT}/**/*.css`)
+    .pipe(gulpLess())
+    .pipe(cleanCSS())
+    .pipe(gulp.dest(BUILD_ROOT));
+
+  stream.on('error', (err) => {
+    console.error(err.message);
+  });
+
+  stream.on('end', () => {
+    const assets = [];
+
+    glob
+      .sync(`${BUILD_ROOT}/**/index.css`)
+      .forEach(item => {
+        const md5sum = md5File(item);
+        const newName = item.replace('index.css', `index-${md5sum}.css`);
+        fs.renameSync(item, newName);
+        assets.push({
+          chunkName: newName.replace(BUILD_ROOT, ''),
+          name: item.replace(BUILD_ROOT, ''),
+          htmlName: item.replace(BUILD_ROOT, '').replace('.css', '.html'),
+        });
+      });
+
+    console.log('css assets: ', assets);
+
+    assets.forEach(asset => {
+      const cssName = asset.name;
+      const htmlPath = BUILD_ROOT + asset.htmlName;
+      const content = fs.readFileSync(htmlPath, {encoding: 'utf8'});
+      const newContent = content.replace(cssName, asset.chunkName);
+      fs.writeFileSync(htmlPath, newContent, 'utf8');
+    });
+
+    console.log('\n css 文件摘要计算及重命名完成 ✔');
+  });
+});
+```
+
+JavaScript 任务：
+
+```javascript
+gulp.task('js', () => {
+  removeFiles(`${SRC_ROOT}/**/index-*.js`);
+
+  const conf = {
+    entry: findAllJSEntryFiles(),
+    output: {
+      filename: '[name]-[chunkhash].js',
+      chunkFilename: '[name]-[chunkhash].js',
+      path: path.resolve(__dirname, 'build'),
+    }
+  };
+
+  webpack(conf, (err, stats) => {
+    if (err || stats.hasErrors()) {
+      console.log('-- error --');
+      return;
+    }
+
+    // 替换模板中的脚本引用
+    const assets = stats.toJson().assets;
+    assets.forEach(asset => {
+      const jsName = asset.chunkNames[0] + '.js';
+      const htmlName = asset.chunkNames[0] + '.html';
+      const htmlPath = BUILD_ROOT + htmlName;
+      let content = fs.readFileSync(htmlPath, {encoding: 'utf8'});
+      content = content.replace(jsName, asset.name);
+      fs.writeFileSync(htmlPath, content, 'utf8');
+    });
+    console.log('\n替换模板中的 js 引用 ✔');
+
+    // Done processing
+    console.log('\nwebpack 构建完成 ✔\n');
+  });
+});
+```
+
 ### 版本v5：HTML 模板
 
 
