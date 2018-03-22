@@ -77,10 +77,10 @@ gulp.task('default', ['build-client', 'watch']);
 关于 glob。。。
 
 ```javascript
-const path = require('path');
-const glob = require('glob');
-const gulp = require('gulp');
-const fse  = require('fs-extra');
+const path     = require('path');
+const glob     = require('glob');
+const gulp     = require('gulp');
+const fse      = require('fs-extra');
 const copydir  = require('copy-dir');
 const cleanCSS = require('gulp-clean-css');
 const uglify   = require('gulp-uglify');
@@ -120,7 +120,7 @@ gulp.task('default', ['css', 'js', 'copy', 'watch']);
 
 进行了压缩，代码文件的网络传输体积变小，看上去的确很美好。然而，源码总不能只在一个文件里面写，我们还要考虑代码复用的情况（不光是 JavaScript，还有 CSS、HTML）。此时，有必要引入 JavaScript 模块系统、CSS 编译系统以及 HTML 模板。在版本 v3 里，我们实现 JavaScript 和 CSS 的模块化开发及构建方案。
 
-** JavaScript 模块化开发与构建**
+#### JavaScript 模块化开发与构建
 
 鉴于 ECMAScript 6 Modules（下面简称 ESM）早已标准化，我们不妨以 ESM 模块系统来管理浏览器端的 JavaScript 代码，然后使用 webpack 对客户端 JS 进行依赖分析、打包、压缩等工作。
 
@@ -207,7 +207,7 @@ document.querySelector('#output').innerHTML = '=> ' + JSON.stringify(pickedData)
 
 <img src="./images/result-home-01.png" style="width: 440px; border: 1px solid #eee; border-radius: 4px;">
 
-**CSS 模块化开发与构建**
+#### CSS 模块化开发与构建
 
 CSS 也有多种方案做到模块化、代码复用。这里我们选择使用 less 作为 CSS 源码的构建工具：
 
@@ -240,7 +240,7 @@ Cache-Control: max-age=86400
 
 <img src="./images/http-cache.png">
 
-**摘要算法**
+#### 摘要算法
 
 根据内容计算出唯一的标识码，通常采用摘要算法。摘要算法也称散列算法、哈希算法，可以根据全部数据，计算得到定长的字符序列。好的摘要算法应当具备这样的特点：
 
@@ -250,7 +250,7 @@ Cache-Control: max-age=86400
 
 摘要算法属于计算机安全领域的概念。Node.js 的核心模块 `crypto` 支持多种摘要算法（MD5、SHA-1等）。前端领域常用 MD5（Message Digest Algorithm 5，消息摘要算法-版本5） 对内容进行摘要计算。MD5 可以生成 128 位的校验值，一般用 32 位十六进制数表示。
 
-我们可以定义一个方法，对给定的文件，读取内容，然后返回其摘要值：
+首先，我们需要定义一个方法 `md5File()`，它可以对给定的文件，读取内容，然后计算其摘要值并返回：
 
 ```
 const crypto = require('crypto');
@@ -272,7 +272,7 @@ function md5File(filename) {
 }
 ```
 
-**CSS 任务**
+#### CSS 任务
 
 ```javascript
 gulp.task('css', () => {
@@ -303,8 +303,6 @@ gulp.task('css', () => {
         });
       });
 
-    console.log('css assets: ', assets);
-
     assets.forEach(asset => {
       const cssName = asset.name;
       const htmlPath = BUILD_ROOT + asset.htmlName;
@@ -312,13 +310,12 @@ gulp.task('css', () => {
       const newContent = content.replace(cssName, asset.chunkName);
       fs.writeFileSync(htmlPath, newContent, 'utf8');
     });
-
     console.log('\n css 文件摘要计算及重命名完成 ✔');
   });
 });
 ```
 
-**JavaScript 任务**
+#### JavaScript 任务
 
 ```javascript
 gulp.task('js', () => {
