@@ -118,12 +118,12 @@ gulp.task('default', ['css', 'js', 'copy', 'watch']);
 
 #### 使用 glob 模块
 
-Glob 表达式是早期 Unix shell 用于文件名匹配的有限通配符的集合。npm 里的 `glob` 包支持使用类似的通配符集合来匹配路径：
+Glob 表达式是早期 Unix shell 用于文件名匹配的有限通配符的集合，属于正则表达式的一个变种。类似地，npm 里的 `glob` 包支持使用类似的通配符集合来匹配文件路径：
 
 + `*` 匹配任意个数量的字符（类似于通用正则表达式 `.*`）
 + `!(pattern|pattern|pattern) ` 匹配任何不是括号里的字符序列的路径
 
-例如
+例如，
 
 ```
 glob.sync(`./client/**/*.!(js|css)`)
@@ -263,9 +263,9 @@ Cache-Control: max-age=86400
 + 对于不同的输入，只有极低的概率会得到相同的散列值（即好的防碰撞特性）
 + 难以逆向计算，已知摘要值，难以推算出其原始的输入值
 
-摘要算法属于计算机安全领域的概念。Node.js 的核心模块 `crypto` 支持多种摘要算法（MD5、SHA-1等）。前端领域常用 MD5（Message Digest Algorithm 5，消息摘要算法-版本5） 对内容进行摘要计算。MD5 可以生成 128 位的校验值，一般用 32 位十六进制数表示。
+摘要算法属于计算机安全领域的概念。Node.js 的核心模块 `crypto` 支持多种摘要算法（例如 MD5、SHA-1 等）。前端领域常用 MD5（Message Digest Algorithm 5，消息摘要算法-版本5） 对内容进行摘要计算。MD5 可以生成 128 位二进制的校验值，一般用 32 位十六进制数表示。
 
-首先，我们需要定义一个方法 `md5File()`，它可以对给定的文件，读取内容，然后计算其摘要值并返回：
+首先，我们需要定义一个方法 `md5File()`，它可以读取给定文件的内容，然后计算其摘要值并返回：
 
 ```
 const crypto = require('crypto');
@@ -288,6 +288,8 @@ function md5File(filename) {
 ```
 
 #### CSS 任务
+
+我们需要在原来的 CSS 编译任务结束并且文件也写完后，进行摘要计算的操作，所以需要监听 gulp stream 的事件。
 
 ```javascript
 gulp.task('css', () => {
@@ -331,6 +333,8 @@ gulp.task('css', () => {
 ```
 
 #### JavaScript 任务
+
+与 CSS 类似，JavaScript 的摘要计算也需要在编译完成后进行。不过我们这次借助 webpack 提供的回调来处理。`webpack(conf, callback)` 方法接收的第二个参数为函数，会传入 `(err, stats)` 两个数据，在编译正常结束后，`stats.toJson().assets` 属性包含了构建后所有文件的编译信息，包括摘要值（`chunkNames`）。
 
 ```javascript
 gulp.task('js', () => {
