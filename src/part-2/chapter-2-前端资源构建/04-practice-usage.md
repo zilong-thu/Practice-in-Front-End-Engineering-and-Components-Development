@@ -74,8 +74,6 @@ gulp.task('default', ['build-client', 'watch']);
 
 版本 v1 仅仅是复制源码到静态文件目录，代码没有进行任何压缩处理，直接响应给浏览器，会增加不必要的网络传输。我们可以针对不同类型的文件，分别进行压缩处理。
 
-关于 glob。。。
-
 ```javascript
 const path     = require('path');
 const glob     = require('glob');
@@ -89,19 +87,19 @@ const BUILD_ROOT = './build/';
 const SRC_ROOT = './client';
 
 gulp.task('css', () => {
-  return gulp.src(`${SRC_ROOT}/**/*.css`)
+  return gulp.src(`./client/**/*.css`)
     .pipe(cleanCSS())
     .pipe(gulp.dest(BUILD_ROOT));
 });
 
 gulp.task('js', () => {
-  return gulp.src(`${SRC_ROOT}/**/*.js`)
+  return gulp.src(`./client/**/*.js`)
     .pipe(uglify())
     .pipe(gulp.dest(BUILD_ROOT));
 });
 
 gulp.task('copy', () => {
-  const files = glob.sync(`${SRC_ROOT}/**/*.!(js|css)`);
+  const files = glob.sync(`./client/**/*.!(js|css)`);
   files.forEach(item => {
     fse.copySync(item, item.replace(SRC_ROOT, BUILD_ROOT));
   });
@@ -115,6 +113,23 @@ gulp.task('watch', () => {
 
 gulp.task('default', ['css', 'js', 'copy', 'watch']);
 ```
+
+我们来分析一下上面的新配置。
+
+#### 使用 glob 模块
+
+Glob 表达式是早期 Unix shell 用于文件名匹配的有限通配符的集合。npm 里的 `glob` 包支持使用类似的通配符集合来匹配路径：
+
++ `*` 匹配任意个数量的字符（类似于通用正则表达式 `.*`）
++ `!(pattern|pattern|pattern) ` 匹配任何不是括号里的字符序列的路径
+
+例如
+
+```
+glob.sync(`./client/**/*.!(js|css)`)
+```
+
+会寻找到 `./client/` 目录下后缀不是 `.js` 也不是 `.css` 的所有文件。
 
 ### 版本v3：模块化
 
@@ -361,3 +376,8 @@ gulp.task('js', () => {
 
 ### 版本v6：使用 CDN
 
+
+
+## 参考资料
+
+1. [Glob | npm](https://www.npmjs.com/package/glob)
