@@ -108,9 +108,10 @@ function findAllJSEntryFiles() {
 
 gulp.task('js', () => {
   removeFiles(`${SRC_ROOT}/**/index-*.js`);
-
+  const entry = findAllJSEntryFiles();
+  console.log('entry: ', entry, '\n');
   const conf = {
-    entry: findAllJSEntryFiles(),
+    entry: entry,
     output: {
       filename: '[name]-[chunkhash].js',
       chunkFilename: '[name]-[chunkhash].js',

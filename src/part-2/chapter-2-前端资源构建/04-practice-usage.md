@@ -263,7 +263,7 @@ Cache-Control: max-age=86400
 + 对于不同的输入，只有极低的概率会得到相同的散列值（即好的防碰撞特性）
 + 难以逆向计算，已知摘要值，难以推算出其原始的输入值
 
-摘要算法属于计算机安全领域的概念。Node.js 的核心模块 `crypto` 支持多种摘要算法（例如 MD5、SHA-1 等）。前端领域常用 MD5（Message Digest Algorithm 5，消息摘要算法-版本5） 对内容进行摘要计算。MD5 可以生成 128 位二进制的校验值，一般用 32 位十六进制数表示。
+摘要算法属于计算机安全领域的概念。Node.js 的核心模块 `crypto` 支持多种摘要算法（例如 MD5、SHA-1 等）。前端领域常用 MD5（Message Digest Algorithm 5，消息摘要算法-版本5） 对内容进行摘要计算。MD5 可以生成 128 位二进制的校验值，一般用 32 位十六进制数表示。MD5 的一个常见应用场景是作为文件完整性校验的判据。
 
 首先，我们需要定义一个方法 `md5File()`，它可以读取给定文件的内容，然后计算其摘要值并返回：
 
@@ -334,7 +334,17 @@ gulp.task('css', () => {
 
 #### JavaScript 任务
 
-与 CSS 类似，JavaScript 的摘要计算也需要在编译完成后进行。不过我们这次借助 webpack 提供的回调来处理。`webpack(conf, callback)` 方法接收的第二个参数为函数，会传入 `(err, stats)` 两个数据，在编译正常结束后，`stats.toJson().assets` 属性包含了构建后所有文件的编译信息，包括摘要值（`chunkNames`）。
+与 CSS 类似，JavaScript 的摘要计算也需要在编译完成后进行。不过我们这次借助 webpack 提供的回调来处理。`webpack(conf, callback)` 方法接收的第二个参数为函数，会传入 `(err, stats)` 两个数据，在编译正常结束后，`stats.toJson().assets` 数组的每一项，对应了入口文件的打包后的结果，包括文件名、摘要值等：
+
+```json
+[{
+  "chunkNames": ["home/index"],  // 入口名称（entry 的 key）
+  "chunks": [1],                 // 入口文件数量
+  "emitted": true,               // 是否正确生成了文件，术语 `emit` 在 webpack 中是“生成”的意思
+  "name": "home/index-564746c23aed161469a8.js",  // 打包后携带摘要值的文件名
+  "size": 16856                  // 文件的字节数
+}, ...]
+```
 
 ```javascript
 gulp.task('js', () => {
