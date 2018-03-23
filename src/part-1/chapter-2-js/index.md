@@ -1,4 +1,4 @@
-# JavaScript 语言发展概况
+# JavaScript 简介
 
 <img src="../images/javascript-timeline.png">
 
