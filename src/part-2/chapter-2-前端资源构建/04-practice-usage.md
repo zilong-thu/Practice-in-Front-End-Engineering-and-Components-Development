@@ -368,17 +368,23 @@ gulp.task('js', () => {
     // 替换模板中的脚本引用
     const assets = stats.toJson().assets;
     assets.forEach(asset => {
+      // 入口JS 的文件名，如 home/index.js
       const jsName = asset.chunkNames[0] + '.js';
+
+      // 页面 HTML 文件名，如 home/index.html
       const htmlName = asset.chunkNames[0] + '.html';
+
+      // 页面 HTML 文件的路径，如 ./build/home/index.html
       const htmlPath = BUILD_ROOT + htmlName;
+
+      // 读取页面 HTML 文件的内容，将入口 JS 的路径替换为添加了摘要值的路径
       let content = fs.readFileSync(htmlPath, {encoding: 'utf8'});
       content = content.replace(jsName, asset.name);
       fs.writeFileSync(htmlPath, content, 'utf8');
     });
-    console.log('\n替换模板中的 js 引用 ✔');
 
     // Done processing
-    console.log('\nwebpack 构建完成 ✔\n');
+    // ...
   });
 });
 ```
