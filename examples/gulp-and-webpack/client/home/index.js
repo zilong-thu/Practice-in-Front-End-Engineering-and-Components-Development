@@ -1,4 +1,5 @@
 import _ from 'underscore';
+import toast from 'toast2';
 
 
 var str = 'Hello World.';
