@@ -1,1 +1,1 @@
-# JavaScript 概述
+# JavaScript 语法概述
