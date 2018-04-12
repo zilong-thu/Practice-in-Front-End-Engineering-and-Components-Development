@@ -63,7 +63,15 @@ Emacs 被设计为可编程的编辑器，设计者赋予了它可以驱动其�
 
 ## VSCode
 
-VSCode 全称 Visual Studio Code，于 2016 年正式发布。微软在互联网浪潮中曾一度被大家遗忘，近些年则十分热衷于开源项目。不但开源了自家最新的浏览器 Edge 的所有代码，还精心打造了 VSCode 这样一款非常适合前端开发人员的编辑器。与 Sublime Text、Vim 相比，VSCode 是经典的集成开发环境（IDE）：
+VSCode 全称 Visual Studio Code，于 2016 年正式发布。微软在互联网浪潮中曾一度被大家遗忘，近些年则十分热衷于开源项目。不但开源了自家最新的浏览器 Edge 的所有代码，还精心打造了 VSCode 这样一款非常适合前端开发人员的编辑器。与 Sublime Text、Vim 相比，VSCode 是经典的集成开发环境（IDE），除了常规的语法分析、语法高亮，它可以：
+
+1. 像 C/C++ 的开发环境 Visual Studio 那样在编辑器内调试 Node.js 代码
+2. 内嵌了一个终端
+
+用户可以在 VSCode 中指定一个启动脚本，然后在相关的 JS 源文件上面直接打断点，启动调试<sup>[7]</sup>：
+
+<img src="../images/vscode-debug-node-1.png">
+
 
 ## 参考资料
 
@@ -73,4 +81,5 @@ VSCode 全称 Visual Studio Code，于 2016 年正式发布。微软在互联网
 4. [Vim | wikipedia](https://zh.wikipedia.org/wiki/Vim)
 5. [Emacs | wikipedia](https://zh.wikipedia.org/wiki/Emacs)
 6. [VSCode | wikipedia](https://en.wikipedia.org/wiki/Visual_Studio_Code)
+7. [Node.js Debugging in VS Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
 
