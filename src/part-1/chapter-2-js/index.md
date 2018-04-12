@@ -10,7 +10,9 @@ JavaScript 最初是作为一种脚本语言被发明出来。“脚本语言”
 
 JavaScript 发布后，获得了巨大的成功。这个语言的发明与繁荣，印证了 MVP（Minimum Viable Product，最小可用产品）理念的价值。简单、跨平台、分布式使得 JavaScript 成为浏览器端的唯一语言，这种重要性反过来迫使各个巨头携手推进其标准化。1997年，由网景、昇阳、微软、宝蓝等公司组织及个人组成的技术委员会在 ECMA（European Computer Manufactures Association，欧洲计算机制造商协会）确定定义了一种名叫 ECMAScript 的新脚本语言标准，规范名为 ECMA-262。
 
-<img src="../images/javascript-timeline.png">
+<img src="../images/javascript-timeline.png" style="width: 85%;">
+
+JavaScript 是一门多范式语言，开发者可以使用命令式风格、面向对象风格以及函数式风格来组织源代码。
 
 
 ## 参考资料
