@@ -8,7 +8,7 @@
 
 ## Sublime Text
 
-<img src="../images/sublime-01-logo.png" style="width: 210px;">
+<img src="../images/sublime-01-logo.png" style="width: 210px;" class="fl">
 
 Sublime Text 是一套跨平台的文本编辑器，支持基于Python的插件。Sublime Text 是专有软件（意味着在使用、修改上有所限制），可通过包（Package）扩充本身的功能。大多数的包使用自由软件授权发布，并由社区建置维护。Sublime Text 由 Jon Skinner 开发与维护，初始版本于 2008 年发布，目前最新的版本是 Sublime Text 3。
 
@@ -27,7 +27,7 @@ Sublime Text 是一套跨平台的文本编辑器，支持基于Python的插件�
 
 ## Vim
 
-<img src="../images/vim-logo.svg" style="width: 120px;">
+<img src="../images/vim-logo.svg" style="width: 120px;" class="fl">
 
 Vim 是从 vi（Bill Joy） 发展出来的一个具有 TUI（Text User Interface，文本用户界面，与 GUI，即图形用户界面相对应）的编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。Vim 的第一个版本由布莱姆·米勒（Bram Moolenaar）在 1991 年发布，源码主要由 C 语言写成。最初的简称是 Vi IMitation，随着功能的不断增加，正式名称改成了 Vi IMproved。现在是在开放源代码方式下发行的自由软件。<sup>[4]</sup>
 
@@ -55,7 +55,7 @@ Vim 有四种常见模式（mode）：
 
 ## Emacs
 
-<img src="../images/emacs-logo.png" style="width: 120px;">
+<img src="../images/emacs-logo.png" style="width: 120px;" class="fl">
 
 Emacs 在 1970 年代诞生于 MIT 人工智能实验室（MIT AI Lab），源码主要是使用 ELisp 写成。Emacs 不仅仅是一个编辑器，它本质上是一个集成环境，进入到编辑器后，用户会感觉如同进入了一个功能完备的子操作系统中去，因为你可以在这里收发电子邮件、通过 Telnet 登录远程主机、上 Twitter、玩游戏以及浏览网站等等。因此，一个流行的笑话声称 Emacs 是一个伪装成编辑器的操作系统。
 
