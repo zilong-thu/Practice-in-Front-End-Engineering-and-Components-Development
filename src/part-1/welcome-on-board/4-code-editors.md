@@ -29,7 +29,7 @@ Sublime Text 是一套跨平台的文本编辑器，支持基于Python的插件�
 
 <img src="../images/vim-logo.svg" style="width: 120px;" class="fl">
 
-Vim 是从 vi（Bill Joy） 发展出来的一个具有 TUI（Text User Interface，文本用户界面，与 GUI，即图形用户界面相对应）的编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。Vim 的第一个版本由布莱姆·米勒（Bram Moolenaar）在 1991 年发布，源码主要由 C 语言写成。最初的简称是 Vi IMitation，随着功能的不断增加，正式名称改成了 Vi IMproved。现在是在开放源代码方式下发行的自由软件。<sup>[4]</sup>
+Vim 是从 vi（visual editor 的缩写，Bill Joy 发明） 发展出来的一个具有 TUI（Text User Interface，文本用户界面，与 GUI，即图形用户界面相对应）的编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。Vim 的第一个版本由布莱姆·米勒（Bram Moolenaar）在 1991 年发布，源码主要由 C 语言写成。最初的简称是 Vi IMitation，随着功能的不断增加，正式名称改成了 Vi IMproved。现在是在开放源代码方式下发行的自由软件。<sup>[4]</sup>
 
 Vim 对重复性操作进行了很好的优化。“对于 Vim 高手来说，Vim 能以思考的速度编辑文本”，这是对 Vim 最流行的描述。即便不把它作为自己的常用编辑器，在登录到服务器上的时候，Vim 很可能就是你唯一可用的编辑器。所以，Vim 应当作为前端程序员的必备技能之一。
 
@@ -57,11 +57,26 @@ Vim 有四种常见模式（mode）：
 
 <img src="../images/emacs-logo.png" style="width: 120px;" class="fl">
 
-Emacs 在 1970 年代诞生于 MIT 人工智能实验室（MIT AI Lab），源码主要是使用 ELisp 写成。Emacs 不仅仅是一个编辑器，它本质上是一个集成环境，进入到编辑器后，用户会感觉如同进入了一个功能完备的子操作系统中去，因为你可以在这里收发电子邮件、通过 Telnet 登录远程主机、上 Twitter、玩游戏以及浏览网站等等。因此，一个流行的笑话声称 Emacs 是一个伪装成编辑器的操作系统。
+Emacs 意为 Editing MACros，即宏编辑。Emacs 在 1970 年代诞生于 MIT 人工智能实验室（MIT AI Lab），源码主要是使用 ELisp 写成。Emacs 不仅仅是一个编辑器，它本质上是一个集成环境，进入到编辑器后，用户会感觉如同进入了一个功能完备的子操作系统中去，因为你可以在这里收发电子邮件、通过 Telnet 登录远程主机、上 Twitter、玩游戏以及浏览网站等等。因此，一个流行的笑话声称 Emacs 是一个伪装成编辑器的操作系统。
 
 Emacs 被设计为可编程的编辑器，设计者赋予了它可以驱动其他工具的能力，结果就是 Emacs 支持在一个共享的上下文环境中处理所有的文本操作——文件、邮件、新闻、调试符号。它可以用作任何拥有交互文本界面命令的定制前端。Emacs 功能丰富，也意味着庞大臃肿，启动通常较慢。设计者希望用户可能一旦进入 Emacs，就不会再退出它。
 
 注：在 Unix 文化里，Emacs 是程序员们关于编辑器之战的两大主角之一，另一个主角就是上面提到的 Vim/vi。
+
+Mac OS 自带一个 GNU Emacs，在终端里输入 `emacs` 命令并回车，即可进入该程序的界面。可以通过 Homebrew 重新安装或升级 Emacs：
+
+```
+# 安装
+brew install emacs --with-cocoa
+
+# 升级
+brew upgrade emacs
+
+# 启动 GNU Emacs
+emacs
+```
+
+Emacs 的入门参考书是《Learning GNU Emacs》（[美] Debra Cameron 著）
 
 ## VSCode
 
