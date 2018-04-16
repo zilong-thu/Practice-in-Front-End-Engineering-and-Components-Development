@@ -76,7 +76,7 @@ brew upgrade emacs
 emacs
 ```
 
-Emacs 的入门参考书是《Learning GNU Emacs》（[美] Debra Cameron 著）
+Emacs 的入门参考书是《Learning GNU Emacs》（[美] Debra Cameron 著）。
 
 ## VSCode
 
