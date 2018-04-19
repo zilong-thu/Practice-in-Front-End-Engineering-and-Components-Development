@@ -38,6 +38,6 @@ find . -type f -name "*.md"  | xargs wc -m
 
 `ebook-convert` 是 Calibre 发布的一款开源工具。[官网](https://manual.calibre-ebook.com/generated/en/ebook-convert.html)
 
-+ 下载 Calibre 并且安装
++ 下载 Calibre 并且安装，calibre-3.16.0
 + 软连接：`ln -s /Applications/calibre.app/Contents/MacOS/ebook-convert /usr/local/bin`
 + `gitbook pdf`
