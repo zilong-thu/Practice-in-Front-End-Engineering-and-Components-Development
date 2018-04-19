@@ -11,3 +11,10 @@
 <img src="./images/safari-debug.png" style="width: 400px;">
 
 <img class="round" src="./images/simulator-1.png" style="width: 90%;">
+
+之后，就可以像通用浏览器调试流程一样对 iOS Safari 进行开发、调试了。
+
+
+## 参考资料
+
+1. [Xcode 在线帮助](https://help.apple.com/xcode)
