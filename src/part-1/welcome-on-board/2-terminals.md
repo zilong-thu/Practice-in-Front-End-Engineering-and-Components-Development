@@ -73,6 +73,14 @@ $ ls -l bin | grep wget
 wget -> ../Cellar/wget/1.18/bin/wget
 ```
 
+------------------
+
+Max Howell 在 2015 年曾经闹出过一段新闻，喜剧性地描述是这样：Max Howell 去谷歌面试，面试官让他对一个二叉树进行反转，然而 Howell 没有回答上来，结果就是没有被谷歌聘用。Howell 回家后在 Twitter 上表达了自己的怨念：
+
+> Google: 90% of our engineers use the software you wrote (Homebrew), but you can't invert a binary tree on a whiteboard so fuck off.
+
+------------------
+
 ### Git
 
 <img src="../images/git-logo.png" style="width: 110px;" class="fl">
