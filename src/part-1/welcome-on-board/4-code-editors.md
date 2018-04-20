@@ -25,6 +25,12 @@ Sublime Text 是一套跨平台的文本编辑器，支持基于Python的插件�
 + 跨平台（Windows、Linux 和 Mac OS X）
 + 代码摘要：用户可替常用的代码片段指定关键字快速插入。
 
+在官网可以下载最新的程序。对于 Mac 系统，安装后创建下面的文件连接可以方便地使用快捷命令启动 Sublime Text：
+
+```
+ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+```
+
 ## Vim
 
 <img src="../images/vim-logo.svg" style="width: 120px;" class="fl">
