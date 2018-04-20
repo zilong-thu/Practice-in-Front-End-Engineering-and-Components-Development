@@ -41,7 +41,7 @@ $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools
 
 ### Homebrew
 
-Homebrew 也许是 MacOS 上最好的开源软件管理工具，最初由 Max Howell 在 2009 年用 Ruby 语言开发，现在则有十多个开发者一起维护其核心代码。用户不需要安装 Ruby，因为它早已在 MacOS 中预装好了。通过在终端运行下面的命令，可以安装 Homebrew：
+<img src="../images/homebrew.png" class="fl round" style="width: 300px;" /> 对 Mac 用户而言，虽然系统已经携带了应用商店（App Store），但里面的软件大都是面向非程序员用户。对开发者来说，需要有像 Ubuntu 下的 `apt-get` 程序那样的软件管理器。Homebrew 就承担了这样的角色，它也许是 MacOS 上最好的开源软件管理工具，最初由 Max Howell 在 2009 年用 Ruby 语言开发，现在则有十多个开发者一起维护其核心代码。用户不需要安装 Ruby，因为它早已在 MacOS 中预装好了。通过在终端运行下面的命令，可以安装 Homebrew：
 
 ```
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"

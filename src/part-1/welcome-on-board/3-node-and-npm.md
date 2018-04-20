@@ -70,7 +70,6 @@ nvm 的更多用法可以参考其官网<sup>[3]</sup>，或者运行 `man nvm` 
 
 NPM 全称为 Node.js Package Manager，即 Node.js 的包管理工具。现在对其更准确的描述是 JavaScript 包管理器。NPM 已然是世界上最大的开源软件注册社区之一<sup>[4]</sup>。
 
-
 #### 国内镜像加速
 
 因为 npmjs.org 服务器是在国外，因此在国内直接使用 `npm install` 的话通常会比较慢。使用国内的镜像可以加速下载包的速度，例如常见的淘宝镜像<sup>[5]</sup>。
