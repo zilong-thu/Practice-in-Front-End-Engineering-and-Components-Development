@@ -16,7 +16,7 @@ Webpack 配置对象的 `output` 属性用于指定构建后的文件存放目�
 
 **加载器（Loaders）**
 
-Webpack 自身可以只处理 JavaScript 模块，通过 Loaders 则可以处理其他类型的文件（例如 CSS/Image）。如果配置了 `css-loader`，那么你的代码里就可以通过 `import` 语句来声明该组件所依赖的样式表，`webpack.config.js`：
+Webpack 自身可以只处理 JavaScript 模块，通过 Loaders 则可以处理其他类型的文件（例如 CSS/Image）。如果配置了 `css-loader`，那么你的代码里就可以通过 `import` 语句来声明该组件所依赖的样式表，`webpack.config.js` 做类似这样的声明：
 
 ```javascript
 /**
@@ -24,23 +24,19 @@ Webpack 自身可以只处理 JavaScript 模块，通过 Loaders 则可以处理
  */
 module.exports = {
   module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [ 'style-loader', 'css-loader' ]
-      }
-    ]
+    rules: [{
+      test: /\.css$/,
+      use: [ 'style-loader', 'css-loader' ]
+    }]
   }
 };
-
 module.exports = config;
 ```
 
-组件代码：
+组件代码就可以这样写了：
 
 ```javascript
 import css from 'file.css';
-
 // 或者
 import 'file.css';
 ```
