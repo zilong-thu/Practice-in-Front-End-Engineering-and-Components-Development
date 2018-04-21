@@ -1,18 +1,51 @@
 # Webpack
 
-<img src="./images/webpack-logo.png">
+<img class="round" src="./images/webpack-logo.png" style="width: 90%;">
 
 Webpack 是现代 JavaScript 应用的静态模块打包工具。
 
 ## 基本概念
 
-### 入口（Entry）
+**入口（Entry）**
 
-### 输出目录（Output）
+入口点（Entry Point）通常是某些特定的文件或目录，对于每个入口文件，webpack 会从它开始进行依赖分析，每个找到的文件会被处理为中间结果（bundles）。Webpack 支持设置单个或多个入口点。
 
-### 加载器（Loaders）
+**输出目录（Output）**
 
-### 插件（Plugins）
+Webpack 配置对象的 `output` 属性用于指定构建后的文件存放目录，以及如何去命名这些文件（例如在文件名中添加摘要值）。
+
+**加载器（Loaders）**
+
+Webpack 自身可以只处理 JavaScript 模块，通过 Loaders 则可以处理其他类型的文件（例如 CSS/Image）。如果配置了 `css-loader`，那么你的代码里就可以通过 `import` 语句来声明该组件所依赖的样式表，`webpack.config.js`：
+
+```javascript
+/**
+ * 需要安装 `css-loader` 和 `style-loader`
+ */
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [ 'style-loader', 'css-loader' ]
+      }
+    ]
+  }
+};
+
+module.exports = config;
+```
+
+组件代码：
+
+```javascript
+import css from 'file.css';
+
+// 或者
+import 'file.css';
+```
+
+**插件（Plugins）**
 
 ## 依赖分析
 
