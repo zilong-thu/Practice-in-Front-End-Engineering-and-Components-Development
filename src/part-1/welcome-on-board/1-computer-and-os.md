@@ -37,7 +37,13 @@ Windows 在网络支持方面的落后，导致2000年后，其在服务器操�
 
 ### XCode
 
-用 Mac 进行开发，需要用到 XCode 里的一个子工具：Command Line Tools for Xcode。
+用 Mac 进行开发，需要用到 XCode 里的一个子工具：Command Line Tools for Xcode。可以通过如下命令单独安装：
+
+```
+xcode-select --install
+```
+
+完整的 XCode 工具通常很大，不过其提供的 Simulator 在调试 iOS Safari 时是非常方便的，所以也建议安装一下。
 
 ### 参考资料
 
