@@ -25,7 +25,30 @@ CommonJS 本身包括但不限于下面的内容：
 
 ## CommonJS 模块系统的基本概念
 
-模块系统是 CommonJS 规范的一部分。其主要定义了 `require`、`exports`、`module` 以及模块查找规则。
+模块系统是 CommonJS 规范的一部分。其主要定义了 `exports`、`module`、`require` 以及模块查找规则。
+
+**模块查找规则**
+
+简单来说，一个文件就是一个模块。
+
+**exports**
+
+**module**
+
+
+```javascript
+/**
+ * util.js
+ */
+var util = {
+  formatNum: function (num, m){
+    return Number(num).toFixed(m);
+  }
+};
+module.exprots = util;
+```
+
+**require**
 
 
 ## CommonJS 模块系统的问题
