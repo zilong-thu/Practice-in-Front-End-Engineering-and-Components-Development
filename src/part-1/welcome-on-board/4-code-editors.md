@@ -25,10 +25,14 @@ Sublime Text 是一套跨平台的文本编辑器，支持基于Python的插件�
 + 跨平台（Windows、Linux 和 Mac OS X）
 + 代码摘要：用户可替常用的代码片段指定关键字快速插入。
 
-在官网可以下载最新的程序。对于 Mac 系统，安装后创建下面的文件连接可以方便地使用快捷命令启动 Sublime Text：
+在官网可以下载最新的程序。对于 Mac 系统，安装后创建下面的文件连接可以方便地使用快捷命令启动 Sublime Text。其官网的说明有点瑕疵，这里建议参考 Olivier Lacan<sup>[8]</sup>的方法，既将快捷命令（symlink）放于 `/usr/local/bin` 目录下，而非 `~/bin` 目录下，因为前者是 OS X 系统的默认可执行程序的加载目录：
 
 ```
-ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+# 创建 symlink
+ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
+
+# 使用 subl 打开文件、目录
+subl .
 ```
 
 ## Vim
@@ -105,4 +109,4 @@ VSCode 全称 Visual Studio Code，于 2016 年正式发布。微软在互联网
 5. [Emacs | wikipedia](https://zh.wikipedia.org/wiki/Emacs)
 6. [VSCode | wikipedia](https://en.wikipedia.org/wiki/Visual_Studio_Code)
 7. [Node.js Debugging in VS Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
-
+8. [Olivier Lacan, Launch Sublime Text 3 from the command line](https://olivierlacan.com/posts/launch-sublime-text-3-from-the-command-line/)
