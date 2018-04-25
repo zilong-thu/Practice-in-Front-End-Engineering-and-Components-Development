@@ -72,14 +72,23 @@ NPM 全称为 Node.js Package Manager，即 Node.js 的包管理工具。现在�
 
 #### 国内镜像加速
 
-因为 npmjs.org 服务器是在国外，因此在国内直接使用 `npm install` 的话通常会比较慢。使用国内的镜像可以加速下载包的速度，例如常见的淘宝镜像<sup>[5]</sup>。
+因为 npmjs.org 服务器是在国外，因此在国内直接使用 `npm install` 的话通常会比较慢。使用国内的镜像可以加速下载包的速度，例如常见的淘宝镜像<sup>[5]</sup>。可以在 `~/.zshrc` 文件里添加下面的配置，这样在系统任何位置使用 `cnpm` 命令安装、更新 npm 包的时候，请求的服务器就是淘宝的镜像服务器了。
 
 ```
+# 在 `~/.zshrc` 文件里添加 cnpm 别名
 alias cnpm="npm --registry=https://registry.npm.taobao.org \
 --cache=$HOME/.npm/.cache/cnpm \
 --disturl=https://npm.taobao.org/dist \
 --userconfig=$HOME/.cnpmrc"
 ```
+
+#### 锁定包版本
+
+
+### 其他包管理器
+
+#### Yarn
+
 
 ### 参考资料
 
