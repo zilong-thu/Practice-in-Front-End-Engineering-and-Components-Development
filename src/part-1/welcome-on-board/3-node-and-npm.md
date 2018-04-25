@@ -1,8 +1,12 @@
 ## Node.js 环境
 
-Node.js<sup>[1, 2]</sup> 是一个跨平台的 JavaScript 运行时环境，由 Ryan Dahl 在 2009 年开发出来。在过去的8年里，Node.js 及其生态圈的发展可以用突飞猛进、日新月日来形容。前端开发者通常用 Node.js 来进行文件构建（例如 gulp、webpack 一类的构建工具）、提供页面服务（例如 express.js、koa.js 这样的服务器端框架），或者写一些网络、计算类的程序（例如爬虫）。
+## Node.js 简介
+
+Node.js（Ryan Dahl，2009）<sup>[1, 2]</sup> 是一个在 Google Chrome 浏览器使用的 V8 引擎的基础上开发出来的跨平台的 JavaScript 运行时环境。在过去的8年里，Node.js 及其生态圈的发展可以用突飞猛进、日新月日来形容。前端开发者通常用 Node.js 来进行文件构建（例如 gulp、webpack 一类的构建工具）、提供页面服务（例如 express.js、koa.js 这样的服务器端框架），或者写一些网络、计算类的程序（例如爬虫）。
 
 <img src="../images/nodejs-logo.png" style="width: 220px;">
+
+
 
 ### 用 NVM 管理 Node.js
 

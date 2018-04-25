@@ -39,7 +39,7 @@ subl .
 
 **关于 `symlink`**
 
-术语 `symlink` 的全称是 `symbolic link`，即“符号链接”，或所谓的“软链接”（`soft link`），是指某文件的内容包含指向其他文件或目录的地址。软链接在 1978 年的小型机操作系统里（如 DEC）就得到了实现，如今已被列入到 POSIX 标准中，因此所有的类 UNIX 系统，如 FreeBSD、Linux、Mac OS X，都支持此特性；Windows 系统下类似的功能是“快捷方式”。<sup>[9]</sup>
+术语 `symlink` 的全称是 `symbolic link`，即“符号链接”，或所谓的“软链接”（`soft link`），是指某文件的内容包含指向其他文件或目录的地址。软链接在 1978 年的小型机操作系统里（如 DEC）就得到了实现，如今已被列入到 POSIX 标准中。因此所有的类 UNIX 系统，如 FreeBSD、Linux、Mac OS X，都支持此特性；Windows 系统下类似的功能是“快捷方式”。<sup>[9]</sup>
 
 与软链接相对的是硬链接。二者的最大区别在于，硬链接与被链接的文件具有相同的 inode 号，而软链接本身有自己的 inode 号且与被链接的文件的 inode 号不同。
 
