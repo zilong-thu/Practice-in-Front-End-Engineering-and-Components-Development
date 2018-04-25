@@ -35,6 +35,14 @@ ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/loca
 subl .
 ```
 
+------------
+
+**关于 `symlink`**
+
+术语 `symlink` 的全称是 `symbolic link`，即“符号链接”，或所谓的“软链接”，是指某文件的内容包含指向其他文件或目录的地址。软链接在 1978 年的小型机操作系统里（如 DEC）就得到了实现，如今已被列入到 POSIX 标准中，因此所有的类 UNIX 系统，如 FreeBSD、Linux、Mac OS X，都支持此特性；Windows 系统下类似的功能是“快捷方式”。<sup>[9]</sup>
+
+------------
+
 ## Vim
 
 <img src="../images/vim-logo.svg" style="width: 120px;" class="fl">
@@ -110,3 +118,4 @@ VSCode 全称 Visual Studio Code，于 2016 年正式发布。微软在互联网
 6. [VSCode | wikipedia](https://en.wikipedia.org/wiki/Visual_Studio_Code)
 7. [Node.js Debugging in VS Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
 8. [Olivier Lacan, Launch Sublime Text 3 from the command line](https://olivierlacan.com/posts/launch-sublime-text-3-from-the-command-line/)
+9. [Symbolic link | wikipedia](https://en.wikipedia.org/wiki/Symbolic_link)
