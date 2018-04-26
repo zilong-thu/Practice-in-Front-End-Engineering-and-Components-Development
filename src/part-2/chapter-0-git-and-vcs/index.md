@@ -29,7 +29,38 @@ $ brew upgrade git
 
 除了使用 `Homebrew` ，还可以直接在 Git 官网下载适合自己系统的二进制包进行安装。
 
-## 基本使用
+## Git 常用命令
+
+**基本命令**
+
+```
+git add --all  # 添加所有文件至暂存区
+git add .      # 只添加当前目录下的修改文件到暂存区
+git commit -m '修改说明'  # 根据暂存区的内容创建一次提交
+git log        # 查看提交历史
+git log -p     # 详细显示提交与修改变动信息
+git push origin master   # 将本地仓库的 master 分支推送到远程仓库的 master 分支
+git fetch origin master  # 拉取远程仓库的 master 分支到本地
+git checkout branch-name    # 切换到另外一个分支
+git checkout -b new-branch  # 基于当前分支创建一个新分支并切换到这个新的分支
+```
+
+**变基**
+
+**Blame**
+
+`git blame` 可以显示一个文件中的某行到文件末尾的每一行的最后一次修改提交信息，包括 commit ID、修改人、修改时间。
+
+```
+$ git blame -L 10, summary.md
+
+f4ff42e0 (王子龙 2018-02-05 16:19:01 +0800 10)   * [前端组件化](part-1/chapter-3.md)
+86084c7a (王子龙 2018-02-28 15:41:22 +0800 11)   * [Welcome on Board](part-1/welcome-on-board/index.md)
+86084c7a (王子龙 2018-02-28 15:41:22 +0800 12)     * [电脑、操作系统](part-1/welcome-on-board/1-computer-and-os.md)
+86084c7a (王子龙 2018-02-28 15:41:22 +0800 13)     * [终端与常用命令行工具](part-1/welcome-on-board/2-terminals.md)
+86084c7a (王子龙 2018-02-28 15:41:22 +0800 14)     * [Node.js环境](part-1/welcome-on-board/3-node-and-npm.md)
+...
+```
 
 ## Git 关键工作原理
 
