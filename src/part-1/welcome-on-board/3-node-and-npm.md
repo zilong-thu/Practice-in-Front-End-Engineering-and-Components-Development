@@ -91,8 +91,7 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 
 ### 其他包管理器
 
-#### Yarn
-
+NPM 并非唯一的 Node.js 包管理器，Facebook、Exponent、Google 与 Tilde 四家公司在 2016 年 11 月联合推出的 Yarn<sup>[6]</sup> 也是一款优秀的同类型开源工具。Yarn 会在系统下对每个已经从远程服务器下载过的包设置本地缓存，并且采用多线程下载，因而相比传统的 npm 会有更快的速度。Mac 下可以通过 Homebrew 执行 `brew install yarn` 进行安装。
 
 ### 参考资料
 
@@ -101,3 +100,4 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 3. [nvm | github](https://github.com/creationix/nvm)
 4. [npm 官网](https://www.npmjs.com/)
 5. [npm 淘宝镜像](http://npm.taobao.org/)
+6. [yarn docs](https://yarnpkg.com/en/)
