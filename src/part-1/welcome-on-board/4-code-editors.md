@@ -8,7 +8,7 @@
 
 ## Sublime Text
 
-<img src="../images/sublime-01-logo.png" style="width: 210px;" class="fl">
+<img src="../images/sublime-01-logo.png" style="width: 210px;" class="fl round">
 
 Sublime Text 是一套跨平台的文本编辑器，支持基于Python的插件。Sublime Text 是专有软件（意味着在使用、修改上有所限制），可通过包（Package）扩充本身的功能。大多数的包使用自由软件授权发布，并由社区建置维护。Sublime Text 由 Jon Skinner 开发与维护，初始版本于 2008 年发布，目前最新的版本是 Sublime Text 3。
 

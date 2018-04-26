@@ -1,4 +1,14 @@
-## 终端与常用命令行工具
+## Mac 终端与常用命令行工具
+
+### XCode
+
+用 Mac 进行开发，需要用到 XCode 里的一个子工具：Command Line Tools for Xcode。可以通过如下命令单独安装：
+
+```
+xcode-select --install
+```
+
+完整的 XCode 工具通常很大，不过其提供的 Simulator 在调试 iOS Safari 时是非常方便的，所以也建议安装一下。
 
 ### Iterm2
 
@@ -83,35 +93,9 @@ Max Howell 在 2015 年曾经闹出过一段新闻，喜剧性地描述是这样
 
 ------------------
 
-### Git
-
-<img src="../images/git-logo.png" style="width: 110px;" class="fl">
-
-Git 是一款强大的分布式版本管理系统，Linus Torvalds 在 2005 年3月开始开发，最初是用于管理 Linux 的内核代码。2005年6月，Linus 将 Git 项目的维护权转交给了 Junio Hamano，后者向 Git 贡献了最多的源码。
-
-我们上面已经安装好了 Homebrew，那么安装 Git 就轻而易举了：
-
-```
-# 安装 git
-$ brew install git
-
-# 查看当前系统里的 git 版本，以确认其是否已经安装好
-$ git version
-git version 2.11.0 (Apple Git-81)
-```
-
-如果系统里已经安装了 git，那么可以检查一下其是否为最新版本，如果不是，可以按照下面的方法来升级 git：
-
-```
-$ brew outdated
-$ brew upgrade git
-```
-
-除了使用 `Homebrew` 安装，还可以直接在 Git 官网下载适合自己系统的二进制包进行安装。
 
 ## 参考资料
 
 1. [Iterm2 官网](http://iterm2.com/)
 2. [Homebrew 官网](https://brew.sh/)
 3. [226. Invert Binary Tree | Leetcode](https://leetcode.com/problems/invert-binary-tree/description/)
-4. [Git 官网](https://git-scm.com/)
