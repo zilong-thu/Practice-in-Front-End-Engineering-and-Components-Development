@@ -15,8 +15,9 @@ Git 是一款强大的免费开源分布式版本控制系统，其从诞生伊�
 $ brew install git
 
 # 查看当前系统里的 git 版本，以确认其是否已经安装好
+# 2018-04-02 发布了 2.17.0 版本
 $ git version
-git version 2.11.0 (Apple Git-81)
+git version 2.17.0
 ```
 
 如果系统里已经安装了 git，那么可以检查一下其是否为最新版本，如果不是，可以按照下面的方法来升级 git：
@@ -34,7 +35,7 @@ $ brew upgrade git
 
 ## Git 工作流
 
-在多人协同开发时，Git 工作流程就显得尤为重要。Vincent Driessen 在2010年的一篇文章《A successful Git branching model》<sup>[1]</sup> 介绍了在这样的场景下，如何使用 Git 进行高效开发。
+在多人协同开发时，Git 工作流程就显得尤为重要。Vincent Driessen 在2010年的一篇文章《A successful Git branching model》<sup>[3]</sup> 介绍了在这样的场景下，如何使用 Git 进行高效开发。
 
 ## 良好的提交信息
 
@@ -73,4 +74,5 @@ $ git commit -m 'docs: 更新接口文档'
 ## 参考资料
 
 1. [Git 官网](https://git-scm.com/)
-2. Vincent Driessen. A successful Git branching model. http://nvie.com/posts/a-successful-git-branching-model/
+2. Jon Leoliger, Matthew McCullough 著, 王迪, 丁彦 等译. Git 版本控制（第二版）[M]. 北京: 人民邮电出版社, 2015.
+3. Vincent Driessen. A successful Git branching model. http://nvie.com/posts/a-successful-git-branching-model/
