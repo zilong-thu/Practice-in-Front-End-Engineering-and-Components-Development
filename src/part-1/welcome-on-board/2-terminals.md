@@ -10,19 +10,19 @@
 
 Iterm2 最常用的功能，是将当前标签分割为多个面板。例如我在写这本书的时候，将标签分为四个面板：
 
-<img src="../images/iterm2-multi-panes.png">
+<img src="../images/iterm2-multi-panes.png" class="round" style="width: 90%;">
 
 **自动补全（Autocomplete）**
 
 输入单词的开头部分，然后按 `Cmd` 和 `;`，就可以出现自动补全提示选择框，通过上下箭头或者鼠标，可以直接选择自己想要输入的词语。如下图所示。
 
-<img src="../images/iterm2-autocomplete.png" style="max-width: 500px;">
+<img src="../images/iterm2-autocomplete.png" class="round" style="max-width: 400px;">
 
 **随时随地召唤 Iterm2（Hotkey Window）**
 
 在 Iterm2 的偏好设置里（`Preferences` -> `Keys` -> `Create a Dedicated Hotkey Window`），可以设置一个能够通过快捷键随时打开的悬浮半透明终端窗口。这个功能对于随时想敲上几句命令行的开发者来说很有帮助。好比我正在浏览鸟哥的Linux私房菜网站，看到有个命令很有意思，想尝试一下。就可以通过这种方式快速“召唤”出 Iterm2（如果希望在全屏模式下也可以悬浮显示 Iterm2，需要设置其打开的方式为 `Floating Window`）：
 
-<img src="../images/iterm2-hotkey.png">
+<img src="../images/iterm2-hotkey.png" class="round" style="width: 90%;">
 
 **其他**
 
@@ -77,7 +77,9 @@ wget -> ../Cellar/wget/1.18/bin/wget
 
 Max Howell 在 2015 年曾经闹出过一段新闻，喜剧性地描述是这样：Max Howell 去谷歌面试，面试官让他对一个二叉树进行反转，然而 Howell 没有回答上来，结果就是没有被谷歌聘用。Howell 回家后在 Twitter 上表达了自己的怨念：
 
-> Google: 90% of our engineers use the software you wrote (Homebrew), but you can't invert a binary tree on a whiteboard so fuck off.
+> Google: 90% of our engineers use the software you wrote (Homebrew), but you can't invert a binary tree on a whiteboard so f*** off.
+
+知名在线编程网站 Leetcode 则趁机将这个问题添加到自己的题库里（226-Invert Binary Tree<sup>[3]</sup>），并且将难度标记为“Easy”。
 
 ------------------
 
@@ -111,4 +113,5 @@ $ brew upgrade git
 
 1. [Iterm2 官网](http://iterm2.com/)
 2. [Homebrew 官网](https://brew.sh/)
-3. [Git 官网](https://git-scm.com/)
+3. [226. Invert Binary Tree | Leetcode](https://leetcode.com/problems/invert-binary-tree/description/)
+4. [Git 官网](https://git-scm.com/)
