@@ -88,6 +88,15 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 
 #### 锁定包版本
 
+由于每个包的多个版本之间可能存在较大的兼容性问题，一些稳定的线上项目会希望其所使用的包的版本是固定的，不会因为包的发布者发布新包而导致项目出现问题。NPM 最初的解决方案是 `shrinkwrap`，即执行：
+
+```
+npm shrinkwrap
+```
+
+该命令会根据根目录下的 `package.json` 文件和 `node_modules` 里已装包的版本、地址等信息生成一个描述当前所用包版本的描述文件 `npm-shrinkwrap.json`。NPM 发展到版本5之后，参考了 yarn 工具，也实现了自动生成、修改 `package-lock.json` 文件的功能。
+
+如果目录中同时存在 `npm-shrinkwrap.json` 和 `package-lock.json` 文件，那么后者将被忽视。
 
 ### 其他包管理器
 
