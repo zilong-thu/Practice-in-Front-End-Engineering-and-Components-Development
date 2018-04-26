@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>个税计算器示例</title>
+  <style type="text/css">
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-size: 14px;
+    }
+
+    input {
+      display: block;
+      width: 200px;
+      padding: 5px;
+      border: 1px solid #999;
+      border-radius: 3px;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #666;
+    }
+  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, max-scale=1, user-scalable=no">
+  <!-- 开发环境版本，包含了用帮助的命令行警告 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <input v-model="message">
+    <p>五险一金数额： {{ result.profit }}</p>
+    <p>税后收入：{{ result.real_income }}</p>
+    <p>您需要缴纳的税额：{{ result.tax }}</p>
+  </div>
+  <script type="text/javascript" src="./index.js"></script>
+</body>
+</html>
