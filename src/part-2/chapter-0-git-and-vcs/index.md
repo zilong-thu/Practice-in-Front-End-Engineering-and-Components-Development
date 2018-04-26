@@ -4,7 +4,7 @@
 
 <img src="./git-logo.png" style="width: 110px;" class="fl">
 
-Git 是一款强大的免费开源分布式版本控制系统，其从诞生伊始就确立了提供快速高效的版本控制为设计目标，无论项目大小。Linus Torvalds 在 2005 年3月开始开发 Git，最初是用于管理 Linux 的内核代码。2005年6月，Linus 将 Git 项目的维护权转交给了 Junio Hamano，后者向 Git 贡献了最多的源码。
+Git 是一款强大的免费开源分布式版本控制系统，其从诞生伊始就确立了提供快速高效的版本控制为设计目标，无论项目大小。Linus Torvalds 在 2005 年 3 月开始开发 Git，最初是用于管理 Linux 的内核代码。2005 年 7 月，Linus 将 Git 项目的维护权转交给了 Junio Hamano，后者向 Git 贡献了最多的源码。Linus 自己则全身心投入到 Linux 内核的开发中。
 
 ## 安装 Git
 
@@ -31,7 +31,9 @@ $ brew upgrade git
 
 ## 基本使用
 
-## Git 工作原理
+## Git 关键工作原理
+
+
 
 ## Git 工作流
 
@@ -69,7 +71,6 @@ $ git commit -m 'fix: **页面数字取值问题'
 # docs 表示这是对文档进行的修改
 $ git commit -m 'docs: 更新接口文档'
 ```
-
 
 ## 参考资料
 
