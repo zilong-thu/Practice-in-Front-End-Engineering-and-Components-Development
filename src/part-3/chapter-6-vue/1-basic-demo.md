@@ -1,7 +1,31 @@
+# 基本使用示例
+
+在介绍 Vue 的工作原理之前，我们先通过两个示例，分别看一下 Vue 的属性变化侦测及组件化开发的基本使用方式。
+
+## 示例一：个税计算器
+
+我们期望实现一个可以根据用户输入的税前收入，来实时计算纳税额、税后到手金额的小工具。效果示意图如下：
+
+<img src="./tax-calculator-2.png" style="width: 40%; border: 1px solid #ddd;" class="round">
+
+```html
+<!-- 开发环境版本，包含了用帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<!-- 这里是 vue app 在文档中的挂载点 -->
+<div id="app">
+  <div><label>税前月收入：</label><input v-model="income"></div>
+  <div><label>五险一金数额： </label>{{ result.profit }}</div>
+  <div><label>税后收入：</label>{{ result.real_income }}</div>
+  <div><label>实际纳税额：</label>{{ result.tax }}</div>
+</div>
+```
+
+```javascript
 const app = new Vue({
   el: '#app',
   data: {
-    income: 0,
+    income: 0
   },
   computed: {
     result: function() {
@@ -10,12 +34,10 @@ const app = new Vue({
   }
 });
 
-
 /**
  * 中国个税计算算法
  * 算法参考：http://www.gerensuodeshui.cn/
  */
-
 function taxCalculator(options = {
   base: 3500,
   income: 10000,
@@ -58,3 +80,8 @@ function taxCalculator(options = {
 
   return {income, profit, real_income, tax};
 }
+```
+
+
+## 示例二：可复用的表格组件
+

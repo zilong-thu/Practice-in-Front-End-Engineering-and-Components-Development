@@ -9,19 +9,32 @@
 
     body {
       font-size: 14px;
+      line-height: 1.8;
     }
 
     input {
-      display: block;
-      width: 200px;
-      padding: 5px;
-      border: 1px solid #999;
-      border-radius: 3px;
+      display: inline-block;
+      width: 100px;
+      padding: 3px 0;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      font-size: 14px;
     }
 
     input:focus {
       outline: none;
-      border-color: #666;
+      border-color: #aaa;
+    }
+
+    label {
+      display: inline-block;
+      width: 40%;
+      margin-right: 10px;
+      text-align: right;
+    }
+
+    h3 {
+      text-align: center;
     }
   </style>
   <meta charset="utf-8">
@@ -30,11 +43,12 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
+  <h3>个税计算器示例</h3>
   <div id="app">
-    <input v-model="message">
-    <p>五险一金数额： {{ result.profit }}</p>
-    <p>税后收入：{{ result.real_income }}</p>
-    <p>您需要缴纳的税额：{{ result.tax }}</p>
+    <div><label>税前月收入：</label><input v-model="income"></div>
+    <div><label>五险一金数额： </label>{{ result.profit }}</div>
+    <div><label>税后收入：</label>{{ result.real_income }}</div>
+    <div><label>实际纳税额：</label>{{ result.tax }}</div>
   </div>
   <script type="text/javascript" src="./index.js"></script>
 </body>
