@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  line-height: 1.8;
+  font-family: sans-serif;
+}
+
+input {
+  display: inline-block;
+  width: 100px;
+  padding: 3px 0;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #aaa;
+}
+
+label {
+  display: inline-block;
+  width: 40%;
+  margin-right: 10px;
+  text-align: right;
+}
+
+h3 {
+  text-align: center;
+}
+
+select {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #eee;
+}
+
+select:focus {
+  outline: none;
+}

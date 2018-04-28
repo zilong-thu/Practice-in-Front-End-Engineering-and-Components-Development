@@ -2,42 +2,7 @@
 <html>
 <head>
   <title>个税计算器示例</title>
-  <style type="text/css">
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      font-size: 14px;
-      line-height: 1.8;
-      font-family: sans-serif;
-    }
-
-    input {
-      display: inline-block;
-      width: 100px;
-      padding: 3px 0;
-      border: none;
-      border-bottom: 1px solid #ccc;
-      font-size: 14px;
-    }
-
-    input:focus {
-      outline: none;
-      border-color: #aaa;
-    }
-
-    label {
-      display: inline-block;
-      width: 40%;
-      margin-right: 10px;
-      text-align: right;
-    }
-
-    h3 {
-      text-align: center;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="./index.css">
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, max-scale=1, user-scalable=no">
   <!-- 开发环境版本，包含了用帮助的命令行警告 -->
@@ -50,6 +15,8 @@
     <div><label>五险一金数额： </label>{{ result.profit }}</div>
     <div><label>税后收入：</label>{{ result.real_income }}</div>
     <div><label>实际纳税额：</label>{{ result.tax }}</div>
+    <hr />
+    <user-settings v-on:settings="onSettingsChange"></user-settings>
   </div>
   <script type="text/javascript" src="./index.js"></script>
 </body>

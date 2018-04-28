@@ -1,12 +1,12 @@
 # 基本使用示例
 
-在介绍 Vue 的工作原理之前，我们先通过两个示例，分别看一下 Vue 的属性变化侦测及组件化开发的基本使用方式。
+在介绍 Vue 的工作原理之前，我们先通过一个个税计算器示例，由简到繁地演进，以熟悉 Vue 的属性变化侦测及组件化开发的基本使用方式。
 
-## 示例一：个税计算器
+## 第一步：自动更新视图
 
 我们期望实现一个可以根据用户输入的税前收入，来实时计算纳税额、税后到手金额的小工具。效果示意图如下：
 
-<img src="./tax-calculator-2.png" style="width: 40%; border: 1px solid #ddd;" class="round">
+<img src="./tax-calculator.png" style="width: 40%; border: 1px solid #ddd;" class="round">
 
 简便起见，我们直接在 HTML 文件中通过 `<script>` 标签从 CDN 服务商引入 `vue.js`：
 
@@ -81,5 +81,77 @@ const app = new Vue({
 ```
 
 
-## 示例二：可复用的表格组件
+## 第二步：添加子组件并与父组件通信
+
+2018 年两会期间，关于提升个税起征点的议题成为社会讨论的焦点之一。我们在第一步里使用的 3500 元起征点，是 2011 年 9 月 1 日起实施的。我们可以在第一步的基础上，添加一个功能，让用户可以设置计算个税的起征点数值。
+
+简便起见，我们直接使用 `Vue.component` 方法在全局定义一个名为 `user-settings` 的子组件。
+
+```
+/**
+ * 定义一个用于设置个税起征点的组件
+ */
+Vue.component('user-settings', {
+  template: `
+    <div>
+      <label>选择个税起征点</label>
+      <select v-on:change="onSelectChange">
+        <option v-for="item in list">{{ item }}</option>
+      </select>
+    </div>`,
+  data: function () {
+    return {
+      base: 3500,
+      // 可选的个税起征点数值
+      list: [3500, 4000, 5000, 7000, 10000],
+    }
+  },
+  methods: {
+    // 子组件上的事件
+    onSelectChange: function(event) {
+      var target = event.target;
+      var value  = Number(target.value);
+      this.$emit('settings', {
+        base: value,
+      });
+    }
+  }
+});
+```
+
+在 HTML 中，可以像 Web Components 规范约定的那样直接使用标签名嵌入子组件，使用 `v-on:settings` 监听子组件发布的名为 `settings` 事件：
+
+```html
+<div id="app">
+  <!-- 省略其他代码 -->
+  <user-settings v-on:settings="onSettingsChange"></user-settings>
+</div>
+```
+
+最外层的 Vue APP 则改写为：
+
+```javascript
+// Vue app
+const app = new Vue({
+  el: '#app',
+  data: {
+    income: 0,
+    base: 3500,
+  },
+  computed: {
+    result: function() {
+      return taxCalculator({income: this.income, base: this.base});
+    }
+  },
+  methods: {
+    onSettingsChange: function(settings) {
+      this.base = settings.base;
+    }
+  }
+});
+```
+
+调整之后的效果如下图所示，可以看到，对于税前收入 1 万元的劳动者来说，个税起征点如果从 3500 元提高到 5000 元，那么可以减少 43% 的纳税额。
+
+<img src="./tax-calculator-2.png" style="width: 40%; border: 1px solid #ddd;" class="round">
 

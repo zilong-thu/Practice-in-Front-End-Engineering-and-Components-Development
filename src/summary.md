@@ -50,6 +50,7 @@
     * [React与函数式编程](part-3/chapter-5-react/5-react-and-fp.md)
   * [Vue](part-3/chapter-6-vue/index.md)
     * [基本使用示例](part-3/chapter-6-vue/1-basic-demo.md)
+    * [Vue 的关键概念与原理](part-3/chapter-6-vue/2-vue-concepts-and-priciples.md)
   * [微信小程序组件化开发实践](part-3/chapter-7-miniprogram/index.md)
 * [第四部分-前端开发中的常见话题](part-4/index.md)
   * [标准库](part-4/01-标准库.md)

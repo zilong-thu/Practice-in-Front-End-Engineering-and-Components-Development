@@ -1,16 +1,3 @@
-const app = new Vue({
-  el: '#app',
-  data: {
-    income: 0,
-  },
-  computed: {
-    result: function() {
-      return taxCalculator({income: this.income})
-    }
-  }
-});
-
-
 /**
  * 中国个税计算算法
  * 算法参考：http://www.gerensuodeshui.cn/
@@ -58,3 +45,53 @@ function taxCalculator(options = {
 
   return {income, profit, real_income, tax};
 }
+
+
+/**
+ * 定义一个用于设置个税起征点的组件
+ */
+Vue.component('user-settings', {
+  template: `
+    <div>
+      <label>选择个税起征点</label>
+      <select v-on:change="onSelectChange">
+        <option v-for="item in list">{{ item }}</option>
+      </select>
+    </div>`,
+  data: function () {
+    return {
+      base: 3500,
+      list: [3500, 4000, 5000, 7000, 10000],
+    }
+  },
+  methods: {
+    onSelectChange: function(event) {
+      var target = event.target;
+      var value  = Number(target.value);
+      this.$emit('settings', {
+        base: value,
+      });
+    }
+  }
+});
+
+
+// Vue app
+const app = new Vue({
+  el: '#app',
+  data: {
+    income: 0,
+    base: 3500,
+  },
+  computed: {
+    result: function() {
+      return taxCalculator({income: this.income, base: this.base});
+    }
+  },
+  methods: {
+    onSettingsChange: function(settings) {
+      this.base = settings.base;
+    }
+  }
+});
+
