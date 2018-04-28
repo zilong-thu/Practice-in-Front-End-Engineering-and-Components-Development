@@ -20,8 +20,7 @@
 使用 React 官方推荐的一些脚手架可能是更好的方案，既便于使用自己的编辑器，也可以方便地扩展功能。使用 `create-react-app` 的方式如下：
 
 ```
-npm install -g create-react-app
-create-react-app my-react-app
+npx create-react-app my-react-app
 cd my-react-app
 npm start
 ```
