@@ -98,6 +98,35 @@ npm shrinkwrap
 
 如果目录中同时存在 `npm-shrinkwrap.json` 和 `package-lock.json` 文件，那么后者将被忽视。
 
+### NPX
+
+NPM 5.2 及之后的版本会随之携带一个新的工具 `npx`，这个工具的主要作用是运行局部而非全局的包（例如`gulp`）。在 `npx` 之前，如果要运行局部安装的 `gulp` 工具，有两个方法：一是在 `package.json` 文件的 `scripts` 里声明一个命令，例如：
+
+```
+# package.json
+"scripts": {
+  "gulp": "gulp"
+}
+
+# 使用时
+$ npm run gulp
+```
+
+另外一个方法是访问局部包里的二进制文件：
+
+```
+$ ./node_modules/.bin/gulp
+```
+
+如果不想像上面这样使用，那就只好全局安装 `gulp`。但这样一来无法保证全局的版本能够与多个项目期望使用的 `gulp` 版本兼容。
+
+NPX 应运而生。有了它以后，如果想运行局部安装的 gulp 包，这样就可以：
+
+```
+$ npx gulp
+```
+
+
 ### 其他包管理器
 
 NPM 并非唯一的 Node.js 包管理器，Facebook、Exponent、Google 与 Tilde 四家公司在 2016 年 11 月联合推出的 Yarn<sup>[6]</sup> 也是一款优秀的同类型开源工具。Yarn 会优先从本地的离线镜像（offline mirror）中获取包，并且采用多线程下载，因而相比传统的 npm 会有更快的速度。Mac 下可以通过 Homebrew 执行 `brew install yarn` 进行安装。
