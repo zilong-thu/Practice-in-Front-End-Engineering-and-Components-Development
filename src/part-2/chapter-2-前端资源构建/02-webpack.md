@@ -2,7 +2,13 @@
 
 <img class="round" src="./images/webpack-logo.png" style="width: 90%;">
 
-Webpack 是现代 JavaScript 应用的静态模块打包工具。
+Webpack 是现代 JavaScript 应用的静态模块打包工具。Webpack 非常适合处理模块化组织的代码，它支持前端开发中的多种模块方案，例如：
+
++ ES6 模块系统，如 `import` 语句
++ CommonJS 模块系统，例如 `require()` 语句
++ AMD 风格的模块系统，如 `define`、`require` 语句
++ css/sass/less 文件中的 `@import` 语句
++ 样式表里对图片文件的依赖声明，也可以被 webpack 处理为模块，例如 `background: url(...)`，甚至 HTML 文件中的图片元素（`<img src=...>`）
 
 ## 基本概念
 
