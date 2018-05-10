@@ -18,6 +18,8 @@ ECMAScript 有过3个重大版本，分别是 1999 年的 ES3、2009 年的 ES5 
 
 JavaScript 是一门多范式语言，开发者可以使用命令式风格、面向对象风格以及函数式风格来组织源代码。
 
+<img src="../images/js-origin.png" style="width: 70%;">
+
 Douglas Crockford 认为，“JavaScript 是第一个成为主流的 Lambda 语言。相对于 Java 而言，JavaScript 与 Lisp 和 Scheme 有更多的共同点。它是披着 C 外衣的 Lisp”<sup>[4]</sup>。其在语言设计上的优越性，使得 JavaScript 在今天愈加强大。
 
 JavaScript 的最佳学习读物主要有 Nicholas C. Zakas 的《JavaScript高级程序设计（第3版）》，David 的《JavaScript权威指南(第6版)》，以及 Douglas Crockford 的《JavaScript语言精粹》。对于 ES6+ 特性的学习，国内有阮一峰的《ES6标准入门》，国外有 Nicholas C. Zakas 的《深入理解 ES6》。此外，《你不知道的 JavaScript》系列读物，也是非常有趣。
