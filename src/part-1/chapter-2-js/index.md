@@ -16,9 +16,9 @@ ECMAScript 有过3个重大版本，分别是 1999 年的 ES3、2009 年的 ES5 
 
 ## JavaScript 语言特点
 
-JavaScript 是一门多范式语言，开发者可以使用命令式风格、面向对象风格以及函数式风格来组织源代码。
+JavaScript 是一门多范式语言，开发者可以使用命令式风格、面向对象风格以及函数式风格来组织源代码。在语言设计上，JavaScript 可谓集众家之所长：
 
-<img src="../images/js-origin.png" style="width: 70%;">
+<img src="../images/js-origin.png" style="width: 60%;">
 
 Douglas Crockford 认为，“JavaScript 是第一个成为主流的 Lambda 语言。相对于 Java 而言，JavaScript 与 Lisp 和 Scheme 有更多的共同点。它是披着 C 外衣的 Lisp”<sup>[4]</sup>。其在语言设计上的优越性，使得 JavaScript 在今天愈加强大。
 
