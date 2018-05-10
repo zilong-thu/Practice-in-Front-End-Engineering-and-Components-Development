@@ -14,9 +14,17 @@ JavaScript 发布后，获得了巨大的成功。这个语言的发明与繁荣
 
 ECMAScript 有过3个重大版本，分别是 1999 年的 ES3、2009 年的 ES5 以及 2015 年的 ES6。从 ES6 开始，TC39 委员会决定每年都发布一次 ECMAScript 的新版本，并以年份作为版本标识。例如 2017 年发布的标准就是 ECMAScript 2017<sup>[3]</sup>。
 
+## JavaScript 语言特点
+
+JavaScript 是一门多范式语言，开发者可以使用命令式风格、面向对象风格以及函数式风格来组织源代码。
+
+Douglas Crockford 认为，“JavaScript 是第一个成为主流的 Lambda 语言。相对于 Java 而言，JavaScript 与 Lisp 和 Scheme 有更多的共同点。它是披着 C 外衣的 Lisp”<sup>[4]</sup>。其在语言设计上的优越性，使得 JavaScript 在今天愈加强大。
+
+JavaScript 的最佳学习读物主要有 Nicholas C. Zakas 的《JavaScript高级程序设计（第3版）》，David 的《JavaScript权威指南(第6版)》，以及 Douglas Crockford 的《JavaScript语言精粹》。对于 ES6+ 特性的学习，国内有阮一峰的《ES6标准入门》，国外有 Nicholas C. Zakas 的《深入理解 ES6》。此外，《你不知道的 JavaScript》系列读物，也是非常有趣。
 
 ## 参考资料
 
 1. [JavaScript at 20, by Brendan Eich](http://brendaneich.github.io/ModernWeb.tw-2015/#1)
 2. [V8 engine | wikipedia](https://en.wikipedia.org/wiki/V8_engine)
 3. [Standard ECMA-262, ECMAScript® 2017 Language Specification](http://www.ecma-international.org/publications/standards/Ecma-262.htm)
+4. Douglas Crockford. JavaScript 语言精粹[M]. 北京: 电子工业出版社, 2012.
