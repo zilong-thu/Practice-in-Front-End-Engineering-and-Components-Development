@@ -1,12 +1,12 @@
 # 用 Git 进行版本控制
 
-## Git 简介
+### Git 简介
 
 <img src="./git-logo.png" style="width: 110px;" class="fl">
 
 Git 是一款强大的免费开源分布式版本控制系统，其从诞生伊始就确立了提供快速高效的版本控制为设计目标，无论项目大小。Linus Torvalds 在 2005 年 3 月开始开发 Git，最初是用于管理 Linux 的内核代码。2005 年 7 月，Linus 将 Git 项目的维护权转交给了 Junio Hamano，后者向 Git 贡献了最多的源码。Linus 自己则全身心投入到 Linux 内核的开发中。
 
-## 安装 Git
+### 安装 Git
 
 在已经安装好了 Homebrew 的 Mac 系统下，安装 Git 不费吹灰之力：
 
@@ -29,7 +29,7 @@ $ brew upgrade git
 
 除了使用 `Homebrew` ，还可以直接在 Git 官网下载适合自己系统的二进制包进行安装。
 
-## Git 常用命令
+### Git 常用命令
 
 **基本命令**
 
@@ -45,9 +45,9 @@ git checkout branch-name    # 切换到另外一个分支
 git checkout -b new-branch  # 基于当前分支创建一个新分支并切换到这个新的分支
 ```
 
-**变基**
+**变基（rebase）**
 
-**Blame**
+**blame：找到“罪魁祸首”**
 
 `git blame` 可以显示一个文件中的某行到文件末尾的每一行的最后一次修改提交信息，包括 commit ID、修改人、修改时间。
 
@@ -62,15 +62,18 @@ f4ff42e0 (子龙 2018-02-05 16:19:01 +0800 10)   * [前端组件化](part-1/chap
 ...
 ```
 
-## Git 关键工作原理
+### Git 关键工作原理
+
+**摘要计算**
+
+**数据存储**
 
 
-
-## Git 工作流
+### Git 工作流
 
 在多人协同开发时，Git 工作流程就显得尤为重要。Vincent Driessen 在2010年的一篇文章《A successful Git branching model》<sup>[3]</sup> 介绍了在这样的场景下，如何使用 Git 进行高效开发。
 
-## 良好的提交信息
+### 良好的提交信息
 
 准确恰当的提交信息对于回溯项目开发历程、寻找特定功能的代码片段都很有帮助。
 
@@ -103,7 +106,7 @@ $ git commit -m 'fix: **页面数字取值问题'
 $ git commit -m 'docs: 更新接口文档'
 ```
 
-## 参考资料
+### 参考资料
 
 1. [Git 官网](https://git-scm.com/)
 2. Jon Leoliger, Matthew McCullough 著, 王迪, 丁彦 等译. Git 版本控制（第二版）[M]. 北京: 人民邮电出版社, 2015.

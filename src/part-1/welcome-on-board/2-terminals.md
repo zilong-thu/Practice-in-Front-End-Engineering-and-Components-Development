@@ -1,14 +1,16 @@
 ## Mac 终端与常用命令行工具
 
+下面介绍的工具适用于 Mac OS。
+
 ### XCode
 
-用 Mac 进行开发，需要用到 XCode 里的一个子工具：Command Line Tools for Xcode。可以通过如下命令单独安装：
+在 Mac OS 下进行开发，需要用到 XCode 里的一个子工具：Command Line Tools for Xcode。可以通过如下命令触发安装进程：
 
 ```
 xcode-select --install
 ```
 
-完整的 XCode 工具通常很大，不过其提供的 Simulator 在调试 iOS Safari 时是非常方便的，所以也建议安装一下。
+完整的 XCode 工具通常体积很大。不过其提供的模拟器（Simulator）在调试 iOS Safari 浏览器页面时是非常方便的，所以建议完整地安装 XCode。
 
 ### Iterm2
 
