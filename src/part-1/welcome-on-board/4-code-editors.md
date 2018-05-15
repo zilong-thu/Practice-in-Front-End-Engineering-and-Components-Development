@@ -4,7 +4,7 @@
 >
 > ——孔子，《论语·卫灵公》
 
-所谓“工欲善其事，必先利其器”，又有俗语“磨刀不误砍柴工”。好的编辑器是高效开发的必备条件。这里我们介绍几个前端开发中最为常见的编辑器。
+所谓“工欲善其事，必先利其器”，又有俗语“磨刀不误砍柴工”。好的编辑器是高效开发的必备条件。这里我们介绍几个前端开发中最为常见的编辑器。工作中通常没有人强制你使用哪款编辑器，选择自己喜欢的就好。当然，在决定“皈依”某款编辑器之前，最好是每个主流的编辑器都尝试一下，毕竟你以后就要天天面对着它了。
 
 ## Sublime Text
 
@@ -29,10 +29,10 @@ Sublime Text 是一套跨平台的文本编辑器，支持基于Python的插件�
 
 ```
 # 创建 symlink
-ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
+$ ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
 
 # 使用 subl 打开文件、目录
-subl .
+$ subl .
 ```
 
 ------------
@@ -40,6 +40,15 @@ subl .
 **关于 `symlink`**
 
 术语 `symlink` 的全称是 `symbolic link`，即“符号链接”，或所谓的“软链接”（`soft link`），是指某文件的内容包含指向其他文件或目录的地址。软链接在 1978 年的小型机操作系统里（如 DEC）就得到了实现，如今已被列入到 POSIX 标准中。因此所有的类 UNIX 系统，如 FreeBSD、Linux、Mac OS X，都支持此特性；Windows 系统下类似的功能是“快捷方式”。<sup>[9]</sup>
+
+连接文件的文件类型属性标志为`[l]`，如果像上面那样软连接 subl，那么可以查看其属性：
+
+```
+$ cd /usr/local/bin
+$ ls -l
+# 第一个属性为 l
+lrwxr-xr-x  1 zilong  admin  62  4 20 22:09 subl -> /Applications/Sublime Text.app/Contents/SharedSupport/bin/subl
+```
 
 与软链接相对的是硬链接。二者的最大区别在于，硬链接与被链接的文件具有相同的 inode 号，而软链接本身有自己的 inode 号且与被链接的文件的 inode 号不同。
 
