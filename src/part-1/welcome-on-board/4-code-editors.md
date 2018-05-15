@@ -35,6 +35,9 @@ $ ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/lo
 $ subl .
 ```
 
+放到 `/usr/local/bin` 目录下，也更符合 FHS（Filesystem Hierarchy Standard
+，文件系统层级结构标准）<sup>[10]</sup>的建议，即 `/usr/local` 目录适合存放系统管理员在本机自行安装的软件。
+
 ------------
 
 **关于 `symlink`**
@@ -129,3 +132,4 @@ VSCode 全称 Visual Studio Code，于 2016 年正式发布。微软在互联网
 7. [Node.js Debugging in VS Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
 8. [Olivier Lacan, Launch Sublime Text 3 from the command line](https://olivierlacan.com/posts/launch-sublime-text-3-from-the-command-line/)
 9. [Symbolic link | wikipedia](https://en.wikipedia.org/wiki/Symbolic_link)
+10. [FHS](http://www.pathname.com/fhs/)
