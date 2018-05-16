@@ -41,15 +41,29 @@ Iterm2 最常用的功能，是将当前标签分割为多个面板。例如我�
 此外，Iterm2 还有选择文本并复制的快捷方式，保留粘贴历史，强大的搜索，以及命令回溯功能。可以在其官网<sup>[1]</sup>获得更详细的使用说明。
 
 
-### Oh-my-zsh
+### Zsh 和 Oh-my-zsh
 
-Oh-my-zsh 是一个 Zsh 配置管理框架。安装 Oh-my-zsh 前要确保 Zsh 已经装好（Mac 预装了 Zsh，所以很方便）。运行下面的脚本可以安装 Oh-my-zsh：
+1990年，Paul Falstad 还在普林斯顿大学读书时，写出了 Zsh 的第一版。程序的名字“zsh”来源于当时的一位助理教授（如今已经是耶鲁大学的教授） Zhong Shao 的账号 ID，Paul Falstad 用 “zsh” 命名这个程序向他致敬<sup>[3]</sup>。如今也可以认为 zsh 是 “Z Shell” 的缩写。Zsh 要比 Unix/Linux 自带的 bash 好用得多。
+
+Zsh 有许多优秀的插件，可以提升工作效率。例如 git 插件，当你在使用了 git 的目录下工作时，Zsh 就总是可以显示当前所在的分支，以及是否有变动。
+
+Oh-my-zsh 则是一个 Zsh 配置管理框架。安装 Oh-my-zsh 前要确保 Zsh 已经装好（Mac 预装了 Zsh，所以很方便）。运行下面的脚本可以安装 Oh-my-zsh：
 
 ```
 $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-1990年，Paul Falstad 还在普林斯顿大学读书时，写出了 Zsh 的第一版。程序的名字“zsh”来源于当时的一位助理教授（如今已经是耶鲁大学的教授） Zhong Shao 的账号 ID，Paul Falstad 用 “zsh” 命名这个程序向他致敬。
+Oh-my-zsh 还提供了多种主题包供选择，在 `~/.oh-my-zsh/themes/` 目录下列出了所有可用的主题。例如在 `~/.zshrc` 里配置：
+
+```
+# 默认主题是 robbyrussell
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="ys"
+```
+
+即可切换主题为 `ys`：
+
+<img src="../images/oh-my-zsh-01.png" style="width: 80%;" class="round">
 
 ### Homebrew
 
@@ -91,7 +105,7 @@ Max Howell 在 2015 年曾经闹出过一段新闻，喜剧性地描述是这样
 
 > Google: 90% of our engineers use the software you wrote (Homebrew), but you can't invert a binary tree on a whiteboard so f*** off.
 
-知名在线编程网站 Leetcode 则趁机将这个问题添加到自己的题库里（226-Invert Binary Tree<sup>[3]</sup>），并且将难度标记为“Easy”。
+知名在线编程网站 Leetcode 则趁机将这个问题添加到自己的题库里（226-Invert Binary Tree<sup>[4]</sup>），并且将难度标记为“Easy”。
 
 ------------------
 
@@ -100,4 +114,5 @@ Max Howell 在 2015 年曾经闹出过一段新闻，喜剧性地描述是这样
 
 1. [Iterm2 官网](http://iterm2.com/)
 2. [Homebrew 官网](https://brew.sh/)
-3. [226. Invert Binary Tree | Leetcode](https://leetcode.com/problems/invert-binary-tree/description/)
+3. [Zsh | wikipedia](https://en.wikipedia.org/wiki/Z_shell)
+4. [226. Invert Binary Tree | Leetcode](https://leetcode.com/problems/invert-binary-tree/description/)
