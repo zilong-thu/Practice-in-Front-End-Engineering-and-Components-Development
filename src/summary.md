@@ -33,6 +33,8 @@
     * [XCode Simulator](part-2/chapter-4/2-xcode-simulator.md)
     * [调试 NodeJS 程序](part-2/chapter-4/3-nodejs-debug.md)
   * [前端测试](part-2/chapter-5-test/index.md)
+    * [JS单元测试](part-2/chapter-5-test/01-unit-test.md)
+    * [浏览器兼容性测试](part-2/chapter-5-test/02-browser-compatibility.md)
 * [第三部分-组件化开发](part-3/index.md)
   * [组件化历史]()
   * [面向对象的组件化开发](part-3/chapter-2-amd-jquery/index.md)
