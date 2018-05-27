@@ -29,20 +29,41 @@ $ brew upgrade git
 
 除了使用 `Homebrew` ，还可以直接在 Git 官网下载适合自己系统的二进制包进行安装。
 
+### 常用设置
+
+**常用操作的别名**
+
+可以为 Git 里最常用的一些命令设置更为简短的别名，可以提高工作效率：
+
+```
+$ git config --global alias.co checkout
+$ git config --global alias.ci commit
+$ git config --global alias.br branch
+$ git config --global alias.st status
+```
+
+这样在切换到某个分支时，就可以只敲 `co` 而不必输入完整的单词 `checkout` 了（节省了 77% 的时间！）：
+
+```
+$ git co master
+```
+
+**字符集设置**
+
 ### Git 常用命令
 
 **基本命令**
 
 ```
-git add --all  # 添加所有文件至暂存区
-git add .      # 只添加当前目录下的修改文件到暂存区
-git commit -m '修改说明'  # 根据暂存区的内容创建一次提交
-git log        # 查看提交历史
-git log -p     # 详细显示提交与修改变动信息
-git push origin master   # 将本地仓库的 master 分支推送到远程仓库的 master 分支
-git fetch origin master  # 拉取远程仓库的 master 分支到本地
-git checkout branch-name    # 切换到另外一个分支
-git checkout -b new-branch  # 基于当前分支创建一个新分支并切换到这个新的分支
+$ git add --all  # 添加所有文件至暂存区
+$ git add .      # 只添加当前目录下的修改文件到暂存区
+$ git commit -m '修改说明'  # 根据暂存区的内容创建一次提交
+$ git log        # 查看提交历史
+$ git log -p     # 详细显示提交与修改变动信息
+$ git push origin master   # 将本地仓库的 master 分支推送到远程仓库的 master 分支
+$ git fetch origin master  # 拉取远程仓库的 master 分支到本地
+$ git checkout branch-name    # 切换到另外一个分支
+$ git checkout -b new-branch  # 基于当前分支创建一个新分支并切换到这个新的分支
 ```
 
 **变基（rebase）**
@@ -70,9 +91,33 @@ f4ff42e0 (子龙 2018-02-05 16:19:01 +0800 10)   * [前端组件化](part-1/chap
 
 ### Git 关键工作原理
 
-**摘要计算**
+**内容追踪**
 
-**数据存储**
+Git 的核心是追踪文件内容，而非文件名、目录。Git 对于每个提交，都会完整地生成一份内容快照。
+
+同时为了实现高效的存储，使用了“打包文件”（packfile）的存储机制，即 Git 会时不时地对存储对象重新进行计算，将一部分 blob 打包到一起，然后对那些被合并了的提交，单独进行差异存储。整合的过程有点类似垃圾收集，Git 也的确为此过程提供了一个命令 `git gc`：
+
+```
+$ git gc
+
+# 通常可以看到如下输出，就是 Git 在优化存储
+Counting objects: 1483, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (709/709), done.
+Writing objects: 100% (1483/1483), done.
+Total 1483 (delta 812), reused 1380 (delta 746)
+```
+
+此外，在用户把代码推到远程仓库时，或者 Git 认为 `.git/objects` 目录下的松散对象太多了，Git 就会自动运行一次 `gc`。在进行完存储优化后，再查看 `.git/objects` 目录，会发现所有的对象文件已经被合并了：
+
+```
+$ find .git/objects -type f
+.git/objects/info/packs
+.git/objects/pack/pack-3dac3cd61a9ed7e06639df27caf1ca3674888baf.idx
+.git/objects/pack/pack-3dac3cd61a9ed7e06639df27caf1ca3674888baf.pack
+```
+
+**摘要计算**
 
 
 ### Git 工作流
