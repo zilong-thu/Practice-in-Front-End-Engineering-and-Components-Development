@@ -1,119 +1,30 @@
-# 用 Git 进行版本控制
+# 版本控制
 
-### Git 简介
+版本控制系统（VCS，Version Control System）通常用于管理软件开发过程中的源代码文件，好的版本控制系统应该具备多人并行开发、代码变更记录、文件冲突处理机制、分支策略、易于回归等特性。版本控制系统经历过三代演进：
 
-<img src="./git-logo.png" style="width: 110px;" class="fl">
+** 本地版本控制（Local Version Control System）**
 
-Git 是一款强大的免费开源分布式版本控制系统，其从诞生伊始就确立了提供快速高效的版本控制为设计目标，无论项目大小。Linus Torvalds 在 2005 年 3 月开始开发 Git，最初是用于管理 Linux 的内核代码。2005 年 7 月，Linus 将 Git 项目的维护权转交给了 Junio Hamano，后者向 Git 贡献了最多的源码。Linus 自己则全身心投入到 Linux 内核的开发中。
+最原始的本地备份式版本控制，也称为“手工版本控制”。这种版本控制策略，本质上只是文件备份，最常用的方式就是将当期文件复制到另一个目录（可能会添加时间戳）。不少人也许有过类似下面这样命名文件的经历，这其实就是一种本地版本控制策略：
 
-### 安装 Git
+<img alt="毕业论文命名" src="./images/local-vcs-demo.png" style="max-width: 70%;" />
 
-在已经安装好了 Homebrew 的 Mac 系统下，安装 Git 不费吹灰之力：
+后来程序员们设计了简单的本地文件数据库系统，并且为文件的备份、命名、签出等操作提供了自动化的命令，从而形成了本地版本控制系统：
 
-```
-# 安装 git
-$ brew install git
+<img src="./images/local-vcs.png" style="max-width: 70%;" />
 
-# 查看当前系统里的 git 版本，以确认其是否已经安装好
-# 2018-04-02 发布了 2.17.0 版本
-$ git version
-git version 2.17.0
-```
+本地版本控制的代表软件是 RCS（Revision Control System），其诞生于 1982 年，由 Walter F. Tichy 发布，隶属于 GNU 项目。
 
-如果系统里已经安装了 git，那么可以检查一下其是否为最新版本，如果不是，可以按照下面的方法来升级 git：
+** 集中式版本控制系统（Centralized Version Control System）**
 
-```
-$ brew outdated
-$ brew upgrade git
-```
+然后是以 Subversion（通常被叫做 svn） 为代表的中央版本控制系统。
 
-除了使用 `Homebrew` ，还可以直接在 Git 官网下载适合自己系统的二进制包进行安装。
+** 分布式版本控制系统（Distributed Version Control System）**
 
-### Git 常用命令
+再后来，出现了以 Git 为代表的分布式版本控制系统。
 
-**基本命令**
-
-```
-git add --all  # 添加所有文件至暂存区
-git add .      # 只添加当前目录下的修改文件到暂存区
-git commit -m '修改说明'  # 根据暂存区的内容创建一次提交
-git log        # 查看提交历史
-git log -p     # 详细显示提交与修改变动信息
-git push origin master   # 将本地仓库的 master 分支推送到远程仓库的 master 分支
-git fetch origin master  # 拉取远程仓库的 master 分支到本地
-git checkout branch-name    # 切换到另外一个分支
-git checkout -b new-branch  # 基于当前分支创建一个新分支并切换到这个新的分支
-```
-
-**变基（rebase）**
-
-在多人开发的模式下，如果依然想保持一个尽可能“干净”的提交历史，那么就需要经常用到**变基（rebase）**这个操作了。
-
-TODO
-
-变基是更改提交历史的 Git 操作之一，其他可以更改提交历史的操作还有 interactive rebase（交互式变基）、cherry pick 等。变更提交历史，意味着如果对公共分支进行变基操作，那么会导致其他人无法正常工作（拉、推代码会遇到冲突）。因此，以变基为代表的这些操作，都不应该在公共分支上进行；私有分支，则可以比较放心地使用。
-
-**blame：找到“罪魁祸首”**
-
-`git blame` 可以显示一个文件中的某行到文件末尾的每一行的最后一次修改提交信息，包括 commit ID、修改人、修改时间。因此常常用于在遇到故障时分析相关责任人，即寻找导致 bug 的“罪魁祸首”。
-
-```
-$ git blame -L 10, summary.md
-
-f4ff42e0 (子龙 2018-02-05 16:19:01 +0800 10)   * [前端组件化](part-1/chapt
-86084c7a (子龙 2018-02-28 15:41:22 +0800 11)   * [Welcome on Board](part
-86084c7a (子龙 2018-02-28 15:41:22 +0800 12)     * [电脑、操作系统](part-1
-86084c7a (子龙 2018-02-28 15:41:22 +0800 13)     * [终端与常用命令行工具](p
-86084c7a (子龙 2018-02-28 15:41:22 +0800 14)     * [Node.js环境](part-1/w
-...
-```
-
-### Git 关键工作原理
-
-**摘要计算**
-
-**数据存储**
-
-
-### Git 工作流
-
-在多人协同开发时，Git 工作流程就显得尤为重要。Vincent Driessen 在2010年的一篇文章《A successful Git branching model》<sup>[3]</sup> 介绍了在这样的场景下，如何使用 Git 进行高效开发。
-
-### 良好的提交信息
-
-准确恰当的提交信息对于回溯项目开发历程、寻找特定功能的代码片段都很有帮助。
-
-真正到了要写提交信息的时候，很多人可能会图省事，使用`...`，或者`abc` 这种方式蒙混过去。Git 的提交信息应该简明扼要。可以使用一些可以描述所做改动的关键词作为前缀然后书写详细的信息。
-
-关键词有两类，一类是动词，表示进行的动作；另一类是名词，通常与业务相关。
-
-下面是一些常见的动词类关键词：
-
-+ `add`，表示添加新功能
-+ `fix`，缺陷修复
-+ `update`，对已有功能进行更改或优化
-+ `remove`，删除部分代码、功能
-+ `refactor`，重构了一些代码、功能
-+ `workflow`，工作流程更改
-+ `chore`，琐碎的修改
-
-```
-# 新增了支持用户上传文件的功能
-$ git commit -m 'add: 上传文件功能'
-
-# 修复了一个线上问题
-$ git commit -m 'fix: **页面数字取值问题'
-```
-
-此外，对于每个项目，可以用业务相关的名词作为关键词前缀。例如：
-
-```
-# docs 表示这是对文档进行的修改
-$ git commit -m 'docs: 更新接口文档'
-```
+Subversion（2000年）、Git（2005年） 都是免费开源软件，Git 出现的更晚一些，也吸收了前者的很多优点，两者各有优缺点。不过随着 Github 网站的崛起，以及自由软件开发的持续热浪，越来越多的程序员新人更倾向于使用 Git 作为自己主要的版本控制工具，对前端开发人员来说更是如此—— JavaScript 向来是 Github 上面最受欢迎的编程语言（GitHub Universe，2017）。
 
 ### 参考资料
 
-1. [Git 官网](https://git-scm.com/)
-2. Jon Leoliger, Matthew McCullough 著, 王迪, 丁彦 等译. Git 版本控制（第二版）[M]. 北京: 人民邮电出版社, 2015.
-3. Vincent Driessen. A successful Git branching model. http://nvie.com/posts/a-successful-git-branching-model/
+1. [Revision Control System | wikipedia](https://en.wikipedia.org/wiki/Revision_Control_System)
+

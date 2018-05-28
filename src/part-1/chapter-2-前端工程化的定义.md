@@ -14,27 +14,6 @@ Node.js 诞生后，前端开发人员凭借自身的 JavaScript 语言优势，
 + 服务器运维
 + 性能优化
 
-## 版本控制
-
-版本控制系统（VCS，Version Control System）通常用于管理软件开发过程中的源代码文件，好的版本控制系统应该具备多人并行开发、代码变更记录、文件冲突处理机制、分支策略、易于回归等特性。版本控制系统经历过三代演进：
-
-** 本地版本控制（Local Version Control System）**
-
-最原始的本地备份式版本控制，也称为“手工版本控制”。这种版本控制策略，本质上只是文件备份，最常用的方式就是将当期文件复制到另一个目录（可能会添加时间戳）。不少人也许有过类似下面这样命名文件的经历，这其实就是一种本地版本控制策略：
-
-<img alt="毕业论文命名" src="./images/local-vcs-demo.jpg" style="max-width: 500px;" />
-
-** 集中式版本控制系统（Centralized Version Control System）**
-
-然后是以 Subversion（通常被叫做 svn） 为代表的中央版本控制系统。
-
-** 分布式版本控制系统（Distributed Version Control System）**
-
-再后来，出现了以 Git 为代表的分布式版本控制系统。
-
-Subversion（2000年）、Git（2005年） 都是免费开源软件，Git 出现的更晚一些，也吸收了前者的很多优点，两者各有优缺点。不过随着 Github 网站的崛起，以及自由软件开发的持续热浪，越来越多的程序员新人更倾向于使用 Git 作为自己主要的版本控制工具，对前端开发人员来说更是如此—— JavaScript 向来是 Github 上面最受欢迎的编程语言（GitHub Universe，2017）。
-
-Git 的使用入门、原理请参加附录A。读者如果希望更深入地学习 Git 知识，那么 Scott Chacon 和 Ben Straub 所著的 Pro Git（2nd Edition, 2014）可能是目前最好的 Git 学习资料，任何人都可以在网上免费阅读此书：https://git-scm.com/book/en/v2。此外，乔恩·罗力格（Jon Loeliger）与马修·麦卡洛（Matthew McCullough）合著的《Git版本控制管理（第2版）》也不错。
 
 ## 模块系统与模块化开发
 
