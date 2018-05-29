@@ -9,18 +9,19 @@
 
 `./src/_book` 为 gitbook 编译后的文件所在目录，已经添加至 `.gitignore`。
 
-全局安装 `gitbook-cli`：
+只需局部安装 `gitbook-cli` 即可：
 
 ```
-npm install -g gitbook-cli
+# 目前使用的是 9.4.0 版本
+$ nvm use
+$ npm install
 ```
 
 在 `src` 目录，启动书籍的编译服务：
 
 ```
-gitbook serve
+$ npx gitbook serve
 ```
-
 
 ## 统计字数
 
