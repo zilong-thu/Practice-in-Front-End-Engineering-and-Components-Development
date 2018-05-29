@@ -127,7 +127,11 @@ $ find .git/objects -type f
 
 ### Git 工作流
 
-在多人协同开发时，Git 工作流程就显得尤为重要。Vincent Driessen 在2010年的一篇文章《A successful Git branching model》<sup>[3]</sup> 介绍了在这样的场景下，如何使用 Git 进行高效开发。
+在多人协同开发时，Git 工作流程就显得尤为重要。当开启一个新特性的开发时，通常从主干分支（例如 `master`） `checkout` 出一个新分支，作为本次特性开发功能的公共主分支，例如命名为 `feature/user-center`；而参与本次特性开发的人员，可以从 `feature/user-center` 再 `checkout` 属于自己的私有分支，例如 `wzl/feature/user-center`。Git 分支的创建可以说是零成本的，这也是其最强大的特性之一。
+
+Vincent Driessen 在2010年的一篇文章《A successful Git branching model》<sup>[3]</sup> 介绍了在这样的场景下，如何使用 Git 进行高效开发。其核心观点之一是围绕着“中心化与去中心化并存”而采取的分支策略：
+
+<img src="./images/centr-decentr.png" style="width: 60%;">
 
 ### 良好的提交信息
 
