@@ -64,6 +64,25 @@ $ git config --global core.quotepath false
 
 <img src="./images/chinese-char-2.png" style="width: 60%;">
 
+**配置文件**
+
+用户对 Git 的特殊配置，都保存在 `~/.gitconfig` 文件里。如果执行过上面的配置，那么查看该文件，可以看到这样的内容：
+
+```
+[user]
+	email = 809052335@qq.com
+	name = zilong-thu
+[alias]
+	co = checkout
+	ci = commit
+	br = branch
+	st = status
+[core]
+	quotepath = false
+```
+
+此外，运行 `git config --list` 可以查看当前用户生效的所有配置。
+
 ### Git 常用命令
 
 **基本命令**
