@@ -27,3 +27,9 @@ pre.pre-dir {
 sup {
   font-size: 0.8em !important;
 }
+
+
+.markdown-section pre,
+pre {
+	line-height: 1.3;
+}

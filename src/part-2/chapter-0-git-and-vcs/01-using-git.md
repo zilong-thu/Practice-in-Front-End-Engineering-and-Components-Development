@@ -50,6 +50,20 @@ $ git co master
 
 **字符集设置**
 
+对于日常使用中文的开发者来说，很可能自己的项目中存在一些包含中文字符的文件或目录。而 Git 的默认设置下，运行 `git status` 这样的命令，会将这些文件显示为转义后的效果：
+
+<img src="./images/chinese-char.png" style="width: 85%;">
+
+这样的显示对开发并不友好，通过下面的设置，可以把显示时的路径转义取消：
+
+```
+$ git config --global core.quotepath false
+```
+
+这时如果再运行 `git status`，就会看到原本的中文路径了：
+
+<img src="./images/chinese-char-2.png" style="width: 60%;">
+
 ### Git 常用命令
 
 **基本命令**

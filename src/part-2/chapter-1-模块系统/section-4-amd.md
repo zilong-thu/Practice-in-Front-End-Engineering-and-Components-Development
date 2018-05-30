@@ -4,11 +4,10 @@
 
 AMD（Asynchronous Module Definition）即**异步模块定义**。AMD 规范中，各个依赖可以异步加载而不影响正常逻辑，非常适用于浏览器环境。AMD 规范的核心 API 只有一个简单的 `define()` 函数。
 
-```
+```javascript
 function define(id?, dependencies?, factory) {
   // ...
 };
-
 define.amd = {};
 ```
 
@@ -54,7 +53,6 @@ root-dir
 /**
  * /amd-demo/main.js
  */
-
 requirejs.config({
   paths: {
     'jquery': '/js/jquery-3.2.1'
@@ -83,7 +81,7 @@ require([
 
 利用 require.js 进行模块加载的关键代码是：
 
-```
+```html
 <script data-main="/amd-demo/main.js" src="/js/require.js"></script>
 ```
 
@@ -93,6 +91,9 @@ require([
 2. 加载完成后，`require.js` 会在所有的 `script` 标签里寻找 `data-main` 属性指定的路径文件作为下一个将要加载的脚本，在这里，就是 `/amd-demo/main.js`
 3. 开始加载 `/amd-demo/main.js`，加载后，解析并执行它，如果发现它有其他依赖，那么先加载所有的依赖（递归）并完成后，再执行 `/amd-demo/main.js` 里面 `require` 的回调函数。
 
+页面就绪后，我们可以在渲染后的 DOM 树中看到 `<head>` 标签里多了几个 `<script>` 元素，Require.js 正是通过这些标签来加载相应的 AMD 模块文件的：
+
+<img src="./images/require-js-effect.png">
 
 ## 关键技术与原理
 
