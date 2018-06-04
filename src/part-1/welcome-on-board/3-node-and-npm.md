@@ -2,7 +2,7 @@
 
 ## Node.js 简介
 
-Node.js（Ryan Dahl，2009）<sup>[1, 2]</sup> 是一个在 Google Chrome 浏览器使用的 V8 引擎的基础上开发出来的跨平台的 JavaScript 运行时环境。Node.js 使用了事件驱动、非阻塞 I/O 模型。
+Node.js（Ryan Dahl，2009）<sup>[1, 2]</sup> 是一个在 Google Chrome 浏览器使用的 V8 引擎的基础上开发出来的跨平台的 JavaScript 运行时环境。Node.js 使用了事件驱动、非阻塞 I/O 模型。其中非阻塞 I/O 机制在不同的系统上采取了不同的库来实现：Windows 使用了 IOCP，Linux 下使用 epoll，Mac 系统下则使用了 kqueue。
 
 在过去的8年里，Node.js 及其生态圈的发展可以用突飞猛进、日新月日来形容。前端开发者通常用 Node.js 来进行文件构建（例如 gulp、webpack 一类的构建工具）、提供页面服务（例如 express.js、koa.js 这样的服务器端框架），或者写一些网络、计算类的程序（例如爬虫）。
 
@@ -141,14 +141,16 @@ NPM 并非唯一的 Node.js 包管理器，Facebook、Exponent、Google 与 Tild
 
 ### Node.js 的设计缺陷
 
-2018年6月，Ryan Dahl 在柏林举办的欧洲 JavaScript 开发者大会上进行了主题为《Design Mistakes in Node》<sup>[7]</sup>的演讲，列举了自己认为 Node.js 的一些设计缺陷。总体而言，Node.js 早期的设计重心在于事件循环与异步I/O，并且解决得很不错。但是仍然遗留了其他方面的缺陷，主要是与“模块”“包”“依赖”等代码组织方式有关的，它们不约而同地导致了 Node.js 生态的一些混乱，例如：
+2018年6月，Ryan Dahl 在柏林举办的欧洲 JavaScript 开发者大会上进行了主题为《Design Mistakes in Node》<sup>[7]</sup>的演讲，列举了自己认为 Node.js 的一些设计缺陷。总体而言，Node.js 早期的设计重心在于事件循环与异步I/O，并且解决得很不错。但是仍然遗留了其他方面的缺陷，主要是与“模块”“包”“依赖”等代码组织方式有关的，它们不约而同地导致了 Node.js 生态的一些混乱，提升了代码组织的复杂度，例如：
 
 + 没有坚定地在 Node 里支持 `Promise`。Ryan 在2009年在 Node.js 里加入了 `Promise`，但是在2010年又将其移除。`Promise` 是 `async/await` 的必要抽象基础，它在 Node 里的天然缺失，导致了各种设计糟糕的异步 API，开发者们也一度很难组织好异步代码。
 + 安全性
-+ 构建系统（GYP）
-+ `package.json`
-+ `node_modules`
-+ `index.js`
++ 构建系统（GYP）。Chrome 的 V8 最开始使用了 GYP 作为项目文件生成工具，因此 Node 直接借鉴了它。后来 Chrome 抛弃了 GYP，转而使用 GN，于是 Node 成为了 GYP 的唯一用户……此外，Node 允许用户直接写 V8 的扩展，这产生了一些不安全因素。更好的方式是提供 FFI（Foreign Function Interface，跨语言函数调用接口）。
++ `package.json`：Node 把 NPM 加入到其核心代码中后，NPM 便成为了 Node 事实上的包管理标准。`require('someModule')` 会寻找 `package.json` 里的 `main` 字段作为包的入口。但是这样的声明并不足够明确。`package.json` 也携带了大量不必要的信息：条款，仓库地址，描述，版本……如果 `require()` 仅支持文件路径或者 URL，那么版本由路径或URL唯一确定，也就不需要列上一堆依赖了。
++ `require` 的参数过于宽松。Node 支持直接书写 `require("module")` 而不必填写后缀 `.js`。看起来似乎显得强大，但是这意味着 Node 要去做多次文件查找才能最终确定要加载的文件。浏览器则没有这种不确定性（`<script>` 元素的 `src` 里不能省略 `.js` 后缀）。此外，默认 `index.js` 为模块的入口，也是很没有必要的。尤其在支持通过 `package.json` 指定入口后。
++ `node_modules` 方案的设计不够完善。
+
+<img src="../images/node_modules_vs_black_holes.jpg" style="width: 70%;" class="round">
 
 ### 参考资料
 
