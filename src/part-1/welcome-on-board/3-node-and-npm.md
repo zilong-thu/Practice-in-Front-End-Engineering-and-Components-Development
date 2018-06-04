@@ -139,6 +139,17 @@ $ npx create-react-app my-app
 
 NPM 并非唯一的 Node.js 包管理器，Facebook、Exponent、Google 与 Tilde 四家公司在 2016 年 11 月联合推出的 Yarn<sup>[6]</sup> 也是一款优秀的同类型开源工具。Yarn 会优先从本地的离线镜像（offline mirror）中获取包，并且采用多线程下载，因而相比传统的 npm 会有更快的速度。Mac 下可以通过 Homebrew 执行 `brew install yarn` 进行安装。
 
+### Node.js 的设计缺陷
+
+2018年6月，Ryan Dahl 在柏林举办的欧洲 JavaScript 开发者大会上进行了主题为《Design Mistakes in Node》<sup>[7]</sup>的演讲，列举了自己认为 Node.js 的一些设计缺陷。总体而言，Node.js 早期的设计重心在于事件循环与异步I/O，并且解决得很不错。但是仍然遗留了其他方面的缺陷，主要是与“模块”“包”“依赖”等代码组织方式有关的，它们不约而同地导致了 Node.js 生态的一些混乱，例如：
+
++ 没有坚定地在 Node 里支持 `Promise`。Ryan 在2009年在 Node.js 里加入了 `Promise`，但是在2010年又将其移除。`Promise` 是 `async/await` 的必要抽象基础，它在 Node 里的天然缺失，导致了各种设计糟糕的异步 API，开发者们也一度很难组织好异步代码。
++ 安全性
++ 构建系统（GYP）
++ `package.json`
++ `node_modules`
++ `index.js`
+
 ### 参考资料
 
 1. [Node.js 官网](https://nodejs.org/en/)
@@ -147,3 +158,4 @@ NPM 并非唯一的 Node.js 包管理器，Facebook、Exponent、Google 与 Tild
 4. [npm 官网](https://www.npmjs.com/)
 5. [npm 淘宝镜像](http://npm.taobao.org/)
 6. [yarn docs](https://yarnpkg.com/en/)
+7. [Design Mistakes in Node (pdf)](http://tinyclouds.org/jsconf2018.pdf)
