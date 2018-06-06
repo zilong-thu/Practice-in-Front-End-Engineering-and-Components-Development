@@ -23,6 +23,7 @@
     * [UMD模块系统](part-2/chapter-1-模块系统/section-5-umd.md)
     * [ECMAScript 模块系统](part-2/chapter-1-模块系统/section-6-esm.md)
   * [前端资源构建](part-2/chapter-2-前端资源构建/index.md)
+    * [CSS 预处理](part-2/chapter-2-前端资源构建/02-css-processors.md)
     * [代码混淆（Uglify）](part-2/chapter-2-前端资源构建/00-uglify.md)
     * [Babel](part-2/chapter-2-前端资源构建/01-babel.md)
     * [Webpack](part-2/chapter-2-前端资源构建/02-webpack.md)
