@@ -34,6 +34,7 @@
     * [浏览器基本通用调试](part-2/chapter-4/1-browser-debug.md)
     * [XCode Simulator](part-2/chapter-4/2-xcode-simulator.md)
     * [调试 NodeJS 程序](part-2/chapter-4/3-nodejs-debug.md)
+    * [移动端 Web 页面调试](part-2/chapter-4/4-mobile-web-debug.md)
   * [前端测试](part-2/chapter-5-test/index.md)
     * [JS单元测试](part-2/chapter-5-test/01-unit-test.md)
     * [浏览器兼容性测试](part-2/chapter-5-test/02-browser-compatibility.md)
