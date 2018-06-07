@@ -16,7 +16,7 @@ $ node-debug app.js
 
 ### Inspector 协议
 
-Node 6.3 及之后的版本新增了名为 `v8-inspector` 的调试协议。
+Node 6.3 及之后的版本新增了名为 `v8-inspector` 的调试协议。在启动 Node 脚本时，`--inspect={PORT}` 参数会创建一个单独的 Node 进程监听（通过 WebSockets）该端口（默认是 `9229`）上的调试命令。配合 Chrome 浏览器的 DevTools，可以方便地获取到该程序的运行信息。
 
 
 ```
