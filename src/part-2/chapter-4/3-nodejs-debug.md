@@ -8,10 +8,20 @@ Node 6.3 及之后的版本新增了名为 `v8-inspector` 的调试协议。在�
 
 ```
 $ node --inspect=9229 ./server.js
-# 会输出：
+# 会输出如下信息，其中 0c48e445-f318-4bb7-85d9-32804ea111db 是该协议为每个 Node 进程分配的 UUID
 Debugger listening on ws://127.0.0.1:9229/0c48e445-f318-4bb7-85d9-32804ea111db
 Debugger attached.
 ```
+
+---------------------
+
+**关于 UUID**<sup>[4]</sup>
+
+UUID（Universally Unique IDentifier，通用唯一识别码），又称 GUID（Globally Unique IDentifier，全局唯一标识符），长度为 128 位二进制，表示为十六进制的话就是 32 位。一个合理的 UUID 生成算法必须能够做到对同一时空下的所有机器分配不同的标识符。
+
+有点类似 Git 的摘要，但是 UUID 的生成通常会考虑时间，而 Git 则只使用内容作为摘要算法的输入。
+
+---------------------
 
 在 Chrome 浏览器的地址栏里输入 `chrome://inspect/#devices` 并回车，可以看到对于该端口的监听（可能有一定的延时）：
 
@@ -56,3 +66,4 @@ $ node-debug app.js
 1. https://zhuanlan.zhihu.com/p/30264842
 2. https://nodejs.org/en/docs/guides/debugging-getting-started/
 3. [node-inspector | github](https://github.com/node-inspector/node-inspector)
+4. [A Universally Unique IDentifier (UUID) URN Namespace | IETF](https://tools.ietf.org/html/rfc4122)
