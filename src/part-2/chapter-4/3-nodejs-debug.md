@@ -17,6 +17,10 @@ Debugger attached.
 
 <img src="./images/node-debug-01.png" style="width: 75%;">
 
+点击上图里的 `inspect`，会调起 Chrome 的 DevTools 界面，在 `Sources` 模块中选择 JavaScript 程序所在目录，就可以像对浏览器端的 JavaScript 代码一样进行调试（例如设置断点）：
+
+<img src="./images/node-debug-02.png" class="round">
+
 ### 远程调试
 
 因为调试协议是基于网络协议 WebSockets，因此 Node 具备调试远程机器上的代码的能力。这意味着要让远程机器的调试接口暴露出来，因此不是特别安全。如果非要进行远程调试，首先要确保服务器上的程序也是以调试模式启动：
