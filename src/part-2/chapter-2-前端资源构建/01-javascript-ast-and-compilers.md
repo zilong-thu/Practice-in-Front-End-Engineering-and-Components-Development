@@ -1,17 +1,23 @@
 # JavaScript AST、编译器及其应用
 
-## ESTree 规范
+## JavaScript AST 等概念
 
-ESTree Spec
+### ESTree 规范
 
-Esprima 是用 JavaScript 实现的 JavaScript 词法分析及语法分析器。
+很早之前，FireFox 浏览器所使用的 JavaScript 引擎 SpiderMonkey 曾经提供了一个 JavaScript API，使得开发者可以直接调用 SpiderMonkey 的 JavaScript 分析器。这个 API 所描述的 JavaScript 抽象语法树格式渐渐流行起来，如今成为 JavaScript AST 的通用描述。ESTree Spec 正是在此基础上建立起来的社区规范。在实现上，有这么几个使用较广泛的库：
 
-Acorn
++ uglifyjs
++ Esprima，是用 JavaScript 实现的 JavaScript 词法分析及语法分析器
++ espree，基于 Esprima，被 ESLint 工具使用
++ Acorn
++ Babylon，在 acorn.js 基础上发展起来，Babel.js 最开始使用的分析器
 
-Babylon: Babel.js 使用的分析器。
+### Acorn.js
 
 
-## 关于图灵完备性
+
+
+### 关于图灵完备性
 
 图灵完备的编程语言（Turing Complete Language）
 
@@ -22,7 +28,7 @@ Facebook 推出的 ECMAScript 编译器 Babel <sup>[1]</sup> 名字源于巴别�
 
 > 大洪水过后，人类使用着同一种语言，当时人们联合起来兴建希望能通往天堂的高塔；为了阻止人类的计划，上帝让人类说不同的语言，使人类相互之间不能沟通，计划因此失败，人类自此各散东西。此故事试图为世上出现不同语言和种族提供解释。
 
-<img src="./images/Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_(Vienna)_Google_Art_Project.jpg" >
+<img src="./images/Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_(Vienna)_Google_Art_Project.jpg" style="width: 90%;" class="round">
 
 Babel.js 的愿景如传说中那座塔一样，使得我们可以直接按照最新的 ECMAScript 标准书写代码，然后由它来翻译为浏览器已普遍支持的 ECMAScript 5。本质上讲，Babel 就是一款 JavaScript 编译器。
 
@@ -64,7 +70,7 @@ var brr = arr.map(function (ele) {
 
 ### 工作原理
 
-
+<img src="./images/babel-01.jpg" style="width: 90%;">
 
 
 ## 混淆技术
@@ -115,3 +121,4 @@ $ uglifyjs in.js -m -o out.js
 5. [CoffeeScript 官网](http://coffeescript.org/)
 6. [CoffeeScript | 维基百科](https://zh.wikipedia.org/wiki/CoffeeScript)
 7. [UglifyJS 官网](http://lisperator.net/uglifyjs/)
+8. [](https://zhuanlan.zhihu.com/p/32189701)
