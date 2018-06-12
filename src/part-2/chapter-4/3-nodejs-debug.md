@@ -31,6 +31,8 @@ UUID（Universally Unique IDentifier，通用唯一识别码），又称 GUID（
 
 <img src="./images/node-debug-02.png" class="round">
 
+如果希望应用程序在运行第一行代码时就中断，可以使用 `--inspect-brk=9229` 来代替 `--inspect=9229`。这个功能对于调试那些只在启动时执行一次的代码比较有用。
+
 ### 远程调试
 
 因为调试协议是基于网络协议 WebSockets，因此 Node 具备调试远程机器上的代码的能力。这意味着要让远程机器的调试接口暴露出来，因此不是特别安全。如果非要进行远程调试，首先要确保服务器上的程序也是以调试模式启动：
@@ -60,6 +62,10 @@ $ node-debug app.js
 ```
 
 当然，前端开发者应该尽量使用最新版本的 Node，配合 `--inspect` 来调试自己的 Node 程序。
+
+## IDE 对 Node 调试的支持
+
+
 
 ## 参考资料
 
