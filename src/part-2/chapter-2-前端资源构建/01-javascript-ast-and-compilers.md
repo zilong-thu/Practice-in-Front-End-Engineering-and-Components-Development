@@ -1,4 +1,22 @@
-# Babel
+# JavaScript AST、编译器及其应用
+
+## ESTree 规范
+
+ESTree Spec
+
+Esprima 是用 JavaScript 实现的 JavaScript 词法分析及语法分析器。
+
+Acorn
+
+Babylon: Babel.js 使用的分析器。
+
+
+## 关于图灵完备性
+
+图灵完备的编程语言（Turing Complete Language）
+
+
+## Babel
 
 Facebook 推出的 ECMAScript 编译器 Babel <sup>[1]</sup> 名字源于巴别塔（Tower of Babel）的故事，这个故事则起源于《圣经·旧约·创世记》（Book of Genesis）第11章：
 
@@ -10,7 +28,7 @@ Babel.js 的愿景如传说中那座塔一样，使得我们可以直接按照�
 
 Babel 并非第一个将源码编译为具有更好兼容性的 JavaScript 代码的编译器。在它之前，就有 CoffeeScript 这样的 ECMAScript 方言及配套预处理器存在<sup>[2][3]</sup>。CoffeeScript 诞生于2009年，它借鉴了 Ruby、Python 与 Haskell 等语言中许多优秀的语法，例如箭头函数（Arrow Functions）、解构赋值（Destructuring Assignment）、异步函数（Async Functions）等等，增强了 ECMAScript 的简洁性和可读性。但是随着 ECMAScript 第6版在 2015 年正式发布，CoffeeScript 大部分特性都在标准中得到了支持，这款小而美的 ECMAScript 方言也算完成了它最重要的历史使命。
 
-## 体验 Babel
+### 体验 Babel
 
 可以在 Babel 的官网（https://babeljs.io/repl/）中体验编译前后代码的差异。
 
@@ -42,13 +60,58 @@ var brr = arr.map(function (ele) {
     | ^</code>
 </pre>
 
-## 基本使用
+### 基本使用
 
-## 工作原理
+### 工作原理
+
+
+
+
+## 混淆技术
+
+JavaScript 抽象语法树的一个经典应用就是进行代码混淆（Obfuscated code）。代码混淆是将计算机程序的代码，转换成一种功能上等价，但是难于阅读和理解的形式的行为。JavaScript 混淆技术主要采取下面这些策略来混淆源代码：
+
+1. 对函数作用域内的变量、函数名称进行替换，例如改写为单个字母
+2. 去除换行、空格、制表符等多余空白符
+
+这里我们以最常见的 Uglify.js 为例，介绍混淆技术的基本使用、关键技术原理等内容。
+
+### 基本使用
+
+安装：
+
+```
+$ npm i --save -g uglify-js
+```
+
+假如我们在 `in.js` 文件里有如下内容：
+
+```javascript
+(function (global) {
+  var name = 'Hello';
+  console.log(name);
+})(window);
+```
+
+那么运行：
+
+```
+$ uglifyjs in.js -m -o out.js
+```
+
+可以在 `out.js` 里看到混淆处理的结果：
+
+```javascript
+(function(o){var l="Hello";console.log(l)})(window);
+```
 
 
 ## 参考资料
 
-1. [Babel 官网](https://babeljs.io/)
-2. [CoffeeScript 官网](http://coffeescript.org/)
-3. [CoffeeScript | 维基百科](https://zh.wikipedia.org/wiki/CoffeeScript)
+1. [ESTtree Spec](https://github.com/estree/estree)
+2. [Esprima](https://github.com/jquery/esprima)
+3. [Acorn](https://github.com/acornjs/acorn)
+4. [Babel 官网](https://babeljs.io/)
+5. [CoffeeScript 官网](http://coffeescript.org/)
+6. [CoffeeScript | 维基百科](https://zh.wikipedia.org/wiki/CoffeeScript)
+7. [UglifyJS 官网](http://lisperator.net/uglifyjs/)
