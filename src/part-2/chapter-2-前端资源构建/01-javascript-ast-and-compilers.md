@@ -12,6 +12,10 @@
 + Acorn
 + Babylon，在 acorn.js 基础上发展起来，Babel.js 最开始使用的分析器
 
+在 https://astexplorer.net/ 网站可以非常直观地看到 JavaScript 源代码与其对应的抽象语法树每个节点之间的对应关系：
+
+<img src="./images/ast-01.png" class="round">
+
 ### Acorn.js
 
 
