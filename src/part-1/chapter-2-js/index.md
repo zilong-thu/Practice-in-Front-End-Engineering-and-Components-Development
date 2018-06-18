@@ -8,7 +8,7 @@ JavaScript 最初是作为一种脚本语言被发明出来。“脚本语言”
 
 不同的 JavaScript 引擎可能采取不同的编译器实现方法。在设计 JavaScript 时，Brendan Eich 受 Java 影响颇大，因此使用了字节码解释器（bytecode interpreter）对 JavaScript 解释执行<sup>[1]</sup>。而著名的 V8 引擎，在运行前先将 JavaScript 编译为机器码（而非字节码或是解释执行它），以此提升性能<sup>[2]</sup>。
 
-JavaScript 发布后，获得了巨大的成功。这个语言的发明与繁荣，印证了 MVP（Minimum Viable Product，最小可用产品）理念的价值。简单、跨平台、分布式使得 JavaScript 成为浏览器端的唯一语言，这种重要性反过来迫使各个巨头携手推进其标准化。1997年，由网景、昇阳、微软、宝蓝等公司组织及个人组成的技术委员会在 ECMA（European Computer Manufactures Association，欧洲计算机制造商协会）确定定义了一种名叫 ECMAScript 的新脚本语言标准，规范名为 ECMA-262。
+JavaScript 发布后，获得了巨大的成功。这个语言的发明与繁荣，印证了 MVP（Minimum Viable Product，最小可用产品）理念的价值。简单、跨平台、分布式使得 JavaScript 很快成为浏览器端的唯一语言，这种重要性反过来迫使各个巨头携手推进其标准化。1997年，由网景、昇阳、微软、宝蓝等公司组织及个人组成的技术委员会在 ECMA（European Computer Manufactures Association，欧洲计算机制造商协会）确定定义了一种名叫 ECMAScript 的新脚本语言标准，规范名为 ECMA-262。
 
 <img src="../images/javascript-timeline.png" style="width: 85%;">
 
@@ -22,9 +22,68 @@ JavaScript 是一门多范式语言，开发者可以使用命令式风格、面
 
 Douglas Crockford 认为，“JavaScript 是第一个成为主流的 Lambda 语言。相对于 Java 而言，JavaScript 与 Lisp 和 Scheme 有更多的共同点。它是披着 C 外衣的 Lisp”<sup>[4]</sup>。其在语言设计上的优越性，使得 JavaScript 在今天愈加强大。
 
-JavaScript 的最佳学习读物主要有 Nicholas C. Zakas 的《JavaScript高级程序设计（第3版）》，David 的《JavaScript权威指南(第6版)》，以及 Douglas Crockford 的《JavaScript语言精粹》。对于 ES6+ 特性的学习，国内有阮一峰的《ES6标准入门》，国外有 Nicholas C. Zakas 的《深入理解 ES6》。此外，《你不知道的 JavaScript》系列读物，也是非常有趣。
+**弱类型**
+
+JavaScript 是一门弱类型，或者“动态类型”的语言，并不意味着 JavaScript 语言是“没有类型”的，而是指用户声明标识符（变量）时不必指定类型，且标识符指向的值的类型可以随意更改，即变量的类型通常在运行时确定。
+
+```javascript
+var a = 'some string';  // 初始化时指定 a 为字符串类型
+
+a = {id: 1};  // 但之后也可以让 a 指向一个对象，成为一个引用类型
+```
+
+**面向对象**
+
+基于原型，JavaScript 支持面向对象的程序设计模式。
+
+```javascript
+// 封装
+function Person(name = '', age = null) {
+  this.name = name;
+  this.age = age;
+}
+
+Person.prototype.sayHello = function() {
+  var str = `Hi, I am ${this.name}.`;
+  if (this.age || this.age === 0) {
+    str += ` I'm ${this.age} years old.`;
+  }
+  console.log(str);
+}
+
+var wang = new Person('Wang', 29);
+wang.sayHello();
+
+// 继承
+function Student() {
+  Person.apply(this, Array.prototype.slice.call(arguments));
+}
+Student.prototype = new Person();
+
+var st = new Student('XiaoMing');
+st.sayHello();  // 调用父类定义给实例的方法
+```
+
+**函数式风格**
+
+JavaScript 里的函数是“一等公民”，即函数本身亦是对象，一个函数可作为另一个函数的返回值，也可以作为其他函数的传入参数。
+
+```javascript
+// 返回一个函数
+var Func = (function() {
+  var id = 0;
+  return function() {
+    this.id = ++id;
+  };
+})();
+
+new Func(); // {id: 1}
+new Func(); // {id: 2}
+```
 
 ## 参考资料
+
+JavaScript 的最佳学习读物主要有 Nicholas C. Zakas 的《JavaScript高级程序设计（第3版）》，David 的《JavaScript权威指南(第6版)》，以及 Douglas Crockford 的《JavaScript语言精粹》。对于 ES6+ 特性的学习，国内有阮一峰的《ES6标准入门》，国外有 Nicholas C. Zakas 的《深入理解 ES6》。此外，《你不知道的 JavaScript》系列读物，也是非常有趣。
 
 1. [JavaScript at 20, by Brendan Eich](http://brendaneich.github.io/ModernWeb.tw-2015/#1)
 2. [V8 engine | wikipedia](https://en.wikipedia.org/wiki/V8_engine)
