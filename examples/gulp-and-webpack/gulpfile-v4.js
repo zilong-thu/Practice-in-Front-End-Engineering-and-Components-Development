@@ -114,8 +114,19 @@ gulp.task('js', () => {
     entry: entry,
     output: {
       filename: '[name]-[chunkhash].js',
-      chunkFilename: '[name]-[chunkhash].js',
       path: path.resolve(__dirname, 'build'),
+    },
+    module: {
+      rules: [{
+        test: /\.css$/,
+        use: [
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: {modules: true}
+          }
+        ]
+      }]
     }
   };
 

@@ -7,7 +7,7 @@ module.exports = {
   entry: getWebpackEntryObj(),
   output: {
     path: path.resolve(__dirname, './build'),
-    filename: '[name].js',
+    filename: '[name][chunkhash].js',
   },
   resolve: {
     alias: {

@@ -171,7 +171,6 @@ gulp.task('js', () => {
     entry: findAllJSEntryFiles(),
     output: {
       filename: '[name].js',
-      chunkFilename: '[name].js',
       path: path.resolve(__dirname, 'build'),
     }
   };
@@ -354,7 +353,6 @@ gulp.task('js', () => {
     entry: findAllJSEntryFiles(),
     output: {
       filename: '[name]-[chunkhash].js',
-      chunkFilename: '[name]-[chunkhash].js',
       path: path.resolve(__dirname, 'build'),
     }
   };
