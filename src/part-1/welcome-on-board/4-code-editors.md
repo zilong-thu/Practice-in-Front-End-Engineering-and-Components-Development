@@ -61,7 +61,7 @@ lrwxr-xr-x  1 zilong  admin  62  4 20 22:09 subl -> /Applications/Sublime Text.a
 
 <img src="../images/vim-logo.png" style="width: 120px;" class="fl">
 
-Vim 是从 vi（visual editor 的缩写，Bill Joy 发明） 发展出来的一个具有 TUI（Text User Interface，文本用户界面，与 GUI，即图形用户界面相对应）的编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。Vim 的第一个版本由布莱姆·米勒（Bram Moolenaar）在 1991 年发布，源码主要由 C 语言写成。最初的简称是 Vi IMitation，随着功能的不断增加，正式名称改成了 Vi IMproved。现在是在开放源代码方式下发行的自由软件。<sup>[4]</sup>
+Vim 是从 vi（visual editor 的缩写，Bill Joy 发明） 发展出来的一个具有 TUI（Text User Interface，文本用户界面，与 GUI，即图形用户界面相对应）的编辑器。Vi 是所有的类 UNIX 系统都会内置安装的文本编辑器，而且相当多的软件的编辑接口都会主动调用 vi。Vim 可以认为是 vi 的升级版，其代码补全、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。Vim 的第一个版本由布莱姆·米勒（Bram Moolenaar）在 1991 年发布，源码主要由 C 语言写成。Vim 最初的简称是 Vi IMitation，随着功能的不断增加，正式名称改成了 Vi IMproved。现在是在开放源代码方式下发行的自由软件。<sup>[4]</sup>
 
 Vim 对重复性操作进行了很好的优化。“对于 Vim 高手来说，Vim 能以思考的速度编辑文本”，这是对 Vim 最流行的描述。即便不把它作为自己的常用编辑器，在登录到服务器上的时候，Vim 很可能就是你唯一可用的编辑器。所以，Vim 应当作为前端程序员的必备技能之一。
 
