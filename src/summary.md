@@ -58,6 +58,7 @@
     * [基本使用示例](part-3/chapter-6-vue/1-basic-demo.md)
     * [Vue 的关键概念与原理](part-3/chapter-6-vue/2-vue-concepts-and-priciples.md)
     * [单文件组件](part-3/chapter-6-vue/3-single-file-components.md)
+    * [Vue构建示例](part-3/chapter-6-vue/4-build-vue.md)
   * [微信小程序组件化开发实践](part-3/chapter-7-miniprogram/index.md)
 * [第四部分-前端开发中的常见话题](part-4/index.md)
   * [标准库](part-4/01-标准库.md)
