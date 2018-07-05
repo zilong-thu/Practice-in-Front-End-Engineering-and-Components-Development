@@ -29,7 +29,39 @@ $ npm install eruda --save
 
 ### 腾讯的 vConsole
 
-腾讯也有一款类似的调试工具，vConsole<sup>[3]</sup>。
+腾讯也有一款类似的调试工具，vConsole<sup>[3]</sup>。引入的方式与 Eruda.js 类似，可以参考官方 Github<sup>[3]</sup>。
+
+### 工作原理
+
+Eruda 和 vConsole 采用重写浏览器原生 API 原型的方式来实现对网络、控制台相关方法的覆盖（`override`）。例如，Eruda 的 Network.js 会重写 `XMLHttpRequest`、`window.fetch` 的原型，如此一来，Eruda 就能够拦截到请求与响应的所有信息。
+
+```javascript
+/**
+ * eruda/src/Network/Network.js
+ */
+export default class Network extends Tool {
+  overrideXhr() {
+  let winXhrProto = window.XMLHttpRequest.prototype;
+  let origOpen = winXhrProto.open;
+  let origSend = winXhrProto.send;
+
+  // 重写 open
+  winXhrProto.open = function(method, url) {
+    // eruda 本身会做一些事情
+    // 省略一些代码...
+    origOpen.apply(this, arguments);
+  };
+
+  // 重写 send
+  winXhrProto.send = function(data) {
+    // eruda 本身会做一些事情
+    // 省略一些代码...
+    origSend.apply(this, arguments);
+  }
+}
+```
+
+在拦截到请求的头、响应后，Eruda 就可以利用相应的 Handlebars 模板来渲染视图了。
 
 ### 参考资料
 
