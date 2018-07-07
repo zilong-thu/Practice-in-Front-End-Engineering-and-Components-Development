@@ -35,6 +35,10 @@ p {
 
 通常这样的文件以 `.vue` 作为后缀，例如 `my-component.vue`，这样方便在 webpack 中配置 `vue-loader` 的匹配规则。
 
+### `vue-loader`
+
+
+
 ## 参考资料
 
 1. [vue-loader | github](https://github.com/vuejs/vue-loader)
