@@ -53,9 +53,15 @@ import 'file.css';
 
 JavaScript 模块的依赖分析是 webpack 的核心流程之一。
 
-## 深入理解 loaders
+## 常见的 loaders
 
-## 深入理解 plugins
+## 常见的插件
+
+**HtmlWebpackPlugin**
+
+**ExtractTextWebpackPlugin**
 
 ## 参考资料
 
+1. [HtmlWebpackPlugin | github](https://github.com/jantimon/html-webpack-plugin)
+2. [ExtractTextWebpackPlugin | github](https://github.com/webpack-contrib/extract-text-webpack-plugin)

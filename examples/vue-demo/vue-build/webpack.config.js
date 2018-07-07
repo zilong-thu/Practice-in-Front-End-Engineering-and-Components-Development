@@ -1,9 +1,18 @@
 // webpack.config.js
 const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
+  entry: {
+    home: './src/pages/home/index.vue',
+    explore: './src/pages/home/index.vue',
+  },
+  output: {
+    path: path.resolve(__dirname, 'build'),
+    filename: '[name].[chunkhash].js',
+  },
   module: {
     rules: [
       {
@@ -29,6 +38,9 @@ module.exports = {
   },
   plugins: [
     // make sure to include the plugin for the magic
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    }),
   ]
 }
