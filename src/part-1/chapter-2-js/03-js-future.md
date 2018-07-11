@@ -8,7 +8,13 @@ Lisp 社区的领袖之一 Richard Gabriel 在一篇论文<sup>[1]</sup>里指�
 
 ### 语言特性
 
-`Number` 本质上是双精度浮点数类型，类似 C 语言里的 `double`，其表达整数的能力比较有限。未来会增加像 `BigInt` 这样的基本类型：
+**类型的重要程度增加**
+
+在复杂的应用中，类型系统有助于提升系统的健壮性，帮助程序员提前发现问题。TypeScript 这样的社区方言，将来可能会有些特性被 ECMAScript 标准所采纳。
+
+**新的基本类型**
+
+以数值为例，ECMAScript 语言中 `Number` 本质上是是完全按照 IEEE Standard for Floating-Point Arithmetic (IEEE 754)[1,2] 实现的。`Number` 类型实际上就是双精度浮点数类型（double precision floating-point format），类似 C 语言里的 `double`。这种数值类型表达整数的能力比较有限。未来可能会增加像 `BigInt` 这样的基本类型：
 
 ```javascript
 var max = Number.MAX_SAFE_INTEGER;
@@ -20,7 +26,7 @@ console.log(bigA);
 // 9007199254741091n
 ```
 
-`BigInt` 目前已经处于 stage3 阶段，Chrome 67 开始实现了此类型。
+这个基本类型目前处在 Stage3 阶段。此阶段的含义是 Candidate（候选），“Indicate that further refinement will require feedback from implementations and users”，即需要实现者（通常是浏览器厂商）与用户进一步优化与反馈。目前 Chrome67 已经开始支持 BigInt。还需要有至少一个其他浏览器厂商或JS运行时给出具体的实现。
 
 ### 应用领域
 
@@ -29,4 +35,3 @@ console.log(bigA);
 ## 参考资料
 
 1. 《Lisp: 好消息，坏消息以及如何获得大胜》（Lisp: Good News, Bad News, and How to Win Big）
-2. 
