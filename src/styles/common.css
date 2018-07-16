@@ -37,3 +37,7 @@ sup {
 pre {
 	line-height: 1.3;
 }
+
+.markdown-section table th {
+  background-color: #ddd;
+}
