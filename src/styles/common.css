@@ -32,12 +32,16 @@ sup {
   font-size: 0.8em !important;
 }
 
-
 .markdown-section pre,
 pre {
 	line-height: 1.3;
 }
 
-.markdown-section table th {
+table th {
   background-color: #ddd;
+}
+
+table th,
+table td {
+  border-color: #ccc;
 }

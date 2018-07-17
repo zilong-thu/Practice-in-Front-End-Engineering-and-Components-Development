@@ -85,6 +85,13 @@ console.log(multi(2)(4));    // => 8
 console.log(multi(1)(2)(3)); // => 6
 ```
 
+此外，ECMAScript6 开始列入标准的箭头函数（Arrow-Functions）可以轻松地实现 λ 表达式（Lambda Expressions）风格的代码：
+
+```javascript
+var y = x => x * x;
+var val = y(2);  // val 的值为 4
+```
+
 ### 参考资料
 
 1. Douglas Crockford. JavaScript 语言精粹[M]. 北京: 电子工业出版社, 2012.
