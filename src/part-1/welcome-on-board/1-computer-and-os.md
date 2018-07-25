@@ -41,7 +41,7 @@ Windows 系统在网络支持方面的落后，以及系统天然的各种强制
 总而言之，推荐读者在 Unix 系列的操作系统下编程，包括 Linux、MacOS X、BSD、Solaris 等，其独特的编程艺术、优雅的设计哲学，会启示你写出更好的软件。
 
 
-Linux 是 UNIX 阵营里的佼佼者，它基于 POSIX 标准实现，是一款免费、开源的操作系统。Linux 操作系统使用方面的介绍，可以参考《鸟哥的 Linux 私房菜：基础学习篇（第三版）》，这大概是最适合入门者的读物了。
+Linux 是 UNIX 阵营里的佼佼者，它基于 POSIX 标准实现，是一款开源的操作系统。Linux 的后期开发也是迄今为止规模最大的开源协作项目。Linux 操作系统使用方面的介绍，可以参考《鸟哥的 Linux 私房菜：基础学习篇（第三版）》，这大概是最适合入门者的读物了。
 
 MacOS X 使用了卡内基梅隆大学研发的 Mach 内核。
 
@@ -57,3 +57,4 @@ MacOS X 使用了卡内基梅隆大学研发的 Mach 内核。
 2. [Ubuntu 官网](https://www.ubuntu.com/index_kylin)
 3. [Centos 官网](https://www.centos.org/)
 4. [Arch Linux 官网](https://www.archlinux.org/)
+5. 如果想了解一下 Linus 与 Linux 的经历，可以读一下他的自传式作品，《只是为了好玩》（**Just for Fun**）.
