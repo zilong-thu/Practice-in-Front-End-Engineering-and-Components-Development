@@ -6,6 +6,8 @@ Lisp 社区的领袖之一 Richard Gabriel 在一篇论文<sup>[1]</sup>里指�
 
 与 JavaScript 同时期诞生的 Java 编程语言的设计目标是“一处编写，到处运行”（write once, run anywhere），并且支持网页中嵌入交互程序（applets）。但由于 Java 语言的所有者 Sun 公司的一系列技术和战略失误，Java 没有实现这两个最初的设计目标（Eric S. Raymond，《Unix编程艺术》）。JavaScript 却借着浏览器端的垄断地位不断向其他领域延伸，以至于 Stackoverflow 的创始人之一 Jeff Atwood 做出了这样的预言：“任何可以使用 JavaScript 实现的程序终将会使用 JavaScript 实现”（Any application that can be written in JavaScript, will eventually be written in JavaScript）。
 
+Ruby 语言的发明者松本行弘在《代码的未来》一书里讨论过 JavaScript 及方言 CoffeeScript（Jeremy Ashkenas 发明，2009年）。CoffeeScript 的出现很大程度上是因为 JavaScript 语法上的欠缺。
+
 ### 语言特性
 
 **类型的重要程度增加**

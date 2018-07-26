@@ -40,10 +40,13 @@ Windows 系统在网络支持方面的落后，以及系统天然的各种强制
 
 总而言之，推荐读者在 Unix 系列的操作系统下编程，包括 Linux、MacOS X、BSD、Solaris 等，其独特的编程艺术、优雅的设计哲学，会启示你写出更好的软件。
 
+**Linux**
 
-Linux 是 UNIX 阵营里的佼佼者，它基于 POSIX 标准实现，是一款开源的操作系统。Linux 的后期开发也是迄今为止规模最大的开源协作项目。Linux 操作系统使用方面的介绍，可以参考《鸟哥的 Linux 私房菜：基础学习篇（第三版）》，这大概是最适合入门者的读物了。
+Linux 是 UNIX 阵营里的佼佼者，它基于 POSIX 标准（Portable Operating System Interface，可移植操作系统接口）实现，是一款开源的操作系统。从 1991 年 9 月发布 0.01 版本以来，林纳斯一直主导着 Linux 内核的开发。Linux 的后期开发也是迄今为止规模最大的开源协作项目。如今，林纳斯（Linus Torvalds）甚至将 Linux 内核源码同步到了 Github 网站上<sup>[5]</sup>，感兴趣的读者可以去阅读一下源代码。Linux 操作系统使用方面的介绍，可以参考《鸟哥的 Linux 私房菜：基础学习篇（第三版）》，这大概是最适合入门者的读物了。
 
-MacOS X 使用了卡内基梅隆大学研发的 Mach 内核。
+**MacOS X**
+
+MacOS X 使用了卡内基梅隆大学研发的 Mach 内核。之后，由于乔布斯招安林纳斯来做 MacOS X 的计划宣告失败，只得请 FreeBSD 的发起人之一 乔丹·哈伯德带领团队开发底层内核 Darwin（混合了 Mach 内核与 BSD 技术）。
 
 ### 选择电脑
 
@@ -57,4 +60,5 @@ MacOS X 使用了卡内基梅隆大学研发的 Mach 内核。
 2. [Ubuntu 官网](https://www.ubuntu.com/index_kylin)
 3. [Centos 官网](https://www.centos.org/)
 4. [Arch Linux 官网](https://www.archlinux.org/)
-5. 如果想了解一下 Linus 与 Linux 的经历，可以读一下他的自传式作品，《只是为了好玩》（**Just for Fun**）.
+5. [linux | github](https://github.com/torvalds/linux)
+6. 如果想了解一下 Linus 与 Linux 的经历，可以读一下他 2001 年写的自传《只是为了好玩》（**Just for Fun**）.
