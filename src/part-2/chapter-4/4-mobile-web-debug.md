@@ -33,7 +33,7 @@ $ npm install eruda --save
 
 腾讯也有一款类似的调试工具，vConsole<sup>[3]</sup>。引入的方式与 Eruda.js 类似，可以参考官方 Github<sup>[3]</sup>。
 
-### 工作原理
+***工作原理***
 
 Eruda 和 vConsole 采用重写浏览器原生 API 原型的方式来实现对网络、控制台相关方法的覆盖（`override`）。例如，Eruda 的 Network.js 会重写 `XMLHttpRequest`、`window.fetch` 的原型，如此一来，Eruda 就能够拦截到请求与响应的所有信息。
 
@@ -64,6 +64,16 @@ export default class Network extends Tool {
 ```
 
 在拦截到请求的头、响应后，Eruda 就可以利用相应的 Handlebars 模板来渲染视图了。
+
+### 调试 webview
+
+Chrome 浏览器的 Devtools 还可以调试安卓手机 APP 里的 webview。步骤如下：
+
+1. 确保安卓设备已经开启了开发者权限
+2. USB 数据线连接电脑时，选择“允许 USB 调试”，然后通过 APP 或者手机浏览器访问一些网页，例如 `http://borninsummer.com/`
+3. 与 Node.js 的调试类似，在电脑的 Chrome 浏览器中打开 `chrome://inspect` 页面，就可以看到当前的安卓设备通过 webview 打开的所有 web 页面，选择其中一个，点击 `inspect` 即可进行调试（注意，首次连接可能需要翻墙）：
+
+<img src="./images/webview-debug-01.jpg" style="width: 70%;">
 
 ### 参考资料
 
