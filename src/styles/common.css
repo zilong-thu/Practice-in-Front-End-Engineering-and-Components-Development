@@ -1,3 +1,10 @@
+figure {
+  text-align: center;
+}
+figcaption {
+  font-size: .8em;
+}
+
 p img {
   display: block;
   margin: 0 auto;
