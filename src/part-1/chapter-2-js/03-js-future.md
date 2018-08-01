@@ -47,3 +47,4 @@ console.log(bigA);
 ## 参考资料
 
 1. 《Lisp: 好消息，坏消息以及如何获得大胜》（Lisp: Good News, Bad News, and How to Win Big）
+2. CoffeeScript 官网, https://coffeescript.org/
