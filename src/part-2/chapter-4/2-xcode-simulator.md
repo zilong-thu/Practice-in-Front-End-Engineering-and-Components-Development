@@ -1,5 +1,7 @@
 # XCode Simulator
 
+## 模拟器里使用 iOS Safari 调试 web 页面
+
 在 Mac OS 的 XCode 里可以通过 `XCode -> Open Developer Tool -> Simulator` 启动一个 iOS 设备模拟器，该模拟器实际上是 iOS 系统的运行环境，开发者可以在里面打开 iOS Safari 浏览器，从而方便地调试前端代码。
 
 如果要安装某个特定版本的模拟器，可以在 `XCode -> Preferences -> Components` 里找到对应的版本然后下载：
@@ -14,6 +16,9 @@
 
 之后，就可以像通用浏览器调试流程一样对 iOS Safari 进行开发、调试了。
 
+## 模拟器安装 iOS 应用
+
+TODO
 
 ## 参考资料
 

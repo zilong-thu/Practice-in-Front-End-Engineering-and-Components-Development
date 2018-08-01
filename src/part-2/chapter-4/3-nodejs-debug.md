@@ -6,7 +6,7 @@
 
 Node 6.3 及之后的版本新增了名为 `v8-inspector` 的调试协议。在启动 Node 脚本时，`--inspect={PORT}` 参数会创建一个单独的 Node 进程监听（通过 WebSockets）该端口（默认是 `9229`）上的调试命令。配合 Chrome 浏览器的 DevTools，可以方便地获取到该程序的运行信息。
 
-```
+```bash
 $ node --inspect=9229 ./server.js
 # 会输出如下信息，其中 0c48e445-f318-4bb7-85d9-32804ea111db 是该协议为每个 Node 进程分配的 UUID
 Debugger listening on ws://127.0.0.1:9229/0c48e445-f318-4bb7-85d9-32804ea111db
@@ -37,13 +37,13 @@ UUID（Universally Unique IDentifier，通用唯一识别码），又称 GUID（
 
 因为调试协议是基于网络协议 WebSockets，因此 Node 具备调试远程机器上的代码的能力。这意味着要让远程机器的调试接口暴露出来，因此不是特别安全。如果非要进行远程调试，首先要确保服务器上的程序也是以调试模式启动：
 
-```
+```bash
 $ node --inspect=9229 server.js
 ```
 
 假设该机器的 IP 地址为 `10.2.3.4`，那么在开发者的本地计算机上，建立一个 TCP 连接：
 
-```
+```bash
 $ ssh -L 9221:localhost:9229 user@10.2.3.4
 ```
 
@@ -53,7 +53,7 @@ $ ssh -L 9221:localhost:9229 user@10.2.3.4
 
 在 Node 7.7.0 之前（不含）的版本里，可以使用 Debugger 协议来调试 Node 程序。例如最早的 `node-inspector` 程序就是基于此协议。
 
-```
+```bash
 # 安装 node-inspector
 $ npm install -g node-inspector
 
