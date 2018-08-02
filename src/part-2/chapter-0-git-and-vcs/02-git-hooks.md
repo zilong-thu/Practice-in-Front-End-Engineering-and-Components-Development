@@ -2,7 +2,7 @@
 
 ### 基本使用
 
-Git 钩子（hook）本质上是在特定的 Git 操作发生时执行的脚本（可以是 shell 脚本，也可以是其他的可执行脚本，如 JavaScript、Python、Ruby 脚本等）。例如，如果我们希望能够每次在执行 `git commit` 后、新的 commit 记录创建前（甚至在输入 commit message 之前），统计某个目录下的 markdown 文件内的文字个数，可以在 `.git/hooks/pre-commit` 文件里添加这样的内容：
+Git 钩子（hook）本质上是在特定的 Git 操作发生时执行的脚本（可以是 shell 脚本，也可以是其他的可执行脚本，如 JavaScript、Python、Ruby 脚本等，需要在首行指定该脚本使用的语言）。例如，如果我们希望能够每次在执行 `git commit` 后、新的 commit 记录创建前（甚至在输入 commit message 之前），统计某个目录下的 markdown 文件内的文字个数，可以在 `.git/hooks/pre-commit` 文件里添加这样的内容：
 
 ```bash
 #!/bin/sh
@@ -77,24 +77,19 @@ $ tree
 
 注：上面使用了 `tree` 这个程序，用来展示某个目录下的文件/目录结构。它并非系统自带，Mac 下可以通过 `brew install tree` 来安装。
 
+Git 钩子的数量可能在不断增加，在这里，我们只重点介绍几个常用的。其他的钩子可以参考 Git 的专业书籍。
+
 **`pre-commit`**
 
 `pre-commit` 是最先执行的一个钩子，在敲入提交信息之前被执行。很多项目使用这个钩子来执行单元测试、代码规范检查等。使用 `git commit --no-verify` 则可以跳过这个钩子。
 
-**`prepare-commit-msg`**
+**`pre-rebase`**
 
-这个钩子会在提交信息编辑器打开之前、默认的提交信息创建之后执行。
-
-**`commit-msg`**
-
-`commit-msg` 钩子接收一个参数，即开发者正在编辑的提交信息临时文件的路径。开发人员可以使用这个钩子来校验项目状态，或者检查提交信息。
+`pre-rebase` 钩子会在我们通过 `git rebase [-i] [<branch-name> | <commit-id>]` 进行变基或交互式变基操作时执行。变基操作不宜在公共分支上面进行，因此这个钩子很有用，可以防止团队中的任何成员不小心在某些公共分支上面变基。例如，常见的公共主分支 `master`，我们可以通过下面这一个钩子，避免开发人员在 `master` 分支上面执行 `git rebase`：
 
 ```bash
-#!/bin/sh
-# commit-msg hook
-TODO 添加一个 commit-msg 示例
+#!/bin/bash
 ```
 
-**`post-commit`**
 
 ### npm 钩子工具
