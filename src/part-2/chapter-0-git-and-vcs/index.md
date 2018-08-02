@@ -27,4 +27,4 @@ Subversion（2000年）、Git（2005年） 都是免费开源软件，Git 出现
 ### 参考资料
 
 1. [Revision Control System | wikipedia](https://en.wikipedia.org/wiki/Revision_Control_System)
-
+2. [Using Git Hooks in Your Development Workflow](https://scotch.io/tutorials/using-git-hooks-in-your-development-workflow)
