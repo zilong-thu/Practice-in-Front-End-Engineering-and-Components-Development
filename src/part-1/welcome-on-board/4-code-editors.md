@@ -111,7 +111,7 @@ Emacs 的入门参考书是《Learning GNU Emacs》（[美] Debra Cameron 著）
 
 ## VSCode
 
-VSCode 全称 Visual Studio Code，于 2016 年正式发布。微软在互联网浪潮中曾一度被大家遗忘，近些年则十分热衷于开源项目。不但开源了自家最新的浏览器 Edge 的所有代码，还精心打造了 VSCode 这样一款非常适合前端开发人员的编辑器。与 Sublime Text、Vim 相比，VSCode 是经典的集成开发环境（IDE），除了常规的语法分析、语法高亮，它可以：
+VSCode 全称 Visual Studio Code，于 2016 年正式发布。微软在互联网浪潮中曾一度被大家遗忘，近些年则十分热衷于开源项目。不但开源了自家最新的浏览器 Edge 的所有代码，还精心打造了 VSCode 这样一款非常适合前端开发人员的编辑器。与 Sublime Text、Vim 相比，VSCode 是经典的集成开发环境（IDE），除了常规的语法分析、语法高亮，它还有这些特性：
 
 1. 像 C/C++ 的开发环境 Visual Studio 那样在编辑器内调试 Node.js 代码
 2. 内嵌了一个终端

@@ -1,8 +1,9 @@
 figure {
   text-align: center;
+  margin: 1em 0;
 }
-figcaption {
-  font-size: .8em;
+figure figcaption {
+  font-size: .8em !important;
 }
 
 p img {
@@ -13,12 +14,12 @@ p img {
 /**
  * 用于段落开头的图片
  */
-img.fl {
+.fl {
   float: left;
   margin: 0 1em 0.5em 0;
 }
 
-img.fr {
+.fr {
   float: right;
   margin: 0 0 0.5em 1em;
 }
