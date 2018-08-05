@@ -1,11 +1,10 @@
-# 前端简史
+# Web前端简史
 
 ### 世界上第一个网站
 
-世界上第一个网站是由在英国 CERN（欧洲核子研究中心，法语为 Conseil Européen pour la Recherche Nucléaire，因此缩写为 CERN，对应的英文名称是 European Council for Nuclear Research） 工作的一位科学家，蒂姆·伯纳斯－李（Tim Berners-Lee），在 1989 年创建的，页面服务由蒂姆的 NeXT 电脑提供（这台机器目前仍在 CERN）。我们现在依然可以在 [http://info.cern.ch/](http://info.cern.ch/) 看到它相关的原始页面。如果打开 [World Wide Web](http://info.cern.ch/hypertext/WWW/TheProject.html)，观察它的响应头，可以看到该文件的最后修改时间（`Last-Modified Time`）是 1992 年 12 月 3 日：
+世界上第一个网站是由在英国 CERN（欧洲核子研究中心，法语为 Conseil Européen pour la Recherche Nucléaire，因此缩写为 CERN，对应的英文名称是 European Council for Nuclear Research） 工作的一位科学家，蒂姆·伯纳斯－李（Tim Berners-Lee），在 1989 年创建的，页面服务由蒂姆的 NeXT 电脑提供（这台机器目前仍在 CERN）。我们现在依然可以在 [http://info.cern.ch/](http://info.cern.ch/) 看到它相关的原始页面。如果打开 [World Wide Web](http://info.cern.ch/hypertext/WWW/TheProject.html)（地址是 `http://info.cern.ch/hypertext/WWW/TheProject.html`），观察它的响应头，可以看到该文件的最后修改时间（`Last-Modified Time`）是 1992 年 12 月 3 日，意味着该页面已经在网络上服务了 26 年（截止到 2018 年 8 月）！该请求的响应报文的首部如下：
 
 ```
-# http://info.cern.ch/hypertext/WWW/TheProject.html 请求的 Response Headers
 HTTP/1.1 200 OK
 Date: Thu, 08 Feb 2018 15:21:53 GMT
 Server: Apache
@@ -17,7 +16,7 @@ Connection: close
 Content-Type: text/html
 ```
 
-时过境迁，1952年创建的 CERN 的最初目标，是探究原子内部的结构（这也是为什么它的名字里有“核子”，即 nuclear）。而到了今天，人类对于物质的理解已经不仅仅停留在原子核层面，CERN 的研究内容也更为深入，主要为粒子物理领域（particle physics）——研究物质的基础组成及它们之间的相互作用。
+时过境迁，1952 年创建的 CERN 的最初目标，是探究原子内部的结构（这也是为什么它的名字里有“核子”，即 nuclear）。而到了今天，人类对于物质的理解已经不仅仅停留在原子核层面，CERN 的研究内容也更为深入，主要为粒子物理领域（particle physics）——研究物质的基础组成及它们之间的相互作用。
 
 World Wide Web (WWW) 项目的初衷是让世界各高校、研究机构的科学家可以分享信息。1993 年 8 月 30 日，CERN 将 WWW 软件公开到了公网中，软件里包括 Web 服务软件、一个简单的浏览器以及一份代码库。随后，CERN 声明这些软件都可自由获取与使用。
 
@@ -35,7 +34,7 @@ World Wide Web (WWW) 项目的初衷是让世界各高校、研究机构的科�
 
 ### 动态网页技术
 
-动态网页（Dynamic Web Page）技术的兴起源 于web2.0 浪潮。这个时期，互联网上产生的数据急剧增长，web开发人员需要解决“不同的人进入到某个相同页面时因自身数据或配置的不同而看到不同的效果”这样的需求，给出了动态网页技术这个解决方案。
+动态网页（Dynamic Web Page）技术的兴起源 于 Web2.0 浪潮。这个时期，互联网上产生的数据急剧增长，Web 开发人员需要解决“不同的人进入到某个相同页面时因自身数据或配置的不同而看到不同的效果”这样的需求，给出了动态网页技术这个解决方案。
 
 注：动态网页技术与 DHTML（Dynamic HTML，微软于 1997 年发布 IE4 时提出）技术是有很大差异的，前者务必要有服务器端数据与模板的拼合，而后者则强调在浏览器中的运行时效果。术语 DHTML 在现代 web 开发活动中也很少被提及，程序员们早已很自然地使用 DOM API、BOM API 进行浏览器页面内的编程。
 
