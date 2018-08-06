@@ -12,14 +12,14 @@ Node.js（Ryan Dahl，2009）<sup>[1, 2]</sup> 是一个在 Google Chrome 浏览
 
 我们可以直接下载安装 Node.js，这样的话操作系统里共用一个 Node.js 程序。但是 Node.js 社区异常活跃，其开发迭代的速度非常快，更好的方式是使用 NVM（Node.js Version Manager，Node 版本管理工具，作者是 Tim Caswell） 来管理系统里的 Node.js，可以同时安装任意多个版本，然后在使用时指定需要的 Node.js 版本即可。可以下载并执行其 Github 仓库里的 `install.sh` 脚本来安装 NVM （可以在其官网上找到具体的命令，地址：[https://github.com/creationix/nvm](https://github.com/creationix/nvm)）：
 
-```
+```bash
 # 这个命令的意思是，从该网址下载文本内容，然后将内容交给 bash 去运行
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 ```
 
 安装好 NVM 后，就可以方便地使用 nvm 命令安装或切换当前会话使用的 Node.js 版本。NVM 的常用命令：
 
-```
+```bash
 # 从服务器查询目前所有可安装的 Node 版本
 nvm ls-remote
 
@@ -49,7 +49,7 @@ nvm uninstall 0.10
 
 安装 NVM 时，`install.sh` 脚本实际上会将 NVM 的代码仓库下载到 `~/.nvm` 目录，然后在配置文件（`~/.bash_profile`，`~/.zshrc`，`~/.profile`，或者 `~/.bashrc`）里添加下面的启动脚本：
 
-```
+```bash
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 ```
@@ -60,7 +60,7 @@ NVM 实际上是一系列 shell 脚本的集合。
 
 在项目的根目录下，可以通过 `.nvmrc` 文件来指定当前项目希望使用的 Node.js 版本。例如：
 
-```
+```bash
 # 在项目的根目录下运行
 $ echo "9.7.0" > .nvmrc
 $ nvm use
@@ -78,7 +78,7 @@ NPM 全称为 Node.js Package Manager，即 Node.js 的包管理工具。现在�
 
 因为 npmjs.org 服务器是在国外，因此在国内直接使用 `npm install` 的话通常会比较慢。使用国内的镜像可以加速下载包的速度，例如常见的淘宝镜像<sup>[5]</sup>。可以在 `~/.zshrc` 文件里添加下面的配置，这样在系统任何位置使用 `cnpm` 命令安装、更新 npm 包的时候，请求的服务器就是淘宝的镜像服务器了。
 
-```
+```bash
 # 在 `~/.zshrc` 文件里添加 cnpm 别名
 alias cnpm="npm --registry=https://registry.npm.taobao.org \
 --cache=$HOME/.npm/.cache/cnpm \
@@ -90,8 +90,8 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 
 由于每个包的多个版本之间可能存在较大的兼容性问题，一些稳定的线上项目会希望其所使用的包的版本是固定的，不会因为包的发布者发布新包而导致项目出现问题。NPM 最初的解决方案是 `shrinkwrap`，即由开发人员手动执行：
 
-```
-npm shrinkwrap
+```bash
+$ npm shrinkwrap
 ```
 
 该命令会根据根目录下的 `package.json` 文件和 `node_modules` 里已装包的版本、地址等信息生成一个描述当前所用包版本的描述文件 `npm-shrinkwrap.json`。NPM 发展到版本5之后，参考了 yarn 工具，也实现了自动生成、修改 `package-lock.json` 文件的功能。
@@ -114,7 +114,7 @@ $ npm run gulp
 
 另外一个方法是访问局部包里的二进制文件：
 
-```
+```bash
 $ ./node_modules/.bin/gulp
 ```
 
@@ -122,13 +122,13 @@ $ ./node_modules/.bin/gulp
 
 NPX 应运而生。有了它以后，如果想运行局部安装的 gulp 包，这样就可以：
 
-```
+```bash
 $ npx gulp
 ```
 
 此外，如果你在任何目录下，想运行一个通常情况下需要全局安装的包来做一些事情（好比创建一些目录结构），但又不想全局安装这个包，那么 `npx` 也派上用场了。例如 React 的脚手架 `create-react-app`，使用 `npx`，就不需要全局安装任何东西，执行：
 
-```
+```bash
 $ npx create-react-app my-app
 ```
 
