@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "cd ./src && gitbook serve"
+    "serve": "cd ./src && gitbook serve",
+    "count": "find ./src -type f -name \"*.md\" | xargs wc -m | grep total"
   },
   "repository": {
     "type": "git",
