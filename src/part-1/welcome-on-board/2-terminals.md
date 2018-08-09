@@ -26,7 +26,7 @@ Iterm2 最常用的功能，是将当前标签分割为多个面板。例如我�
 
 **自动补全（Autocomplete）**
 
-输入单词的开头部分，然后按 `Cmd` 和 `;`，就可以出现自动补全提示选择框，通过上下箭头或者鼠标，可以直接选择自己想要输入的词语。如下图所示。
+输入单词的开头部分，然后按 `Cmd` 和 `;`，就可以出现自动补全提示选择框，此时通过上下箭头或者鼠标，可以直接选择自己想要输入的词语。如下图所示。
 
 <img src="../images/iterm2-autocomplete.png" class="round" style="max-width: 400px;">
 
@@ -63,7 +63,7 @@ ZSH_THEME="ys"
 
 ### Homebrew
 
-<img src="../images/homebrew.png" class="fl round" style="width: 300px;" /> 对 Mac 用户而言，虽然系统已经携带了应用商店（App Store），但里面的软件大都是面向非程序员用户。对开发者来说，需要有像 Ubuntu 下的 `apt-get` 程序那样的软件管理器。Homebrew <sup>[2]</sup>就承担了这样的角色，它也许是 MacOS 上最好的开源软件管理工具，最初由 Max Howell 在 2009 年用 Ruby 语言开发，现在则有十多个开发者一起维护其核心代码。用户不需要安装 Ruby，因为它早已在 MacOS 中预装好了。通过在终端运行下面的命令，可以安装 Homebrew：`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+<img src="../images/homebrew-logo.png" class="fl round" style="width: 300px;" /> 对 Mac 用户而言，虽然系统已经携带了应用商店（App Store），但里面的软件大都是面向非程序员用户。对开发者来说，需要有像 Ubuntu 下的 `apt-get` 程序那样的软件管理器。Homebrew <sup>[2]</sup>就承担了这样的角色，它也许是 MacOS 上最好的开源软件管理工具，最初由 Max Howell 在 2009 年用 Ruby 语言开发，现在则有十多个开发者一起维护其核心代码。用户不需要安装 Ruby，因为它早已在 MacOS 中预装好了。通过在终端运行下面的命令，可以安装 Homebrew：`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
 Homebrew 会将程序安装到其自己的目录下（在 Mac 中，通常位于 `/usr/local/Cellar` 目录下），然后将其可执行文件链接到 `/usr/local` 目录下。以 `wget` 程序为例，安装时执行：
 

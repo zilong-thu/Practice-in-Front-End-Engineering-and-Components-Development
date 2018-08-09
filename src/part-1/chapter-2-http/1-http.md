@@ -13,7 +13,17 @@ HTTP 以文档的形式确立的第一版规范是 1991 年的 0.9 版本。之�
 <figcaption>HTTP 主要版本变迁。1991 年 HTTP/1.1 发布之后，依然通过多个版本的 RFC 对 HTTP/1.1 规范进行补充。RFC 是指 Request for Comments（请求评论）。通常，当某家机构或团体开发出了一套标准或提出对某种标准的设想，想要征询外界的意见时，就会在 Internet 上发放一份 RFC，对这一问题感兴趣的人可以阅读该 RFC 并提出自己的意见。常见的机构或团体有 IETF、IRTF、IAB 等。</figcaption>
 </figure>
 
+HTTP 协议本身存在两个最主要的问题，一个与安全有关，一个与性能有关。针对这两个问题，社区、企业和规范制定方分别给出了 HTTPS 和 HTTP/2 这两个解决方案。
+
+## HTTPS
+
+HTTP 本身都是明文传输，在网络通信的任何环节都存在被窃听的可能。
+
+## HTTP/2
+
+HTTP/1.1 相比于 HTTP/1 增加了一个关于持久连接的首部：`Connection: keep-alive`。
 
 ## 参考资料
 
 1. https://w3techs.com/technologies/details/ce-http2/all/all
+2. https://http2.github.io/
