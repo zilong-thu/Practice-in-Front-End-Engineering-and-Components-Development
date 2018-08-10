@@ -21,9 +21,22 @@ HTTP 本身都是明文传输，在网络通信的任何环节都存在被窃听
 
 ## HTTP/2
 
+Tim Berners-Lee 在提出 HTTP 协议时，只设想过用它来传输 HTML 文档。不过随着网站复杂度的提升，每个页面涉及的资源逐渐增加。我们可以从两份具体的数据来感受一下 Web 复杂度的增长。
+
+第一份数据来自 Andrew B. King<sup>[2]</sup>的调研：从 2003 年到 2008 年，每张网页包含的对象数从 25.7 个上升到 49.9个（凡是需要发出独立http请求的网页元素，都算作一个对象）。
+
+第二份数据来自 HTTP Archive，这个机构从 2010 年起开始追踪世界排名靠前的网站的 HTTP 相关性能数据（包括页面体积、HTTP/HTTPS/HTTP2请求数、TCP 连接数等）。2011 年 11 月至 2018 年 6 月，这些网站每个页面的 HTTP 请求的中位数，从 58 增长到了 83 个。
+
+<figure>
+<img src="../images/http-requests-trends.png">
+<figcaption>2011.11.15~2018.07.15 期间，被统计的网站的 HTTP 请求中位数趋势。</figcaption>
+</figure>
+
 HTTP/1.1 相比于 HTTP/1 增加了一个关于持久连接的首部：`Connection: keep-alive`。
 
 ## 参考资料
 
 1. https://w3techs.com/technologies/details/ce-http2/all/all
 2. https://http2.github.io/
+3. Andrew B. King. Website Optimization [M]. O'Reilly.
+3. https://httparchive.org/
