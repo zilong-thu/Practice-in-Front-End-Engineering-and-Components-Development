@@ -69,13 +69,20 @@ export default class Network extends Tool {
 
 **Android Webview**
 
-Chrome 浏览器的 Devtools 还可以调试安卓手机 APP 里的 webview。步骤如下：
+Chrome 浏览器的 Devtools 还可以调试安卓手机的系统浏览器页面，或者 APP 里的 webview。步骤如下：
 
 1. 确保安卓设备已经开启了开发者权限
 2. USB 数据线连接电脑时，选择“允许 USB 调试”，然后通过 APP 或者手机浏览器访问一些网页，例如 `http://borninsummer.com/`
 3. 与 Node.js 的调试类似，在电脑的 Chrome 浏览器中打开 `chrome://inspect#devices` 页面，就可以看到当前的安卓设备通过 webview 打开的所有 web 页面，选择其中一个，点击 `inspect` 即可进行调试（注意，首次连接可能需要翻墙）：
 
-<img src="./images/webview-debug-01.jpg" style="width: 70%;">
+<img src="./images/webview-debug-01.jpg" style="width: 60%;">
+
+<figure>
+<img src="./images/webview-debug-02.png" style="width: 85%;">
+<figcaption>通过 USB 调试安卓手机浏览器打开的页面（小米手机6，MIUI9.6）</figcaption>
+</figure>
+
+<img src="./images/webview-debug-03.jpg">
 
 **iOS WKWebview**
 
