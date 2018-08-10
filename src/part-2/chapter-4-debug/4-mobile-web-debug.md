@@ -5,7 +5,7 @@
 
 **Eruda**
 
-Eruda.js 是针对移动 web 页面调试的优秀工具。它可以直接在真机上模拟出类似 PC 上的 Chrome、Safari、FireFox 等现代浏览器的开发者调试工具，包括 Console、Elements、Network、Resources、Sources 等常见模块。
+Eruda 是一个专为手机网页前端设计的调试面板工具，类似 DevTools 的迷你版，其主要功能包括：捕获 console 日志、检查元素状态、捕获 XHR 请求、显示本地存储（localStorage）和 Cookie 信息等等。<sup>[1]</sup>
 
 <img src="./images/eruda.png" style="width: 80%;">
 
@@ -22,11 +22,11 @@ Eruda.js 是针对移动 web 页面调试的优秀工具。它可以直接在真
 $ npm install eruda --save
 ```
 
-然后如下引用：
+然后在页面的初始化脚本中手动启用 eruda：
 
-```html
-<script src="node_modules/eruda/eruda.min.js"></script>
-<script>eruda.init();</script>
+```javascript
+import eruda from 'eruda'
+eruda.init();
 ```
 
 **腾讯的 vConsole**
