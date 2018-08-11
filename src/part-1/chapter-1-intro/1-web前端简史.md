@@ -26,27 +26,27 @@ World Wide Web (WWW) 项目的初衷是让世界各高校、研究机构的科�
 
 ### 静态页面时期
 
-<img src="./images/web-history-1-static.png" style="width: 80%;">
+<img src="../images/web-history-1-static.png" style="width: 80%;">
 
 在静态页面时期，Web 服务器就是最简单的文件服务器。用户主要请求 HTML 文件为入口，然后服务器会响应后续的脚本、样式、图片等资源请求。这些文件由网站开发人员、设计师、内容管理人员一起维护。客户端如果想要与网站进行通信怎么办？发邮件！
 
 这个时期主要以博客为主。
 
-### 动态网页技术
+### 动态内容网页
 
-动态网页（Dynamic Web Page）技术的兴起源 于 Web2.0 浪潮。这个时期，互联网上产生的数据急剧增长，Web 开发人员需要解决“不同的人进入到某个相同页面时因自身数据或配置的不同而看到不同的效果”这样的需求，给出了动态网页技术这个解决方案。
+动态内容网页（Dynamic Web Page）技术的兴起源 于 Web2.0 浪潮。这个时期，互联网上产生的数据急剧增长，Web 开发人员需要解决“不同的人进入到某个相同页面时因自身数据或配置的不同而看到不同的效果”这样的需求，给出了动态内容网页技术这个解决方案。
 
-注：动态网页技术与 DHTML（Dynamic HTML，微软于 1997 年发布 IE4 时提出）技术是有很大差异的，前者务必要有服务器端数据与模板的拼合，而后者则强调在浏览器中的运行时效果。术语 DHTML 在现代 web 开发活动中也很少被提及，程序员们早已很自然地使用 DOM API、BOM API 进行浏览器页面内的编程。
+注：动态内容网页技术与 DHTML（Dynamic HTML，微软于 1997 年发布 IE4 时提出）是有很大差异的，前者务必要有服务器端数据与模板的拼合，强调的是内容的动态性，而后者则强调在浏览器中的运行时效果。术语 DHTML 在现代 web 开发活动中也很少被提及，程序员们早已很自然地使用 DOM API、BOM API 进行浏览器页面内的编程。
 
-在实现方式上，动态网页技术也存在两类：一是最早借助于服务器端脚本（例如 Perl、PHP、JSP 以及 ASP.NET 等）实现的服务器端动态页面（server-side dynamic web page）；另一种是在 Ajax 技术出现后，主要通过 JavaScript 操作 DOM 来生成视图的的方式，即客户端动态页面（client-side dynamic web page）。
+在实现方式上，动态内容网页技术也存在两类：一是最早借助于服务器端脚本（例如 Perl、PHP、JSP 以及 ASP.NET 等）实现的服务器端动态页面（server-side dynamic web page）；另一种是在 Ajax 技术出现后，主要通过 JavaScript 操作 DOM 来生成视图的的方式，即客户端动态页面（client-side dynamic web page）。
 
-这种技术架构示意图如下：
+这种技术架构如下图所示，相比于静态内容页面，数据库开始成为网站的核心：
 
-<img src="./images/dynamic_page_en.png" style="width: 80%;">
+<img src="../images/dynamic_page_en.png" style="width: 80%;">
 
 ### 从 MVC 到前后端分离
 
-<img src="./images/mvc-process.png" style="width: 36%;" class="fr">
+<img src="../images/mvc-process.png" style="width: 36%;" class="fr">
 
 术语 MVC（Model-View-Controller，模型-视图-控制器）原本是桌面 GUI 程序开发中的常用架构模式，它最早于 1970 年代引入到 SmallTalk-76 编程语言中。1988 年的一篇论文则使其正式成为一种通用设计模式。
 
