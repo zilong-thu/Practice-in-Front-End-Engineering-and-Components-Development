@@ -2,9 +2,7 @@
 
 * [第一部分-概述](part-1/index.md)
   * [Web 前端简史](part-1/chapter-1-intro/1-web前端简史.md)
-  * [HTTP、TCP/IP简介](part-1/chapter-2-http/index.md)
-    * [HTTP 简介](part-1/chapter-2-http/1-http.md)
-    * [TCP/IP 简介](part-1/chapter-2-http/2-tcp-and-ip.md)
+  * [HTTP 简介](part-1/chapter-2-http/1-http.md)
   * [JavaScript简介](part-1/chapter-3-js/index.md)
     * [语言特性](part-1/chapter-3-js/01-language-features.md)
     * [编译原理](part-1/chapter-3-js/02-js-compiling.md)

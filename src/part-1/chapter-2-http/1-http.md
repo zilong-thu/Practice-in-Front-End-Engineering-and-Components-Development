@@ -50,11 +50,15 @@ HTTP/2 源自于谷歌公司的 SPDY（读音类似于 speedy）项目。2015 �
 
 对前端开发人员来说，HTTP/2 的普及对构建发布流程有着较大的影响。我们现在为了提升 web 前端网络性能而采取的各种减少 HTTP 请求数量的技术，例如 CSS 精灵图、JavaScript/CSS 文件合并等等，可能都不再需要了。因为所有的 HTTP/2 请求可以同时发起！
 
-补充一张图。
+<figure>
+<img src="../images/http-3-types.png">
+<figcaption>HTTP 三个主要版本对 TCP 连接的使用差异对比。① HTTP/1 版本里，每个 TCP 只能用于一次 HTTP 通信，完成后会立即关闭。每个 HTTP 请求都需要重新建立 TCP 连接。② HTTP/1.1 增加了 `Connection: keep-alive` 首部，允许持久连接的 TCP。③ HTTP/2 则允许在同一个 TCP 连接里同时进行多个 HTTP 请求/响应会话。（本图参考[5]绘制）。假设网络带宽都足够大，那么 HTTP/2 的方案则明显可以很大程度上降低整个页面的网络延时。</figcaption>
+</figure>
 
 ## 参考资料
 
 1. https://w3techs.com/technologies/details/ce-http2/all/all
 2. https://http2.github.io/
 3. Andrew B. King. Website Optimization [M]. O'Reilly.
-3. https://httparchive.org/
+4. https://httparchive.org/
+5. Andrew S. Tanenbaum, Davide J. Wetherall 著. 严伟, 潘爱民 译. 计算机网络（第五版） [M]. 北京: 清华大学出版社, 2014.
