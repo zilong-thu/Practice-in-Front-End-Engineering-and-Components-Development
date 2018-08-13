@@ -189,9 +189,82 @@ html {
 
 Sass 有一个小问题：它的 `@import` 会原封不动地把子文件内容替换过来。如果子文件中包含路径，则结果上来看，类似采用了动态上下文，而非更常见的词法作用域。留意上面的代码，在 `./icons/index.scss` 文件中，`url(./success.png)` 是指定了同一目录下的图片；而编译后的 `output.css` 文件里，这个值没有发生变化，`.my-icon-success` 在使用时，就会因找不到该图片而报 404 错误。Less 等工具也有类似的问题。这样有时候不便于重构以及维护。不过，在基于 webpack 的构建流中，这个问题一般可以通过 `loaders` 来解决。
 
-**函数**
+**混合（Mixins）**
 
-**循环语句**
+我们用 Mixin 来实现一个常见的旋转动画。在 HTML 中，添加了 `class="spinning"` 的元素会不停地绕中心旋转下去。
+
+```html
+<div class="spinning"></div>
+```
+
+Sass 源码：
+
+```scss
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-ms-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+@include keyframes(spinning360) {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+.spinning {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  border-radius: 10%;
+  border: 1px solid #ccc;
+  animation: spinning360 3s infinite linear;
+}
+```
+
+编译后：
+
+```css
+@-webkit-keyframes spinning360 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+@-ms-keyframes spinning360 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes spinning360 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+.spinning {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  border-radius: 10%;
+  border: 1px solid #ccc;
+  animation: spinning360 3s infinite linear;
+}
+```
 
 ### 预处理器工作原理：以 PostCSS 为例
 

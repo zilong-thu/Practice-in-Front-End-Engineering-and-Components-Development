@@ -37,6 +37,46 @@ html {
 body {
   font: 100% Helvetica, sans-serif;
   color: #333;
+  padding: 0.3rem;
+}
+
+.box {
+  -webkit-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+@-webkit-keyframes spinning360 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+@-ms-keyframes spinning360 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes spinning360 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+.spinning {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  border-radius: 10%;
+  border: 1px solid #ccc;
+  animation: spinning360 3s infinite linear;
 }
 
 /*# sourceMappingURL=output.css.map */

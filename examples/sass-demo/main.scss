@@ -27,4 +27,46 @@ $primary-color: #333;
 body {
   font: 100% $font-stack;
   color: $primary-color;
+  padding: .3rem;
+}
+
+
+// mixins
+@mixin transform($property) {
+  -webkit-transform: $property;
+      -ms-transform: $property;
+          transform: $property;
+}
+
+.box { @include transform(rotate(30deg)); }
+
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-ms-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+@include keyframes(spinning360) {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.spinning {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  border-radius: 10%;
+  border: 1px solid #ccc;
+  animation: spinning360 3s infinite linear;
 }
