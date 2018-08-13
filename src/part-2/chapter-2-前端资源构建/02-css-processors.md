@@ -191,13 +191,13 @@ Sass 有一个小问题：它的 `@import` 会原封不动地把子文件内容�
 
 **混合（Mixins）**
 
-我们用 Mixin 来实现一个常见的旋转动画。在 HTML 中，添加了 `class="spinning"` 的元素会不停地绕中心旋转下去。
+Mixin 的作用通常是生成一段代码。非常适合用来处理重复的逻辑，例如浏览器厂商前缀。与之相关的有三个主要指令：
 
-```html
-<div class="spinning"></div>
-```
++ `@mixin`：用于定义一个 mixin
++ `@include`：使用一个 mixin
++ `@content`：插入内容块
 
-Sass 源码：
+我们来看一个 CSS3 旋转动画的例子。Sass 源码：
 
 ```scss
 @mixin keyframes($animationName) {
@@ -264,6 +264,12 @@ Sass 源码：
   border: 1px solid #ccc;
   animation: spinning360 3s infinite linear;
 }
+```
+
+然后就可以使用该样式了。在 HTML 中，添加了 `class="spinning"` 的元素会不停地绕中心旋转下去。
+
+```html
+<div class="spinning"></div>
 ```
 
 ### 预处理器工作原理：以 PostCSS 为例
