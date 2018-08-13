@@ -27,9 +27,10 @@ Sublime Text 是一套跨平台的文本编辑器，支持基于Python的插件�
 
 在官网可以下载最新的程序。对于 Mac 系统，安装后创建下面的文件连接可以方便地使用快捷命令启动 Sublime Text。其官网的说明有点瑕疵，这里建议参考 Olivier Lacan<sup>[8]</sup>的方法，既将快捷命令（symlink）放于 `/usr/local/bin` 目录下，而非 `~/bin` 目录下，因为前者是 OS X 系统的默认可执行程序的加载目录（`$PATH`里默认有 `/usr/local/bin` 而没有 `~/bin`）：
 
-```
+```bash
 # 创建 symlink
-$ ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
+$ ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" \
+/usr/local/bin/subl
 
 # 使用 subl 打开文件、目录
 $ subl .
@@ -38,15 +39,13 @@ $ subl .
 放到 `/usr/local/bin` 目录下，也更符合 FHS（Filesystem Hierarchy Standard
 ，文件系统层级结构标准）<sup>[10]</sup>的建议，即 `/usr/local` 目录适合存放系统管理员在本机自行安装的软件。
 
-------------
-
 **关于 `symlink`**
 
 术语 `symlink` 的全称是 `symbolic link`，即“符号链接”，或所谓的“软链接”（`soft link`），是指某文件的内容包含指向其他文件或目录的地址。软链接在 1978 年的小型机操作系统里（如 DEC）就得到了实现，如今已被列入到 POSIX 标准中。因此所有的类 UNIX 系统，如 FreeBSD、Linux、Mac OS X，都支持此特性；Windows 系统下类似的功能是“快捷方式”。<sup>[9]</sup>
 
 连接文件的文件类型属性标志为`[l]`，如果像上面那样软连接 subl，那么可以查看其属性：
 
-```
+```bash
 $ cd /usr/local/bin
 $ ls -l
 # 第一个属性为 l
@@ -54,8 +53,6 @@ lrwxr-xr-x  1 zilong  admin  62  4 20 22:09 subl -> /Applications/Sublime Text.a
 ```
 
 与软链接相对的是硬链接。二者的最大区别在于，硬链接与被链接的文件具有相同的 inode 号，而软链接本身有自己的 inode 号且与被链接的文件的 inode 号不同。
-
-------------
 
 ## Vim
 
@@ -96,7 +93,7 @@ Emacs 被设计为可编程的编辑器，设计者赋予了它可以驱动其�
 
 Mac OS 自带一个 GNU Emacs，在终端里输入 `emacs` 命令并回车，即可进入该程序的界面。可以通过 Homebrew 重新安装或升级 Emacs：
 
-```
+```bash
 # 安装
 brew install emacs --with-cocoa
 

@@ -278,7 +278,10 @@ Mixin 的作用通常是生成一段代码。非常适合用来处理重复的�
 
 **Autoprefixer**
 
-<img src="./images/autoprefixer-logo.png" style="width: 200px;">
+<figure>
+<img src="./images/autoprefixer-logo.png" style="width: 100px;">
+<figcaption>Autoprefixer 的 logo</figcaption>
+</figure>
 
 Autoprefixer 是 PostCSS 生态链下最受欢迎的一个插件。
 
