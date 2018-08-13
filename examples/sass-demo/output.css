@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.my-icon {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+}
+
+.my-icon-success {
+  background-image: url(./success.png);
+}
+
+html {
+  font-size: 100px;
+}
+
+.navbar {
+  font-size: 0.14rem;
+}
+.navbar .logo {
+  display: inline-block;
+  height: 0.5rem;
+  width: 0.5rem;
+}
+.navbar button {
+  border-radius: 0.02rem;
+  transition: box-shadow 0.2s;
+}
+.navbar button:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+
+/*# sourceMappingURL=output.css.map */

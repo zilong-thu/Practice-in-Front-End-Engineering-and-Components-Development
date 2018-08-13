@@ -1,0 +1,8 @@
+.my-icon {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+}
+.my-icon-success {
+  background-image: url(./success.png);
+}
