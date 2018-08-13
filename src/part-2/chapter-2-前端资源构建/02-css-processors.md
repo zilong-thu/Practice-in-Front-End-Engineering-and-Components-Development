@@ -274,6 +274,14 @@ Mixin 的作用通常是生成一段代码。非常适合用来处理重复的�
 
 ### 预处理器工作原理：以 PostCSS 为例
 
+在所有的 CSS 预处理工具中，PostCSS 是最为与众不同的一个。Sass/Less/Stylus 都是定义好 CSS 语法、函数、Mixin、模块等规则，然后开发者必须按照这样的规则来书写。PostCSS 则不定义任何规则，而是把 CSS 语法分析的结果以 JavaScript API 的形式暴露出来，让开发者可以定义自己的插件，各个插件以管线的形式处理输入。我们正好可以通过 PostCSS 的插件用法，以及如何实现一个插件，来感受一下 PostCSS 以及大多数 CSS 预处理的核心工作原理。
+
+**Autoprefixer**
+
+<img src="./images/autoprefixer-logo.png" style="width: 200px;">
+
+Autoprefixer 是 PostCSS 生态链下最受欢迎的一个插件。
+
 ### CSS Next
 
 ### 参考资料
@@ -283,3 +291,4 @@ Mixin 的作用通常是生成一段代码。非常适合用来处理重复的�
 3. PostCSS 官网：
 4. Stylus 官网：http://stylus-lang.com/
 5. Less 官网：http://lesscss.org/
+6. [Autoprefixer | github](https://github.com/postcss/autoprefixer)
