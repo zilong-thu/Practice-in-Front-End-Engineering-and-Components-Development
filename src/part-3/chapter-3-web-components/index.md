@@ -2,15 +2,14 @@
 
 2011 年，Alex Russell 在 Fronteers 大会上首次提出“Web 组件”的概念。要知道，使用基于组件的 UI 库进行开发客户端应用，一直就是标准方法。而在 web UI 开发领域，原生的 HTML 组件功能非常有限。像 React/Vue 是借助于 JavaScript 、在有限的 HTML 标记下实现的组件化。Web Components 则有所不同，它期望能够在 DOM 层面实现组件化，开发者可以扩展 HTML 标记。
 
-Web Components 是W3C正在向HTML和DOM规范添加的一套功能<sup>[1]</sup>，它允许在Web文档和Web应用程序中创建可重用的小部件或组件，开发者可以在更高的层次上组装自己的web应用程序。Web Components 规范实际上包括四大部分，它们可以单独或者组合使用。到目前为止，它们都仍然只是草稿阶段，没有成为标准。
-
-四个子规范分别是：
+Web Components 是 W3C 正在向 HTML 和 DOM 规范添加的一套功能<sup>[1]</sup>，它允许在 Web 文档和 Web 应用程序中创建可重用的小部件或组件，开发者可以在更高的层次上组装自己的web应用程序。Web Components 规范包括四大部分，它们可以单独或者组合使用。四个子规范分别是：
 
 + Custom Elements  —  定义新HTML元素的API
 + Shadow DOM       —  封装的DOM和样式，配以组合化。是 Web Components 的核心
 + HTML Templates   —  允许文档包含惰性的DOM块
 + HTML Imports     —  将HTML文档导入其他文档的声明方法
 
+不过到目前为止，它们都仍然只是草稿阶段，没有成为标准。
 
 ## 浏览器支持进展
 
