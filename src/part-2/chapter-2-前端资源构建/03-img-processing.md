@@ -4,28 +4,39 @@
 
 ## 常见图片格式
 
-互联网上的常见图片格式主要有 `gif`、`png`、`apng`、`jpg`/`jpeg`、`webp` 等。
+互联网上的常见图片格式主要有 `gif`、`png`、`apng`、`jpeg`、`svg`、`webp` 等。
 
-#### Gif
+<figure>
+<img src="./images/image-file-formats.png" style="width: 50%;">
+<figcaption>W3Techs 给出的网站图片格式分类占比，数据时间是 2018 年 8 月。在所调查的网站中，74.4% 的网站使用了 PNG 图片，72.9% 的网站用到了 JPEG 图片。数据来源：https://w3techs.com/technologies/overview/image_format/all</figcaption>
+</figure>
 
-GIF 是 Graphics Interchange Format 的缩写。
+#### GIF
+
+GIF 是 Graphics Interchange Format 的缩写。这种格式于 1987 年出现（比互联网还要早），之后在互联网浪潮兴起后得到了广泛的支持。GIF 格式采用了 LZW（Lempel–Ziv–Welch）无损压缩技术存储图片，LZW 算法在 1985 年开始受到专利保护，这催生了 PNG 标准的诞生（见下文）。2004 年 GIF 相关的专利到期。
+
+GIF 是位图的一种，它使用一个最多可以表达 256 种颜色的表来记录一张图片（一帧）里使用的色彩。对于每个像素，则使用 8 位二进制来表示其颜色值。颜色表可以将真彩色（true color，2<sup>24</sup>种颜色）空间映射到 256 色空间。这种方案在 GIF 诞生的年代非常合理——那时候还很少有硬件设备能够支持 256 种以上的颜色。
+
+在网络图标方面，PNG/SVG 的使用要比 GIF 广泛；真彩色方面的欠缺，不如 JPEG格式。所以，如今 GIF 最大的优势在于良好的支持度以及其将多张图片整合到一起形成动画的能力。前端资源构建流程中，通常很少涉及 GIF 图片的处理。
+
+#### JPEG
+
+JPEG（全称 Joint Photographic Experts Group）是一种常见的数字图像有损压缩（lossy compression）存储格式，它诞生于 1992 年。JPEG 图片通常以 `*.jpg` 或者 `*.jpeg` 作为文件名的后缀。它占据了 MIME 类型中的 `image/jpeg`。JPEG 是 Joint Photographic Experts Group 的缩写。
 
 #### PNG
 
-PNG 是 Portable Network Graphics 的缩写，意为“便携式网络图片”。PNG 格式是作为 gif 格式的替代方案而提出的，原因是 gif 格式受到专利的保护。PNG 格式支持无损压缩，目前是互联网上使用最广泛的图片无损压缩存储方案。PNG 图片的 MIME 类型通常表示为 `image/png`，并且以 `png` 或者 `PNG` 作为文件名后缀。
+PNG 是 Portable Network Graphics 的缩写，意为“便携式网络图片”。PNG 格式是作为 GIF 格式的替代方案而提出的，主要原因是 GIF 格式受到专利的保护。PNG 格式支持无损压缩，目前是互联网上使用最广泛的图片无损压缩存储方案。PNG 图片的 MIME 类型通常表示为 `image/png`，并且以 `png` 或者 `PNG` 作为文件名后缀。
 
 PNG 规范在 1997 年的 RFC-2083 中初次进行了阐述。PNG 格式有这样一些特点：
 
-+ 支持 24 位颜色，并且附加一个 8 位的 alpha 通道（透明度）。所以一个 PNG 图片最高可以表达 32 位的颜色。
-+ 无损压缩
++ 支持 24 位真彩色，并且附加一个 8 位的 alpha 通道（透明度）。所以一个 PNG 图片最高可以表达 32 位的颜色。
++ 无损压缩。这是当年 PNG 为了取代 GIF 而必须完成的设计目标。
+
+PNG 图片的所有相关技术可以在 Greg Roelofs 的《PNG 权威指南》（PNG: The Definitive Guide）一书中获得。
 
 #### APNG
 
 APNG 是指动画版的 PNG（Animated Portable Network Graphics）。
-
-#### JPEG
-
-JPEG 是一种常见的数字图像有损压缩（lossy compression）存储格式。JPEG 图片通常以 `*.jpg` 或者 `*.jpeg` 作为文件名的后缀。它占据了 MIME 类型中的 `image/jpeg`。JPEG 是 Joint Photographic Experts Group 的缩写。
 
 #### Webp
 
@@ -87,6 +98,8 @@ H + I > 4/3*I
 
 ## 参考资料
 
-1. PNG 格式规范. https://tools.ietf.org/html/rfc2083
-2. [APNG | wikipedia](https://en.wikipedia.org/wiki/APNG)
-3. [JPEG | wikipedia](https://en.wikipedia.org/wiki/JPEG)
+1. [GIF | wikipedia](https://en.wikipedia.org/wiki/GIF)
+2. [JPEG | wikipedia](https://en.wikipedia.org/wiki/JPEG)
+3. PNG 格式规范. https://tools.ietf.org/html/rfc2083
+4. Greg Roelofs. PNG: The Definitive Guide [M]. O'Reilly & Associates, Inc. 1999. 第二版为 HTML 版，发布于 2003 年：http://www.libpng.org/pub/png/book/.
+5. [APNG | wikipedia](https://en.wikipedia.org/wiki/APNG)
