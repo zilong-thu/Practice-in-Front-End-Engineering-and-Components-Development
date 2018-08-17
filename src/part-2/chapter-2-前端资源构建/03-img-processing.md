@@ -36,7 +36,7 @@ PNG 图片的所有相关技术可以在 Greg Roelofs 的《PNG 权威指南》�
 
 #### APNG
 
-APNG 是指动画版的 PNG（Animated Portable Network Graphics）。
+APNG 是指动画版的 PNG（Animated Portable Network Graphics），中文名通常叫做**动态 PNG**。APNG 的第 1 帧为标准 PNG 图像，剩余的动画和帧速等数据放在 PNG 扩展数据块里，因此只支持原版 PNG 的软件会正确显示第1 帧。APNG 规范由 Mozilla 公司的 Stuart Parmenter 和 Vladimir Vukićević 在 2004 年创立。目前移动浏览器和除微软家之外的桌面浏览器都支持 APNG 图片格式。总体来说，APNG 的使用还是比较少。
 
 #### Webp
 
