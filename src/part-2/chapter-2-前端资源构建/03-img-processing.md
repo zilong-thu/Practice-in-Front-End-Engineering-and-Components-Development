@@ -35,14 +35,27 @@ PNG 规范在 1997 年的 RFC-2083 中初次进行了阐述。PNG 格式有这�
 具体来说，PNG 有 3 种常用的子格式：PNG8、PNG24、PNG32。PNGcheck 程序<sup>[4]</sup>可以查看一个 PNG 的具体信息，例如在 Mac 系统下：
 
 ```bash
+# 安装 pngcheck
 $ brew install pngcheck
+
+# 查看 pngcheck 程序的版本、作者等基本信息
 $ pngcheck
 PNGcheck, version 2.3.0 of 7 July 2007,
    by Alexander Lehmann, Andreas Dilger and Greg Roelofs.
    Compiled with zlib 1.2.8; using zlib 1.2.8.
    ... # 省略
+
+# 查看某张图片的信息
 $ pngcheck gulp-2x.png
 OK: gulp-2x.png (228x510, 32-bit RGB+alpha, non-interlaced, 97.4%).
+
+# 检查某个目录下所有 PNG 图片的信息
+$ pngcheck *.png
+OK: file-1.png (256x160, 8-bit palette+trns, non-interlaced, 97.6%).
+OK: file-2.png (858x660, 32-bit RGB+alpha, non-interlaced, 98.5%).
+OK: file-3.png (992x500, 24-bit RGB, non-interlaced, 97.5%).
+OK: file-4.png (446x622, 24-bit RGB, non-interlaced, 97.9%).
+OK: file-5.png (866x630, 8-bit palette, non-interlaced, 96.9%).
 ```
 
 PNG 图片的所有相关技术可以在 Greg Roelofs 的《PNG 权威指南》（PNG: The Definitive Guide）<sup>[5]</sup>一书中获得。
@@ -52,6 +65,15 @@ PNG 图片的所有相关技术可以在 Greg Roelofs 的《PNG 权威指南》�
 APNG 是指动画版的 PNG（Animated Portable Network Graphics），中文名通常叫做**动态 PNG**。APNG 的第 1 帧为标准 PNG 图像，剩余的动画和帧速等数据放在 PNG 扩展数据块里，因此只支持原版 PNG 的软件会正确显示第1 帧。APNG 规范由 Mozilla 公司的 Stuart Parmenter 和 Vladimir Vukićević 在 2004 年创立。目前移动浏览器和除微软家之外的桌面浏览器都支持 APNG 图片格式。总体来说，APNG 的使用还是比较少。
 
 #### Webp
+
+## 交错与非交错图像
+
+在使用 `pngcheck` 检查 PNG 图片信息的时候，可以留意到输出的信息中提到了“non-interlaced”，这是指该图片为非交错格式。交错、非交错图像格式的差异体现在网络的加载上，如下图所示。
+
+<figure>
+<img src="./images/interlace-demo.png" style="width: 50%;">
+<figcaption>左侧是非交错图片的加载过程，右侧是交错图像的加载过程。通常来说，用户在遇到右侧的加载效果时更愿意等待。</figcaption>
+</figure>
 
 ## 压缩与内联
 
