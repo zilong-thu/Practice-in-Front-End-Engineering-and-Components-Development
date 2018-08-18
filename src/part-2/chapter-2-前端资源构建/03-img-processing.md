@@ -7,7 +7,7 @@
 互联网上的常见图片格式主要有 `gif`、`png`、`apng`、`jpeg`、`svg`、`webp` 等。
 
 <figure>
-<img src="./images/image-file-formats.png" style="width: 50%;">
+<img src="./images/image-file-formats.jpg" style="width: 50%;">
 <figcaption>W3Techs 给出的网站图片格式分类占比，数据时间是 2018 年 8 月。在所调查的网站中，74.4% 的网站使用了 PNG 图片，72.9% 的网站用到了 JPEG 图片。数据来源：https://w3techs.com/technologies/overview/image_format/all</figcaption>
 </figure>
 
@@ -32,7 +32,20 @@ PNG 规范在 1997 年的 RFC-2083 中初次进行了阐述。PNG 格式有这�
 + 支持 24 位真彩色，并且附加一个 8 位的 alpha 通道（透明度）。所以一个 PNG 图片最高可以表达 32 位的颜色。
 + 无损压缩。这是当年 PNG 为了取代 GIF 而必须完成的设计目标。
 
-PNG 图片的所有相关技术可以在 Greg Roelofs 的《PNG 权威指南》（PNG: The Definitive Guide）一书中获得。
+具体来说，PNG 有 3 种常用的子格式：PNG8、PNG24、PNG32。PNGcheck 程序<sup>[4]</sup>可以查看一个 PNG 的具体信息，例如在 Mac 系统下：
+
+```bash
+$ brew install pngcheck
+$ pngcheck
+PNGcheck, version 2.3.0 of 7 July 2007,
+   by Alexander Lehmann, Andreas Dilger and Greg Roelofs.
+   Compiled with zlib 1.2.8; using zlib 1.2.8.
+   ... # 省略
+$ pngcheck gulp-2x.png
+OK: gulp-2x.png (228x510, 32-bit RGB+alpha, non-interlaced, 97.4%).
+```
+
+PNG 图片的所有相关技术可以在 Greg Roelofs 的《PNG 权威指南》（PNG: The Definitive Guide）<sup>[5]</sup>一书中获得。
 
 #### APNG
 
@@ -101,5 +114,6 @@ H + I > 4/3*I
 1. [GIF | wikipedia](https://en.wikipedia.org/wiki/GIF)
 2. [JPEG | wikipedia](https://en.wikipedia.org/wiki/JPEG)
 3. PNG 格式规范. https://tools.ietf.org/html/rfc2083
-4. Greg Roelofs. PNG: The Definitive Guide [M]. O'Reilly & Associates, Inc. 1999. 第二版为 HTML 版，发布于 2003 年：http://www.libpng.org/pub/png/book/.
-5. [APNG | wikipedia](https://en.wikipedia.org/wiki/APNG)
+4. pngcheck 官网, http://www.libpng.org/pub/png/apps/pngcheck.html
+5. Greg Roelofs. PNG: The Definitive Guide [M]. O'Reilly & Associates, Inc. 1999. 第二版为 HTML 版，发布于 2003 年：http://www.libpng.org/pub/png/book/.
+6. [APNG | wikipedia](https://en.wikipedia.org/wiki/APNG)
