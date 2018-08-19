@@ -58,11 +58,16 @@ OK: file-4.png (446x622, 24-bit RGB, non-interlaced, 97.9%).
 OK: file-5.png (866x630, 8-bit palette, non-interlaced, 96.9%).
 ```
 
-PNG 图片的所有相关技术可以在 Greg Roelofs 的《PNG 权威指南》（PNG: The Definitive Guide）<sup>[5]</sup>一书中获得。
+PNG 图片的所有相关技术可以在 Greg Roelofs 的《PNG 权威指南》（PNG: The Definitive Guide）<sup>[5]</sup>一书中获得。这本书的第二版为 HTML 版，可以在线阅览。
 
 #### APNG
 
-APNG 是指动画版的 PNG（Animated Portable Network Graphics），中文名通常叫做**动态 PNG**。APNG 的第 1 帧为标准 PNG 图像，剩余的动画和帧速等数据放在 PNG 扩展数据块里，因此只支持原版 PNG 的软件会正确显示第1 帧。APNG 规范由 Mozilla 公司的 Stuart Parmenter 和 Vladimir Vukićević 在 2004 年创立。目前移动浏览器和除微软家之外的桌面浏览器都支持 APNG 图片格式。总体来说，APNG 的使用还是比较少。
+APNG 是指动画版的 PNG（Animated Portable Network Graphics），中文名通常叫做**动态 PNG**。APNG 的第 1 帧为标准 PNG 图像，剩余的动画和帧速等数据放在 PNG 扩展数据块里，因此只支持原版 PNG 的软件会正确显示第1 帧。APNG 规范由 Mozilla 公司的 Stuart Parmenter 和 Vladimir Vukićević 在 2004 年创立。目前移动浏览器和除微软家之外的桌面浏览器都支持 APNG 图片格式。
+
+与 Gif 相比，APNG 有许多优势：
+
++ 色彩丰富度：Gif 图片只支持 8 位即 256 种颜色，而 APNG 则支持 24 位即真彩色
++ 存储空间优势：Gif 文件里每一帧都是独立的图片；而 APNG 文件里，第一帧是完整的 PNG 图片，但第 2 帧及之后，可以只存储差异数据。因此，APNG 能够在提升了色彩的展现能力的同时，还保留了与 Gif 非常接近的存储体积，甚至更小。
 
 #### Webp
 
