@@ -82,6 +82,38 @@ APNG 是指动画版的 PNG（Animated Portable Network Graphics），中文名�
 
 有损压缩方面，WebP 的思路来源于 VP8 视频编解码技术。VP8 的一个特性是帧内预测压缩。WebP 本质上是可以存储与解析一帧 VP8 图像的轻量级容器。
 
+谷歌官方也发布了用于编解码 WebP 图像格式的命令行工具，Mac 下可以通过 Homebrew 安装：
+
+```bash
+# 安装好后，可以使用的有两个程序 cwebp 和 dwebp
+#  - cwebp 可以将 JPEG、PNG、TIFF 格式的图片转化为 WebP 格式
+#  - dwebp 则将 WebP 格式转换为 PNG 格式
+$ brew install webp
+
+# 将 PNG 图片转换为 webp 格式
+# cwebp [options] -q quality input.png -o output.webp
+$ cwebp gulp-2x.png -o gulp-2x.webp
+Saving file 'gulp-2x.webp'
+File:      gulp-2x.png
+Dimension: 228 x 510 (with alpha)
+Output:    8664 bytes Y-U-V-All-PSNR 64.97 58.16 57.22   61.06 dB
+           (0.60 bpp)
+block count:  intra4:          2  (0.42%)
+              intra16:       478  (99.58%)
+              skipped:       465  (96.88%)
+bytes used:  header:             26  (0.3%)
+             mode-partition:    229  (2.6%)
+             transparency:     8251 (99.0 dB)
+ Residuals bytes  |segment 1|segment 2|segment 3|segment 4|  total
+    macroblocks:  |       2%|       0%|       1%|      97%|     480
+      quantizer:  |      36 |      36 |      31 |      25 |
+   filter level:  |      11 |       8 |       5 |       4 |
+Lossless-alpha compressed size: 8250 bytes
+  * Header size: 72 bytes, image data size: 8178
+  * Precision Bits: histogram=5 transform=5 cache=0
+  * Palette size:   256
+```
+
 ## 交错与非交错图像
 
 在使用 `pngcheck` 检查 PNG 图片信息的时候，可以留意到输出的信息中提到了“non-interlaced”，这是指该图片为非交错格式。交错、非交错图像格式的差异体现在网络的加载上，如下图所示。
