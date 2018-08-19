@@ -114,6 +114,13 @@ Lossless-alpha compressed size: 8250 bytes
   * Palette size:   256
 ```
 
+目前，Chrome、Opera 以及安卓下的浏览器和 webview，都支持 Webp 格式，但是 FireFox、Safari 尚不支持。而根据微软 Edge 浏览器开发者网站的进度报告，其目前已经在开发对 WebP 的支持功能了。
+
+<figure>
+<img src="./images/edge-webp-progress.png" style="width: 100%;">
+<figcaption>微软会在官方 Platform status 中<sup>[7]</sup>放出关于 Edge 浏览器当前支持的功能、在开发中的功能以及开发者们希望支持的功能。上图就是 Edge 对 WebP 格式的支持功能的状况（2018-08-19）。</figcaption>
+</figure>
+
 ## 交错与非交错图像
 
 在使用 `pngcheck` 检查 PNG 图片信息的时候，可以留意到输出的信息中提到了“non-interlaced”，这是指该图片为非交错格式。交错、非交错图像格式的差异体现在网络的加载上，如下图所示。
@@ -191,3 +198,4 @@ H + I > 4/3*I
 4. pngcheck 官网, http://www.libpng.org/pub/png/apps/pngcheck.html
 5. Greg Roelofs. PNG: The Definitive Guide [M]. O'Reilly & Associates, Inc. 1999. 第二版为 HTML 版，发布于 2003 年：http://www.libpng.org/pub/png/book/.
 6. [APNG | wikipedia](https://en.wikipedia.org/wiki/APNG)
+7. 微软 Edge Platform status. https://developer.microsoft.com/en-us/microsoft-edge/platform/status/webpimageformat/
