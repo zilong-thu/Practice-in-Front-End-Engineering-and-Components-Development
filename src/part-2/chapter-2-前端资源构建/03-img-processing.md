@@ -69,7 +69,18 @@ APNG 是指动画版的 PNG（Animated Portable Network Graphics），中文名�
 + 色彩丰富度：Gif 图片只支持 8 位即 256 种颜色，而 APNG 则支持 24 位即真彩色
 + 存储空间优势：Gif 文件里每一帧都是独立的图片；而 APNG 文件里，第一帧是完整的 PNG 图片，但第 2 帧及之后，可以只存储差异数据。因此，APNG 能够在提升了色彩的展现能力的同时，还保留了与 Gif 非常接近的存储体积，甚至更小。
 
-#### Webp
+自由、开源软件 APNG Assembler 可以用来制作 APNG 图片。
+
+<figure>
+<img src="./images/apng-assembler-logo.png" style="width: 120px;">
+<figcaption>APNG Assembler</figcaption>
+</figure>
+
+#### WebP
+
+在 Web 上，JPEG 自 1992 年诞生起就几乎成为有损图像的唯一可选格式。这几十年里也有不少研究课题试图找到更高效的有损压缩格式（即在保证相同质量的前提下，使用更少的存储空间）。WebP 格式就是目前比较成功的一个格式。谷歌是 WebP 技术的发起者及大力推广者。WebP 不止有损压缩，它也支持无损压缩。此外，还有 8 位透明通道、动画、图片元信息等特性。在谷歌进行的 WebP、PNG、JPEG 格式压缩对比表明，图片质量相当的情况下，WebP 格式平均要比 PNG 和 JPEG 小 30% 左右（官网 https://developers.google.cn/speed/webp/）。
+
+有损压缩方面，WebP 的思路来源于 VP8 视频编解码技术。VP8 的一个特性是帧内预测压缩。WebP 本质上是可以存储与解析一帧 VP8 图像的轻量级容器。
 
 ## 交错与非交错图像
 
@@ -81,6 +92,10 @@ APNG 是指动画版的 PNG（Animated Portable Network Graphics），中文名�
 </figure>
 
 ## 压缩与内联
+
+### 压缩的目的
+
+At Google, we are constantly looking at ways to make web pages load faster. One way to do this is by making web images smaller. Images comprise up to 60%-65% of bytes on most web pages and page size is a major factor in total rendering time. Page size is especially important for mobile devices, where smaller images save both bandwidth and battery life.
 
 ### 无损压缩
 
