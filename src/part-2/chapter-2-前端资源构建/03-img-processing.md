@@ -127,7 +127,7 @@ Lossless-alpha compressed size: 8250 bytes
 
 <figure>
 <img src="./images/interlace-demo.png" style="width: 50%;">
-<figcaption>左侧是非交错图片的加载过程，右侧是交错图像的加载过程。通常来说，用户在遇到右侧的加载效果时更愿意等待。</figcaption>
+<figcaption>左侧是非交错图片的加载过程，右侧是交错图像的加载过程。通常来说，用户在遇到右侧的加载效果时更愿意等待。图片来源：[8]</figcaption>
 </figure>
 
 JPEG、PNG、GIF 都支持以交错或非交错格式存储。交错式编码也叫做渐进式编码（Progressive Encoding）。设计师可以使用 PhotoShop 这样的设计工具在导出图片时选择交错式格式。前端开发人员使用 ImageMagick 程序也可以实现同样的功能：
@@ -140,7 +140,7 @@ $ convert test.jpg -interlace Plane test-interlaced.jpg
 
 ### 压缩的目的
 
-At Google, we are constantly looking at ways to make web pages load faster. One way to do this is by making web images smaller. Images comprise up to 60%-65% of bytes on most web pages and page size is a major factor in total rendering time. Page size is especially important for mobile devices, where smaller images save both bandwidth and battery life.
+大多数网站页面 60%-65% 的体积为图片占据。图片越小，则页面总体积越小，完全加载时间也越快；对于移动设备来说，较小的图片可以节省带宽、减少耗电量。
 
 ### 无损压缩
 
@@ -205,3 +205,4 @@ H + I > 4/3*I
 5. Greg Roelofs. PNG: The Definitive Guide [M]. O'Reilly & Associates, Inc. 1999. 第二版为 HTML 版，发布于 2003 年：http://www.libpng.org/pub/png/book/.
 6. [APNG | wikipedia](https://en.wikipedia.org/wiki/APNG)
 7. 微软 Edge Platform status. https://developer.microsoft.com/en-us/microsoft-edge/platform/status/webpimageformat/
+8. [The Difference Between Interlaced and Non-interlaced Images](https://www.ledfrog.com/blogging-tools/visual-design/2010/11/difference-interlaced-non-interlaced-images/). 2010.
