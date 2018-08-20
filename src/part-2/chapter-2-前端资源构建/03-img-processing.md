@@ -123,12 +123,18 @@ Lossless-alpha compressed size: 8250 bytes
 
 ## 交错与非交错图像
 
-在使用 `pngcheck` 检查 PNG 图片信息的时候，可以留意到输出的信息中提到了“non-interlaced”，这是指该图片为非交错格式。交错、非交错图像格式的差异体现在网络的加载上，如下图所示。
+在使用 `pngcheck` 检查 PNG 图片信息的时候，可以留意到输出的信息中提到了“non-interlaced”，这是指该图片为非交错格式。交错（interlaced）、非交错图像格式的差异体现在网络的加载上，如下图所示。
 
 <figure>
 <img src="./images/interlace-demo.png" style="width: 50%;">
 <figcaption>左侧是非交错图片的加载过程，右侧是交错图像的加载过程。通常来说，用户在遇到右侧的加载效果时更愿意等待。</figcaption>
 </figure>
+
+JPEG、PNG、GIF 都支持以交错或非交错格式存储。交错式编码也叫做渐进式编码（Progressive Encoding）。设计师可以使用 PhotoShop 这样的设计工具在导出图片时选择交错式格式。前端开发人员使用 ImageMagick 程序也可以实现同样的功能：
+
+```bash
+$ convert test.jpg -interlace Plane test-interlaced.jpg
+```
 
 ## 压缩与内联
 
