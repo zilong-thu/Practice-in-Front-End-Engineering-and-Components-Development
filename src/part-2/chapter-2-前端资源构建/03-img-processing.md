@@ -58,7 +58,9 @@ OK: file-4.png (446x622, 24-bit RGB, non-interlaced, 97.9%).
 OK: file-5.png (866x630, 8-bit palette, non-interlaced, 96.9%).
 ```
 
-PNG 图片的所有相关技术可以在 Greg Roelofs 的《PNG 权威指南》（PNG: The Definitive Guide）<sup>[5]</sup>一书中获得。这本书的第二版为 HTML 版，可以在线阅览。
+PNG 图片通常优先选择无损压缩进行处理，也可以酌情考虑有损转换为 PNG24 或者 PNG8 后再进行无损压缩。PNG 有自己的官方图形处理参考工具 libpng<sup>[5]</sup>。Libpng 诞生于 1996 年，由 ANSI C (C89) 写成，具有良好的跨平台兼容性。libpng 依赖 zlib 库来压缩和解压缩数据。
+
+PNG 图片的所有相关技术可以在 Greg Roelofs 的《PNG 权威指南》（PNG: The Definitive Guide）<sup>[6]</sup>一书中获得。这本书的第二版为 HTML 版，可以在线阅览。
 
 #### APNG
 
@@ -118,7 +120,7 @@ Lossless-alpha compressed size: 8250 bytes
 
 <figure>
 <img src="./images/edge-webp-progress.png" style="width: 100%;">
-<figcaption>微软会在官方 Platform status 中<sup>[7]</sup>放出关于 Edge 浏览器当前支持的功能、在开发中的功能以及开发者们希望支持的功能。上图就是 Edge 对 WebP 格式的支持功能的状况（2018-08-19）。</figcaption>
+<figcaption>微软会在官方 Platform status 中<sup>[8]</sup>放出关于 Edge 浏览器当前支持的功能、在开发中的功能以及开发者们希望支持的功能。上图就是 Edge 对 WebP 格式的支持功能的状况（2018-08-19）。</figcaption>
 </figure>
 
 ## 交错与非交错图像
@@ -136,15 +138,17 @@ JPEG、PNG、GIF 都支持以交错或非交错格式存储。交错式编码也
 $ convert test.jpg -interlace Plane test-interlaced.jpg
 ```
 
-## 压缩与内联
+## 压缩与内联工具
 
 ### 压缩的目的
 
 大多数网站页面 60%-65% 的体积为图片占据。图片越小，则页面总体积越小，完全加载时间也越快；对于移动设备来说，较小的图片可以节省带宽、减少耗电量。
 
-### 无损压缩
+### 无损压缩 vs 有损压缩
 
-### 有损压缩
+无损压缩是一些通用算法，它们试图在不丢失数据全部信息的情况下减少数据的空间占用。ZIP 就是最常见的一种无损压缩算法。
+
+### ImageMagick
 
 ### Base64 内联小尺寸图片
 
@@ -202,7 +206,8 @@ H + I > 4/3*I
 2. [JPEG | wikipedia](https://en.wikipedia.org/wiki/JPEG)
 3. PNG 格式规范. https://tools.ietf.org/html/rfc2083
 4. pngcheck 官网, http://www.libpng.org/pub/png/apps/pngcheck.html
-5. Greg Roelofs. PNG: The Definitive Guide [M]. O'Reilly & Associates, Inc. 1999. 第二版为 HTML 版，发布于 2003 年：http://www.libpng.org/pub/png/book/.
-6. [APNG | wikipedia](https://en.wikipedia.org/wiki/APNG)
-7. 微软 Edge Platform status. https://developer.microsoft.com/en-us/microsoft-edge/platform/status/webpimageformat/
-8. [The Difference Between Interlaced and Non-interlaced Images](https://www.ledfrog.com/blogging-tools/visual-design/2010/11/difference-interlaced-non-interlaced-images/). 2010.
+5. libpng 官网. http://libpng.org/pub/png/libpng.html
+6. Greg Roelofs. PNG: The Definitive Guide [M]. O'Reilly & Associates, Inc. 1999. 第二版为 HTML 版，发布于 2003 年：http://www.libpng.org/pub/png/book/.
+7. [APNG | wikipedia](https://en.wikipedia.org/wiki/APNG)
+8. 微软 Edge Platform status. https://developer.microsoft.com/en-us/microsoft-edge/platform/status/webpimageformat/
+9. [The Difference Between Interlaced and Non-interlaced Images](https://www.ledfrog.com/blogging-tools/visual-design/2010/11/difference-interlaced-non-interlaced-images/). 2010.
