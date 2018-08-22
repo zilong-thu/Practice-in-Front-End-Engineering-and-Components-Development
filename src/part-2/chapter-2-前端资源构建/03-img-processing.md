@@ -228,6 +228,17 @@ GIMP（GNU Image Manipulation Program，GNU 图形处理程序）是一款跨平
 <figcaption>GIMP 的界面风格、操作方式与 Photoshop 都很相似。</figcaption>
 </figure>
 
+### ImageOptim
+
+<img src="./images/image-optim-logo.png" style="width: 220px;">
+
+ImageOptim<sup>[13]</sup> 是一个免费、开源的 GUI 软件，专门用于图片压缩。这是一款很小巧的工具，它支持拖拽选择图片，然后运行各种图片压缩程序（MozJPEG、pngquant、Pngcrush、7zip、SVGO 以及 Google Zopfli）来寻找具有最优压缩效果的图片。
+
+<figure>
+<img src="./images/image-optim-app@2x.png" style="width: 60%;">
+<figcaption>ImageOptim 的界面</figcaption>
+</figure>
+
 ### Base64 内联小尺寸图片
 
 Base64 是一种基于65个字符（26个大写字母 `[A-Z]`，26个小写字母 `[a-z]`，10个阿拉伯数字 `[0-9]`，加号 `+` 和斜杠 `/`，以及用来补位的第65个字符 `=`）来表示二进制数据的编码方法。Base64 编码方案是由 Simon Josefsson 在 2000 年提出的，最初定义在 RFC 1421 和 RFC 2045 里，目前最新的规范是 RFC 4648。
@@ -292,3 +303,4 @@ H + I > 4/3*I
 10. Riley Brandt's Photography Blog. http://www.rileybrandt.com/2014/03/09/photoshop-to-gimp/
 11. ImageMagick 官网. https://www.imagemagick.org/script/index.php
 12. ImageMagick 中文网. http://www.imagemagick.org.cn/
+13. ImageOptim 官网. https://imageoptim.com
