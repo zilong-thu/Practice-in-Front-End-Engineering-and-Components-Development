@@ -32,7 +32,7 @@ Facebook 推出的 ECMAScript 编译器 Babel <sup>[1]</sup> 名字源于巴别�
 
 > 大洪水过后，人类使用着同一种语言，当时人们联合起来兴建希望能通往天堂的高塔；为了阻止人类的计划，上帝让人类说不同的语言，使人类相互之间不能沟通，计划因此失败，人类自此各散东西。此故事试图为世上出现不同语言和种族提供解释。
 
-<img src="./images/Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_(Vienna)_Google_Art_Project.jpg" style="width: 90%;" class="round">
+<img src="./images/tower-of-babel.jpg" style="width: 90%;" class="round">
 
 Babel.js 的愿景如传说中那座塔一样，使得我们可以直接按照最新的 ECMAScript 标准书写代码，然后由它来翻译为浏览器已普遍支持的 ECMAScript 5。本质上讲，Babel 就是一款 JavaScript 编译器。
 
@@ -44,14 +44,14 @@ Babel 并非第一个将源码编译为具有更好兼容性的 JavaScript 代�
 
 例如输入这样的一段代码：
 
-```
+```javascript
 const arr = [1, 2, 3, 4];
 const brr = arr.map(ele => ele * ele);
 ```
 
 设置输入语言为 es2016，目标代码的运行环境为浏览器（例如 `> 2%, ie 11, safari > 9`），那么 Babel 会将其编译为：
 
-```
+```javascript
 "use strict";
 
 var arr = [1, 2, 3, 4];
@@ -90,7 +90,7 @@ JavaScript 抽象语法树的一个经典应用就是进行代码混淆（Obfusc
 
 安装：
 
-```
+```bash
 $ npm i --save -g uglify-js
 ```
 
@@ -105,7 +105,7 @@ $ npm i --save -g uglify-js
 
 那么运行：
 
-```
+```bash
 $ uglifyjs in.js -m -o out.js
 ```
 

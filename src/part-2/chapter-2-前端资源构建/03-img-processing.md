@@ -151,18 +151,19 @@ $ convert test.jpg -interlace Plane test-interlaced.jpg
 
 ### ImageMagick
 
-ImageMagick 最早于 1987 年由 John Cristy 开发出来，当时是为了将 24 位真彩色图片转换为 8 位的图片（即 256 色），以便图片能够在大部分显示器上面正常展示。1990 年，ImageMagick 被作为免费软件公布于世。到现在，ImageMagick 已经具有了丰富的功能，例如格式转换、尺寸调整、图片对比、加水印、截取部分图片等等。
+ImageMagick 最早于 1987 年由 John Cristy 开发出来，当时是为了将 24 位真彩色图片转换为 8 位的图片（即 256 色），以便图片能够在大部分显示器上面正常展示。1990 年，ImageMagick 被作为免费软件公布于世。到现在，ImageMagick 已经具有了丰富的功能，例如格式转换、尺寸调整、图片对比、添加文字/图案、截取部分图片、生成 GIF 图片等各种操作。而且具有优秀的跨平台能力，可以运行在 Linux/Unix/Windows/MacOS（现在甚至支持 iOS、Android）系统下。
 
 <figure>
 <img src="./images/imagemagick-logo-wizard.jpg" style="width: 260px;">
 <figcaption>ImageMagick 的 logo 是一个挥舞着魔棒的巫师，他正在处理蒙娜丽莎的照片。</figcaption>
 </figure>
 
-ImageMagick 可以作为图片服务的核心程序之一。例如七牛云存储就使用了 ImageMagick 程序来处理图片。
+ImageMagick 可以被多种程序语言调用，因此很适合在服务器端使用，提供动态图片生成（例如验证码）、缩略图生成等常见的图片服务。
 
-ImageMagick 支持超过 200 种图片文件格式，包括主流的 PNG、JPEG、GIF、HEIC、TIFF、DPX、EXR、WebP、Postscript、PDF、SVG 等。
+ImageMagick 支持超过 200 种图片文件格式，包括主流的 PNG、JPEG、GIF、HEIC、TIFF、DPX、EXR、WebP、Postscript、PDF、SVG 等。ImageMagick 的具体使用可以参见其官网<sup>[11]</sup>，或者中文网<sup>[12]</sup>，或者通过 `man` 命令来获取帮助文档。我们这里展示几个常用的命令。
 
 ```bash
+# 安装
 $ brew install imagemagick
 $ convert -version
 Version: ImageMagick 7.0.7-28 Q16 x86_64 2018-03-25 http://www.imagemagick.org
@@ -170,6 +171,47 @@ Copyright: © 1999-2018 ImageMagick Studio LLC
 License: http://www.imagemagick.org/script/license.php
 Features: Cipher DPC HDRI Modules
 Delegates (built-in): bzlib freetype jng jpeg ltdl lzma png tiff xml zlib
+
+# 查看使用帮助
+# Mac 下，/usr/local/bin 目录下的 magick 和 convert 实际上都是软链接，最终都指向了同一个程序，
+# 即 /usr/local/Cellar/imagemagick/7.0.8-10/bin/magick
+$ man magick
+$ man convert
+
+# 格式转换
+# ImageMagick 的格式转换可以是隐式的，根据后缀名来判断
+# 将 foo.png 转换为 jpeg 格式，并保存为 foo.jpg
+$ convert foo.png foo.jpg
+
+# 调整尺寸
+# 将 foo.jpg 等比例缩放，尺寸为之前的 80%，可以看到 ImageMagick 使用字母 x 来表示乘号
+$ convert -resize 80%x80% foo.jpg foo-2.jpg
+
+# 以 70% 的质量来压缩图片，-strip 用于去除图片上的信息元数据
+$ convert -quality 70 -strip in.jpg out.jpg
+
+# 图片裁剪
+# 从左上角（0, 2px）开始，裁剪出一张 280x101 像素大小的图片
+$ convert pub.png -crop 280x101-0+2 pub-2.png
+# 假设我们有一张4160X2340 的图片，想要裁剪掉一部分，保留居中的部分，可以像下面这样，意思是将高度变为 1900 像素
+$ convert outside.jpeg -gravity center -crop 4160x1900+0+0 outside-3.jpeg
+
+# 将图片转换为 PDF
+# 场景1，在某个目录下，将所有的 jpg 图片，合并为一个 PDF 文件
+$ convert *.jpg foo.pdf
+# 场景2，把某张图片转换为 PDF
+$ convert pic.png pic.pdf
+
+# png8 & png24
+# 使用 imageMagick 可以方便地把 PNG32 图片转换为 PNG24 或者是 PNG8 格式的图片。
+# Mac 系统的截屏，默认是 PNG24。
+$ convert douban-movie.png png8:douban-movie-8.png
+$ ll
+-rw-r--r--  1 wzl  staff   383K  1 18 10:17 douban-movie.png
+-rw-r--r--  1 wzl  staff    77K  1 18 10:22 douban-movie-8.png
+
+# 生成灰度图
+$ convert <img_in> -set colorspace Gray -separate -average <img_out>
 ```
 
 ### GIMP
@@ -248,3 +290,5 @@ H + I > 4/3*I
 8. [The Difference Between Interlaced and Non-interlaced Images](https://www.ledfrog.com/blogging-tools/visual-design/2010/11/difference-interlaced-non-interlaced-images/). 2010.
 9. [GIMP 官网](https://www.gimp.org/)
 10. Riley Brandt's Photography Blog. http://www.rileybrandt.com/2014/03/09/photoshop-to-gimp/
+11. ImageMagick 官网. https://www.imagemagick.org/script/index.php
+12. ImageMagick 中文网. http://www.imagemagick.org.cn/
