@@ -140,15 +140,30 @@ $ convert test.jpg -interlace Plane test-interlaced.jpg
 
 ## 压缩与内联工具
 
-### 压缩的目的
-
 大多数网站页面 60%-65% 的体积为图片占据。图片越小，则页面总体积越小，完全加载时间也越快；对于移动设备来说，较小的图片可以节省带宽、减少耗电量。
+
+设计师在交付设计稿、图片素材的时候，可以使用 Adobe Photoshop 等工具对图片进行压缩处理。前端开发人员也可以用 Photoshop，不过这套软件价格不菲，自由软件的世界中，有同样优秀的程序可供选择。命令行工具类，有最著名的 ImageMagick。图形用户界面类的，有 GIMP <sup>[9]</sup>可以用。
 
 ### 无损压缩 vs 有损压缩
 
 无损压缩是一些通用算法，它们试图在不丢失数据全部信息的情况下减少数据的空间占用。ZIP 就是最常见的一种无损压缩算法。
 
 ### ImageMagick
+
+
+### GIMP
+
+<figure class="fr">
+<img src="./images/gimp-logo-wilber-big.png" style="width: 130px;">
+<figcaption>GIMP Logo</figcaption>
+</figure>
+
+GIMP（GNU Image Manipulation Program，GNU 图形处理程序）是一款跨平台的免费、开源软件。GIMP 项目目前依然在不断更新，现在，其界面风格、操作方式与 Photoshop 都很接近了。GIMP 的跨平台意味着其可以在 Linux/MacOS/Windows 系统下运行。GIMP 能够打开以 Photoshop 的私有文件格式 PSD 存储的 `*.psd` 文件，不过可能有的图层会需要转换。总体来说，GIMP 是 Photoshop 的最好免费替代者了，甚至有一些专业的设计师也在推广从 Photoshop 迁移到 GIMP<sup>[10]</sup>。
+
+<figure>
+<img src="./images/gimp-ui.jpg" style="width: 80%;">
+<figcaption>GIMP 的界面风格、操作方式与 Photoshop 都很相似。</figcaption>
+</figure>
 
 ### Base64 内联小尺寸图片
 
@@ -206,8 +221,9 @@ H + I > 4/3*I
 2. [JPEG | wikipedia](https://en.wikipedia.org/wiki/JPEG)
 3. PNG 格式规范. https://tools.ietf.org/html/rfc2083
 4. pngcheck 官网, http://www.libpng.org/pub/png/apps/pngcheck.html
-5. libpng 官网. http://libpng.org/pub/png/libpng.html
-6. Greg Roelofs. PNG: The Definitive Guide [M]. O'Reilly & Associates, Inc. 1999. 第二版为 HTML 版，发布于 2003 年：http://www.libpng.org/pub/png/book/.
-7. [APNG | wikipedia](https://en.wikipedia.org/wiki/APNG)
-8. 微软 Edge Platform status. https://developer.microsoft.com/en-us/microsoft-edge/platform/status/webpimageformat/
-9. [The Difference Between Interlaced and Non-interlaced Images](https://www.ledfrog.com/blogging-tools/visual-design/2010/11/difference-interlaced-non-interlaced-images/). 2010.
+5. Greg Roelofs. PNG: The Definitive Guide [M]. O'Reilly & Associates, Inc. 1999. 第二版为 HTML 版，发布于 2003 年：http://www.libpng.org/pub/png/book/.
+6. [APNG | wikipedia](https://en.wikipedia.org/wiki/APNG)
+7. 微软 Edge Platform status. https://developer.microsoft.com/en-us/microsoft-edge/platform/status/webpimageformat/
+8. [The Difference Between Interlaced and Non-interlaced Images](https://www.ledfrog.com/blogging-tools/visual-design/2010/11/difference-interlaced-non-interlaced-images/). 2010.
+9. [GIMP 官网](https://www.gimp.org/)
+10. Riley Brandt's Photography Blog. http://www.rileybrandt.com/2014/03/09/photoshop-to-gimp/
