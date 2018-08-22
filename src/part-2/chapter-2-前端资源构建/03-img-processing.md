@@ -153,6 +153,11 @@ $ convert test.jpg -interlace Plane test-interlaced.jpg
 
 ImageMagick 最早于 1987 年由 John Cristy 开发出来，当时是为了将 24 位真彩色图片转换为 8 位的图片（即 256 色），以便图片能够在大部分显示器上面正常展示。1990 年，ImageMagick 被作为免费软件公布于世。到现在，ImageMagick 已经具有了丰富的功能，例如格式转换、尺寸调整、图片对比、加水印、截取部分图片等等。
 
+<figure>
+<img src="./images/imagemagick-logo-wizard.jpg" style="width: 260px;">
+<figcaption>ImageMagick 的 logo 是一个挥舞着魔棒的巫师，他正在处理蒙娜丽莎的照片。</figcaption>
+</figure>
+
 ImageMagick 可以作为图片服务的核心程序之一。例如七牛云存储就使用了 ImageMagick 程序来处理图片。
 
 ImageMagick 支持超过 200 种图片文件格式，包括主流的 PNG、JPEG、GIF、HEIC、TIFF、DPX、EXR、WebP、Postscript、PDF、SVG 等。
