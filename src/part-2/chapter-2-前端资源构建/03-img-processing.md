@@ -135,6 +135,7 @@ Lossless-alpha compressed size: 8250 bytes
 JPEG、PNG、GIF 都支持以交错或非交错格式存储。交错式编码也叫做渐进式编码（Progressive Encoding）。设计师可以使用 PhotoShop 这样的设计工具在导出图片时选择交错式格式。前端开发人员使用 ImageMagick 程序也可以实现同样的功能：
 
 ```bash
+# ImageMagick 是软件的版权注册名，而 convert 则是该软件暴露的命令行程序
 $ convert test.jpg -interlace Plane test-interlaced.jpg
 ```
 
@@ -150,6 +151,21 @@ $ convert test.jpg -interlace Plane test-interlaced.jpg
 
 ### ImageMagick
 
+ImageMagick 最早于 1987 年由 John Cristy 开发出来，当时是为了将 24 位真彩色图片转换为 8 位的图片（即 256 色），以便图片能够在大部分显示器上面正常展示。1990 年，ImageMagick 被作为免费软件公布于世。到现在，ImageMagick 已经具有了丰富的功能，例如格式转换、尺寸调整、图片对比、加水印、截取部分图片等等。
+
+ImageMagick 可以作为图片服务的核心程序之一。例如七牛云存储就使用了 ImageMagick 程序来处理图片。
+
+ImageMagick 支持超过 200 种图片文件格式，包括主流的 PNG、JPEG、GIF、HEIC、TIFF、DPX、EXR、WebP、Postscript、PDF、SVG 等。
+
+```bash
+$ brew install imagemagick
+$ convert -version
+Version: ImageMagick 7.0.7-28 Q16 x86_64 2018-03-25 http://www.imagemagick.org
+Copyright: © 1999-2018 ImageMagick Studio LLC
+License: http://www.imagemagick.org/script/license.php
+Features: Cipher DPC HDRI Modules
+Delegates (built-in): bzlib freetype jng jpeg ltdl lzma png tiff xml zlib
+```
 
 ### GIMP
 
