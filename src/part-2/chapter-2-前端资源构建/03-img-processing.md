@@ -191,10 +191,10 @@ $ convert -resize 80%x80% foo.jpg foo-2.jpg
 $ convert -quality 70 -strip in.jpg out.jpg
 
 # 图片裁剪
-# 从左上角（0, 2px）开始，裁剪出一张 280x101 像素大小的图片
+# 从左上角（0, 2px）开始，裁剪出一张 280×101 像素大小的图片
 $ convert pub.png -crop 280x101-0+2 pub-2.png
-# 假设我们有一张4160X2340 的图片，想要裁剪掉一部分，保留居中的部分，可以像下面这样，意思是将高度变为 1900 像素
-$ convert outside.jpeg -gravity center -crop 4160x1900+0+0 outside-3.jpeg
+# in.jpg 尺寸为 4160×2340，如果要裁剪掉一部分，宽度不变，高度变为 1900 像素，取居中的部分：
+$ convert in.jpg -gravity center -crop 4160x1900+0+0 out.jpg
 
 # 将图片转换为 PDF
 # 场景1，在某个目录下，将所有的 jpg 图片，合并为一个 PDF 文件
@@ -232,12 +232,50 @@ GIMP（GNU Image Manipulation Program，GNU 图形处理程序）是一款跨平
 
 <img src="./images/image-optim-logo.png" style="width: 220px;">
 
-ImageOptim<sup>[13]</sup> 是一个免费、开源的 GUI 软件，专门用于图片压缩。这是一款很小巧的工具，它支持拖拽选择图片，然后运行各种图片压缩程序（MozJPEG、pngquant、Pngcrush、7zip、SVGO 以及 Google Zopfli）来寻找具有最优压缩效果的图片。
+ImageOptim<sup>[13]</sup> 是一个免费、开源的 GUI 软件，专门用于图片压缩。这是一款很小巧的工具，它支持拖拽选择图片。本质上，它是这些图片压缩程序的前端界面：MozJPEG、PNGQuant、PNGCrush、AdvPNG、OptiPNG、PNGOUT、Zopfli、JpegOptim、JpegTran、7zip、SVG。ImageOptim 会运行它们，最后自动选择最小的文件。
 
 <figure>
 <img src="./images/image-optim-app@2x.png" style="width: 60%;">
 <figcaption>ImageOptim 的界面</figcaption>
 </figure>
+
+### ZopfliPNG
+
+在所有的无损压缩算法中，Zopfli 是最新也是效果最好的一个，缺点是花费时间最长。Zopfli 被认为是目前压缩率最有效的 DEFLATE 编码器。2013年2月，Google 将 Zopfli 算法的一个参考实现以 Apache 许可证 2.0 发布为自由软件程序库，并将代码托管到了 Github 上：[https://github.com/google/zopfli](https://github.com/google/zopfli)。Zopfli 的一个子程序 ZopfliPNG 是专门用于 PNG 图片压缩的命令行程序，读者可以从 Zopfli 的源码中单独编译 ZopfliPNG 程序出来。
+
+```bash
+# 先下载 zopfli 的最新源码
+$ git clone https://github.com/google/zopfli.git
+$ cd zopfli
+
+# 下面这样编译，得到的是 ZopfliPNG 二进制可执行文件
+$ make zopflipng
+
+# 将 zopflipng 二进制可执行程序放到系统常用的 bin 目录下
+# 然后就可以在任何地方使用 zopflipng 来无损压缩 PNG 图片了
+$ mv zopflipng /usr/local/bin
+```
+
+有了命令行工具，就方便进行自动化、批量处理了。我们来看一个例子，通过一段 shell 程序，批量无损压缩某个目录下的所有 PNG 文件：
+
+```bash
+#!/bin/bash
+for file in $(find . -type f -name '*.png')
+do
+  newFile="${file/.png/-compressed.png}"
+  zopflipng "${file}" $newFile
+done
+```
+
+上面的内容保存到 `run.sh` 文件里，然后运行 `bash ./run.sh`，可以观察 ZopfliPNG 的压缩效果：
+
+```bash
+$ bash ./run.sh
+Optimizing ./test.png
+Input size: 10956 (10K)
+Result size: 3347 (3K). Percentage of original: 30.549%
+Result is smaller
+```
 
 ### Base64 内联小尺寸图片
 
