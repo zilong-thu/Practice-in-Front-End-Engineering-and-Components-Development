@@ -260,14 +260,17 @@ $ mv zopflipng /usr/local/bin
 
 ```bash
 #!/bin/bash
+# 首先查找所有的 png 图片
 for file in $(find . -type f -name '*.png')
 do
+  # 定义输出文件名，后面添加 -compressed 字符串
   newFile="${file/.png/-compressed.png}"
+  # 调用 zopflipng 程序来压缩并保存为新图片
   zopflipng "${file}" $newFile
 done
 ```
 
-上面的内容保存到 `run.sh` 文件里，然后运行 `bash ./run.sh`，可以观察 ZopfliPNG 的压缩效果：
+上面的内容保存到 `run-1.sh` 文件里，然后运行 `bash ./run.sh`，可以观察 ZopfliPNG 的压缩效果：
 
 ```bash
 $ bash ./run.sh
@@ -275,6 +278,20 @@ Optimizing ./test.png
 Input size: 10956 (10K)
 Result size: 3347 (3K). Percentage of original: 30.549%
 Result is smaller
+# ... 省略
+```
+
+`run-1.sh` 会生成多余文件，可以逐一比较，然后决定要不要保留（通常来说可以相信 `zopflipng` 的无损压缩能力），如果确认全部替换，可以执行下面的脚本：
+
+```bash
+# 找到所有的压缩图片（名字里以 -compressed.png 结尾）
+for file in $(find . -type f -name "*-compressed.png")
+do
+  # 删掉原图片
+  rm ${file/-compressed/}
+  # 把压缩后的图片重命名为原图片的名字
+  mv ${file} ${file/-compressed/}
+done
 ```
 
 ### Base64 内联小尺寸图片
