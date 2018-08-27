@@ -298,7 +298,47 @@ done
 
 Base64 是一种基于65个字符（26个大写字母 `[A-Z]`，26个小写字母 `[a-z]`，10个阿拉伯数字 `[0-9]`，加号 `+` 和斜杠 `/`，以及用来补位的第65个字符 `=`）来表示二进制数据的编码方法。Base64 编码方案是由 Simon Josefsson 在 2000 年提出的，最初定义在 RFC 1421 和 RFC 2045 里，目前最新的规范是 RFC 4648。
 
-**话题：多小的图片可以考虑使用 base64 进行内联？**
+CSS 的背景图支持使用 base64：
+
+```css
+background-image: url(data:image/png;base64,base64_code_goes_here);
+```
+
+#### 命令行工具
+
+Linux/Unix/MacOS 下都自带了 `base64` 程序。`base64` 程序可以基于 RFC 4648 进行数据的 `Base64` 编解码。
+
+```bash
+$ man base64
+NAME
+    base64 -- Encode and decode using Base64 representation
+
+SYNOPSIS
+    base64 [-h | -D] [-b count] [-i input_file] [-o output_file]
+# ... 省略
+
+# 从 stdin 读取输入值
+$ echo 22 | base64
+MjIK
+$ echo QWxhZGRpbjpvcGVuIHNlc2FtZQ== | base64 --decode
+Aladdin:open sesame
+
+# 读取文件作为输入，转码后把 base64 序列输出到 out.txt 文件里
+$ base64 -i input_file.png -o output_file.txt
+```
+
+此外，`openssl` 程序也支持 `base64` 格式的编码：
+
+```bash
+# -A 参数是为了避免产生自动折行
+$ openssl base64 -A -in in.png -out out.txt
+```
+
+#### Node.js 接口
+
+TODO
+
+#### 话题：多小的图片可以考虑使用 base64 进行内联？
 
 Base64 生成的文件体积为原始图片体积的4/3倍，它对于网站性能优化的提升通常仅针对超小体积的图标类型图片，以体积的稍微增加，来减少 HTTP 的请求次数。那么多小的图片可以考虑使用 base64 进行内联呢？
 
