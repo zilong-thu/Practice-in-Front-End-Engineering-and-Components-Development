@@ -225,7 +225,7 @@ GIMP（GNU Image Manipulation Program，GNU 图形处理程序）是一款跨平
 
 <figure>
 <img src="./images/gimp-ui.jpg" style="width: 80%;">
-<figcaption>GIMP 的界面风格、操作方式与 Photoshop 都很相似。</figcaption>
+<figcaption>GIMP 的界面风格、操作方式与 Photoshop 都很相似。图片里的这位女郎名叫 Lenna。自 1973 年起，Lenna 的这张头像就一直被用作图像处理领域的基准图像。</figcaption>
 </figure>
 
 ### ImageOptim
