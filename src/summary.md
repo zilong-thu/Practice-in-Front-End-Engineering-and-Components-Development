@@ -32,6 +32,7 @@
     * [Webpack](part-2/chapter-2-前端资源构建/05-webpack.md)
     * [前端资源构建系统演进示例](part-2/chapter-2-前端资源构建/06-practice-usage.md)
   * [代码检查工具](part-2/chapter-3-linters/index.md)
+    * [ESLint](part-2/chapter-3-linters/1-eslint.md)
   * [开发与调试](part-2/chapter-4-debug/index.md)
     * [浏览器基本通用调试](part-2/chapter-4-debug/1-browser-debug.md)
     * [XCode Simulator](part-2/chapter-4-debug/2-xcode-simulator.md)
