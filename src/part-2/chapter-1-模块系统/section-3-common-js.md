@@ -1,4 +1,4 @@
-# CommonJS 模块系统及其在 Node.js 中的实现
+# CommonJS 模块系统与 Node.js
 
 ## 简史
 
@@ -25,9 +25,9 @@ CommonJS 本身包括但不限于下面的内容：
 
 ## Node.js 模块系统的基本概念
 
-模块系统是 CommonJS 规范的一部分。其主要定义了 `exports`、`module`、`require` 以及模块查找规则。Node.js 基本上按照 CommonJS 规范实现了模块系统。下面我们来具体看一看。
+模块系统是 CommonJS 规范的一部分，其主要定义了 `exports`、`module`、`require` 以及模块查找规则。Node.js 基本上按照 CommonJS 规范实现了模块系统，不过还是略有差异，因此是一种变体。下面我们来具体看一看。
 
-**模块查找规则**
+### 模块查找规则
 
 简单来说，一个文件就是一个模块。例如，`circle.js`：
 
@@ -46,10 +46,33 @@ const circle = require('./circle.js');
 console.log(`半径为4的圆的面积 = ${circle.area(4)}`);
 ```
 
-**exports**
+### 模块作用域
+
+一个模块文件会形成自己的作用域，这个模块作用域下有几个默认的常量和变量：
+
+**__dirname、__filename**
+
+`__dirname` 返回模块文件所在文件目录的绝对路径。
+
+`__filename` 返回模块文件在操作系统里的绝对路径。
+
+以 `/Users/wzl/commonjs-demo/index.js` 文件为例：
+
+```javascript
+// /Users/wzl/commonjs-demo/index.js
+const path = require('path');
+
+path.dirname(__filename) === __dirname;  // 返回 true
+
+console.log(__filename);
+// 输出： /Users/wzl/examples/demo-modules/commonjs/index.js
+console.log(__dirname);
+// 输出： /Users/wzl/examples/demo-modules/commonjs
+```
 
 **module**
 
+以 `/Users/wzl/commonjs-demo/utils.js` 为例，我们在里面声明一个简单的单例对象，并导出：
 
 ```javascript
 /**
@@ -61,10 +84,84 @@ var util = {
   }
 };
 module.exprots = util;
+console.log(module);
+```
+
+在该文件目录下执行 `node util.js`，可以得到（部分为伪代码）：
+
+```javascript
+Module {
+  id: '.',
+  exports: { formatNum: [Function: formatNum] },
+  parent: null,
+  filename: '/Users/wzl/commonjs-demo/util.js',
+  loaded: false,
+  children: [],
+  paths: [
+    '/Users/wzl/commonjs-demo/node_modules',
+    '/Users/wzl/node_modules',
+    '/Users/node_modules',
+    '/node_modules'
+  ]
+}
+```
+
++ `module.exports` 是这个模块对外输出的对象，可以被其他模块通过 `require()` 语句获取到
++ `module.children` 是这个模块依赖的子模块列表，每一项都是一个 Module 对象
++ `module.paths` 模块的查找路径
++ `module.parent` 第一次加载本模块的模块
+
+**exports**
+
+`exports` 是一个变量名，指向了 `module.exports`，当初设计它的目的只是为了方便、少些点代码而已。它相当于：
+
+```javascript
+var exports = module.exports;
+
+exports.foo = ...
+```
+
+模块最终对外输出的始终是 `module.exports`。这意味着对 `exports` 重新赋值并不会影响真正输出的对象。我们来看个例子，修改上面的 `/Users/wzl/commonjs-demo/utils.js` 如下：
+
+```javascript
+var util = {
+  formatNum: function (num, m){
+    return Number(num).toFixed(m);
+  }
+};
+exports = util;
+console.log(module);
+```
+
+从下面的输出结果，可以看到 `module.exports` 是个空对象 `{}`。如果该模块被其他模块引用，则只能得到一个对象 `{}`。
+
+```javascript
+Module {
+  id: '.',
+  exports: {},
+  parent: null,
+  filename: '/Users/wzl/commonjs-demo/util.js',
+  loaded: false,
+  children: [],
+  paths:[省略...]
+}
 ```
 
 **require**
 
+`require` 是个函数，用于加载模块。
+
+### 模块包装
+
+Node.js 在解析与执行每个模块之前，会先加上一层包装，类似于：
+
+```javascript
+(function(exports, require, module, __filename, __dirname) {
+// 模块代码...
+});
+```
+
+所以，模块作用域实际上是一个函数作用域；而 `__dirname`、`__filename`、`require`、`module` 等模块常量/变量都是外部传入的参数。
 
 ## CommonJS 模块系统的问题
 

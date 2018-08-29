@@ -22,7 +22,7 @@
     * [服务器端 Git](part-2/chapter-0-git-and-vcs/04-server-side-git.md)
   * [模块系统](part-2/chapter-1-模块系统/section-1-概述.md)
     * [刀耕火种时代](part-2/chapter-1-模块系统/section-2-刀耕火种时代.md)
-    * [CommonJS模块系统](part-2/chapter-1-模块系统/section-3-common-js.md)
+    * [CommonJS模块系统与Node.js](part-2/chapter-1-模块系统/section-3-common-js.md)
     * [AMD模块系统](part-2/chapter-1-模块系统/section-4-amd.md)
     * [UMD模块系统](part-2/chapter-1-模块系统/section-5-umd.md)
     * [ECMAScript 模块系统](part-2/chapter-1-模块系统/section-6-esm.md)
