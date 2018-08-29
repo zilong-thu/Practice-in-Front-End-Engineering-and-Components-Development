@@ -1,4 +1,4 @@
-# CommonJS 模块系统
+# CommonJS 模块系统及其在 Node.js 中的实现
 
 ## 简史
 
@@ -23,13 +23,28 @@ CommonJS 本身包括但不限于下面的内容：
 + Encodings
 + Filesystem
 
-## CommonJS 模块系统的基本概念
+## Node.js 模块系统的基本概念
 
-模块系统是 CommonJS 规范的一部分。其主要定义了 `exports`、`module`、`require` 以及模块查找规则。
+模块系统是 CommonJS 规范的一部分。其主要定义了 `exports`、`module`、`require` 以及模块查找规则。Node.js 基本上按照 CommonJS 规范实现了模块系统。下面我们来具体看一看。
 
 **模块查找规则**
 
-简单来说，一个文件就是一个模块。
+简单来说，一个文件就是一个模块。例如，`circle.js`：
+
+```javascript
+const { PI } = Math;
+// 面积
+exports.area = (r) => PI * r ** 2;
+// 周长
+exports.circumference = (r) => 2 * PI * r;
+```
+
+使用上面的模块：
+
+```javascript
+const circle = require('./circle.js');
+console.log(`半径为4的圆的面积 = ${circle.area(4)}`);
+```
 
 **exports**
 
