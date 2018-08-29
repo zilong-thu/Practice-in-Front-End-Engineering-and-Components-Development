@@ -109,6 +109,24 @@ Git 钩子可以分为两大类：客户端钩子（client side hooks），服�
 # TODO
 ```
 
-### 服务器端钩子
+## 共享钩子
 
-## npm 钩子工具
+写在 `.git/hooks` 目录下的钩子有个问题，就是并不能自动跨计算机共享。这样一来，如果多人在一个项目中协作开发，就需要一个机制来确保所有人的钩子都有效。
+
+一个简单的办法是将钩子放到项目中，与源码一同接收版本控制，然后提供一些命令方便每个成员初始化钩子。
+
+### 使用自动化脚本
+
+可以将写好的钩子统一放到一个目录中，例如 `scripts`，然后在 `package.json` 里添加一个脚本：
+
+```bash
+  "scripts": {
+    "init-hooks": "cp ./scripts/pre-commit.sh ./.git/hooks/pre-commit && chmod a+x .git/hooks/pre-commit"
+  }
+```
+
+其他项目成员在获取到项目代码后，就可以通过 `npm run init-hooks` 来初始化所有的钩子了。
+
+### npm 钩子工具
+
+除了借助 shell 脚本，还可以使用 npm 生态下的工具。例如 `husky`。

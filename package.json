@@ -9,7 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "cd ./src && gitbook serve",
-    "count": "find ./src -type f -name \"*.md\" | xargs wc -m | grep total"
+    "count": "find ./src -type f -name \"*.md\" | xargs wc -m | grep total",
+    "init-hooks": "cp ./scripts/pre-commit.sh ./.git/hooks/pre-commit"
   },
   "repository": {
     "type": "git",
