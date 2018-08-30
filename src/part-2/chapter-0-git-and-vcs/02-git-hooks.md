@@ -117,18 +117,28 @@ Git 钩子可以分为两大类：客户端钩子（client side hooks），服�
 
 ### 使用自动化脚本
 
-可以将写好的钩子统一放到一个目录中，例如 `scripts`，然后在 `package.json` 里添加一个脚本：
+可以将写好的钩子统一放到一个目录中，例如 `scripts`，然后在项目的 `package.json` 里添加一个脚本：
 
 ```bash
-  "scripts": {
-    "init-hooks": "cp ./scripts/pre-commit.sh ./.git/hooks/pre-commit && chmod a+x .git/hooks/pre-commit"
-  }
+"scripts": {
+  "init-hooks": "cp ./scripts/pre-commit.sh ./.git/hooks/pre-commit && chmod a+x .git/hooks/pre-commit"
+}
 ```
 
 其他项目成员在获取到项目代码后，就可以通过 `npm run init-hooks` 来初始化所有的钩子了。
 
 ### npm 钩子工具
 
-除了借助 shell 脚本，还可以使用 npm 生态下的工具。
+除了借助 shell 脚本，还可以使用 npm 生态下的工具。例如 `husky`。
 
-例如 `husky`。`husky` 在安装后，会自动在 `.git/hooks` 目录下添加所有的钩子文件，并使用一个模板进行初始化（如果已有某个钩子，则跳过）。然后，每个钩子都会读取 `package.json` 里面对应的脚本（例如 `pre-commit` 钩子会去寻找 `precommit`），在相应钩子调用时执行 `package.json` 里的对应 shell 脚本。
+`husky` 在安装后，会执行 `husky` 的 `package.json` 里 `scripts.install` 指定的命令：
+
+```json
+"scripts": {
+  "install": "node ./bin/install.js"
+}
+```
+
+该脚本会自动在 `.git/hooks` 目录下添加所有的钩子文件，并使用一个模板进行初始化（如果已有某个钩子，则跳过）。
+
+然后，git 操作触发某个钩子执行时，该钩子都会读取项目的 `package.json` 里面对应的脚本（例如 `pre-commit` 钩子会去寻找 `precommit`），并执行之。
