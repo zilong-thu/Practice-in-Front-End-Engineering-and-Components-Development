@@ -10,7 +10,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "cd ./src && gitbook serve",
     "count": "find ./src -type f -name \"*.md\" | xargs wc -m | grep total",
-    "init-hooks": "cp ./scripts/pre-commit.sh ./.git/hooks/pre-commit && chmod a+x ./.git/hooks/pre-commit"
+    "init-hooks": "cp ./scripts/pre-commit.sh ./.git/hooks/pre-commit && chmod a+x ./.git/hooks/pre-commit",
+    "precommit": "npm run test"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "husky": "^0.14.3"
+  }
 }
