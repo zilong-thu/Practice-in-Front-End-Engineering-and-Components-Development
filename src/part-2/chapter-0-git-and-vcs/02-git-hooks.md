@@ -129,4 +129,6 @@ Git 钩子可以分为两大类：客户端钩子（client side hooks），服�
 
 ### npm 钩子工具
 
-除了借助 shell 脚本，还可以使用 npm 生态下的工具。例如 `husky`。
+除了借助 shell 脚本，还可以使用 npm 生态下的工具。
+
+例如 `husky`。`husky` 在安装后，会自动在 `.git/hooks` 目录下添加所有的钩子文件，并使用一个模板进行初始化（如果已有某个钩子，则跳过）。然后，每个钩子都会读取 `package.json` 里面对应的脚本（例如 `pre-commit` 钩子会去寻找 `precommit`），在相应钩子调用时执行 `package.json` 里的对应 shell 脚本。
