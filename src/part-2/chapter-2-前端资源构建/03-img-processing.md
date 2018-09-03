@@ -178,6 +178,10 @@ Delegates (built-in): bzlib freetype jng jpeg ltdl lzma png tiff xml zlib
 $ man magick
 $ man convert
 
+# 查看图片的基本信息，包括格式、尺寸等
+$ magick identify test.jpg
+test.jpg JPEG 690x390 690x390+0+0 8-bit sRGB 65745B 0.000u 0:00.000
+
 # 格式转换
 # ImageMagick 的格式转换可以是隐式的，根据后缀名来判断
 # 将 foo.png 转换为 jpeg 格式，并保存为 foo.jpg
