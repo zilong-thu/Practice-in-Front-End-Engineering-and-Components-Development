@@ -1,13 +1,15 @@
 # 目录
 
 * [封面](README.md)
-* [前言](part-0/1-pre.md)
+* [版权声明](part-0/0-rights.md)
+* [作者介绍](part-0/1-about-author.md)
+* [前言](part-0/2-pre.md)
 * [第一部分-概述](part-1/index.md)
   * [Web 前端简史](part-1/chapter-1-intro/1-web前端简史.md)
   * [HTTP 简介](part-1/chapter-2-http/1-http.md)
   * [JavaScript简介](part-1/chapter-3-js/index.md)
     * [语言特性](part-1/chapter-3-js/01-language-features.md)
-    * [编译原理](part-1/chapter-3-js/02-js-compiling.md)
+    * [JavaScript引擎](part-1/chapter-3-js/02-js-engine.md)
     * [展望](part-1/chapter-3-js/03-js-future.md)
   * [Welcome on Board](part-1/welcome-on-board/index.md)
     * [电脑、操作系统](part-1/welcome-on-board/1-computer-and-os.md)
