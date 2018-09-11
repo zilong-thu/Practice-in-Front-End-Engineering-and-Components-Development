@@ -84,6 +84,20 @@ Chrome 浏览器的 Devtools 还可以调试安卓手机的系统浏览器页面
 
 <img src="./images/webview-debug-03.jpg">
 
+**微信网页**
+
+在国内的前端开发生态中，微信是不容忽视的一个运行环境。针对安卓微信，也可以使用 Chrome DevTools + USB 进行调试。
+
++ 微信访问 `http://debugx5.qq.com/`，开启调试
++ 手机开启开发者选项，开启 USB 调试
++ 手机微信访问要调试的网页
++ USB 连接电脑，电脑 Chrome 浏览器访问 `chrome://inspect/#devices`，即可看到手机设备及其打开的 webview，微信打开的页面通常会提示为 `WebView in com.tencent.mm(version)`
+
+<figure>
+<img src="./images/webview-debug-04-wechat.png" style="width: 60%;">
+<figcaption></figcaption>
+</figure>
+
 **iOS WKWebview**
 
 TODO: 用小可的手机试一下
