@@ -308,6 +308,21 @@ CSS 的背景图支持使用 base64：
 background-image: url(data:image/png;base64,base64_code_goes_here);
 ```
 
+#### 编码规则
+
+首先，我们有一张包含 64 个字符的编码表。下表从 0 开始，到 63 结束。
+
+<figure>
+<img src="./images/base64-index-table.png" style="width: 420px;">
+<figcaption>Base64 编码映射表。共计 2<sup>6</sup> = 64 个字符，用二进制表示的话，最多占用 6 位比特。</figcaption>
+</figure>
+
+一个字节是 8 位比特。使用 6 和 8 的最小公倍数，即 24 比特，3 个字节。由于 Base64 的映射表里每个字符实际上最终依然占据一个字节，所以，这个过程是将 3 个字节映射为 4 个字节。
+
+<figure>
+<img src="./images/base64-encode-example.png" style="width: 70%;">
+</figure>
+
 #### 命令行工具
 
 Linux/Unix/MacOS 下都自带了 `base64` 程序。`base64` 程序可以基于 RFC 4648 进行数据的 `Base64` 编解码。
