@@ -321,6 +321,7 @@ background-image: url(data:image/png;base64,base64_code_goes_here);
 
 <figure>
 <img src="./images/base64-encode-example.png" style="width: 70%;">
+<figcaption>使用 Base64 编码，<code>Man</code> 会被编码为 <code>TWFu</code>。对于不同长度的输入，编码结果未必刚好是 4/3 倍，有可能存在空位，这时候会使用其他 ASCII 符号来补位，例如常见的等号 <code>=</code>。</figcaption>
 </figure>
 
 #### 命令行工具
