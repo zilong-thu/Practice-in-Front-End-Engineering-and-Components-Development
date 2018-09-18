@@ -11,6 +11,7 @@
     * [语言特性](part-1/chapter-3-js/01-language-features.md)
     * [JavaScript引擎](part-1/chapter-3-js/02-js-engine.md)
     * [展望](part-1/chapter-3-js/03-js-future.md)
+  * [前端可以做什么](part-1/chapter-4-webfe-apps/index.md)
   * [Welcome on Board](part-1/welcome-on-board/index.md)
     * [电脑、操作系统](part-1/welcome-on-board/1-computer-and-os.md)
     * [Mac终端与常用命令行工具](part-1/welcome-on-board/2-terminals.md)

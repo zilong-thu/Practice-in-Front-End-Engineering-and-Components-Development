@@ -37,17 +37,6 @@ console.log(bigA);
 
 这个基本类型目前处在 Stage3 阶段。此阶段的含义是 Candidate（候选），“Indicate that further refinement will require feedback from implementations and users”，即需要实现者（通常是浏览器厂商）与用户进一步优化与反馈。目前 Chrome67 已经开始支持 BigInt。还需要有至少一个其他浏览器厂商或JS运行时给出具体的实现。
 
-### 应用领域
-
-在应用程序方面，我们可以期待 JavaScript 承担更多的业务场景。
-
-**后端服务**
-
-借助于 Node.js，相当多的 JavaScript 开发者已经在生产环境下维护着自己的前端服务，这些服务承担着路由控制、页面渲染、请求代理与数据聚合等功能，少数公司可能还使用了 JavaScript 来连接数据库（例如MySQL/MongoDB）并提供微服务。这种从前到后都使用 JavaScript 进行开发的全栈模式，减少了语言间的沟通障碍，有一定的优势，也有一定的潜在风险，例如对开发人员的要求变高可能面临暂时的人才储备不足，JavaScript 的弱类型带来的不稳定性，等等。未来应该会有更多的公司和开发者去尝试全栈 JavaScript 开发模式。
-
-**游戏开发**
-
-**区块链技术**
 
 ## 参考资料
 
