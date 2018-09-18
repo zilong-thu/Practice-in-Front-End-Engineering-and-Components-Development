@@ -27,10 +27,14 @@ JavaScript 也是一门图灵完备的程序设计语言，这意味着我们可
 
 <img src="./images/ast-01.png" class="round">
 
-我们以 Acorn.js 为例来看一下 JavaScript 解析器的使用方法。首先，安装 `acorn`：
+我们以 Acorn.js 为例来看一下 JavaScript 解析器的使用方法。首先，安装 `acorn` 等示例用到的包：
 
 ```bash
-$ npm i acorn acorn-walker
+$ npm i acorn acorn-walker escodegen
+# 每个包的作用说明
+#   acorn:       JS 语法分析的主要入口
+#   acorn-walk:  提供遍历抽象语法树的接口
+#   escodegen:   将符合 ESTree 规范的抽象语法树生成为 ECMAScript 代码
 ```
 
 在 `acorn-01.js` 里书写下面的代码，
@@ -82,6 +86,91 @@ $ node acorn-01.js
   "sourceType": "script",
   "start": 0,
   "type": "Program"
+}
+```
+
+生成 AST 后，可以对其进行遍历，在访问到不同类型的节点时可以执行配置的回调函数（visitors），既可以进行统计分析，也可以直接操作 AST。
+
+假设我们有个 `util.js` 文件，其内容为：
+
+```javascript
+export function queryData() {
+  return [];
+}
+
+export function addData(data) {
+  return true;
+}
+
+export function updateData(data) {
+  return true;
+}
+
+export function removeData(id) {
+  return true;
+}
+```
+
+我们的 `acorn-02.js` 内容如下：
+
+```javascript
+const fs         = require('fs');
+const {Parser}   = require('acorn');
+const walk       = require('acorn-walk');
+const escodegen  = require('escodegen');
+
+
+const fileContent = fs.readFileSync('./util.js');
+const ast = Parser.parse(fileContent, {
+  // 注意这里指定了源内容的类型为 module，即模块
+  sourceType: 'module'
+});
+
+
+// 定义访问者函数
+const visitors = {
+  // 会在每次遇到一个 type 为 ExportNamedDeclaration 的节点时执行此函数
+  ExportNamedDeclaration(node) {
+    if (node.declaration.type === 'FunctionDeclaration') {
+      console.log(`找到了一个 export 函数的语句，函数名称是：${node.declaration.id.name}`);
+    }
+  }
+};
+walk.simple(ast, visitors);
+
+fs.writeFileSync('util-new.js', escodegen.generate(ast, {
+  format: {
+    // 指定输出代码的缩进为两个空格
+    indent: {
+      style: '  ',
+    }
+  }
+}));
+```
+
+执行上面的代码，会输出：
+
+```bash
+找到了一个 export 函数的语句，函数名称是：queryData
+找到了一个 export 函数的语句，函数名称是：addData
+找到了一个 export 函数的语句，函数名称是：updateData
+找到了一个 export 函数的语句，函数名称是：removeData
+```
+
+而如果查看 `util-new.js` 文件，则会发现每个函数名的前面被我们加上了一个 `$` 符号：
+
+```javascript
+export function $queryData() {
+  return [];
+}
+export function $addData(data) {
+  return true;
+}
+export function $updateData(data) {
+  return true;
+}
+export function $removeData(id) {
+  return true;
 }
 ```
 
