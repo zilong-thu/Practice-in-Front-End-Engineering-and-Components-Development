@@ -97,4 +97,3 @@ $ uglifyjs in.js -m -o out.js
 5. [CoffeeScript 官网](http://coffeescript.org/)
 6. [CoffeeScript | 维基百科](https://zh.wikipedia.org/wiki/CoffeeScript)
 7. [UglifyJS 官网](http://lisperator.net/uglifyjs/)
-8. [](https://zhuanlan.zhihu.com/p/32189701)

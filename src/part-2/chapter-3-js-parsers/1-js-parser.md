@@ -13,19 +13,77 @@ JavaScript 也是一门图灵完备的程序设计语言，这意味着我们可
 
 使用不同工具构建的抽象语法树可能会有不同的结构，如果大家都遵从同样的规范，那么相关联的生态链工具的开发会更为轻松、明晰。很早之前，FireFox 浏览器所使用的 JavaScript 引擎 SpiderMonkey 曾经提供了一个 JavaScript API，使得开发者可以直接调用 SpiderMonkey 的 JavaScript 分析器。这个 API 所描述的 JavaScript 抽象语法树格式渐渐流行起来，如今成为 JavaScript AST 的通用描述。ESTree Spec 正是在此基础上建立起来的，它现在是社区对 JavaScript 抽象语法树构建时采用最广泛的规则，可以认为是社区推动的事实标准。众多基础设施开发者一起维护着这个规范，包括 Dave Herman（Mozilla 研究中心的首席研究员和策略总监）、 Nicholas C. Zakas（ESLint 的作者）、Ingvar Stepanyan（Acorn 的作者）、Mike Sherov 与 Ariya Hidayat（Esprima 的作者）以及 Babel.js 团队等。
 
-## 实现
+## 解析器使用：以Acorn.js为例
 
 在实现上，有这么几个使用较广泛的库：
 
-+ uglifyjs
++ Uglifyjs，这个工具是专门用来混淆压缩 JavaScript 代码的，内置了一个解析器
 + Esprima，是用 JavaScript 实现的 JavaScript 词法分析及语法分析器
 + espree，基于 Esprima，被 ESLint 工具使用
-+ Acorn
++ Acorn，目前使用量很高的一个解析器
 + Babylon，在 acorn.js 基础上发展起来，Babel.js 最开始使用的分析器
 
 在 https://astexplorer.net/ 网站可以非常直观地看到 JavaScript 源代码与其对应的抽象语法树每个节点之间的对应关系：
 
 <img src="./images/ast-01.png" class="round">
+
+我们以 Acorn.js 为例来看一下 JavaScript 解析器的使用方法。首先，安装 `acorn`：
+
+```bash
+$ npm i acorn acorn-walker
+```
+
+在 `acorn-01.js` 里书写下面的代码，
+
+```javascript
+const {Parser} = require('acorn');
+console.log(JSON.stringify(Parser.parse('var a = 1;')));
+```
+
+运行上面的代码：
+
+```
+$ node acorn-01.js
+```
+
+我们会输出这样的对象，它就是根据 `var a = 1;` 这样一段代码所生成的抽象语法树：
+
+```json
+{
+  "body": [
+    {
+      "declarations": [
+        {
+          "end": 9,
+          "id": {
+            "end": 5,
+            "name": "a",
+            "start": 4,
+            "type": "Identifier"
+          },
+          "init": {
+            "end": 9,
+            "raw": "1",
+            "start": 8,
+            "type": "Literal",
+            "value": 1
+          },
+          "start": 4,
+          "type": "VariableDeclarator"
+        }
+      ],
+      "end": 10,
+      "kind": "var",
+      "start": 0,
+      "type": "VariableDeclaration"
+    }
+  ],
+  "end": 10,
+  "sourceType": "script",
+  "start": 0,
+  "type": "Program"
+}
+```
 
 ## 参考
 
