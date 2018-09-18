@@ -1,32 +1,4 @@
-# JavaScript AST、编译器及其应用
-
-## JavaScript AST 等概念
-
-### ESTree 规范
-
-很早之前，FireFox 浏览器所使用的 JavaScript 引擎 SpiderMonkey 曾经提供了一个 JavaScript API，使得开发者可以直接调用 SpiderMonkey 的 JavaScript 分析器。这个 API 所描述的 JavaScript 抽象语法树格式渐渐流行起来，如今成为 JavaScript AST 的通用描述。ESTree Spec 正是在此基础上建立起来的社区规范。在实现上，有这么几个使用较广泛的库：
-
-+ uglifyjs
-+ Esprima，是用 JavaScript 实现的 JavaScript 词法分析及语法分析器
-+ espree，基于 Esprima，被 ESLint 工具使用
-+ Acorn
-+ Babylon，在 acorn.js 基础上发展起来，Babel.js 最开始使用的分析器
-
-在 https://astexplorer.net/ 网站可以非常直观地看到 JavaScript 源代码与其对应的抽象语法树每个节点之间的对应关系：
-
-<img src="./images/ast-01.png" class="round">
-
-### Acorn.js
-
-
-
-
-### 关于图灵完备性
-
-图灵完备的编程语言（Turing Complete Language）
-
-
-## Babel
+# Babel
 
 Facebook 推出的 ECMAScript 编译器 Babel <sup>[1]</sup> 名字源于巴别塔（Tower of Babel）的故事，这个故事则起源于《圣经·旧约·创世记》（Book of Genesis）第11章：
 
