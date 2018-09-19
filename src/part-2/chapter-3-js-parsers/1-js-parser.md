@@ -55,40 +55,40 @@ $ node acorn-01.js
 
 我们会输出这样的对象，它就是根据 `var a = 1;` 这样一段代码所生成的抽象语法树：
 
-```json
+```javascript
 {
-  "body": [
+  type: "Program",      // type 为 Program 的节点只有一个，表示这是程序代码语法树的根节点
+  sourceType: "script",
+  start: 0,
+  end: 10,
+  body: [
     {
-      "declarations": [
+      type: "VariableDeclaration",  // 变量声明节点
+      declarations: [               // declarations 是个数组，包含了变量声明节点的子节点
         {
-          "end": 9,
-          "id": {
-            "end": 5,
-            "name": "a",
-            "start": 4,
-            "type": "Identifier"
+          end: 9,
+          id: {
+            end: 5,
+            name: "a",
+            start: 4,
+            type: "Identifier",   // Identifier 表示这是一个标识符，即变量或常量名
           },
-          "init": {
-            "end": 9,
-            "raw": "1",
-            "start": 8,
-            "type": "Literal",
-            "value": 1
+          init: {
+            end: 9,
+            raw: "1",
+            start: 8,
+            type: "Literal",      // Literal 表示此节点为原始值
+            value: 1
           },
-          "start": 4,
-          "type": "VariableDeclarator"
+          start: 4,
+          type: "VariableDeclarator"
         }
       ],
-      "end": 10,
-      "kind": "var",
-      "start": 0,
-      "type": "VariableDeclaration"
+      end: 10,
+      kind: "var",    // 声明标识符时使用的关键字类型，可以为 [var | let | const] 之一
+      start: 0,
     }
   ],
-  "end": 10,
-  "sourceType": "script",
-  "start": 0,
-  "type": "Program"
 }
 ```
 

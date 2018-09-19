@@ -3,6 +3,8 @@ const {Parser}   = require('acorn');
 const walk       = require('acorn-walk');
 const escodegen  = require('escodegen');
 
+console.log(JSON.stringify(Parser.parse('const a = 1;')));
+
 // 读取 util.js 里的文件内容
 const fileContent = fs.readFileSync('./util.js');
 // 生成抽象语法树
