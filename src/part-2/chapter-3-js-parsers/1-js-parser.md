@@ -16,6 +16,29 @@ JavaScript 也是一门图灵完备的程序设计语言，这意味着我们可
 
 使用不同工具构建的抽象语法树可能会有不同的结构，如果大家都遵从同样的规范，那么相关联的生态链工具的开发会更为轻松、明晰。很早之前，FireFox 浏览器所使用的 JavaScript 引擎 SpiderMonkey 曾经提供了一个 JavaScript API，使得开发者可以直接调用 SpiderMonkey 的 JavaScript 分析器。这个 API 所描述的 JavaScript 抽象语法树格式渐渐流行起来，如今成为 JavaScript AST 的通用描述。ESTree Spec 正是在此基础上建立起来的，它现在是社区对 JavaScript 抽象语法树构建时采用最广泛的规则，可以认为是社区推动的事实标准。众多基础设施开发者一起维护着这个规范，包括 Dave Herman（Mozilla 研究中心的首席研究员和策略总监）、 Nicholas C. Zakas（ESLint 的作者）、Ingvar Stepanyan（Acorn 的作者）、Mike Sherov 与 Ariya Hidayat（Esprima 的作者）以及 Babel.js 团队等。
 
+ESTree AST Spec 的初始版本是基于 ES5 的，后续的 ES6/ES7/ES8 等版本的规范，都只针对新增语言特性提出。
+
+ESTree AST 的每个节点，都用 Node 对象来标识，Node 对象按照下面的接口定义：
+
+```
+interface Node {
+  type: string;
+  loc: SourceLocation | null;
+}
+```
+
+`type` 表示节点类型，例如 `Identifier | Literal | Program | ExpressionStatement` 等。`loc` 表示该节点的起始位置，由 `SourceLocation` 定义：
+
+```
+interface SourceLocation {
+  source: string | null;
+  start: Position;
+  end: Position;
+}
+```
+
+诸如此类。
+
 ## 解析器使用：以Acorn.js为例
 
 在实现上，有这么几个使用较广泛的库：
