@@ -14,9 +14,9 @@ JavaScript 也是一门图灵完备的程序设计语言，这意味着我们可
 
 ## JavaScript AST 规范
 
-使用不同工具构建的抽象语法树可能会有不同的结构，如果大家都遵从同样的规范，那么相关联的生态链工具的开发会更为轻松、明晰。很早之前，FireFox 浏览器所使用的 JavaScript 引擎 SpiderMonkey 曾经提供了一个 JavaScript API，使得开发者可以直接调用 SpiderMonkey 的 JavaScript 分析器。这个 API 所描述的 JavaScript 抽象语法树格式渐渐流行起来，如今成为 JavaScript AST 的通用描述。ESTree Spec 正是在此基础上建立起来的，它现在是社区对 JavaScript 抽象语法树构建时采用最广泛的规则，可以认为是社区推动的事实标准。众多基础设施开发者一起维护着这个规范，包括 Dave Herman（Mozilla 研究中心的首席研究员和策略总监）、 Nicholas C. Zakas（ESLint 的作者）、Ingvar Stepanyan（Acorn 的作者）、Mike Sherov 与 Ariya Hidayat（Esprima 的作者）以及 Babel.js 团队等。
+使用不同工具构建的抽象语法树可能会有不同的结构，如果大家都遵从同样的规范，那么相关联的生态链工具的开发会更为轻松、明晰。很早之前，FireFox 浏览器所使用的 JavaScript 引擎 SpiderMonkey 曾经提供了一个 JavaScript API，使得开发者可以直接调用 SpiderMonkey 的 JavaScript 分析器。这个 API 所描述的 JavaScript 抽象语法树格式渐渐流行起来，如今成为 JavaScript AST 的通用描述。ESTree Spec<sup>[1]</sup> 正是在此基础上建立起来的，它现在是社区对 JavaScript 抽象语法树构建时采用最广泛的规则，可以认为是社区推动的事实标准。众多基础设施开发者一起维护着这个规范，包括 Dave Herman（Mozilla 研究中心的首席研究员和策略总监）、 Nicholas C. Zakas（ESLint 的作者）、Ingvar Stepanyan（Acorn 的作者）、Mike Sherov 与 Ariya Hidayat（Esprima 的作者）以及 Babel.js 团队等。
 
-ESTree AST Spec 的初始版本是基于 ES5 的，后续的 ES6/ES7/ES8 等版本的规范，都只针对新增语言特性提出。
+ESTree AST Spec 的初始版本是基于 ES5 的<sup>[2]</sup>，后续的 ES6/ES7/ES8 等版本的规范，都只针对新增语言特性提出。
 
 ESTree AST 的每个节点，都用 Node 对象来标识，Node 对象按照下面的接口定义：
 
@@ -205,8 +205,7 @@ export function $removeData(id) {
 
 ## 参考
 
-https://zhuanlan.zhihu.com/p/32189701
-
-https://juejin.im/post/582425402e958a129926fcb4
-
-https://www.zhihu.com/question/25017764
+1. [ESTtree Spec](https://github.com/estree/estree)
+2. https://github.com/estree/estree/blob/master/es5.md
+3. [Esprima](https://github.com/jquery/esprima)
+4. [Acorn](https://github.com/acornjs/acorn)

@@ -90,9 +90,6 @@ $ uglifyjs in.js -m -o out.js
 
 ## 参考资料
 
-1. [ESTtree Spec](https://github.com/estree/estree)
-2. [Esprima](https://github.com/jquery/esprima)
-3. [Acorn](https://github.com/acornjs/acorn)
 4. [Babel 官网](https://babeljs.io/)
 5. [CoffeeScript 官网](http://coffeescript.org/)
 6. [CoffeeScript | 维基百科](https://zh.wikipedia.org/wiki/CoffeeScript)
