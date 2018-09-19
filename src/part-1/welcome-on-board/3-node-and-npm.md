@@ -98,6 +98,22 @@ $ npm shrinkwrap
 
 如果目录中同时存在 `npm-shrinkwrap.json` 和 `package-lock.json` 文件，那么后者将被忽视。
 
+#### 一些常用命令
+
+```bash
+# 安装某个包，并将其作为 devDependencies 依赖记录到 package.json 里
+$ npm install <package-name> --save-dev
+
+# 卸载某个包
+$ npm uninstall <package-name>
+
+# 与远程镜像进行版本对比，列出过期的包
+$ npm outdated
+
+# 列出全局安装了的包，只搜索第一级
+$ npm ls -g --depth=0
+```
+
 ### NPX
 
 NPM 5.2 及之后的版本会随之携带一个新的工具 `npx`，这个工具的主要作用是运行局部而非全局的包（例如`gulp`）。在 `npx` 之前，如果要运行局部安装的 `gulp` 工具，有两个方法：一是在 `package.json` 文件的 `scripts` 里声明一个命令，例如：
