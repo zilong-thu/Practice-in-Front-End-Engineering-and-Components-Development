@@ -122,13 +122,13 @@ const {Parser}   = require('acorn');
 const walk       = require('acorn-walk');
 const escodegen  = require('escodegen');
 
-
+// 读取 util.js 里的文件内容
 const fileContent = fs.readFileSync('./util.js');
+// 生成抽象语法树
 const ast = Parser.parse(fileContent, {
   // 注意这里指定了源内容的类型为 module，即模块
   sourceType: 'module'
 });
-
 
 // 定义访问者函数
 const visitors = {
@@ -139,6 +139,7 @@ const visitors = {
     }
   }
 };
+// 遍历抽象语法树
 walk.simple(ast, visitors);
 
 fs.writeFileSync('util-new.js', escodegen.generate(ast, {
