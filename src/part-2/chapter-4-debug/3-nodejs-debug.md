@@ -47,7 +47,7 @@ $ node --inspect=9229 server.js
 $ ssh -L 9221:localhost:9229 user@10.2.3.4
 ```
 
-如此一来，本地机器的 `9221` 端口就直连了远程机器的 `9229` 端口。然后用 Chrome DevTools 或者 VS Code “附着”（attach） `9221` 端口，就可以像之前那样进行调试了。
+如此一来，本地机器的 `9221` 端口就直连了远程机器的 `9229` 端口。然后用 Chrome DevTools `9221` 端口，就可以像之前那样进行调试了。
 
 ### Debugger 协议
 
@@ -63,9 +63,18 @@ $ node-debug app.js
 
 当然，前端开发者应该尽量使用最新版本的 Node，配合 `--inspect` 来调试自己的 Node 程序。
 
-## IDE 对 Node 调试的支持
+## VSCode 对 Node 调试的支持
 
+除了借助于 Chrome DevTools 对 Node.js 程序进行调试，我们还可以使用 VSCode 的“附着”（attach）功能在编辑器里打断点对通过 `--inspect` 协议启动的 Node.js 程序进行调试。
 
+<figure>
+<img src="./images/node-debug-03.png" class="round" style="width: 96%;">
+<figcaption>在所有的 IDE 中，VSCode 对 Node.js 程序的调试支持可以说是非常完备了。在 VSCode 中使用 Attach 功能调试由 `--inspect=9529` 启动的 Node.js 程序，需要在项目的根目录下新建 .vscode/launch.json 文件并进行如上配置。</figcaption>
+</figure>
+
+此外，VSCode 的另外一种主要调试方式，是直接使用 VSCode 来启动 Node.js 程序。这种模式称为 "Launch"。
+
+使用哪种方式进行调试，要取决于项目开发所采用的工作流。如果项目开发非常依赖 VSCode，Node.js 程序也要在 VSCode 里启动，自然就可以在 Launch 模式下调试；而如果项目的启动与运行并不打算依赖 VSCode，而是以其他的方式启动（Node 或者浏览器），那么使用 Attach 模式进行调试更为合适。
 
 ## 参考资料
 
