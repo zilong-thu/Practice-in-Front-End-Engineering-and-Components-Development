@@ -1,6 +1,14 @@
 {
+  "title": "Web前端工程化与组件化开发实践",
   "styles": {
     "website": "styles/common.css",
     "pdf": "styles/common.css"
+  },
+  "theme-default": {
+    "showLevel": true
+  },
+  "pdf": {
+    "fontSize": 13,
+    "paperSize": "b5"
   }
 }
