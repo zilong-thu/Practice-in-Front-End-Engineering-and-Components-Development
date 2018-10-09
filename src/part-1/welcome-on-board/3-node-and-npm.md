@@ -68,6 +68,8 @@ Found '/path/to/project/.nvmrc' with with version <9.7.0>
 Now using node v9.7.0 (npm v5.6.0)
 ```
 
+给项目设置 `.nvmrc` 文件可以避免很多麻烦，例如多人协作时 Node 版本不一致、依赖的某些全局包在切换 Node 版本时不存在等等问题。
+
 nvm 的更多用法可以参考其官网<sup>[3]</sup>，或者运行 `man nvm` 来获得帮助。
 
 ### NPM - Node.js 包管理工具
@@ -112,6 +114,9 @@ $ npm outdated
 
 # 列出全局安装了的包，只搜索第一级
 $ npm ls -g --depth=0
+/Users/wzl/.nvm/versions/node/v9.7.0/lib
+├── gitbook-cli@2.3.2
+└── npm@5.6.0
 ```
 
 ### NPX
