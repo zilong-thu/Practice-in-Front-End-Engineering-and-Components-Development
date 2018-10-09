@@ -4,11 +4,20 @@
     "website": "styles/common.css",
     "pdf": "styles/common.css"
   },
-  "theme-default": {
-    "showLevel": true
+  "pluginsConfig": {
+    "theme-default": {
+      "showLevel": false
+    }
   },
   "pdf": {
     "fontSize": 13,
-    "paperSize": "b5"
-  }
+    "paperSize": "b5",
+    "margin": {
+      "top": 45,
+      "bottom": 45,
+      "left": 50,
+      "right": 50
+    }
+  },
+  "plugins": []
 }
