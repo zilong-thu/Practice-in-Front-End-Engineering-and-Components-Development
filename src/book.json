@@ -4,11 +4,6 @@
     "website": "styles/common.css",
     "pdf": "styles/common.css"
   },
-  "pluginsConfig": {
-    "theme-default": {
-      "showLevel": false
-    }
-  },
   "pdf": {
     "fontSize": 13,
     "paperSize": "b5",
@@ -18,6 +13,5 @@
       "left": 50,
       "right": 50
     }
-  },
-  "plugins": []
+  }
 }
