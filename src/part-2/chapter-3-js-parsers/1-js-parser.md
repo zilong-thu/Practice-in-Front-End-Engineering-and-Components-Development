@@ -211,7 +211,39 @@ export function $removeData(id) {
 }
 ```
 
+## Acorn.js 工作原理
+
+与常见的编译器语法分析过程类似，Acorn.js 也会经过词法分析、语法分析两个阶段来输出抽象语法树，如下图所示。
+
+<figure>
+<img src="./images/parsing-process.png" style="width: 70%;">
+<figcaption>Acorn.js 解析过程</figcaption>
+</figure>
+
+### 词法分析
+
+大部分编程语言的词素可以分为这几类：
+
++ 关键字（keyword），例如 `var`、`function`
++ 标识符（identifier），例如变量名、函数名
++ 分隔符（separator），例如 `(`、`)`、`{`、`[`、`;`
++ 操作符（operator），`=`、`+`、`++`
++ 字面量（literal），对应 JavaScript，就是基本值，例如布尔值 `true`、数字 `200`、字符串 `"this is a string"`
++ 注释（comment）
+
+词法分析阶段，Acorn.js 将字符流解析为有意义的词素序列，并对于每个词素进行分析，最后输出词法单元（`token`）序列。例如输入代码 `var a = 1;`，会得到形如这样的词法单元序列：
+
+```
+[<keyword, var>, <id, a>, <operator, =>, <literal, 1>, <separator, ;>]
+```
+
+### 语法分析
+
 ## 我们可以用JS解析器做什么
+
+### 静态分析
+
+### 代码生成
 
 ## 参考
 
