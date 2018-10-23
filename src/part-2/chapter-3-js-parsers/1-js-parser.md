@@ -57,6 +57,36 @@ interface IfStatement <: Statement {
 }
 ```
 
+## Acorn.js 工作原理
+
+与常见的编译器语法分析过程类似，Acorn.js 也会经过词法分析、语法分析两个阶段来输出抽象语法树，如下图所示。
+
+<figure>
+<img src="./images/parsing-process.png" style="width: 70%;">
+<figcaption>Acorn.js 解析过程</figcaption>
+</figure>
+
+### 词法分析
+
+大部分编程语言的词素可以分为这几类：
+
++ 关键字（keyword），例如 `var`、`function`
++ 标识符（identifier），例如变量名、函数名
++ 分隔符（separator），例如 `(`、`)`、`{`、`[`、`;`
++ 操作符（operator），`=`、`+`、`++`
++ 字面量（literal），对应 JavaScript，就是基本值，例如布尔值 `true`、数字 `200`、字符串 `"this is a string"`
++ 注释（comment）
+
+词法分析阶段，Acorn.js 将字符流解析为有意义的词素序列，并对于每个词素进行分析，最后输出词法单元（`token`）序列。例如输入代码 `var a = 1;`，会得到形如这样的词法单元序列：
+
+```
+[<keyword, var>, <id, a>, <operator, =>, <literal, 1>, <separator, ;>]
+```
+
+### 语法分析
+
+语法分析（Syntax Analysis），也叫“解析”（Parsing），目标结果通常是输出该语言的抽象语法树（Abstract Syntax Tree，AST）。Acorn.js 采用了自顶向下的语法分析方法。
+
 ## 解析器使用：以Acorn.js为例
 
 在 https://astexplorer.net/ 网站可以非常直观地看到 JavaScript 源代码与其对应的抽象语法树每个节点之间的对应关系：
@@ -211,39 +241,9 @@ export function $removeData(id) {
 }
 ```
 
-## Acorn.js 工作原理
+## 我们可以用 JS 解析器做什么
 
-与常见的编译器语法分析过程类似，Acorn.js 也会经过词法分析、语法分析两个阶段来输出抽象语法树，如下图所示。
-
-<figure>
-<img src="./images/parsing-process.png" style="width: 70%;">
-<figcaption>Acorn.js 解析过程</figcaption>
-</figure>
-
-### 词法分析
-
-大部分编程语言的词素可以分为这几类：
-
-+ 关键字（keyword），例如 `var`、`function`
-+ 标识符（identifier），例如变量名、函数名
-+ 分隔符（separator），例如 `(`、`)`、`{`、`[`、`;`
-+ 操作符（operator），`=`、`+`、`++`
-+ 字面量（literal），对应 JavaScript，就是基本值，例如布尔值 `true`、数字 `200`、字符串 `"this is a string"`
-+ 注释（comment）
-
-词法分析阶段，Acorn.js 将字符流解析为有意义的词素序列，并对于每个词素进行分析，最后输出词法单元（`token`）序列。例如输入代码 `var a = 1;`，会得到形如这样的词法单元序列：
-
-```
-[<keyword, var>, <id, a>, <operator, =>, <literal, 1>, <separator, ;>]
-```
-
-### 语法分析
-
-## 我们可以用JS解析器做什么
-
-### 静态分析
-
-### 代码生成
+JavaScript 解析器通常应用在非常基础的功能上面，包括静态分析、代码检查、语法转换等。例如，社区应用最广泛的打包构建工具 webpack，就使用 acorn.js 作为自己的语法分析器的基础库；Babel 项目的 语法分析器 babylon.js 实际上是在 acorn.js 基础上开发并演化的；代码检查工具 ESLint 则使用语法分析工具 Espree.js 来提供对代码的感知能力。
 
 ## 参考
 
