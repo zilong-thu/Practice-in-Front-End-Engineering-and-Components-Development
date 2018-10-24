@@ -21,6 +21,38 @@ JavaScript 也是一门图灵完备的程序设计语言，这意味着我们可
 + **Babylon**，在 acorn.js 基础上发展起来，Babel.js 最开始使用的分析器
 + **TypeScript**
 
+我们以 Acorn.js 为例，来看一下 JS 解析器的原理与应用场景。
+
+## Acorn.js 工作原理
+
+与常见的编译器语法分析过程类似，Acorn.js 也会经过词法分析、语法分析两个阶段来输出抽象语法树，如下图所示。
+
+<figure>
+<img src="./images/parsing-process.png" style="width: 70%;">
+<figcaption>Acorn.js 解析过程</figcaption>
+</figure>
+
+### 词法分析
+
+大部分编程语言的词素可以分为这几类：
+
++ 关键字（keyword），例如 `break`、`var`、`function`、`if`、`else` 等
++ 标识符（identifier），例如变量名、函数名
++ 标点符号（punctuator），也叫分隔符（separator），例如 `(`、`)`、`{`、`[`、`;`、`,`
++ 操作符（operator），`=`、`+`、`++`
++ 字面量（literal），对应 JavaScript，就是基本值，例如布尔值 `true`、数字 `200`、字符串 `"this is a string"`
++ 注释（comment），包括 `//` 和 `/**/`
+
+词法分析阶段，Acorn.js 将字符流解析为有意义的词素序列，并对于每个词素进行分析，最后输出词法单元（`token`）序列。例如输入代码 `var a = 1;`，会得到形如这样的词法单元序列：
+
+```
+[<keyword, var>, <id, a>, <operator, =>, <literal, 1>, <separator, ;>]
+```
+
+### 语法分析
+
+语法分析（Syntax Analysis），也叫“解析”（Parsing），目标结果通常是输出该语言的抽象语法树（Abstract Syntax Tree，AST）。Acorn.js 采用了自顶向下的语法分析方法，并且输出的 AST 结构是按照 JavaScript AST 规范的约定来实现的。
+
 ## JavaScript AST 规范
 
 使用不同工具构建的抽象语法树可能会有不同的结构，如果大家都遵从同样的规范，那么相关联的生态链工具的开发会更为轻松、明晰。很早之前，FireFox 浏览器所使用的 JavaScript 引擎 SpiderMonkey 曾经提供了一个 JavaScript API，使得开发者可以直接调用 SpiderMonkey 的 JavaScript 分析器。这个 API 所描述的 JavaScript 抽象语法树格式渐渐流行起来，如今成为 JavaScript AST 的通用描述。ESTree Spec<sup>[1]</sup> 正是在此基础上建立起来的，它现在是社区对 JavaScript 抽象语法树构建时采用最广泛的规则，可以认为是社区推动的事实标准。众多基础设施开发者一起维护着这个规范，包括 Dave Herman（Mozilla 研究中心的首席研究员和策略总监）、 Nicholas C. Zakas（ESLint 的作者）、Ingvar Stepanyan（Acorn 的作者）、Mike Sherov 与 Ariya Hidayat（Esprima 的作者）以及 Babel.js 团队等。
@@ -57,35 +89,7 @@ interface IfStatement <: Statement {
 }
 ```
 
-## Acorn.js 工作原理
-
-与常见的编译器语法分析过程类似，Acorn.js 也会经过词法分析、语法分析两个阶段来输出抽象语法树，如下图所示。
-
-<figure>
-<img src="./images/parsing-process.png" style="width: 70%;">
-<figcaption>Acorn.js 解析过程</figcaption>
-</figure>
-
-### 词法分析
-
-大部分编程语言的词素可以分为这几类：
-
-+ 关键字（keyword），例如 `var`、`function`
-+ 标识符（identifier），例如变量名、函数名
-+ 分隔符（separator），例如 `(`、`)`、`{`、`[`、`;`
-+ 操作符（operator），`=`、`+`、`++`
-+ 字面量（literal），对应 JavaScript，就是基本值，例如布尔值 `true`、数字 `200`、字符串 `"this is a string"`
-+ 注释（comment）
-
-词法分析阶段，Acorn.js 将字符流解析为有意义的词素序列，并对于每个词素进行分析，最后输出词法单元（`token`）序列。例如输入代码 `var a = 1;`，会得到形如这样的词法单元序列：
-
-```
-[<keyword, var>, <id, a>, <operator, =>, <literal, 1>, <separator, ;>]
-```
-
-### 语法分析
-
-语法分析（Syntax Analysis），也叫“解析”（Parsing），目标结果通常是输出该语言的抽象语法树（Abstract Syntax Tree，AST）。Acorn.js 采用了自顶向下的语法分析方法。
+`<:` 符号表示前者是后者的子集。
 
 ## 解析器使用：以Acorn.js为例
 
@@ -124,13 +128,13 @@ $ node acorn-01.js
   sourceType: "script",
   start: 0,
   end: 10,
-  body: [
+  body: [               // body 是个数组，由语句（statement）组成
     {
       type: "VariableDeclaration",  // 变量声明节点
       declarations: [               // declarations 是个数组，包含了变量声明节点的子节点
         {
           end: 9,
-          id: {
+          id: {                  // id 是 identifier 的缩写
             end: 5,
             name: "a",
             start: 4,
