@@ -43,11 +43,45 @@ JavaScript 也是一门图灵完备的程序设计语言，这意味着我们可
 + 字面量（literal），对应 JavaScript，就是基本值，例如布尔值 `true`、数字 `200`、字符串 `"this is a string"`
 + 注释（comment），包括 `//` 和 `/**/`
 
-词法分析阶段，Acorn.js 将字符流解析为有意义的词素序列，并对于每个词素进行分析，最后输出词法单元（`token`）序列。例如输入代码 `var a = 1;`，会得到形如这样的词法单元序列：
+词法分析阶段，acorn.js 将字符流解析为有意义的词素序列，并对于每个词素进行分析，最后输出词法单元（`token`）序列。例如输入代码 `var a = 1;`，会得到形如这样的词法单元序列：
 
 ```
 [<keyword, var>, <id, a>, <operator, =>, <literal, 1>, <separator, ;>]
 ```
+
+acorn.js 暴露了自己的词法分析接口，可以像下面这样调用：
+
+```javascript
+const acorn = require('acorn');
+
+const str = `var a = 1;`;
+const tokenIter = acorn.tokenizer(str);
+const tokens = [...tokenIter];
+console.log(JSON.stringify(tokens));
+```
+
+执行上面的代码，会得到一个对象数组：
+
+```javascript
+[{
+  type: {
+    label: "var",       // 解析到的符号的类型
+    keyword: "var",     // 如果是 keyword，那么说明该符号刚好为 JS 的关键字
+  },
+  value: "var",         // 解析到的词素
+  start: 0,             // 该词素的起始下标
+  end: 3                // 该词素后面一个空白符的下标
+},
+{
+  type: {
+    label: "name",
+  },
+  value: "a",
+}
+// ... 省略
+}]
+```
+
 
 ### 语法分析
 

@@ -12,7 +12,7 @@ Babel 并非第一个将源码编译为具有更好兼容性的 JavaScript 代�
 
 ### 体验 Babel
 
-可以在 Babel 的官网（https://babeljs.io/repl/）中体验编译前后代码的差异。
+可以在 Babel 的官网（[https://babeljs.io/repl](https://babeljs.io/repl/)）中体验编译前后代码的差异。
 
 例如输入这样的一段代码：
 
@@ -32,7 +32,7 @@ var brr = arr.map(function (ele) {
 });
 ```
 
-如果试图重新给常量 `arr` 赋值，那么 Babel 会在编译阶段进行报错，然后中断编译过程：
+Babel 还可以对代码中的语法错误进行提示。例如，如果试图重新给常量 `arr` 赋值，那么 Babel 会在编译阶段进行报错，然后中断编译过程：
 
 <pre style="color: red;">
 <code>repl: "arr" is read-only
@@ -46,7 +46,7 @@ var brr = arr.map(function (ele) {
 
 ### 工作原理
 
-<img src="./images/babel-01.jpg" style="width: 90%;">
+<img src="./images/babel-02.png" style="width: 80%;">
 
 
 ## 混淆技术
