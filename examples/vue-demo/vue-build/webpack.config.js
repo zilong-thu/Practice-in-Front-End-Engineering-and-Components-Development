@@ -1,11 +1,16 @@
 const fs                = require('fs');
 const path              = require('path');
+const glob              = require('glob');
 const VueLoaderPlugin   = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack           = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const rimraf            = require('rimraf');
 const mkdirp            = require('mkdirp');
+
+const entryFiles = glob.sync('./src/pages/**/*/index.vue');
+console.log('entryFiles: ', entryFiles);
+const entry = {};
 
 const config = {
   mode: 'development',
@@ -51,7 +56,7 @@ try {
   }
   if (fs.statSync(config.output.path)) {
     rimraf.sync(config.output.path);
-    console.log('构建目标目录已删除');
+    console.log('构建结果目录已删除');
   }
 } catch(e) {}
 mkdirp(CACHE_DIR_NAME);

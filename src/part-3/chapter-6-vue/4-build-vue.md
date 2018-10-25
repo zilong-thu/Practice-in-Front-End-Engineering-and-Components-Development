@@ -75,8 +75,9 @@ const path              = require('path');
 const VueLoaderPlugin   = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack           = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+// rimraf 提供了类似 Linux 系统下的 rm 命令
 const rimraf            = require('rimraf');
+// mkdirp 用于创建文件目录
 const mkdirp            = require('mkdirp');
 
 const config = {
@@ -123,7 +124,7 @@ try {
   }
   if (fs.statSync(config.output.path)) {
     rimraf.sync(config.output.path);
-    console.log('构建目标目录已删除');
+    console.log('构建结果目录已删除');
   }
 } catch(e) {}
 mkdirp(CACHE_DIR_NAME);
