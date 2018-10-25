@@ -36,7 +36,6 @@ const config = {
     new VueLoaderPlugin(),
     // HMR shows correct file names in console on update.
     new webpack.NamedModulesPlugin(),
-    // new ExtractTextPlugin('[name].[contenthash].css')
   ],
 }
 
@@ -76,5 +75,4 @@ pageEntryNames.forEach(name => {
   config.entry[name] = newEntry;
   config.plugins.push(pluginItem);
 });
-console.log(config);
 module.exports = config;
