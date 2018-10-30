@@ -31,17 +31,13 @@
 
 ### 依赖的包
 
+`package.json` 中与依赖的包相关的部分如下面的代码所示。在执行构建之前，需要将它们全部安装一下。
+
 ```json
 {
-  "name": "vue-build",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
     "build": "webpack"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "vue": "^2.5.16"
@@ -67,25 +63,34 @@
 
 ### Webpack 配置
 
-下面是一个自定义的用于 Vue 项目构建的 `webpack.config.js` 文件。
+下面就是我们本次自定义的用于 Vue 项目构建的 `webpack.config.js` 文件。
 
 ```javascript
 const fs                = require('fs');
 const path              = require('path');
+const glob              = require('glob');
 const VueLoaderPlugin   = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack           = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 // rimraf 提供了类似 Linux 系统下的 rm 命令
 const rimraf            = require('rimraf');
 // mkdirp 用于创建文件目录
 const mkdirp            = require('mkdirp');
 
+// 按照约定的格式，寻找页面入口文件
+const entryFiles = glob.sync('./src/pages/**/*/index.vue');
+console.log('entryFiles: ', entryFiles);
+const entry = {};
+entryFiles.forEach(item => {
+  let key = item.replace('./src/pages/', '').replace('/index.vue', '').replace('/', '.');
+  entry[key] = path.resolve(item);
+});
+
+// 配置对象
 const config = {
   mode: 'development',
-  entry: {
-    home: './src/pages/home/index.vue',
-    explore: './src/pages/home/index.vue',
-  },
+  entry: entry,
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: '[name].[chunkhash].js',
@@ -105,14 +110,10 @@ const config = {
     ]
   },
   plugins: [
-    // make sure to include the plugin!
     new VueLoaderPlugin(),
-    // HMR shows correct file names in console on update.
-    new webpack.NamedModulesPlugin(),
   ],
 }
 
-const entry = config.entry;
 const pageEntryNames = Object.keys(entry);
 let vueTemplateFile = fs.readFileSync('./src/entry-template.js').toString();
 
@@ -133,7 +134,7 @@ mkdirp(CACHE_DIR_NAME);
 const htmlTemplate = path.resolve('./src/index.html');
 
 pageEntryNames.forEach(name => {
-  let content = vueTemplateFile.replace('${path}', path.resolve(entry[name]));
+  let content = vueTemplateFile.replace('${path}', path.resolve(config.entry[name]));
   let newEntry = path.resolve(CACHE_DIR_NAME, './', name + '.js');
   fs.writeFileSync(newEntry, content);
   const pluginItem = new HtmlWebpackPlugin({
@@ -148,6 +149,7 @@ pageEntryNames.forEach(name => {
   config.entry[name] = newEntry;
   config.plugins.push(pluginItem);
 });
+
 module.exports = config;
 ```
 

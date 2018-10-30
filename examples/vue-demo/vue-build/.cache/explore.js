@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import App from '/Users/wzl/gitee/my-book-react-and-engineering/examples/vue-demo/vue-build/src/pages/home/index.vue';
+import App from '/Users/wzl/gitee/my-book-react-and-engineering/examples/vue-demo/vue-build/src/pages/explore/index.vue';
 
 Vue.config.productionTip = false
 
