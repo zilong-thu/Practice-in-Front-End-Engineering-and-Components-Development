@@ -91,6 +91,12 @@ $ ls -l bin | grep wget
 wget -> ../Cellar/wget/1.18/bin/wget
 ```
 
+`brew` 可以安装一个软件的多个版本，然后用户可以使用 `brew switch` 来切换需要的版本。例如，不同的 `yarn` 版本可能有不同的包目录结构，如果希望切换到某个特定的 `yarn` 版本（例如 `1.10.1`），那么可以执行下面的命令：
+
+```bash
+$ brew switch yarn 1.10.1
+```
+
 ------------------
 
 Max Howell 在 2015 年曾经闹出过一段新闻，喜剧性地描述是这样：Max Howell 去谷歌面试，面试官让他对一个二叉树进行反转，然而 Howell 没有回答上来，结果就是没有被谷歌聘用。Howell 回家后在 Twitter 上表达了自己的怨念：
