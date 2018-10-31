@@ -90,7 +90,7 @@ const app = new Vue({
 
 简便起见，我们直接使用 `Vue.component` 方法在全局定义一个名为 `user-settings` 的子组件。
 
-```
+```javascript
 /**
  * 定义一个用于设置个税起征点的组件
  */
