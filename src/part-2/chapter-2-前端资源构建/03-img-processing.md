@@ -116,12 +116,19 @@ Lossless-alpha compressed size: 8250 bytes
   * Palette size:   256
 ```
 
-目前，Chrome、Opera 以及安卓下的浏览器和 webview，都支持 Webp 格式，但是 FireFox、Safari 尚不支持。而根据微软 Edge 浏览器开发者网站的进度报告，其目前已经在开发对 WebP 的支持功能了。
+**兼容性**
+
+
+目前，Chrome、Opera 以及安卓下的浏览器和 webview，都支持 Webp 格式，但是 FireFox、Safari 尚不支持。而根据微软 Edge 浏览器开发者网站的进度报告，因为希望支持 webp 格式的开发者们投票数较高，因为他们决定在新版的 Edge 浏览器中支持 WebP（从 Edge 18 开始）。
 
 <figure>
 <img src="./images/edge-webp-progress.png" style="width: 100%;">
-<figcaption>微软会在官方 Platform status 中<sup>[8]</sup>放出关于 Edge 浏览器当前支持的功能、在开发中的功能以及开发者们希望支持的功能。上图就是 Edge 对 WebP 格式的支持功能的状况（2018-08-19）。</figcaption>
+<figcaption>微软会在官方 Platform status 中<sup>[8]</sup>放出关于 Edge 浏览器当前支持的功能、在开发中的功能以及开发者们希望支持的功能。上图就是 Edge 对 WebP 格式的支持投票的状况（2018-08-19）。</figcaption>
 </figure>
+
+截至 2018 年 11 月，webp 图像格式在各个浏览器中的支持情况如下所示（[https://caniuse.com/#search=webp](https://caniuse.com/#search=webp)）
+
+<img src="./images/image-caniuse-webp.png">
 
 ## 交错与非交错图像
 
