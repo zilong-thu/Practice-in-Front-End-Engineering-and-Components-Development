@@ -80,9 +80,11 @@ APNG 是指动画版的 PNG（Animated Portable Network Graphics），中文名�
 
 #### WebP
 
-在 Web 上，JPEG 自 1992 年诞生起就几乎成为有损图像的唯一可选格式。这几十年里也有不少研究课题试图找到更高效的有损压缩格式（即在保证相同质量的前提下，使用更少的存储空间）。WebP 格式就是目前比较成功的一个格式。谷歌是 WebP 技术的发起者及大力推广者。WebP 不止有损压缩，它也支持无损压缩。此外，还有 8 位透明通道、动画、图片元信息等特性。在谷歌进行的 WebP、PNG、JPEG 格式压缩对比表明，图片质量相当的情况下，WebP 格式平均要比 PNG 和 JPEG 小 30% 左右（官网 https://developers.google.cn/speed/webp/）。
+在 Web 上，JPEG 自 1992 年诞生起就几乎成为有损图像的唯一可选格式。这几十年里也有不少研究课题试图找到更高效的有损压缩格式（即在保证相同质量的前提下，使用更少的存储空间）。WebP 格式就是目前比较成功的一个格式。WebP 不止有损压缩，它也支持无损压缩。此外，还有 8 位透明通道、动画、图片元信息等特性。
 
-有损压缩方面，WebP 的思路来源于 VP8 视频编解码技术。VP8 的一个特性是帧内预测压缩。WebP 本质上是可以存储与解析一帧 VP8 图像的轻量级容器。
+谷歌是 WebP 技术的发起者及大力推广者，2010 年 9 月，谷歌首次对外公布了 WebP 图像格式的诞生<sup>[14]</sup>。谷歌开发团队进行的 WebP、PNG、JPEG 格式压缩对比表明，图片质量相当的情况下，WebP 格式平均要比 PNG 和 JPEG 小 30% 左右（官网 [https://developers.google.cn/speed/webp](https://developers.google.cn/speed/webp/)）。
+
+有损压缩方面，WebP 的思路来源于 VP8 视频编解码技术，intro-frame coding。VP8 的一个特性是帧内预测压缩。WebP 本质上是可以存储与解析一帧 VP8 图像的轻量级容器。
 
 谷歌官方也发布了用于编解码 WebP 图像格式的命令行工具，Mac 下可以通过 Homebrew 安装：
 
@@ -426,3 +428,4 @@ H + I > 4/3*I
 11. ImageMagick 官网. https://www.imagemagick.org/script/index.php
 12. ImageMagick 中文网. http://www.imagemagick.org.cn/
 13. ImageOptim 官网. https://imageoptim.com
+14. Chromium Blog. *WebP, a new image format for the Web*. https://blog.chromium.org/2010/09/webp-new-image-format-for-web.html
