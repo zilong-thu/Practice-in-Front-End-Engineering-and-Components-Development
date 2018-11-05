@@ -75,7 +75,7 @@ APNG 是指动画版的 PNG（Animated Portable Network Graphics），中文名�
 
 <figure>
 <img src="./images/apng-assembler-logo.png" style="width: 120px;">
-<figcaption>APNG Assembler</figcaption>
+<figcaption>APNG Assembler，一个可以用来制作 APNG 图片的软件。</figcaption>
 </figure>
 
 #### WebP
@@ -84,7 +84,7 @@ APNG 是指动画版的 PNG（Animated Portable Network Graphics），中文名�
 
 谷歌是 WebP 技术的发起者及大力推广者，2010 年 9 月，谷歌首次对外公布了 WebP 图像格式的诞生<sup>[14]</sup>。谷歌开发团队进行的 WebP、PNG、JPEG 格式压缩对比表明，图片质量相当的情况下，WebP 格式平均要比 PNG 和 JPEG 小 30% 左右（官网 [https://developers.google.cn/speed/webp](https://developers.google.cn/speed/webp/)）。
 
-有损压缩方面，WebP 的思路来源于 VP8 视频编解码技术，intro-frame coding。VP8 的一个特性是帧内预测压缩。WebP 本质上是可以存储与解析一帧 VP8 图像的轻量级容器。
+有损压缩方面，WebP 的思路来源于 VP8 视频编解码技术——**帧内编码**（intra-frame coding）。VP8 的一个特性是帧内预测压缩。WebP 本质上是可以存储与解析一帧 VP8 图像的轻量级容器。
 
 谷歌官方也发布了用于编解码 WebP 图像格式的命令行工具，Mac 下可以通过 Homebrew 安装：
 
@@ -120,8 +120,7 @@ Lossless-alpha compressed size: 8250 bytes
 
 **兼容性**
 
-
-目前，Chrome、Opera 以及安卓下的浏览器和 webview，都支持 Webp 格式，但是 FireFox、Safari 尚不支持。而根据微软 Edge 浏览器开发者网站的进度报告，因为希望支持 webp 格式的开发者们投票数较高，因为他们决定在新版的 Edge 浏览器中支持 WebP（从 Edge 18 开始）。
+在兼容性方面，目前，Chrome、Opera 以及安卓下的浏览器和 webview 都支持 Webp 格式，但是 FireFox、Safari 尚不支持。而根据微软 Edge 浏览器开发者网站的进度报告，因为希望支持 webp 格式的开发者们投票数较高，因为他们决定在新版的 Edge 浏览器中支持 WebP（从 Edge 18 开始）。
 
 <figure>
 <img src="./images/edge-webp-progress.png" style="width: 100%;">
