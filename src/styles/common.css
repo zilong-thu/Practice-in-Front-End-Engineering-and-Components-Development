@@ -45,11 +45,8 @@ pre {
 	line-height: 1.3;
 }
 
-table th {
-  background-color: #ddd;
-}
-
 table th,
 table td {
   border-color: #ccc;
+  text-align: center;
 }
