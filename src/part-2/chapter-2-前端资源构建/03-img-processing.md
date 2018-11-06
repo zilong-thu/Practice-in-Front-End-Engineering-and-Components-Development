@@ -82,7 +82,7 @@ APNG 是指动画版的 PNG（Animated Portable Network Graphics），中文名�
 
 在 Web 上，JPEG 自 1992 年诞生起就几乎成为有损图像的唯一可选格式。这几十年里也有不少研究课题试图找到更高效的有损压缩格式（即在保证相同质量的前提下，使用更少的存储空间）。WebP 格式就是目前比较成功的一个格式。WebP 不止有损压缩，它也支持无损压缩。此外，还有 8 位透明通道、动画、图片元信息等特性。
 
-谷歌是 WebP 技术的发起者及大力推广者，2010 年 9 月，谷歌首次对外公布了 WebP 图像格式的诞生<sup>[14]</sup>，并且随后整合到了浏览器内核 Chromium 以及移动操作系统 Android 中；此外，谷歌还发布了开源库，以便让 iOS 应用可以正确解析 WebP 图片。WebP 的压缩效果非常可观。谷歌开发团队进行的 WebP、PNG、JPEG 格式压缩对比表明，图片质量相当的情况下，WebP 格式平均要比 PNG 和 JPEG 小 30% 左右（官网 [https://developers.google.cn/speed/webp](https://developers.google.cn/speed/webp/)）。
+谷歌是 WebP 技术的发起者及大力推广者。WebP 格式的诞生有些因缘巧合。最初，该团队致力于新的视频格式 WebM 的研发，该格式使用了 VP8 编码技术，工作人员意识到这种压缩编码技术可以用到图片上面。尝试之后效果不错，因此有了 WebP 项目。2010 年 9 月，谷歌首次对外公布了 WebP 图像格式的诞生<sup>[14]</sup>，并且随后整合到了浏览器内核 Chromium 以及移动操作系统 Android 中；此外，谷歌还发布了开源库，以便让 iOS 应用可以正确解析 WebP 图片。WebP 的压缩效果非常可观。谷歌开发团队进行的 WebP、PNG、JPEG 格式压缩对比表明，图片质量相当的情况下，WebP 格式平均要比 PNG 和 JPEG 小 30% 左右（官网 [https://developers.google.cn/speed/webp](https://developers.google.cn/speed/webp/)）。
 
 有损压缩方面，WebP 的思路来源于 VP8 视频编解码技术——**帧内编码**（intra-frame coding）。VP8 的一个特性是帧内预测压缩。WebP 本质上是可以存储与解析一帧 VP8 图像的轻量级容器。
 
@@ -94,7 +94,7 @@ APNG 是指动画版的 PNG（Animated Portable Network Graphics），中文名�
 #  - dwebp 则将 WebP 格式转换为 PNG 格式
 $ brew install webp
 
-# 将 PNG 图片转换为 webp 格式
+# 将 PNG 图片转换为 WebP 格式
 # cwebp [options] -q quality input.png -o output.webp
 $ cwebp gulp-2x.png -o gulp-2x.webp
 Saving file 'gulp-2x.webp'
@@ -120,26 +120,26 @@ Lossless-alpha compressed size: 8250 bytes
 
 **兼容性**
 
-在兼容性方面，目前，Chrome、Opera 以及安卓下的浏览器和 webview 都支持 WebP 格式，但是 FireFox、Safari 尚不支持。而根据微软 Edge 浏览器开发者网站的进度报告，因为希望支持 webp 格式的开发者们投票数较高，因为他们决定在新版的 Edge 浏览器中支持 WebP（从 Edge 18 开始）。
+在兼容性方面，目前，Chrome、Opera 以及安卓下的浏览器和 webview 都支持 WebP 格式，但是 FireFox、Safari 尚不支持。而根据微软 Edge 浏览器开发者网站的进度报告，因为希望支持 WebP 格式的开发者们投票数较高，因为他们决定在新版的 Edge 浏览器中支持 WebP（从 Edge 18 开始）。
 
 <figure>
 <img src="./images/edge-webp-progress.png" style="width: 100%;">
 <figcaption>微软会在官方 Platform status 中<sup>[8]</sup>放出关于 Edge 浏览器当前支持的功能、在开发中的功能以及开发者们希望支持的功能。上图就是 Edge 对 WebP 格式的支持投票的状况（2018-08-19）。</figcaption>
 </figure>
 
-截至 2018 年 11 月，webp 图像格式在各个浏览器中的支持情况如下所示（根据[https://caniuse.com/#search=webp](https://caniuse.com/#search=webp) 给出的数据绘制）。
+截至 2018 年 11 月，WebP 图像格式在各个浏览器中的支持情况如下所示（根据[https://caniuse.com/#search=webp](https://caniuse.com/#search=webp) 给出的数据绘制）。
 
 桌面端浏览器：
 
 | IE   | Edge | FF | Chrome | Safari | Opera |
 |------|------|----|--------|--------|-------|
-| No   | 18+  | No | 23+    | No     | 12.1+ |
+| No   | 18+  | 65+ | 23+    | No     | 12.1+ |
 
 移动端浏览器：
 
-| Android Browser | iOS Safari | Baidu | QQ   | UC (Android) | Opera Mobile | IE Mobile |
-|-----------------|------------|-------|------|--------------|--------------|-----------|
-| 4.2+            | No         | 7.12+ | 1.2+ | 11.8+        | 12+          | No        |
+| 安卓浏览器 | Safari | Baidu | QQ浏览器 | UC (安卓) | Opera | IE Mobile | Chrome(安卓) |
+|-----------|--------|-------|---------|-----------|-------|-----------|-------------|
+| 4.2+      | No     | 7.12+ | 1.2+    | 11.8+     | 12+   | No        | 69+         |
 
 
 ## 交错与非交错图像

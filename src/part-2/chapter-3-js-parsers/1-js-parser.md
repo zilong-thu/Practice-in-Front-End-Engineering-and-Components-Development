@@ -19,9 +19,9 @@ JavaScript 也是一门图灵完备的程序设计语言，这意味着我们可
 + **Espree**，基于 Esprima，被 ESLint 工具使用
 + **Acorn**，目前使用量很高的一个解析器
 + **Babylon**，在 acorn.js 基础上发展起来，Babel.js 最开始使用的分析器
-+ **TypeScript**
++ **TypeScript**，已经实现了自举的编译器，输入语言为 TypeScript，输出为 JavaScript
 
-我们以 Acorn.js 为例，来看一下 JS 解析器的原理与应用场景。
+我们以 Acorn.js 为例，来看一下 JavaScript 解析器的原理与应用场景。
 
 ## Acorn.js 工作原理
 
@@ -66,7 +66,7 @@ console.log(JSON.stringify(tokens));
 [{
   type: {
     label: "var",       // 解析到的符号的类型
-    keyword: "var",     // 如果是 keyword，那么说明该符号刚好为 JS 的关键字
+    keyword: "var",     // 如果是 keyword，那么说明该符号刚好为 JavaScript 的关键字
   },
   value: "var",         // 解析到的词素
   start: 0,             // 该词素的起始下标
@@ -127,7 +127,7 @@ interface IfStatement <: Statement {
 
 ## 解析器使用：以Acorn.js为例
 
-在 https://astexplorer.net/ 网站可以非常直观地看到 JavaScript 源代码与其对应的抽象语法树每个节点之间的对应关系：
+在 [https://astexplorer.net](https://astexplorer.net/) 网站可以非常直观地看到 JavaScript 源代码与其对应的抽象语法树每个节点之间的对应关系：
 
 <img src="./images/ast-01.png" class="round">
 
@@ -136,7 +136,7 @@ interface IfStatement <: Statement {
 ```bash
 $ npm i acorn acorn-walker escodegen
 # 每个包的作用说明
-#   acorn:       JS 语法分析的主要入口
+#   acorn:       JavaScript 语法分析的主要入口
 #   acorn-walk:  提供遍历抽象语法树的接口
 #   escodegen:   将符合 ESTree 规范的抽象语法树生成为 ECMAScript 代码
 ```
@@ -279,7 +279,7 @@ export function $removeData(id) {
 }
 ```
 
-## 我们可以用 JS 解析器做什么
+## 我们可以用 JavaScript 解析器做什么
 
 JavaScript 解析器通常应用在非常基础的功能上面，包括静态分析、代码检查、语法转换等。例如，社区应用最广泛的打包构建工具 webpack，就使用 acorn.js 作为自己的语法分析器的基础库；Babel 项目的 语法分析器 babylon.js 实际上是在 acorn.js 基础上开发并演化的；代码检查工具 ESLint 则使用语法分析工具 Espree.js 来提供对代码的感知能力。
 
