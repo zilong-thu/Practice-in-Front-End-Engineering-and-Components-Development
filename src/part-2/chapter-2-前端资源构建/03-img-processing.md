@@ -118,7 +118,7 @@ Lossless-alpha compressed size: 8250 bytes
   * Palette size:   256
 ```
 
-**兼容性**
+**浏览器兼容性**
 
 在兼容性方面，目前，Chrome、Opera 以及安卓下的浏览器和 webview 都支持 WebP 格式，但是 FireFox、Safari 尚不支持。而根据微软 Edge 浏览器开发者网站的进度报告，因为希望支持 WebP 格式的开发者们投票数较高，因为他们决定在新版的 Edge 浏览器中支持 WebP（从 Edge 18 开始）。
 
@@ -141,6 +141,63 @@ Lossless-alpha compressed size: 8250 bytes
 |-----------|--------|-------|---------|-----------|-------|-----------|-------------|
 | 4.2+      | No     | 7.12+ | 1.2+    | 11.8+     | 12+   | No        | 69+         |
 
+我们可以使用传统的**浏览器嗅探**方法判断当前环境是否支持 WebP，即在浏览器里利用 `window.navigator.userAgent` 接口，或者在服务器端获取 HTTP 报文的 `User-Agent` 首部，解析出客户端名称、版本等信息，再结合上面的客户端兼容表，判断当前客户端是否在表里。
+
+**WebP 特性检测**
+
+如果要更准确地判断浏览器是否支持 WebP，最好使用特性检测。WebP 特性检测的思路大都是基于运行时的。例如使用 Canvas 的能力：
+
+```javascript
+function testWebpUsingCanvas() {
+  /**
+   * 参考：【简书】https://www.jianshu.com/p/101b047c1146
+   * 因为 canvas 的浏览器兼容性极佳，所以在这里可以使用 canvas 方便地判断
+   */
+  try {
+    return (document && (typeof document.createElement === 'function') &&
+      document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0);
+  } catch (err) {
+    return false;
+  }
+}
+```
+
+上面的 `testWebpUsingCanvas` 很方便，是同步的方法。但是也有些问题：在常见的 Hybrid 开发模式中，iOS 客户端可以使用 WebP 的解析库来支持 WebP 图片，但是 `testWebpUsingCanvas` 函数却可能返回 `false`。此时，可以采用加载真实 WebP 图片并监听其 `onload`、`onerror` 回调事件的方式，更准确地判断浏览器是否支持 WebP：
+
+```javascript
+/**
+ * 通过加载一张图片来检测浏览器对 WebP 的支持情况
+ * 这应该是最接近真实结果的方法了
+ * 检测的结果，可以存到 localStorage 里，供下次使用
+ */
+function testWebpAsync() {
+  return new Promise((res, rej) => {
+    let img = new Image();
+
+    img.onload = img.onerror = function() {
+      // 如果浏览器支持 WebP 格式，那么图片会加载成功，并且可以获取到其真实的高度，即 2px
+      const ifSupport = img.height === 2;
+      res(ifSupport);
+    };
+
+    // 这张图片的高度是 2px
+    // 参考：【简书】https://www.jianshu.com/p/101b047c1146
+    img.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
+  });
+}
+```
+
+在需要判断 WebP 兼容性的地方，可以像下面这样获取结果：
+
+```javascript
+testWebpAsync().then(supportWebp => {
+  if (supportWebp) {
+    // 如果支持的话
+  } else {
+    // 不支持的话
+  }
+})
+```
 
 ## 交错与非交错图像
 
