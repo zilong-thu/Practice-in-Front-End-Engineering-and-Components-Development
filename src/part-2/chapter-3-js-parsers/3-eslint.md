@@ -27,22 +27,55 @@ $ npm install eslint --save-dev
 $ ./node_modules/.bin/eslint --init
   # 使用 ESLint 自带的配置初始化程序的话，会被问到类似下面的问题
   ? How would you like to configure ESLint? Answer questions about your style
-  ? Which version of ECMAScript do you use? ES2018
-  ? Are you using ES6 modules? Yes
-  ? Where will your code run? Browser
-  ? Do you use CommonJS? No
-  ? Do you use JSX? Yes
-  ? Do you use React? Yes
-  ? What style of indentation do you use? Spaces
-  ? What quotes do you use for strings? Double
-  ? What line endings do you use? Unix
-  ? Do you require semicolons? Yes
-  ? What format do you want your config file to be in? JavaScript
+  ? Which version of ECMAScript do you use?
+  ? Are you using ES6 modules?
+  ? Where will your code run?
+  ? Do you use CommonJS?
+  ? Do you use JSX?
+  ? Do you use React?
+  ? What style of indentation do you use?
+  ? What quotes do you use for strings?
+  ? What line endings do you use?
+  ? Do you require semicolons?
+  ? What format do you want your config file to be in?
   The config that you have selected requires the following dependencies:
 
   eslint-plugin-react@latest
   Successfully created .eslintrc.js file in <path-to-project-root>
+```
 
+初始化之后，会在项目的根目录下面创建 `.eslintrc.js` 文件，作为规则配置文件，按照上面的选择，该文件内容如下：
+
+```javascript
+module.exports = {
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:vue/essential"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "vue",
+  ],
+  "rules": {
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    "semi": ["warn", "always"]
+  }
+};
+```
+
+```bash
 # 安装特定的依赖
 $ npm i --save-dev eslint-plugin-react eslint-plugin-vue
 
@@ -65,16 +98,16 @@ $ npm run lint
 > eslint -c .eslintrc.js --ext .vue,.js src/
 
 ~project-root/src/pages/explore/index.vue
-  15:2  error  Missing semicolon  semi
+  15:2  warning  Missing semicolon  semi
 
 ~project-root/src/pages/home/index.vue
-  19:2  error  Missing semicolon  semi
+  19:2  warning  Missing semicolon  semi
 
 ~project-root/src/pages/user/followers/index.vue
-  20:2  error  Missing semicolon  semi
+  20:2  warning  Missing semicolon  semi
 
-✖ 3 problems (3 errors, 0 warnings)
-  3 errors and 0 warnings potentially fixable with the `--fix` option.
+✖ 3 problems (0 errors, 3 warnings)
+  0 errors and 3 warnings potentially fixable with the `--fix` option.
 ```
 
 每个项目局部安装、局部配置是我们推荐的方式。这样便于各个项目之间解耦，并且便于在构建环境中持续集成。
