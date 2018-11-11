@@ -43,8 +43,38 @@ $ ./node_modules/.bin/eslint --init
   eslint-plugin-react@latest
   Successfully created .eslintrc.js file in <path-to-project-root>
 
+# 安装特定的依赖
+$ npm i --save-dev eslint-plugin-react eslint-plugin-vue
+
 # 在项目根目录下使用
 $ ./node_modules/.bin/eslint yourfile.js
+```
+
+`package.json` 里指定 shell 命令：
+
+```json
+{
+  "scripts": {
+    "lint": "eslint -c .eslintrc.js --ext .vue,.js src/"
+  }
+}
+```
+
+```bash
+$ npm run lint
+> eslint -c .eslintrc.js --ext .vue,.js src/
+
+~project-root/src/pages/explore/index.vue
+  15:2  error  Missing semicolon  semi
+
+~project-root/src/pages/home/index.vue
+  19:2  error  Missing semicolon  semi
+
+~project-root/src/pages/user/followers/index.vue
+  20:2  error  Missing semicolon  semi
+
+✖ 3 problems (3 errors, 0 warnings)
+  3 errors and 0 warnings potentially fixable with the `--fix` option.
 ```
 
 每个项目局部安装、局部配置是我们推荐的方式。这样便于各个项目之间解耦，并且便于在构建环境中持续集成。
