@@ -75,15 +75,21 @@ module.exports = {
 };
 ```
 
+如果使用了 React 或者 Vue 之类的框架，需要使用配套的语法解析插件来帮助 ESLint 进行代码检查（例如 Vue 的单文件组件需要有特定的语法解析规则）。我们在这里把 React 和 Vue 的插件都安装一下：
+
 ```bash
 # 安装特定的依赖
 $ npm i --save-dev eslint-plugin-react eslint-plugin-vue
+```
 
+依赖包安装完成之后，就可以启动 ESLint 了。启动 ESLint 有两种常用方法。第一种是直接调用局部模块系统下的 `eslint` 脚本：
+
+```bash
 # 在项目根目录下使用
 $ ./node_modules/.bin/eslint yourfile.js
 ```
 
-`package.json` 里指定 shell 命令：
+还可以在 `package.json` 里指定 shell 命令：
 
 ```json
 {
@@ -92,6 +98,8 @@ $ ./node_modules/.bin/eslint yourfile.js
   }
 }
 ```
+
+然后，运行：
 
 ```bash
 $ npm run lint
