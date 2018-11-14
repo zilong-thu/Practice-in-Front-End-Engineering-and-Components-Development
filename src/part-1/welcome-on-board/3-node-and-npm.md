@@ -128,6 +128,9 @@ $ npm ls -g --depth=0
 在 `package.json` 所在目录运行 `npm` 相关命令时，会触发许多类似于“NPM生命周期”的事件，例如：
 
 + `install`, `postinstall`，当前项目被作为其他包的依赖被安装后，运行此字段定义的命令
++ `preinstall`，在本地装包之前执行
+
+更多定义可以在 npm 文档<sup>[10]</sup>里找到。
 
 **自定义命令**
 
@@ -199,3 +202,4 @@ NPM 并非唯一的 Node.js 包管理器，Facebook、Exponent、Google 与 Tild
 7. [Design Mistakes in Node (pdf)](http://tinyclouds.org/jsconf2018.pdf)
 8. [ESLint 官网：Postmortem for Malicious Packages Published on July 12th, 2018](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes)
 9. [https://github.com/eslint/eslint-scope/issues/39](https://github.com/eslint/eslint-scope/issues/39)
+10. [https://docs.npmjs.com/misc/scripts](https://docs.npmjs.com/misc/scripts)
