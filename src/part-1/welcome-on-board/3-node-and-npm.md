@@ -119,6 +119,18 @@ $ npm ls -g --depth=0
 └── npm@5.6.0
 ```
 
+#### scripts
+
+大部分前端项目都会有一份 `package.json` 文件，可以在里面声明项目名称、版本、作者、依赖、执行命令以及授权协议信息等。其中 `scripts` 字段用于自定义或者调用一些预定义的命令。
+
+**预定义命令**
+
+在 `package.json` 所在目录运行 `npm` 相关命令时，会触发许多类似于“NPM生命周期”的事件，例如：
+
++ `install`, `postinstall`，当前项目被作为其他包的依赖被安装后，运行此字段定义的命令
+
+**自定义命令**
+
 ### NPX
 
 NPM 5.2 及之后的版本会随之携带一个新的工具 `npx`，这个工具的主要作用是运行局部而非全局的包（例如`gulp`）。在 `npx` 之前，如果要运行局部安装的 `gulp` 工具，有两个方法：一是在 `package.json` 文件的 `scripts` 里声明一个命令，例如：
@@ -161,6 +173,7 @@ $ npx create-react-app my-app
 <img src="../images/yarn-logo.png" class="fr" style="width: 100px;">
 
 NPM 并非唯一的 Node.js 包管理器，Facebook、Exponent、Google 与 Tilde 四家公司在 2016 年 11 月联合推出的 Yarn<sup>[6]</sup> 也是一款优秀的同类型开源工具。Yarn 会优先从本地的离线镜像（offline mirror）中获取包，并且采用多线程下载，因而相比传统的 npm 会有更快的速度。Mac 下可以通过 Homebrew 执行 `brew install yarn` 进行安装。
+
 
 ### Node.js 的设计缺陷
 
