@@ -4,7 +4,9 @@ ESLint 是由 Nicholas C. Zakas 于 2013 年创建的开源项目，旨在为 Ja
 
 ESLint 主要有两种使用方式，一种是在命令行中使用，适合自动化、持续构建流程；一种是与编辑器集成，可以为开发者提供实时代码检查能力。
 
-## 命令行使用
+## 基本使用：命令行
+
+在终端中通过命令行的方式运行 ESLint 是其最基本的使用方式。我们先从安装开始说起。
 
 **全局**
 
@@ -99,7 +101,7 @@ $ ./node_modules/.bin/eslint yourfile.js
 }
 ```
 
-然后，运行：
+然后，运行 `npm run lint` 即可对关心的目录、文件进行代码检查了：
 
 ```bash
 $ npm run lint
@@ -119,6 +121,21 @@ $ npm run lint
 ```
 
 每个项目局部安装、局部配置是我们推荐的方式。这样便于各个项目之间解耦，并且便于在构建环境中持续集成。
+
+## 与 Git 钩子一起使用
+
+ESLint 常见的使用方法之一是与 Git 的钩子一起使用，例如 `pre-commit`。下面的配置（借助于 Node 包 husky），可以在每次执行 Git 提交之前，检测文件变动，只对修改、新增的文件用 ESLint 进行检查。
+
+```json
+{
+  "scripts": {
+    "lint-changed-files": "git diff --cached | xargs eslint -c ./eslintrc.js --ignore .eslintignore"
+  },
+  "husky": {
+    "pre-commit": "npm run lint-changed-files"
+  }
+}
+```
 
 ## 与编辑器集成
 
