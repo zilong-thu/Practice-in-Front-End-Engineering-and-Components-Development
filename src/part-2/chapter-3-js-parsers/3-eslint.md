@@ -137,9 +137,9 @@ ESLint 常见的使用方法之一是与 Git 的钩子一起使用，例如 `pre
 }
 ```
 
-我们来逐字分析一下 `git diff --cached --name-status | awk '$1 != \"D\" && $2 ~ /(src.+vue$)|(src.+js$)/ { print $2 }' | xargs eslint -c ./eslintrc.js --ignore .eslintignore` 这段脚本。
+我们来逐字分析一下 `scripts.lint-cached-files` 定义的脚本。
 
-① 首先，`git diff --cached --name-status` 可以输出 Git 暂存区的文件名，以及文件变更描述，例如：
+① 首先，`git diff --cached --name-status` 可以输出 Git 暂存区的文件名以及文件变更描述（`A` 即 Add，表示添加；`M` 即 Modified，表示修改了该文件；`D` 即 Delete，表示该文件被删除），例如：
 
 ```text
 D       README.md
@@ -148,6 +148,9 @@ M       src/part-2/art-about-code.md
 M       src/part-2/chapter-3-js-parsers/3-eslint.md
 ```
 
+② 然后，`awk '$1 != \"D\" && $2 ~ /(src.+vue$)|(src.+js$)/ { print $2 }'`，调用行编辑器 `awk`。`awk` 会将文本以空格进行分隔，然后可以使用 `$1`、`$2` 等分别访问第一个字串、第二个字串，以此类推。这里要排除删除的文件（即 `$1` 等于 `D` 的），并且要求文件名（即 `$2` 指向的字串）以 `.vue` 或者 `.js` 结尾。然后只返回文件名（即 `$2`）。
+
+③ 最后，`xargs` 会接收管道传过来的多行文本，将每一行作为后面要执行的命令（即 `eslint`）的参数，逐一执行该命令。
 
 ## 与编辑器集成
 
