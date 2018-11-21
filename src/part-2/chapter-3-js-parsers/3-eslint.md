@@ -91,17 +91,17 @@ $ npm i --save-dev eslint-plugin-react eslint-plugin-vue
 $ ./node_modules/.bin/eslint yourfile.js
 ```
 
-还可以在 `package.json` 里指定 shell 命令：
+还可以在 `package.json` 里指定 shell 命令。例如下面的 `lint` 字段意思是，使用 `.eslintrc.js` 文件作为配置文件，对 `src/` 目录下的所有后缀为 `.vue` 或者 `.js` 的文件进行代码检查：
 
 ```json
 {
   "scripts": {
-    "lint": "eslint -c .eslintrc.js --ext .vue,.js src/"
+    "lint": "eslint  -c .eslintrc.js --ext .vue,.js src/"
   }
 }
 ```
 
-然后，运行 `npm run lint` 即可对关心的目录、文件进行代码检查了：
+然后，在项目根目录下运行 `npm run lint` 即可对关心的目录、文件进行代码检查了：
 
 ```bash
 $ npm run lint
@@ -129,13 +129,25 @@ ESLint 常见的使用方法之一是与 Git 的钩子一起使用，例如 `pre
 ```json
 {
   "scripts": {
-    "lint-changed-files": "git diff --cached | xargs eslint -c ./eslintrc.js --ignore .eslintignore"
+    "lint-cached-files": "git diff --cached --name-status | awk '$1 != \"D\" && $2 ~ /(src.+vue$)|(src.+js$)/ { print $2 }' | xargs eslint -c ./eslintrc.js --ignore .eslintignore"
   },
   "husky": {
-    "pre-commit": "npm run lint-changed-files"
+    "pre-commit": "npm run lint-cached-files"
   }
 }
 ```
+
+我们来逐字分析一下 `git diff --cached --name-status | awk '$1 != \"D\" && $2 ~ /(src.+vue$)|(src.+js$)/ { print $2 }' | xargs eslint -c ./eslintrc.js --ignore .eslintignore` 这段脚本。
+
+① 首先，`git diff --cached --name-status` 可以输出 Git 暂存区的文件名，以及文件变更描述，例如：
+
+```text
+D       README.md
+A       doc.md
+M       src/part-2/art-about-code.md
+M       src/part-2/chapter-3-js-parsers/3-eslint.md
+```
+
 
 ## 与编辑器集成
 
