@@ -42,7 +42,7 @@ HTTP/1.1 相比于 HTTP/1.0 增加了一个关于持久连接的首部：`Connec
 
 HTTP/2 正是对此作了优化。它采用了称为“多路复用”（Multiplexing）的技术，允许在同一个 TCP 连接里同时有上行数据和下行数据（即全双工），从而可以使多个 HTTP 请求共用一个 TCP 连接。如此一来，建立 TCP 连接的成本又可以下降一个数量级，每个网站只需要若干个（甚至只用 1 个） TCP 连接就能够完成所有的资源获取。
 
-HTTP/2 源自于谷歌公司的 SPDY（读音类似于 speedy）项目。2015 年 5 月发布的 RFC-7540 正式将 HTTP/2 标准化了。HTTP/2 的全称是 Hypertext Transfer Protocol Version 2，它主要有这些新的特点：
+HTTP/2 源自于谷歌公司的 SPDY（读音类似于 speedy）项目。2015 年 5 月发布的 RFC-7540 正式将 HTTP/2 标准化。HTTP/2 的全称是 Hypertext Transfer Protocol Version 2，它主要有这些新的特点：
 
 + TCP 多路复用
 + 压缩请求、响应报文的首部
@@ -55,6 +55,14 @@ HTTP/2 源自于谷歌公司的 SPDY（读音类似于 speedy）项目。2015 �
 <figcaption>HTTP 三个主要版本对 TCP 连接的使用差异对比。① HTTP/1 版本里，每个 TCP 只能用于一次 HTTP 通信，完成后会立即关闭。每个 HTTP 请求都需要重新建立 TCP 连接。② HTTP/1.1 增加了 `Connection: keep-alive` 首部，允许持久连接的 TCP。③ HTTP/2 则允许在同一个 TCP 连接里同时进行多个 HTTP 请求/响应会话。（本图参考[5]绘制）。假设网络带宽都足够大，那么 HTTP/2 的方案则明显可以很大程度上降低整个页面的网络延时。</figcaption>
 </figure>
 
+## HTTP/3
+
+尽管 HTTP/2 的性能已经较 HTTP/1.1 提升了很多，但是，为 HTTP/2 协议标准化做出海量研究的谷歌工程师们对 HTTP 性能的追求依然没有停止。这一次，谷歌打算从传输层对协议进行改进。首先，他们推出了新的传输层协议 QUIC，并在 2015 年正式提交给 IETF 作为标准草案。QUIC 是 Quick UDP Internet Connections 的缩写，与 TCP、UDP 协议同属于传输层。之后在 2016 年，谷歌提出了新的 HTTP 协议 HTTP-over-QUIC，此协议糅合了 HTTP/2、TCP、UDP、TLS（用户加密）等关键技术，可以认为是对当前 HTTP 协议的重写。
+
+2018 年 11 月，IETF 官方声明将接受 HTTP-over-QUIC 方案，并将其命名为 HTTP/3。
+
+HTTP-over-QUIC 目前还只是起步阶段。浏览器支持度方面，Chrome 从 29 版本、Opera 从 16 版本开始支持 HTTP-over-QUIC 协议，其他浏览器暂不支持。服务器端方面，根据 W3Techs 的统计数据，截止 2018 年 11 月，在全球前 1000 万个网站里，31.2% 的网站支持 HTTP/2，而支持 QUIC 的则只有 1.2%。
+
 ## 参考资料
 
 1. https://w3techs.com/technologies/details/ce-http2/all/all
@@ -62,3 +70,4 @@ HTTP/2 源自于谷歌公司的 SPDY（读音类似于 speedy）项目。2015 �
 3. Andrew B. King. Website Optimization [M]. O'Reilly.
 4. https://httparchive.org/
 5. Andrew S. Tanenbaum, Davide J. Wetherall 著. 严伟, 潘爱民 译. 计算机网络（第五版） [M]. 北京: 清华大学出版社, 2014.
+6. https://www.zdnet.com/article/http-over-quic-to-be-renamed-http3/
