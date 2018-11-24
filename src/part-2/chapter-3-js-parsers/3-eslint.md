@@ -147,14 +147,30 @@ ESLint 常见的使用方法之一是与 Git 的钩子一起使用，例如 `pre
 D       README.md
 A       doc.md
 M       src/part-2/art-about-code.md
-M       src/part-2/chapter-3-js-parsers/3-eslint.md
+M       src/part-2/eslint.md
 ```
 
 ② 然后，`awk '$1 != \"D\" && $2 ~ /(src.+vue$)|(src.+js$)/ { print $2 }'`，调用行编辑器 `awk`。`awk` 会将文本以空格进行分隔，然后可以使用 `$1`、`$2` 等分别访问第一个字串、第二个字串，以此类推。这里要排除删除的文件（即 `$1` 等于 `D` 的），并且要求文件名（即 `$2` 指向的字串）以 `.vue` 或者 `.js` 结尾。然后只返回文件名（即 `$2`）。
 
-③ 最后，`xargs` 会接收管道传过来的多行文本，将每一行作为后面要执行的命令（即 `eslint`）的参数，逐一执行该命令。
+对于第①步里的文件变动信息，本步骤的输出结果是三行文件名：
+
+```text
+doc.md
+src/part-2/art-about-code.md
+src/part-2/eslint.md
+```
+
+③ 最后，`xargs` 会接收管道传过来的多行文本，将每一行作为后面要执行的命令（即 `eslint`）的参数，逐一执行该命令。所以 `xargs eslint -c ./eslintrc.js --ignore .eslintignore` 相当于连续执行以下三行命令：
+
+```bash
+$ eslint -c ./eslintrc.js --ignore .eslintignore doc.md
+$ eslint -c ./eslintrc.js --ignore .eslintignore src/part-2/art-about-code.md
+$ eslint -c ./eslintrc.js --ignore .eslintignore src/part-2/eslint.md
+```
 
 ## 与编辑器集成
+
+与 Git 钩子一起使用 ESLint 可以确保代码总是能够被检查，不过如果能够在书写或者保存代码的时候实时提示代码语法或者风格问题，就可以让我们更早一步对代码做出调整，而不必等到提交的时候再处理。
 
 ### Sublime Text
 
