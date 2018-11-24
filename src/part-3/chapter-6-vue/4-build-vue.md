@@ -4,9 +4,86 @@
 
 对于大型的生产环境项目，Vue 官方给出了 `vue-cli`<sup>[1]</sup> 这样的脚手架工具来初始化项目结构，开发者既可以直接使用，也可以在此基础上再更改。我们在这里暂且不使用 `vue-cli`，而是基于 `webpack`、`vue-loader` 等设计一个简单的构建流程。
 
-### 目录结构设计
+## 单页面 Vue 应用
 
-单页面应用的目录较为简单，一个打包入口，一个（或切割后的多个）输出即可。多页面应用是更为常见的情形，值得我们花些章节来分析一下开发、构建等配置。
+单页面应用（SPA，Single Page Application）的目录较为简单，一个打包入口，一个（或切割后的多个）输出即可。
+
+一个简单的单页面 Vue 应用目录结构如下所示：
+
+```
+.
+├── build                     # 打包后的目录
+│   ├── index.{md5}.js
+│   └── index.html
+├── package.json
+├── src
+│   ├── index.vue             # 唯一的 vue 入口
+│   ├── index.html            # 页面的 html 模板，被 HtmlWebpackPlugin 使用
+│   ├── components            # 放置一些公共组件，不会作为 webpack 的打包入口
+│   │   ├── chart.vue
+│   │   └── dialog.vue
+│   └── utils                 # 放置一些常用的工具类 JS 文件
+│       ├── parse-ua.js
+│       └── my-axios.js
+└── webpack.config.js         # webpack 配置文件
+```
+
+Webpack 配置：
+
+```javascript
+const VueLoaderPlugin   = require('vue-loader/lib/plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+  mode: 'development',
+  entry: './src/index.vue',
+  output: {
+    path: path.resolve(__dirname, 'build'),
+    filename: '[name].[chunkhash].js',
+  },
+  module: {
+    rules: [
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+      }, {
+        test: /\.js$/,
+        loader: 'babel-loader',
+      }, {
+        test: /\.css$/,
+        use: ['vue-style-loader', 'css-loader'],
+      }
+    ]
+  },
+  plugins: [
+    new VueLoaderPlugin(),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: './src/index.html',
+      chunks: [name],
+    });
+  ],
+}
+```
+
+其中，`src/index.html` 是所有页面公共的 HTML 模板，该文件的代码内容如下：
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <div id="app"></div>
+</body>
+</html>
+```
+
+## 多页面 Vue 应用构建
+
+多页面应用（MPA，Multi Page Application）是更为常见的情形，也稍微复杂一下，值得我们多花点章节来分析一下开发、构建等配置。
 
 一个常见的多页面 Vue 项目的目录结构如下所示。我们约定以 `src/pages` 目录下的每个 `index.vue` 文件作为页面的入口，也是 webpack 打包的入口（entry）参考。构建后将 `src/pages` 的文件放到 `build` 目录下（即提升了一层目录）。
 
@@ -24,29 +101,20 @@
 │   ├── vue-template.js       # vue 模板文件
 │   ├── index.html            # 每个页面的 html 模板，被 HtmlWebpackPlugin 使用
 │   ├── components            # 放置一些公共组件，不会作为 webpack 的打包入口
+│   │   ├── chart.vue
+│   │   └── dialog.vue
 │   ├── pages                 # 页面目录
 │   │   ├── explore
 │   │   │   └── index.vue     # 页面的单文件组件
 │   │   └── home
 │   │       └── index.vue
 │   └── utils                 # 放置一些常用的工具类 JS 文件
+│       ├── parse-ua.js
+│       └── my-axios.js
 └── webpack.config.js         # webpack 配置文件
 ```
 
-`src/index.html` 是所有页面公共的 HTML 模板，该文件的代码内容如下：
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-</head>
-<body>
-  <div id="app"></div>
-</body>
-</html>
-```
+模板文件 `src/index.html` 与单页面时的内容及使用方式一样。
 
 `src/vue-template.js` 会在后面的配置中作为 JS 入口的模板文件，`${path}` 会被替换为 `src/pages` 目录下的每个入口的绝对路径。该文件的代码内容如下：
 
