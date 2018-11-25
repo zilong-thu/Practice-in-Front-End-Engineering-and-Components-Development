@@ -83,17 +83,31 @@ Git 钩子可以分为两大类：客户端钩子（client side hooks），服�
 
 **`pre-commit`**
 
-`pre-commit` 是最先执行的一个钩子，在敲入提交信息之前被执行。很多项目使用这个钩子来执行单元测试、代码规范检查等。使用 `git commit --no-verify` 则可以跳过这个钩子。`pre-commit` 钩子经常被用于执行单元测试或者运行代码检查，下面分别看一个例子。
+`pre-commit` 是最先执行的一个钩子，在敲入提交信息之前被执行。使用 `git commit --no-verify` 则可以跳过这个钩子。`pre-commit` 钩子经常被用于执行单元测试或者运行代码检查，下面分别看一个例子。
+
+首先，我们在项目的 `package.json` 里声明 `test` 和 `lint` 两个指令：
+
+```json
+{
+  "scripts": {
+    "test": "mocha test/index.js",
+    "lint": "eslint ./src -c eslintrc.js --ext .js"
+  }
+}
+```
+
+然后，在 `.git/hooks/pre-commit.sh` 文件里定义钩子内容：
 
 ```bash
 #!/bin/bash
-# TODO
+echo "执行单元测试..."
+npm run test
+
+echo "执行代码检查..."
+npm run lint
 ```
 
-```bash
-#!/bin/bash
-# TODO
-```
+那么，以后每次在运行 `git commit` 后，会先运行上面的 `.git/hooks/pre-commit.sh`，如果正常结束（`exit status` 为 `0`），则继续提交；如果运行出错，即单元测试或者代码检查发现了问题而以非零值退出，则会中断提交过程。
 
 **`pre-rebase`**
 
@@ -131,7 +145,7 @@ Git 钩子可以分为两大类：客户端钩子（client side hooks），服�
 
 除了借助 shell 脚本，还可以使用 npm 生态下的工具。例如 `husky`。
 
-`husky` 在下载完成后，会执行其 `package.json` 里用 `scripts.install` 指定的命令：
+`husky` 在下载完成后，会执行其 `package.json` 里用 `scripts.install` 指定的命令（所以说，本质上是利用 `npm` 的钩子来创建 `git` 的钩子）：
 
 ```json
 {
