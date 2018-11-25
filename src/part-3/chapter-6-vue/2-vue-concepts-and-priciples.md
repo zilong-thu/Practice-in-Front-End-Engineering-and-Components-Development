@@ -2,7 +2,11 @@
 
 ## 检测对象变化
 
-Vue 基于 `Object.defineProperty()` 方法重写对象属性的 `getter/setter` 实现了对象属性变化的检测。`Object.defineProperty()` 是 ECMAScript5 标准添加的特性，无法通过 JavaScript 代码实现 polyfill（因此 Vue 无法用于像 IE8 这种不支持 ES5 的浏览器）。
+Vue 的核心功能之一是模板可以自动响应数据变化，这就涉及到如何检测数据的变动。
+
+在版本 1 和 2 中，Vue 是基于 `Object.defineProperty()` 方法重写对象属性的 `getter/setter` 实现了对象属性变化的检测。`Object.defineProperty()` 是 ECMAScript5 标准添加的特性，无法通过 JavaScript 代码实现 polyfill（因此 Vue 无法用于像 IE8 这种不支持 ES5 的浏览器）。
+
+而到了 Vue 3（发布于 2019 年），则采用了更新的 ES6 API —— Proxy。
 
 ### `Object.defineProperty()`
 
