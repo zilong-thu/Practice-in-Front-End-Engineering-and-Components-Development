@@ -292,6 +292,9 @@ $ ll
 
 # 生成灰度图
 $ convert <img_in> -set colorspace Gray -separate -average <img_out>
+
+# 将两张图在竖直方向上连接，合并为一张图
+$ convert -append a.jpg b.jpg out.jpg
 ```
 
 ### GIMP
