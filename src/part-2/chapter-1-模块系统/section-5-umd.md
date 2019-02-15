@@ -29,7 +29,7 @@
 
 通常，如果一个变量在取右值时未定义，会发生引用错误（Reference Error），例如
 
-```
+```javascript
 // 标识符 an_undefined_token 不在当前作用域链上
 console.log(an_undefined_token);
 

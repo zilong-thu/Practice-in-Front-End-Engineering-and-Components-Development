@@ -19,7 +19,7 @@ CommonJS 模块的 `__dirname`、`__filename` 也不会作为全局变量提供�
 
 Node.js 对 CommonJS 与 ESM 进行了较严格的区分，CommonJS 的 `require()` 不可用于加载 ESM 文件。
 
-```
+```javascript
 # 不支持的写法
 require('./foo.mjs');
 ```
@@ -36,7 +36,7 @@ require('./foo.mjs');
 
 `lib.mjs` 的内容：
 
-```
+```javascript
 console.log('lib module is loaded into memory.');
 
 export var name = '阿珂';
@@ -52,7 +52,7 @@ export function add(x, y) {
 
 `my-app.mjs` 的内容：
 
-```
+```javascript
 import {name} from './lib.mjs';
 import {setName, add} from './lib.mjs';
 
@@ -65,7 +65,7 @@ console.log('sum: ' + add(2, 3));
 
 执行：
 
-```
+```bash
 $ node --experimental-modules my-app.mjs
 # 输出的结果：
 lib module is loaded into memory.

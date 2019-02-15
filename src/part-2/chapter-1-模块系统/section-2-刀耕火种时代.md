@@ -4,7 +4,7 @@ HTML `<script>` 元素用于嵌入或引用可执行脚本。互联网早期，�
 
 这个时期针对 JavaScript 源码的组织，谈不上模块化。即便采用了文件拼接（concat）这样的处理技术，其先后顺序也需要人工维护。典型的例子是 Backbone.js 在官网上提供的代码示例<sup>[1]</sup>：
 
-```
+```html
 <head>
   <title>Backbone.js Todos</title>
   <link rel="stylesheet" href="todos.css"/>
