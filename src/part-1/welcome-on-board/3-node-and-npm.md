@@ -173,10 +173,17 @@ $ npx create-react-app my-app
 
 ### 其他包管理器
 
+**yarn**
+
 <img src="../images/yarn-logo.png" class="fr" style="width: 100px;">
 
-NPM 并非唯一的 Node.js 包管理器，Facebook、Exponent、Google 与 Tilde 四家公司在 2016 年 11 月联合推出的 Yarn<sup>[6]</sup> 也是一款优秀的同类型开源工具。Yarn 会优先从本地的离线镜像（offline mirror）中获取包，并且采用多线程下载，因而相比传统的 npm 会有更快的速度。Mac 下可以通过 Homebrew 执行 `brew install yarn` 进行安装。
+NPM 并非唯一的 Node.js 包管理器，Facebook、Exponent、Google 与 Tilde 四家公司在 2016 年 11 月联合推出的 Yarn<sup>[6]</sup> 也是一款优秀的同类型开源工具。Yarn 会优先从本地的离线镜像（offline mirror）中获取包，并且采用多线程下载，因而相比传统的 npm 会有更快的速度。
 
+Mac 下可以通过 Homebrew 执行 `brew install yarn` 进行安装。官方还推荐通过下载其安装脚本的方式进行安装：
+
+```bash
+$ curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
+```
 
 ### Node.js 的设计缺陷
 
