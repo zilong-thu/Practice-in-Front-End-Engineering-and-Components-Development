@@ -1,7 +1,7 @@
 # 目录
 
-* [封面](README.md)
-* [版权声明](part-0/0-rights.md)
+* [Introduction](README.md)
+* [著作权声明](part-0/0-cover.md)
 * [作者介绍](part-0/1-about-author.md)
 * [前言](part-0/2-pre.md)
 
