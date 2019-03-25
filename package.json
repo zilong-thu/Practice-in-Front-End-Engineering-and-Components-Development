@@ -1,7 +1,7 @@
 {
-  "name": "my-book-react-and-engineering",
+  "name": "Practice-in-Front-End-Engineering-and-Components-Development",
   "version": "1.0.0",
-  "description": "书名：Web组件化开发与前端工程化实践",
+  "description": "书名：Web前端工程化与组件化开发实践",
   "main": "index.js",
   "directories": {
     "example": "examples"
@@ -16,7 +16,7 @@
     "type": "git",
     "url": "git@git.oschina.net:zilong-thu/my-book-react-and-engineering.git"
   },
-  "author": "",
+  "author": "zilong-thu",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
