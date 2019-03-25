@@ -1,0 +1,1404 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>重构 · Web前端工程化与组件化开发实践</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/common.css">
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="04-fe-self-learning.html" />
+    
+    
+    <link rel="prev" href="02-编码规范.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../part-0/0-cover.html">
+            
+                <a href="../part-0/0-cover.html">
+            
+                    
+                    著作权声明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../part-0/1-about-author.html">
+            
+                <a href="../part-0/1-about-author.html">
+            
+                    
+                    作者介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../part-0/2-pre.html">
+            
+                <a href="../part-0/2-pre.html">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../part-1/">
+            
+                <a href="../part-1/">
+            
+                    
+                    第一部分 基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../part-1/chapter-1-intro/1-web前端简史.html">
+            
+                <a href="../part-1/chapter-1-intro/1-web前端简史.html">
+            
+                    
+                    第1章 Web前端简史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../part-1/chapter-2-http/">
+            
+                <a href="../part-1/chapter-2-http/">
+            
+                    
+                    第2章 HTTP与HTTP服务简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../part-1/chapter-2-http/1-http.html">
+            
+                <a href="../part-1/chapter-2-http/1-http.html">
+            
+                    
+                    HTTP简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../part-1/chapter-2-http/2-http-servers.html">
+            
+                <a href="../part-1/chapter-2-http/2-http-servers.html">
+            
+                    
+                    HTTP服务简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../part-1/chapter-2-http/3-http-proxies.html">
+            
+                <a href="../part-1/chapter-2-http/3-http-proxies.html">
+            
+                    
+                    HTTP抓包与调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../part-1/chapter-html/">
+            
+                <a href="../part-1/chapter-html/">
+            
+                    
+                    第3章 HTML简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../part-1/chapter-3-js/">
+            
+                <a href="../part-1/chapter-3-js/">
+            
+                    
+                    第4章 JavaScript简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../part-1/chapter-3-js/01-language-features.html">
+            
+                <a href="../part-1/chapter-3-js/01-language-features.html">
+            
+                    
+                    语言特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../part-1/chapter-3-js/02-js-engine.html">
+            
+                <a href="../part-1/chapter-3-js/02-js-engine.html">
+            
+                    
+                    JavaScript引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../part-1/chapter-3-js/03-js-future.html">
+            
+                <a href="../part-1/chapter-3-js/03-js-future.html">
+            
+                    
+                    展望
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../part-1/chapter-4-webfe-apps/">
+            
+                <a href="../part-1/chapter-4-webfe-apps/">
+            
+                    
+                    第5章 前端可以做什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../part-1/welcome-on-board/">
+            
+                <a href="../part-1/welcome-on-board/">
+            
+                    
+                    第6章 Welcome on Board
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../part-1/welcome-on-board/1-computer-and-os.html">
+            
+                <a href="../part-1/welcome-on-board/1-computer-and-os.html">
+            
+                    
+                    电脑、操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../part-1/welcome-on-board/2-terminals.html">
+            
+                <a href="../part-1/welcome-on-board/2-terminals.html">
+            
+                    
+                    Mac终端与常用命令行工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="../part-1/welcome-on-board/3-node-and-npm.html">
+            
+                <a href="../part-1/welcome-on-board/3-node-and-npm.html">
+            
+                    
+                    Node.js环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="../part-1/welcome-on-board/4-code-editors.html">
+            
+                <a href="../part-1/welcome-on-board/4-code-editors.html">
+            
+                    
+                    编辑器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../part-2/">
+            
+                <a href="../part-2/">
+            
+                    
+                    第二部分 工程化实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../part-2/chapter-0-git-and-vcs/">
+            
+                <a href="../part-2/chapter-0-git-and-vcs/">
+            
+                    
+                    第7章 版本控制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../part-2/chapter-0-git-and-vcs/01-using-git.html">
+            
+                <a href="../part-2/chapter-0-git-and-vcs/01-using-git.html">
+            
+                    
+                    用Git进行版本控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../part-2/chapter-0-git-and-vcs/02-git-hooks.html">
+            
+                <a href="../part-2/chapter-0-git-and-vcs/02-git-hooks.html">
+            
+                    
+                    Git钩子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../part-2/chapter-0-git-and-vcs/03-git-workflow.html">
+            
+                <a href="../part-2/chapter-0-git-and-vcs/03-git-workflow.html">
+            
+                    
+                    Git工作流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../part-2/chapter-0-git-and-vcs/04-server-side-git.html">
+            
+                <a href="../part-2/chapter-0-git-and-vcs/04-server-side-git.html">
+            
+                    
+                    服务器端Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../part-2/chapter-1-模块系统/section-1-概述.html">
+            
+                <a href="../part-2/chapter-1-模块系统/section-1-概述.html">
+            
+                    
+                    第8章 模块系统
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../part-2/chapter-1-模块系统/section-2-刀耕火种时代.html">
+            
+                <a href="../part-2/chapter-1-模块系统/section-2-刀耕火种时代.html">
+            
+                    
+                    刀耕火种时代
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../part-2/chapter-1-模块系统/section-3-common-js.html">
+            
+                <a href="../part-2/chapter-1-模块系统/section-3-common-js.html">
+            
+                    
+                    CommonJS模块系统与Node.js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../part-2/chapter-1-模块系统/section-4-amd.html">
+            
+                <a href="../part-2/chapter-1-模块系统/section-4-amd.html">
+            
+                    
+                    AMD模块系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="../part-2/chapter-1-模块系统/section-5-umd.html">
+            
+                <a href="../part-2/chapter-1-模块系统/section-5-umd.html">
+            
+                    
+                    UMD模块系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5" data-path="../part-2/chapter-1-模块系统/section-6-esm.html">
+            
+                <a href="../part-2/chapter-1-模块系统/section-6-esm.html">
+            
+                    
+                    ECMAScript模块系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../part-2/chapter-3-js-parsers/">
+            
+                <a href="../part-2/chapter-3-js-parsers/">
+            
+                    
+                    第9章 JavaScript解析器及应用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="../part-2/chapter-3-js-parsers/1-js-parser.html">
+            
+                <a href="../part-2/chapter-3-js-parsers/1-js-parser.html">
+            
+                    
+                    JavaScript解析器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2" data-path="../part-2/chapter-3-js-parsers/2-babel.html">
+            
+                <a href="../part-2/chapter-3-js-parsers/2-babel.html">
+            
+                    
+                    Babel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.3" data-path="../part-2/chapter-3-js-parsers/3-eslint.html">
+            
+                <a href="../part-2/chapter-3-js-parsers/3-eslint.html">
+            
+                    
+                    ESLint
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../part-2/chapter-2-前端资源构建/">
+            
+                <a href="../part-2/chapter-2-前端资源构建/">
+            
+                    
+                    第10章 前端资源构建
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.5.1" data-path="../part-2/chapter-2-前端资源构建/02-css-processors.html">
+            
+                <a href="../part-2/chapter-2-前端资源构建/02-css-processors.html">
+            
+                    
+                    CSS预处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.2" data-path="../part-2/chapter-2-前端资源构建/03-img-processing.html">
+            
+                <a href="../part-2/chapter-2-前端资源构建/03-img-processing.html">
+            
+                    
+                    图片处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.3" data-path="../part-2/chapter-2-前端资源构建/04-gulp.html">
+            
+                <a href="../part-2/chapter-2-前端资源构建/04-gulp.html">
+            
+                    
+                    Gulp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.4" data-path="../part-2/chapter-2-前端资源构建/05-webpack.html">
+            
+                <a href="../part-2/chapter-2-前端资源构建/05-webpack.html">
+            
+                    
+                    Webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.5" data-path="../part-2/chapter-2-前端资源构建/06-practice-usage.html">
+            
+                <a href="../part-2/chapter-2-前端资源构建/06-practice-usage.html">
+            
+                    
+                    前端资源构建系统演进示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../part-2/chapter-4-debug/">
+            
+                <a href="../part-2/chapter-4-debug/">
+            
+                    
+                    第11章 开发与调试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.1" data-path="../part-2/chapter-4-debug/1-browser-debug.html">
+            
+                <a href="../part-2/chapter-4-debug/1-browser-debug.html">
+            
+                    
+                    浏览器基本通用调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2" data-path="../part-2/chapter-4-debug/2-xcode-simulator.html">
+            
+                <a href="../part-2/chapter-4-debug/2-xcode-simulator.html">
+            
+                    
+                    XCode Simulator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.3" data-path="../part-2/chapter-4-debug/3-nodejs-debug.html">
+            
+                <a href="../part-2/chapter-4-debug/3-nodejs-debug.html">
+            
+                    
+                    调试 NodeJS 程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.4" data-path="../part-2/chapter-4-debug/4-mobile-web-debug.html">
+            
+                <a href="../part-2/chapter-4-debug/4-mobile-web-debug.html">
+            
+                    
+                    移动端 Web 页面调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../part-2/chapter-5-test/">
+            
+                <a href="../part-2/chapter-5-test/">
+            
+                    
+                    第12章 前端测试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.7.1" data-path="../part-2/chapter-5-test/01-unit-test.html">
+            
+                <a href="../part-2/chapter-5-test/01-unit-test.html">
+            
+                    
+                    JavaScript单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7.2" data-path="../part-2/chapter-5-test/02-browser-compatibility.html">
+            
+                <a href="../part-2/chapter-5-test/02-browser-compatibility.html">
+            
+                    
+                    浏览器兼容性测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7.3" data-path="../part-2/chapter-5-test/03-components-test.html">
+            
+                <a href="../part-2/chapter-5-test/03-components-test.html">
+            
+                    
+                    Web组件的单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../part-3/">
+            
+                <a href="../part-3/">
+            
+                    
+                    第三部分 组件化开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../part-3/chapter-2-amd-jquery/">
+            
+                <a href="../part-3/chapter-2-amd-jquery/">
+            
+                    
+                    第14章 面向对象的组件化开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../part-3/chapter-3-web-components/">
+            
+                <a href="../part-3/chapter-3-web-components/">
+            
+                    
+                    第15章 web components技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="../part-3/chapter-3-web-components/article-1-custom-elements.html">
+            
+                <a href="../part-3/chapter-3-web-components/article-1-custom-elements.html">
+            
+                    
+                    自定义元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2" data-path="../part-3/chapter-3-web-components/article-2-shadow-dom.html">
+            
+                <a href="../part-3/chapter-3-web-components/article-2-shadow-dom.html">
+            
+                    
+                    Shadow DOM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3" data-path="../part-3/chapter-3-web-components/article-3-template.html">
+            
+                <a href="../part-3/chapter-3-web-components/article-3-template.html">
+            
+                    
+                    HTML template
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.4" data-path="../part-3/chapter-3-web-components/article-4-html-import.html">
+            
+                <a href="../part-3/chapter-3-web-components/article-4-html-import.html">
+            
+                    
+                    HTML Import
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../part-3/chapter-4-polymer/">
+            
+                <a href="../part-3/chapter-4-polymer/">
+            
+                    
+                    第16章 Polymer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../part-3/chapter-5-react/">
+            
+                <a href="../part-3/chapter-5-react/">
+            
+                    
+                    第17章 React
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.5.1" data-path="../part-3/chapter-5-react/1-get-started.html">
+            
+                <a href="../part-3/chapter-5-react/1-get-started.html">
+            
+                    
+                    基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.2" data-path="../part-3/chapter-5-react/2-virtual-dom.html">
+            
+                <a href="../part-3/chapter-5-react/2-virtual-dom.html">
+            
+                    
+                    虚拟DOM原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.3" data-path="../part-3/chapter-5-react/3-message-among-components.html">
+            
+                <a href="../part-3/chapter-5-react/3-message-among-components.html">
+            
+                    
+                    组件间通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.4" data-path="../part-3/chapter-5-react/4-ssr.html">
+            
+                <a href="../part-3/chapter-5-react/4-ssr.html">
+            
+                    
+                    服务端渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.5" data-path="../part-3/chapter-5-react/5-react-and-fp.html">
+            
+                <a href="../part-3/chapter-5-react/5-react-and-fp.html">
+            
+                    
+                    React与函数式编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../part-3/chapter-6-vue/">
+            
+                <a href="../part-3/chapter-6-vue/">
+            
+                    
+                    第18章 Vue
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.6.1" data-path="../part-3/chapter-6-vue/1-basic-demo.html">
+            
+                <a href="../part-3/chapter-6-vue/1-basic-demo.html">
+            
+                    
+                    基本使用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.2" data-path="../part-3/chapter-6-vue/2-vue-concepts-and-priciples.html">
+            
+                <a href="../part-3/chapter-6-vue/2-vue-concepts-and-priciples.html">
+            
+                    
+                    Vue 的关键概念与原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.3" data-path="../part-3/chapter-6-vue/3-single-file-components.html">
+            
+                <a href="../part-3/chapter-6-vue/3-single-file-components.html">
+            
+                    
+                    单文件组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.4" data-path="../part-3/chapter-6-vue/4-build-vue.html">
+            
+                <a href="../part-3/chapter-6-vue/4-build-vue.html">
+            
+                    
+                    Vue构建示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="../part-3/chapter-7-miniprogram/">
+            
+                <a href="../part-3/chapter-7-miniprogram/">
+            
+                    
+                    第19章 微信小程序组件化开发实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第20章 前端开发中的常见话题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="01-标准库.html">
+            
+                <a href="01-标准库.html">
+            
+                    
+                    标准库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="02-编码规范.html">
+            
+                <a href="02-编码规范.html">
+            
+                    
+                    编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.1.3" data-path="03-重构.html">
+            
+                <a href="03-重构.html">
+            
+                    
+                    重构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="04-fe-self-learning.html">
+            
+                <a href="04-fe-self-learning.html">
+            
+                    
+                    前端程序员的自我成长
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../part-5/">
+            
+                <a href="../part-5/">
+            
+                    
+                    附录
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1" data-path="../part-5/02-about-web-browsers.html">
+            
+                <a href="../part-5/02-about-web-browsers.html">
+            
+                    
+                    Web 浏览器工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2" data-path="../part-5/03-lambda-calculus.html">
+            
+                <a href="../part-5/03-lambda-calculus.html">
+            
+                    
+                    Lambda 演算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.3" data-path="../part-5/04-immutable-data.html">
+            
+                <a href="../part-5/04-immutable-data.html">
+            
+                    
+                    不可变数据（Immutable Data）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../part-6-ref/">
+            
+                <a href="../part-6-ref/">
+            
+                    
+                    参考资料
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >重构</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x91CD;&#x6784;">&#x91CD;&#x6784;</h1>
+<p>&#x91CD;&#x6784;&#xFF08;Refactoring&#xFF09;&#x662F;&#x6307;&#x6539;&#x53D8;&#x4EE3;&#x7801;&#x7684;&#x7ED3;&#x6784;&#x548C;&#x7EC4;&#x7EC7;&#xFF0C;&#x540C;&#x65F6;&#x4FDD;&#x6301;&#x539F;&#x6709;&#x529F;&#x80FD;&#x903B;&#x8F91;&#x4E0D;&#x53D8;&#x7684;&#x8FC7;&#x7A0B;&#x3002;Eric S. Raymond &#x8BA4;&#x4E3A;&#x201C;&#x91CD;&#x6784;&#x7684;&#x539F;&#x5219;&#x6027;&#x76EE;&#x6807;&#x5C31;&#x662F;&#x63D0;&#x9AD8;&#x6B63;&#x4EA4;&#x6027;&#x201D;&#x3002;&#x6B63;&#x5982;&#x8BB8;&#x591A;&#x7269;&#x7406;&#x5B66;&#x5BB6;&#x6240;&#x575A;&#x4FE1;&#x7684;&#xFF0C;&#x4E07;&#x7269;&#x8FD0;&#x884C;&#x7684;&#x89C4;&#x5F8B;&#x5E94;&#x8BE5;&#x662F;&#x7B80;&#x5355;&#x3001;&#x7B80;&#x6D01;&#x7684;&#x4E00;&#x6837;&#xFF0C;&#x5728;&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x4E2D;&#xFF0C;&#x8981;&#x5B8C;&#x6210;&#x67D0;&#x4E2A;&#x529F;&#x80FD;&#xFF0C;&#x603B;&#x5E94;&#x8BE5;&#x5B58;&#x5728;&#x7740;&#x4E00;&#x79CD;&#x7B80;&#x6D01;&#x3001;&#x6E05;&#x6670;&#x7684;&#x5B9E;&#x73B0;&#x3002;&#x8F6F;&#x4EF6;&#x91CD;&#x6784;&#x7684;&#x76EE;&#x6807;&#xFF0C;&#x5C31;&#x662F;&#x8981;&#x8FFD;&#x6C42;&#x8FD9;&#x6837;&#x7684;&#x5B8C;&#x7F8E;&#x5883;&#x754C;&#xFF1A;&#x201C;&#x5B8C;&#x7F8E;&#x4E4B;&#x9053;&#xFF0C;&#x4E0D;&#x5728;&#x65E0;&#x53EF;&#x589E;&#x52A0;&#xFF0C;&#x800C;&#x5728;&#x65E0;&#x53EF;&#x5220;&#x51CF;&#x3002;&#x201D;&#xFF08;&#x5F15;&#x81EA;&#x5B89;&#x4E1C;&#x5C3C;&#xB7;&#x5FB7;&#xB7;&#x5723;&#x57C3;&#x514B;&#x82CF;&#x4F69;&#x91CC;[&#x6CD5;]&#xFF0C;&#x8BBA;&#x98DE;&#x673A;&#x8BBE;&#x8BA1;&#xFF09;</p>
+<blockquote>
+<p>&#x5728;&#x201C;&#x8FD9;&#x4E2A;&#x8BBE;&#x8BA1;&#x80FD;&#x884C;&#x5417;&#xFF1F;&#x201D;&#x4E4B;&#x540E;&#x8981;&#x63D0;&#x51FA;&#x7684;&#x5934;&#x51E0;&#x4E2A;&#x95EE;&#x9898;&#x5C31;&#x662F;&#x201C;&#x522B;&#x4EBA;&#x80FD;&#x8BFB;&#x61C2;&#x8FD9;&#x4E2A;&#x8BBE;&#x8BA1;&#x5417;&#xFF1F;&#x8FD9;&#x4E2A;&#x8BBE;&#x8BA1;&#x4F18;&#x96C5;&#x5417;&#xFF1F;&#x201D;</p>
+</blockquote>
+<p>&#x7B2C;&#x4E8C;&#x7CFB;&#x7EDF;&#x7EFC;&#x5408;&#x5F81;&#xFF08;Second-System Effect&#xFF09;</p>
+<blockquote>
+<p>&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x7CFB;&#x7EDF;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;&#x4E00;&#x79CD;&#x662F;&#x5C3D;&#x91CF;&#x7B80;&#x5355;&#xFF0C;&#x8FD9;&#x6837;&#x663E;&#x7136;&#x4E0D;&#x4F1A;&#x6709;&#x4EC0;&#x4E48;&#x95EE;&#x9898;&#xFF1B;&#x53E6;&#x5916;&#x4E00;&#x79CD;&#x662F;&#xFF0C;&#x5C3D;&#x91CF;&#x590D;&#x6742;&#xFF0C;&#x8FD9;&#x6837;&#x6CA1;&#x4EC0;&#x4E48;&#x663E;&#x7136;&#x7684;&#x95EE;&#x9898;&#x3002;
+&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x5176;&#x5B9E;&#x66F4;&#x96BE;&#x3002;&#x5B83;&#x9700;&#x8981;&#x4ECE;&#x590D;&#x6742;&#x7684;&#x81EA;&#x7136;&#x73B0;&#x8C61;&#x4E2D;&#x53D1;&#x73B0;&#x7B80;&#x5355;&#x7684;&#x7269;&#x7406;&#x89C4;&#x5F8B;&#x7684;&#x90A3;&#x79CD;&#x6280;&#x80FD;&#x3001;&#x6295;&#x5165;&#x3001;&#x6D1E;&#x5BDF;&#x529B;&#xFF0C;&#x751A;&#x81F3;&#x662F;&#x90A3;&#x79CD;&#x7075;&#x611F;&#xFF0C;&#x540C;&#x65F6;&#x8FD8;&#x9700;&#x8981;&#x4F60;&#x80FD;&#x63A5;&#x53D7;&#x4F60;&#x7684;&#x76EE;&#x6807;&#x53D7;&#x9650;&#x4E8E;&#x7269;&#x7406;&#x3001;&#x903B;&#x8F91;&#x548C;&#x79D1;&#x6280;&#x7684;&#x7EA6;&#x675F;&#xFF0C;&#x4EE5;&#x53CA;&#x5728;&#x76EE;&#x6807;&#x95F4;&#x6709;&#x51B2;&#x7A81;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x59A5;&#x534F;&#x3002;
+&#x2014;&#x2014; Tony Hoar&#xFF0C;&#x56FE;&#x7075;&#x5956;&#x83B7;&#x5956;&#x611F;&#x8A00;</p>
+</blockquote>
+<p>&#x5728;&#x300A;&#x7F16;&#x7A0B;&#x4EBA;&#x751F;&#x300B;&#x4E2D;&#xFF0C;Joshua Bloch &#x6709;&#x8FD9;&#x6837;&#x7684;&#x89C2;&#x70B9;&#xFF1A;</p>
+<blockquote>
+<p>&#x5728;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7A0B;&#x5E8F;&#x5458;&#x7684;&#x65F6;&#x95F4;&#x6BD4;&#x8BA1;&#x7B97;&#x673A;&#x7684;&#x65F6;&#x95F4;&#x66F4;&#x5B9D;&#x8D35;&#x3002;&#x4F46;&#x662F;&#x5F53;&#x4F60;&#x7684;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x5728;&#x6210;&#x5343;&#x4E0A;&#x4E07;&#x53F0;&#x673A;&#x5668;&#x4E0A;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x5B8C;&#x5168;&#x4E0D;&#x540C;&#x4E86;&#x3002;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5199;&#x7684;&#x6709;&#x4E9B;&#x7A0B;&#x5E8F;&#xFF08;&#x4F8B;&#x5982;&#x8C37;&#x6B4C;&#x7684;&#x7D22;&#x5F15;&#x670D;&#x52A1;&#x5668;&#x7684;&#x5185;&#x5FAA;&#x73AF;&#x7A0B;&#x5E8F;&#xFF09;&#xFF0C;&#x4F7F;&#x7528;&#x90A3;&#x4E9B;&#x53EF;&#x80FD;&#x4E0D;&#x90A3;&#x4E48;&#x5B89;&#x5168;&#x7684;&#x8BED;&#x8A00;&#xFF0C;&#x69A8;&#x51FA;&#x6BCF;&#x4E00;&#x70B9;&#x503C;&#x5F97;&#x69A8;&#x51FA;&#x7684;&#x6027;&#x80FD;&#x3002;</p>
+<p>&#x6211;&#x8981;&#x91CD;&#x70B9;&#x8BF4;&#x8BF4;&#x4E00;&#x7C7B;&#x4EBA;&#xFF0C;&#x7528; Kevin Bourrillion &#x7684;&#x8BDD;&#x6765;&#x8BF4;&#xFF0C;&#x4ED6;&#x4EEC;&#x201C;&#x7F3A;&#x4E4F;&#x611F;&#x540C;&#x8EAB;&#x53D7;&#x7684;&#x57FA;&#x56E0;&#x201D;&#x3002;&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x80FD;&#x628A;&#x81EA;&#x5DF1;&#x60F3;&#x8C61;&#x6210;&#x4F7F;&#x7528;&#x4F60;&#x7684; API&#x3001;&#x4F60;&#x7684;&#x8BED;&#x8A00;&#x7684;&#x666E;&#x901A;&#x7A0B;&#x5E8F;&#x5458;&#xFF0C;&#x90A3;&#x4E48;&#x4F60;&#x5C31;&#x6CA1;&#x6709;&#x529E;&#x6CD5;&#x505A;&#x4E00;&#x4E2A;&#x597D;&#x7684;API&#x6216;&#x8005;&#x8BED;&#x8A00;&#x8BBE;&#x8BA1;&#x8005;&#x3002;</p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="02-编码规范.html" class="navigation navigation-prev " aria-label="Previous page: 编码规范">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="04-fe-self-learning.html" class="navigation navigation-next " aria-label="Next page: 前端程序员的自我成长">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"重构","level":"5.1.3","depth":2,"next":{"title":"前端程序员的自我成长","level":"5.1.4","depth":2,"path":"part-4/04-fe-self-learning.md","ref":"part-4/04-fe-self-learning.md","articles":[]},"previous":{"title":"编码规范","level":"5.1.2","depth":2,"path":"part-4/02-编码规范.md","ref":"part-4/02-编码规范.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/common.css","pdf":"styles/common.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":13,"fontFamily":"Arial","paperSize":"b5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":50,"left":50,"top":45,"bottom":45}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Web前端工程化与组件化开发实践","gitbook":"*"},"file":{"path":"part-4/03-重构.md","mtime":"2018-04-25T06:28:03.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-25T11:26:55.644Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

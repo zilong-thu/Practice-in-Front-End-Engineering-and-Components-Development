@@ -1,0 +1,52 @@
+figure {
+  text-align: center;
+  margin: 1em 0;
+}
+figure figcaption {
+  font-size: .8em !important;
+}
+
+p img {
+  display: block;
+  margin: 0 auto;
+}
+
+/**
+ * 用于段落开头的图片
+ */
+.fl {
+  float: left;
+  margin: 0 1em 0.5em 0;
+}
+
+.fr {
+  float: right;
+  margin: 0 0 0.5em 1em;
+}
+
+img.round {
+  border-radius: 5px;
+}
+
+pre {
+  border-radius: 6px;
+}
+
+pre.pre-dir {
+  font-size: .85em;
+}
+
+sup {
+  font-size: 0.8em !important;
+}
+
+.markdown-section pre,
+pre {
+	line-height: 1.3;
+}
+
+table th,
+table td {
+  border-color: #ccc;
+  text-align: center;
+}

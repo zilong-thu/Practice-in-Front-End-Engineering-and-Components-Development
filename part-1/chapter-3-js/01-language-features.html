@@ -1,0 +1,1463 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>语言特性 · Web前端工程化与组件化开发实践</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/common.css">
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="02-js-engine.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../part-0/0-cover.html">
+            
+                <a href="../../part-0/0-cover.html">
+            
+                    
+                    著作权声明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../part-0/1-about-author.html">
+            
+                <a href="../../part-0/1-about-author.html">
+            
+                    
+                    作者介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../part-0/2-pre.html">
+            
+                <a href="../../part-0/2-pre.html">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    第一部分 基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../chapter-1-intro/1-web前端简史.html">
+            
+                <a href="../chapter-1-intro/1-web前端简史.html">
+            
+                    
+                    第1章 Web前端简史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../chapter-2-http/">
+            
+                <a href="../chapter-2-http/">
+            
+                    
+                    第2章 HTTP与HTTP服务简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../chapter-2-http/1-http.html">
+            
+                <a href="../chapter-2-http/1-http.html">
+            
+                    
+                    HTTP简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../chapter-2-http/2-http-servers.html">
+            
+                <a href="../chapter-2-http/2-http-servers.html">
+            
+                    
+                    HTTP服务简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../chapter-2-http/3-http-proxies.html">
+            
+                <a href="../chapter-2-http/3-http-proxies.html">
+            
+                    
+                    HTTP抓包与调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../chapter-html/">
+            
+                <a href="../chapter-html/">
+            
+                    
+                    第3章 HTML简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第4章 JavaScript简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.5.1" data-path="01-language-features.html">
+            
+                <a href="01-language-features.html">
+            
+                    
+                    语言特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="02-js-engine.html">
+            
+                <a href="02-js-engine.html">
+            
+                    
+                    JavaScript引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="03-js-future.html">
+            
+                <a href="03-js-future.html">
+            
+                    
+                    展望
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../chapter-4-webfe-apps/">
+            
+                <a href="../chapter-4-webfe-apps/">
+            
+                    
+                    第5章 前端可以做什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../welcome-on-board/">
+            
+                <a href="../welcome-on-board/">
+            
+                    
+                    第6章 Welcome on Board
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../welcome-on-board/1-computer-and-os.html">
+            
+                <a href="../welcome-on-board/1-computer-and-os.html">
+            
+                    
+                    电脑、操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../welcome-on-board/2-terminals.html">
+            
+                <a href="../welcome-on-board/2-terminals.html">
+            
+                    
+                    Mac终端与常用命令行工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="../welcome-on-board/3-node-and-npm.html">
+            
+                <a href="../welcome-on-board/3-node-and-npm.html">
+            
+                    
+                    Node.js环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="../welcome-on-board/4-code-editors.html">
+            
+                <a href="../welcome-on-board/4-code-editors.html">
+            
+                    
+                    编辑器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../part-2/">
+            
+                <a href="../../part-2/">
+            
+                    
+                    第二部分 工程化实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../part-2/chapter-0-git-and-vcs/">
+            
+                <a href="../../part-2/chapter-0-git-and-vcs/">
+            
+                    
+                    第7章 版本控制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../../part-2/chapter-0-git-and-vcs/01-using-git.html">
+            
+                <a href="../../part-2/chapter-0-git-and-vcs/01-using-git.html">
+            
+                    
+                    用Git进行版本控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../../part-2/chapter-0-git-and-vcs/02-git-hooks.html">
+            
+                <a href="../../part-2/chapter-0-git-and-vcs/02-git-hooks.html">
+            
+                    
+                    Git钩子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../../part-2/chapter-0-git-and-vcs/03-git-workflow.html">
+            
+                <a href="../../part-2/chapter-0-git-and-vcs/03-git-workflow.html">
+            
+                    
+                    Git工作流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../../part-2/chapter-0-git-and-vcs/04-server-side-git.html">
+            
+                <a href="../../part-2/chapter-0-git-and-vcs/04-server-side-git.html">
+            
+                    
+                    服务器端Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../part-2/chapter-1-模块系统/section-1-概述.html">
+            
+                <a href="../../part-2/chapter-1-模块系统/section-1-概述.html">
+            
+                    
+                    第8章 模块系统
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../../part-2/chapter-1-模块系统/section-2-刀耕火种时代.html">
+            
+                <a href="../../part-2/chapter-1-模块系统/section-2-刀耕火种时代.html">
+            
+                    
+                    刀耕火种时代
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../../part-2/chapter-1-模块系统/section-3-common-js.html">
+            
+                <a href="../../part-2/chapter-1-模块系统/section-3-common-js.html">
+            
+                    
+                    CommonJS模块系统与Node.js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../../part-2/chapter-1-模块系统/section-4-amd.html">
+            
+                <a href="../../part-2/chapter-1-模块系统/section-4-amd.html">
+            
+                    
+                    AMD模块系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="../../part-2/chapter-1-模块系统/section-5-umd.html">
+            
+                <a href="../../part-2/chapter-1-模块系统/section-5-umd.html">
+            
+                    
+                    UMD模块系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5" data-path="../../part-2/chapter-1-模块系统/section-6-esm.html">
+            
+                <a href="../../part-2/chapter-1-模块系统/section-6-esm.html">
+            
+                    
+                    ECMAScript模块系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../../part-2/chapter-3-js-parsers/">
+            
+                <a href="../../part-2/chapter-3-js-parsers/">
+            
+                    
+                    第9章 JavaScript解析器及应用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="../../part-2/chapter-3-js-parsers/1-js-parser.html">
+            
+                <a href="../../part-2/chapter-3-js-parsers/1-js-parser.html">
+            
+                    
+                    JavaScript解析器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2" data-path="../../part-2/chapter-3-js-parsers/2-babel.html">
+            
+                <a href="../../part-2/chapter-3-js-parsers/2-babel.html">
+            
+                    
+                    Babel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.3" data-path="../../part-2/chapter-3-js-parsers/3-eslint.html">
+            
+                <a href="../../part-2/chapter-3-js-parsers/3-eslint.html">
+            
+                    
+                    ESLint
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../../part-2/chapter-2-前端资源构建/">
+            
+                <a href="../../part-2/chapter-2-前端资源构建/">
+            
+                    
+                    第10章 前端资源构建
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.5.1" data-path="../../part-2/chapter-2-前端资源构建/02-css-processors.html">
+            
+                <a href="../../part-2/chapter-2-前端资源构建/02-css-processors.html">
+            
+                    
+                    CSS预处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.2" data-path="../../part-2/chapter-2-前端资源构建/03-img-processing.html">
+            
+                <a href="../../part-2/chapter-2-前端资源构建/03-img-processing.html">
+            
+                    
+                    图片处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.3" data-path="../../part-2/chapter-2-前端资源构建/04-gulp.html">
+            
+                <a href="../../part-2/chapter-2-前端资源构建/04-gulp.html">
+            
+                    
+                    Gulp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.4" data-path="../../part-2/chapter-2-前端资源构建/05-webpack.html">
+            
+                <a href="../../part-2/chapter-2-前端资源构建/05-webpack.html">
+            
+                    
+                    Webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.5" data-path="../../part-2/chapter-2-前端资源构建/06-practice-usage.html">
+            
+                <a href="../../part-2/chapter-2-前端资源构建/06-practice-usage.html">
+            
+                    
+                    前端资源构建系统演进示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../../part-2/chapter-4-debug/">
+            
+                <a href="../../part-2/chapter-4-debug/">
+            
+                    
+                    第11章 开发与调试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.1" data-path="../../part-2/chapter-4-debug/1-browser-debug.html">
+            
+                <a href="../../part-2/chapter-4-debug/1-browser-debug.html">
+            
+                    
+                    浏览器基本通用调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2" data-path="../../part-2/chapter-4-debug/2-xcode-simulator.html">
+            
+                <a href="../../part-2/chapter-4-debug/2-xcode-simulator.html">
+            
+                    
+                    XCode Simulator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.3" data-path="../../part-2/chapter-4-debug/3-nodejs-debug.html">
+            
+                <a href="../../part-2/chapter-4-debug/3-nodejs-debug.html">
+            
+                    
+                    调试 NodeJS 程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.4" data-path="../../part-2/chapter-4-debug/4-mobile-web-debug.html">
+            
+                <a href="../../part-2/chapter-4-debug/4-mobile-web-debug.html">
+            
+                    
+                    移动端 Web 页面调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../../part-2/chapter-5-test/">
+            
+                <a href="../../part-2/chapter-5-test/">
+            
+                    
+                    第12章 前端测试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.7.1" data-path="../../part-2/chapter-5-test/01-unit-test.html">
+            
+                <a href="../../part-2/chapter-5-test/01-unit-test.html">
+            
+                    
+                    JavaScript单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7.2" data-path="../../part-2/chapter-5-test/02-browser-compatibility.html">
+            
+                <a href="../../part-2/chapter-5-test/02-browser-compatibility.html">
+            
+                    
+                    浏览器兼容性测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7.3" data-path="../../part-2/chapter-5-test/03-components-test.html">
+            
+                <a href="../../part-2/chapter-5-test/03-components-test.html">
+            
+                    
+                    Web组件的单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../part-3/">
+            
+                <a href="../../part-3/">
+            
+                    
+                    第三部分 组件化开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../part-3/chapter-2-amd-jquery/">
+            
+                <a href="../../part-3/chapter-2-amd-jquery/">
+            
+                    
+                    第14章 面向对象的组件化开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../../part-3/chapter-3-web-components/">
+            
+                <a href="../../part-3/chapter-3-web-components/">
+            
+                    
+                    第15章 web components技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="../../part-3/chapter-3-web-components/article-1-custom-elements.html">
+            
+                <a href="../../part-3/chapter-3-web-components/article-1-custom-elements.html">
+            
+                    
+                    自定义元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2" data-path="../../part-3/chapter-3-web-components/article-2-shadow-dom.html">
+            
+                <a href="../../part-3/chapter-3-web-components/article-2-shadow-dom.html">
+            
+                    
+                    Shadow DOM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3" data-path="../../part-3/chapter-3-web-components/article-3-template.html">
+            
+                <a href="../../part-3/chapter-3-web-components/article-3-template.html">
+            
+                    
+                    HTML template
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.4" data-path="../../part-3/chapter-3-web-components/article-4-html-import.html">
+            
+                <a href="../../part-3/chapter-3-web-components/article-4-html-import.html">
+            
+                    
+                    HTML Import
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../../part-3/chapter-4-polymer/">
+            
+                <a href="../../part-3/chapter-4-polymer/">
+            
+                    
+                    第16章 Polymer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../../part-3/chapter-5-react/">
+            
+                <a href="../../part-3/chapter-5-react/">
+            
+                    
+                    第17章 React
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.5.1" data-path="../../part-3/chapter-5-react/1-get-started.html">
+            
+                <a href="../../part-3/chapter-5-react/1-get-started.html">
+            
+                    
+                    基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.2" data-path="../../part-3/chapter-5-react/2-virtual-dom.html">
+            
+                <a href="../../part-3/chapter-5-react/2-virtual-dom.html">
+            
+                    
+                    虚拟DOM原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.3" data-path="../../part-3/chapter-5-react/3-message-among-components.html">
+            
+                <a href="../../part-3/chapter-5-react/3-message-among-components.html">
+            
+                    
+                    组件间通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.4" data-path="../../part-3/chapter-5-react/4-ssr.html">
+            
+                <a href="../../part-3/chapter-5-react/4-ssr.html">
+            
+                    
+                    服务端渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.5" data-path="../../part-3/chapter-5-react/5-react-and-fp.html">
+            
+                <a href="../../part-3/chapter-5-react/5-react-and-fp.html">
+            
+                    
+                    React与函数式编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../../part-3/chapter-6-vue/">
+            
+                <a href="../../part-3/chapter-6-vue/">
+            
+                    
+                    第18章 Vue
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.6.1" data-path="../../part-3/chapter-6-vue/1-basic-demo.html">
+            
+                <a href="../../part-3/chapter-6-vue/1-basic-demo.html">
+            
+                    
+                    基本使用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.2" data-path="../../part-3/chapter-6-vue/2-vue-concepts-and-priciples.html">
+            
+                <a href="../../part-3/chapter-6-vue/2-vue-concepts-and-priciples.html">
+            
+                    
+                    Vue 的关键概念与原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.3" data-path="../../part-3/chapter-6-vue/3-single-file-components.html">
+            
+                <a href="../../part-3/chapter-6-vue/3-single-file-components.html">
+            
+                    
+                    单文件组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.4" data-path="../../part-3/chapter-6-vue/4-build-vue.html">
+            
+                <a href="../../part-3/chapter-6-vue/4-build-vue.html">
+            
+                    
+                    Vue构建示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="../../part-3/chapter-7-miniprogram/">
+            
+                <a href="../../part-3/chapter-7-miniprogram/">
+            
+                    
+                    第19章 微信小程序组件化开发实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../../part-4/">
+            
+                <a href="../../part-4/">
+            
+                    
+                    第20章 前端开发中的常见话题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../../part-4/01-标准库.html">
+            
+                <a href="../../part-4/01-标准库.html">
+            
+                    
+                    标准库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../../part-4/02-编码规范.html">
+            
+                <a href="../../part-4/02-编码规范.html">
+            
+                    
+                    编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../../part-4/03-重构.html">
+            
+                <a href="../../part-4/03-重构.html">
+            
+                    
+                    重构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="../../part-4/04-fe-self-learning.html">
+            
+                <a href="../../part-4/04-fe-self-learning.html">
+            
+                    
+                    前端程序员的自我成长
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../../part-5/">
+            
+                <a href="../../part-5/">
+            
+                    
+                    附录
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1" data-path="../../part-5/02-about-web-browsers.html">
+            
+                <a href="../../part-5/02-about-web-browsers.html">
+            
+                    
+                    Web 浏览器工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2" data-path="../../part-5/03-lambda-calculus.html">
+            
+                <a href="../../part-5/03-lambda-calculus.html">
+            
+                    
+                    Lambda 演算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.3" data-path="../../part-5/04-immutable-data.html">
+            
+                <a href="../../part-5/04-immutable-data.html">
+            
+                    
+                    不可变数据（Immutable Data）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../../part-6-ref/">
+            
+                <a href="../../part-6-ref/">
+            
+                    
+                    参考资料
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >语言特性</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x8BED;&#x8A00;&#x7279;&#x70B9;">&#x8BED;&#x8A00;&#x7279;&#x70B9;</h2>
+<p>JavaScript &#x662F;&#x4E00;&#x95E8;&#x591A;&#x8303;&#x5F0F;&#x8BED;&#x8A00;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#x5F0F;&#x98CE;&#x683C;&#x3001;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x98CE;&#x683C;&#x4EE5;&#x53CA;&#x51FD;&#x6570;&#x5F0F;&#x98CE;&#x683C;&#x6765;&#x7EC4;&#x7EC7;&#x6E90;&#x4EE3;&#x7801;&#x3002;&#x5728;&#x8BED;&#x8A00;&#x8BBE;&#x8BA1;&#x4E0A;&#xFF0C;JavaScript &#x53EF;&#x8C13;&#x96C6;&#x4F17;&#x5BB6;&#x4E4B;&#x6240;&#x957F;&#xFF1A;</p>
+<p><img src="../images/js-origin.png" style="width: 60%;"></p>
+<p>Douglas Crockford &#x8BA4;&#x4E3A;&#xFF0C;&#x201C;JavaScript &#x662F;&#x7B2C;&#x4E00;&#x4E2A;&#x6210;&#x4E3A;&#x4E3B;&#x6D41;&#x7684; Lambda &#x8BED;&#x8A00;&#x3002;&#x76F8;&#x5BF9;&#x4E8E; Java &#x800C;&#x8A00;&#xFF0C;JavaScript &#x4E0E; Lisp &#x548C; Scheme &#x6709;&#x66F4;&#x591A;&#x7684;&#x5171;&#x540C;&#x70B9;&#x3002;&#x5B83;&#x662F;&#x62AB;&#x7740; C &#x5916;&#x8863;&#x7684; Lisp&#x201D;<sup>[1]</sup>&#x3002;&#x5176;&#x5728;&#x8BED;&#x8A00;&#x8BBE;&#x8BA1;&#x4E0A;&#x7684;&#x4F18;&#x8D8A;&#x6027;&#xFF0C;&#x4F7F;&#x5F97; JavaScript &#x5728;&#x4ECA;&#x5929;&#x6108;&#x52A0;&#x5F3A;&#x5927;&#x3002;</p>
+<p><strong>&#x5F31;&#x7C7B;&#x578B;</strong></p>
+<p>JavaScript &#x662F;&#x4E00;&#x95E8;&#x5F31;&#x7C7B;&#x578B;&#xFF0C;&#x6216;&#x8005;&#x201C;&#x52A8;&#x6001;&#x7C7B;&#x578B;&#x201D;&#x7684;&#x8BED;&#x8A00;&#xFF0C;&#x5E76;&#x4E0D;&#x610F;&#x5473;&#x7740; JavaScript &#x8BED;&#x8A00;&#x662F;&#x201C;&#x6CA1;&#x6709;&#x7C7B;&#x578B;&#x201D;&#x7684;&#xFF0C;&#x800C;&#x662F;&#x6307;&#x7528;&#x6237;&#x58F0;&#x660E;&#x6807;&#x8BC6;&#x7B26;&#xFF08;&#x53D8;&#x91CF;&#xFF09;&#x65F6;&#x4E0D;&#x5FC5;&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#xFF0C;&#x4E14;&#x6807;&#x8BC6;&#x7B26;&#x6307;&#x5411;&#x7684;&#x503C;&#x7684;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x968F;&#x610F;&#x66F4;&#x6539;&#xFF0C;&#x5373;&#x53D8;&#x91CF;&#x7684;&#x7C7B;&#x578B;&#x901A;&#x5E38;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x786E;&#x5B9A;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> a = <span class="hljs-string">&apos;some string&apos;</span>;  <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;&#x65F6;&#x6307;&#x5B9A; a &#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;</span>
+
+a = {id: <span class="hljs-number">1</span>};  <span class="hljs-comment">// &#x4F46;&#x4E4B;&#x540E;&#x4E5F;&#x53EF;&#x4EE5;&#x8BA9; a &#x6307;&#x5411;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x6210;&#x4E3A;&#x4E00;&#x4E2A;&#x5F15;&#x7528;&#x7C7B;&#x578B;</span>
+</code></pre>
+<p><strong>&#x9762;&#x5411;&#x5BF9;&#x8C61;</strong></p>
+<p>&#x57FA;&#x4E8E;&#x539F;&#x578B;&#xFF0C;JavaScript &#x652F;&#x6301;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x5C01;&#x88C5;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params">name = &apos;&apos;, age = null</span>) </span>{
+  <span class="hljs-keyword">this</span>.name = name;
+  <span class="hljs-keyword">this</span>.age = age;
+}
+
+Person.prototype.sayHello = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">var</span> str = <span class="hljs-string">`Hi, I am <span class="hljs-subst">${this.name}</span>.`</span>;
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.age || <span class="hljs-keyword">this</span>.age === <span class="hljs-number">0</span>) {
+    str += <span class="hljs-string">` I&apos;m <span class="hljs-subst">${this.age}</span> years old.`</span>;
+  }
+  <span class="hljs-built_in">console</span>.log(str);
+}
+
+<span class="hljs-keyword">var</span> wang = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">&apos;Wang&apos;</span>, <span class="hljs-number">29</span>);
+wang.sayHello();
+
+<span class="hljs-comment">// &#x7EE7;&#x627F;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Student</span>(<span class="hljs-params"></span>) </span>{
+  Person.apply(<span class="hljs-keyword">this</span>, <span class="hljs-built_in">Array</span>.prototype.slice.call(<span class="hljs-built_in">arguments</span>));
+}
+Student.prototype = <span class="hljs-keyword">new</span> Person();
+
+<span class="hljs-keyword">var</span> st = <span class="hljs-keyword">new</span> Student(<span class="hljs-string">&apos;XiaoMing&apos;</span>);
+st.sayHello();  <span class="hljs-comment">// &#x8C03;&#x7528;&#x7236;&#x7C7B;&#x5B9A;&#x4E49;&#x7ED9;&#x5B9E;&#x4F8B;&#x7684;&#x65B9;&#x6CD5;</span>
+</code></pre>
+<p>&#x6B64;&#x5916;&#xFF0C;&#x5229;&#x7528;&#x6BCF;&#x4E2A;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x7684; <code>arguments</code> &#x4E0A;&#x4E0B;&#x6587;&#x53D8;&#x91CF;&#x5BF9;&#x5B9E;&#x53C2;&#x8FDB;&#x884C;&#x6570;&#x91CF;&#x4E0E;&#x7C7B;&#x578B;&#x7684;&#x68C0;&#x67E5;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x51FD;&#x6570;&#x7684;&#x91CD;&#x8F7D;&#x3002;</p>
+<p><strong>&#x51FD;&#x6570;&#x5F0F;&#x98CE;&#x683C;</strong></p>
+<p>JavaScript &#x91CC;&#x7684;&#x51FD;&#x6570;&#x662F;&#x201C;&#x4E00;&#x7B49;&#x516C;&#x6C11;&#x201D;&#xFF0C;&#x5373;&#x51FD;&#x6570;&#x672C;&#x8EAB;&#x4EA6;&#x662F;&#x5BF9;&#x8C61;&#xFF0C;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x53EF;&#x4F5C;&#x4E3A;&#x53E6;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x5176;&#x4ED6;&#x51FD;&#x6570;&#x7684;&#x4F20;&#x5165;&#x53C2;&#x6570;&#x3002;&#x7531;&#x4E8E; JavaScript &#x5728;&#x8BBE;&#x8BA1;&#x51FA;&#x6765;&#x65F6;&#x5C31;&#x501F;&#x9274;&#x4E86;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x8BED;&#x8A00; Scheme&#xFF0C;&#x56E0;&#x6B64;&#x5BF9;&#x51FD;&#x6570;&#x5F0F;&#x98CE;&#x683C;&#x7684;&#x7F16;&#x7A0B;&#x652F;&#x6301;&#x5F97;&#x5F88;&#x597D;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
+<span class="hljs-comment">// &#x5185;&#x7F6E;&#x7684;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x98CE;&#x683C;&#x7684;API</span>
+<span class="hljs-keyword">var</span> b = arr.map(item =&gt; item * item);
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x7528;&#x5E38;&#x89C1;&#x7684;&#x79D1;&#x91CC;&#x5316;&#xFF08;curring&#xFF09;&#x505A;&#x5230;&#x4E00;&#x4E9B;&#x5F88;&#x9177;&#x7684;&#x4E8B;&#x60C5;&#xFF1A;</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">multi</span>(<span class="hljs-params">x = 1</span>) </span>{
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">m</span>(<span class="hljs-params">y = 1</span>) </span>{
+    x = x * y;
+    <span class="hljs-keyword">return</span> m;
+  }
+
+  m.toString = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;&apos;</span> + x;
+  };
+
+  m.valueOf = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> x;
+  }
+
+  <span class="hljs-keyword">return</span> m;
+}
+
+<span class="hljs-built_in">console</span>.log(multi(<span class="hljs-number">2</span>));       <span class="hljs-comment">// =&gt; 1</span>
+<span class="hljs-built_in">console</span>.log(multi(<span class="hljs-number">2</span>)(<span class="hljs-number">4</span>));    <span class="hljs-comment">// =&gt; 8</span>
+<span class="hljs-built_in">console</span>.log(multi(<span class="hljs-number">1</span>)(<span class="hljs-number">2</span>)(<span class="hljs-number">3</span>)); <span class="hljs-comment">// =&gt; 6</span>
+</code></pre>
+<p>&#x6B64;&#x5916;&#xFF0C;ECMAScript6 &#x5F00;&#x59CB;&#x5217;&#x5165;&#x6807;&#x51C6;&#x7684;&#x7BAD;&#x5934;&#x51FD;&#x6570;&#xFF08;Arrow-Functions&#xFF09;&#x53EF;&#x4EE5;&#x8F7B;&#x677E;&#x5730;&#x5B9E;&#x73B0; &#x3BB; &#x8868;&#x8FBE;&#x5F0F;&#xFF08;Lambda Expressions&#xFF09;&#x98CE;&#x683C;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> y = x =&gt; x * x;
+<span class="hljs-keyword">var</span> val = y(<span class="hljs-number">2</span>);  <span class="hljs-comment">// val &#x7684;&#x503C;&#x4E3A; 4</span>
+</code></pre>
+<h3 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h3>
+<ol>
+<li>Douglas Crockford. JavaScript &#x8BED;&#x8A00;&#x7CBE;&#x7CB9;[M]. &#x5317;&#x4EAC;: &#x7535;&#x5B50;&#x5DE5;&#x4E1A;&#x51FA;&#x7248;&#x793E;, 2012.</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 第4章 JavaScript简介">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="02-js-engine.html" class="navigation navigation-next " aria-label="Next page: JavaScript引擎">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"语言特性","level":"2.5.1","depth":2,"next":{"title":"JavaScript引擎","level":"2.5.2","depth":2,"path":"part-1/chapter-3-js/02-js-engine.md","ref":"part-1/chapter-3-js/02-js-engine.md","articles":[]},"previous":{"title":"第4章 JavaScript简介","level":"2.5","depth":1,"path":"part-1/chapter-3-js/index.md","ref":"part-1/chapter-3-js/index.md","articles":[{"title":"语言特性","level":"2.5.1","depth":2,"path":"part-1/chapter-3-js/01-language-features.md","ref":"part-1/chapter-3-js/01-language-features.md","articles":[]},{"title":"JavaScript引擎","level":"2.5.2","depth":2,"path":"part-1/chapter-3-js/02-js-engine.md","ref":"part-1/chapter-3-js/02-js-engine.md","articles":[]},{"title":"展望","level":"2.5.3","depth":2,"path":"part-1/chapter-3-js/03-js-future.md","ref":"part-1/chapter-3-js/03-js-future.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/common.css","pdf":"styles/common.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":13,"fontFamily":"Arial","paperSize":"b5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":50,"left":50,"top":45,"bottom":45}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Web前端工程化与组件化开发实践","gitbook":"*"},"file":{"path":"part-1/chapter-3-js/01-language-features.md","mtime":"2018-08-09T09:59:46.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-25T11:26:55.644Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

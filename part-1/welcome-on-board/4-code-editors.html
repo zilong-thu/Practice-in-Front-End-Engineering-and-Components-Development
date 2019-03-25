@@ -1,0 +1,1485 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>编辑器 · Web前端工程化与组件化开发实践</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/common.css">
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../part-2/" />
+    
+    
+    <link rel="prev" href="3-node-and-npm.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../part-0/0-cover.html">
+            
+                <a href="../../part-0/0-cover.html">
+            
+                    
+                    著作权声明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../part-0/1-about-author.html">
+            
+                <a href="../../part-0/1-about-author.html">
+            
+                    
+                    作者介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../part-0/2-pre.html">
+            
+                <a href="../../part-0/2-pre.html">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    第一部分 基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../chapter-1-intro/1-web前端简史.html">
+            
+                <a href="../chapter-1-intro/1-web前端简史.html">
+            
+                    
+                    第1章 Web前端简史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../chapter-2-http/">
+            
+                <a href="../chapter-2-http/">
+            
+                    
+                    第2章 HTTP与HTTP服务简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../chapter-2-http/1-http.html">
+            
+                <a href="../chapter-2-http/1-http.html">
+            
+                    
+                    HTTP简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../chapter-2-http/2-http-servers.html">
+            
+                <a href="../chapter-2-http/2-http-servers.html">
+            
+                    
+                    HTTP服务简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../chapter-2-http/3-http-proxies.html">
+            
+                <a href="../chapter-2-http/3-http-proxies.html">
+            
+                    
+                    HTTP抓包与调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../chapter-html/">
+            
+                <a href="../chapter-html/">
+            
+                    
+                    第3章 HTML简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../chapter-3-js/">
+            
+                <a href="../chapter-3-js/">
+            
+                    
+                    第4章 JavaScript简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../chapter-3-js/01-language-features.html">
+            
+                <a href="../chapter-3-js/01-language-features.html">
+            
+                    
+                    语言特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../chapter-3-js/02-js-engine.html">
+            
+                <a href="../chapter-3-js/02-js-engine.html">
+            
+                    
+                    JavaScript引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../chapter-3-js/03-js-future.html">
+            
+                <a href="../chapter-3-js/03-js-future.html">
+            
+                    
+                    展望
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../chapter-4-webfe-apps/">
+            
+                <a href="../chapter-4-webfe-apps/">
+            
+                    
+                    第5章 前端可以做什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第6章 Welcome on Board
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="1-computer-and-os.html">
+            
+                <a href="1-computer-and-os.html">
+            
+                    
+                    电脑、操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="2-terminals.html">
+            
+                <a href="2-terminals.html">
+            
+                    
+                    Mac终端与常用命令行工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="3-node-and-npm.html">
+            
+                <a href="3-node-and-npm.html">
+            
+                    
+                    Node.js环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.7.4" data-path="4-code-editors.html">
+            
+                <a href="4-code-editors.html">
+            
+                    
+                    编辑器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../part-2/">
+            
+                <a href="../../part-2/">
+            
+                    
+                    第二部分 工程化实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../part-2/chapter-0-git-and-vcs/">
+            
+                <a href="../../part-2/chapter-0-git-and-vcs/">
+            
+                    
+                    第7章 版本控制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../../part-2/chapter-0-git-and-vcs/01-using-git.html">
+            
+                <a href="../../part-2/chapter-0-git-and-vcs/01-using-git.html">
+            
+                    
+                    用Git进行版本控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../../part-2/chapter-0-git-and-vcs/02-git-hooks.html">
+            
+                <a href="../../part-2/chapter-0-git-and-vcs/02-git-hooks.html">
+            
+                    
+                    Git钩子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../../part-2/chapter-0-git-and-vcs/03-git-workflow.html">
+            
+                <a href="../../part-2/chapter-0-git-and-vcs/03-git-workflow.html">
+            
+                    
+                    Git工作流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../../part-2/chapter-0-git-and-vcs/04-server-side-git.html">
+            
+                <a href="../../part-2/chapter-0-git-and-vcs/04-server-side-git.html">
+            
+                    
+                    服务器端Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../part-2/chapter-1-模块系统/section-1-概述.html">
+            
+                <a href="../../part-2/chapter-1-模块系统/section-1-概述.html">
+            
+                    
+                    第8章 模块系统
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../../part-2/chapter-1-模块系统/section-2-刀耕火种时代.html">
+            
+                <a href="../../part-2/chapter-1-模块系统/section-2-刀耕火种时代.html">
+            
+                    
+                    刀耕火种时代
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../../part-2/chapter-1-模块系统/section-3-common-js.html">
+            
+                <a href="../../part-2/chapter-1-模块系统/section-3-common-js.html">
+            
+                    
+                    CommonJS模块系统与Node.js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../../part-2/chapter-1-模块系统/section-4-amd.html">
+            
+                <a href="../../part-2/chapter-1-模块系统/section-4-amd.html">
+            
+                    
+                    AMD模块系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="../../part-2/chapter-1-模块系统/section-5-umd.html">
+            
+                <a href="../../part-2/chapter-1-模块系统/section-5-umd.html">
+            
+                    
+                    UMD模块系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5" data-path="../../part-2/chapter-1-模块系统/section-6-esm.html">
+            
+                <a href="../../part-2/chapter-1-模块系统/section-6-esm.html">
+            
+                    
+                    ECMAScript模块系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../../part-2/chapter-3-js-parsers/">
+            
+                <a href="../../part-2/chapter-3-js-parsers/">
+            
+                    
+                    第9章 JavaScript解析器及应用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="../../part-2/chapter-3-js-parsers/1-js-parser.html">
+            
+                <a href="../../part-2/chapter-3-js-parsers/1-js-parser.html">
+            
+                    
+                    JavaScript解析器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2" data-path="../../part-2/chapter-3-js-parsers/2-babel.html">
+            
+                <a href="../../part-2/chapter-3-js-parsers/2-babel.html">
+            
+                    
+                    Babel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.3" data-path="../../part-2/chapter-3-js-parsers/3-eslint.html">
+            
+                <a href="../../part-2/chapter-3-js-parsers/3-eslint.html">
+            
+                    
+                    ESLint
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../../part-2/chapter-2-前端资源构建/">
+            
+                <a href="../../part-2/chapter-2-前端资源构建/">
+            
+                    
+                    第10章 前端资源构建
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.5.1" data-path="../../part-2/chapter-2-前端资源构建/02-css-processors.html">
+            
+                <a href="../../part-2/chapter-2-前端资源构建/02-css-processors.html">
+            
+                    
+                    CSS预处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.2" data-path="../../part-2/chapter-2-前端资源构建/03-img-processing.html">
+            
+                <a href="../../part-2/chapter-2-前端资源构建/03-img-processing.html">
+            
+                    
+                    图片处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.3" data-path="../../part-2/chapter-2-前端资源构建/04-gulp.html">
+            
+                <a href="../../part-2/chapter-2-前端资源构建/04-gulp.html">
+            
+                    
+                    Gulp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.4" data-path="../../part-2/chapter-2-前端资源构建/05-webpack.html">
+            
+                <a href="../../part-2/chapter-2-前端资源构建/05-webpack.html">
+            
+                    
+                    Webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.5" data-path="../../part-2/chapter-2-前端资源构建/06-practice-usage.html">
+            
+                <a href="../../part-2/chapter-2-前端资源构建/06-practice-usage.html">
+            
+                    
+                    前端资源构建系统演进示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../../part-2/chapter-4-debug/">
+            
+                <a href="../../part-2/chapter-4-debug/">
+            
+                    
+                    第11章 开发与调试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.1" data-path="../../part-2/chapter-4-debug/1-browser-debug.html">
+            
+                <a href="../../part-2/chapter-4-debug/1-browser-debug.html">
+            
+                    
+                    浏览器基本通用调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2" data-path="../../part-2/chapter-4-debug/2-xcode-simulator.html">
+            
+                <a href="../../part-2/chapter-4-debug/2-xcode-simulator.html">
+            
+                    
+                    XCode Simulator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.3" data-path="../../part-2/chapter-4-debug/3-nodejs-debug.html">
+            
+                <a href="../../part-2/chapter-4-debug/3-nodejs-debug.html">
+            
+                    
+                    调试 NodeJS 程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.4" data-path="../../part-2/chapter-4-debug/4-mobile-web-debug.html">
+            
+                <a href="../../part-2/chapter-4-debug/4-mobile-web-debug.html">
+            
+                    
+                    移动端 Web 页面调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../../part-2/chapter-5-test/">
+            
+                <a href="../../part-2/chapter-5-test/">
+            
+                    
+                    第12章 前端测试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.7.1" data-path="../../part-2/chapter-5-test/01-unit-test.html">
+            
+                <a href="../../part-2/chapter-5-test/01-unit-test.html">
+            
+                    
+                    JavaScript单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7.2" data-path="../../part-2/chapter-5-test/02-browser-compatibility.html">
+            
+                <a href="../../part-2/chapter-5-test/02-browser-compatibility.html">
+            
+                    
+                    浏览器兼容性测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7.3" data-path="../../part-2/chapter-5-test/03-components-test.html">
+            
+                <a href="../../part-2/chapter-5-test/03-components-test.html">
+            
+                    
+                    Web组件的单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../part-3/">
+            
+                <a href="../../part-3/">
+            
+                    
+                    第三部分 组件化开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../part-3/chapter-2-amd-jquery/">
+            
+                <a href="../../part-3/chapter-2-amd-jquery/">
+            
+                    
+                    第14章 面向对象的组件化开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../../part-3/chapter-3-web-components/">
+            
+                <a href="../../part-3/chapter-3-web-components/">
+            
+                    
+                    第15章 web components技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="../../part-3/chapter-3-web-components/article-1-custom-elements.html">
+            
+                <a href="../../part-3/chapter-3-web-components/article-1-custom-elements.html">
+            
+                    
+                    自定义元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2" data-path="../../part-3/chapter-3-web-components/article-2-shadow-dom.html">
+            
+                <a href="../../part-3/chapter-3-web-components/article-2-shadow-dom.html">
+            
+                    
+                    Shadow DOM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3" data-path="../../part-3/chapter-3-web-components/article-3-template.html">
+            
+                <a href="../../part-3/chapter-3-web-components/article-3-template.html">
+            
+                    
+                    HTML template
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.4" data-path="../../part-3/chapter-3-web-components/article-4-html-import.html">
+            
+                <a href="../../part-3/chapter-3-web-components/article-4-html-import.html">
+            
+                    
+                    HTML Import
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../../part-3/chapter-4-polymer/">
+            
+                <a href="../../part-3/chapter-4-polymer/">
+            
+                    
+                    第16章 Polymer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../../part-3/chapter-5-react/">
+            
+                <a href="../../part-3/chapter-5-react/">
+            
+                    
+                    第17章 React
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.5.1" data-path="../../part-3/chapter-5-react/1-get-started.html">
+            
+                <a href="../../part-3/chapter-5-react/1-get-started.html">
+            
+                    
+                    基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.2" data-path="../../part-3/chapter-5-react/2-virtual-dom.html">
+            
+                <a href="../../part-3/chapter-5-react/2-virtual-dom.html">
+            
+                    
+                    虚拟DOM原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.3" data-path="../../part-3/chapter-5-react/3-message-among-components.html">
+            
+                <a href="../../part-3/chapter-5-react/3-message-among-components.html">
+            
+                    
+                    组件间通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.4" data-path="../../part-3/chapter-5-react/4-ssr.html">
+            
+                <a href="../../part-3/chapter-5-react/4-ssr.html">
+            
+                    
+                    服务端渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.5" data-path="../../part-3/chapter-5-react/5-react-and-fp.html">
+            
+                <a href="../../part-3/chapter-5-react/5-react-and-fp.html">
+            
+                    
+                    React与函数式编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../../part-3/chapter-6-vue/">
+            
+                <a href="../../part-3/chapter-6-vue/">
+            
+                    
+                    第18章 Vue
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.6.1" data-path="../../part-3/chapter-6-vue/1-basic-demo.html">
+            
+                <a href="../../part-3/chapter-6-vue/1-basic-demo.html">
+            
+                    
+                    基本使用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.2" data-path="../../part-3/chapter-6-vue/2-vue-concepts-and-priciples.html">
+            
+                <a href="../../part-3/chapter-6-vue/2-vue-concepts-and-priciples.html">
+            
+                    
+                    Vue 的关键概念与原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.3" data-path="../../part-3/chapter-6-vue/3-single-file-components.html">
+            
+                <a href="../../part-3/chapter-6-vue/3-single-file-components.html">
+            
+                    
+                    单文件组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.4" data-path="../../part-3/chapter-6-vue/4-build-vue.html">
+            
+                <a href="../../part-3/chapter-6-vue/4-build-vue.html">
+            
+                    
+                    Vue构建示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="../../part-3/chapter-7-miniprogram/">
+            
+                <a href="../../part-3/chapter-7-miniprogram/">
+            
+                    
+                    第19章 微信小程序组件化开发实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../../part-4/">
+            
+                <a href="../../part-4/">
+            
+                    
+                    第20章 前端开发中的常见话题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../../part-4/01-标准库.html">
+            
+                <a href="../../part-4/01-标准库.html">
+            
+                    
+                    标准库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../../part-4/02-编码规范.html">
+            
+                <a href="../../part-4/02-编码规范.html">
+            
+                    
+                    编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../../part-4/03-重构.html">
+            
+                <a href="../../part-4/03-重构.html">
+            
+                    
+                    重构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="../../part-4/04-fe-self-learning.html">
+            
+                <a href="../../part-4/04-fe-self-learning.html">
+            
+                    
+                    前端程序员的自我成长
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../../part-5/">
+            
+                <a href="../../part-5/">
+            
+                    
+                    附录
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1" data-path="../../part-5/02-about-web-browsers.html">
+            
+                <a href="../../part-5/02-about-web-browsers.html">
+            
+                    
+                    Web 浏览器工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2" data-path="../../part-5/03-lambda-calculus.html">
+            
+                <a href="../../part-5/03-lambda-calculus.html">
+            
+                    
+                    Lambda 演算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.3" data-path="../../part-5/04-immutable-data.html">
+            
+                <a href="../../part-5/04-immutable-data.html">
+            
+                    
+                    不可变数据（Immutable Data）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../../part-6-ref/">
+            
+                <a href="../../part-6-ref/">
+            
+                    
+                    参考资料
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >编辑器</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x4EE3;&#x7801;&#x7F16;&#x8F91;&#x5668;">&#x4EE3;&#x7801;&#x7F16;&#x8F91;&#x5668;</h1>
+<blockquote>
+<p>&#x5DE5;&#x6B32;&#x5584;&#x5176;&#x4E8B;&#xFF0C;&#x5FC5;&#x5148;&#x5229;&#x5176;&#x5668;&#x3002;</p>
+<p>&#x2014;&#x2014;&#x5B54;&#x5B50;&#xFF0C;&#x300A;&#x8BBA;&#x8BED;&#xB7;&#x536B;&#x7075;&#x516C;&#x300B;</p>
+</blockquote>
+<p>&#x6240;&#x8C13;&#x201C;&#x5DE5;&#x6B32;&#x5584;&#x5176;&#x4E8B;&#xFF0C;&#x5FC5;&#x5148;&#x5229;&#x5176;&#x5668;&#x201D;&#xFF0C;&#x53C8;&#x6709;&#x4FD7;&#x8BED;&#x201C;&#x78E8;&#x5200;&#x4E0D;&#x8BEF;&#x780D;&#x67F4;&#x5DE5;&#x201D;&#x3002;&#x597D;&#x7684;&#x7F16;&#x8F91;&#x5668;&#x662F;&#x9AD8;&#x6548;&#x5F00;&#x53D1;&#x7684;&#x5FC5;&#x5907;&#x6761;&#x4EF6;&#x3002;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4ECB;&#x7ECD;&#x51E0;&#x4E2A;&#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x4E2D;&#x6700;&#x4E3A;&#x5E38;&#x89C1;&#x7684;&#x7F16;&#x8F91;&#x5668;&#x3002;&#x5DE5;&#x4F5C;&#x4E2D;&#x901A;&#x5E38;&#x6CA1;&#x6709;&#x4EBA;&#x5F3A;&#x5236;&#x4F60;&#x4F7F;&#x7528;&#x54EA;&#x6B3E;&#x7F16;&#x8F91;&#x5668;&#xFF0C;&#x9009;&#x62E9;&#x81EA;&#x5DF1;&#x559C;&#x6B22;&#x7684;&#x5C31;&#x597D;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x5728;&#x51B3;&#x5B9A;&#x201C;&#x7688;&#x4F9D;&#x201D;&#x67D0;&#x6B3E;&#x7F16;&#x8F91;&#x5668;&#x4E4B;&#x524D;&#xFF0C;&#x6700;&#x597D;&#x662F;&#x6BCF;&#x4E2A;&#x4E3B;&#x6D41;&#x7684;&#x7F16;&#x8F91;&#x5668;&#x90FD;&#x5C1D;&#x8BD5;&#x4E00;&#x4E0B;&#xFF0C;&#x6BD5;&#x7ADF;&#x4F60;&#x4EE5;&#x540E;&#x5C31;&#x8981;&#x5929;&#x5929;&#x9762;&#x5BF9;&#x7740;&#x5B83;&#x4E86;&#x3002;</p>
+<h2 id="sublime-text">Sublime Text</h2>
+<p><img src="../images/sublime-01-logo.png" style="width: 210px;" class="fl round"></p>
+<p>Sublime Text &#x662F;&#x4E00;&#x5957;&#x8DE8;&#x5E73;&#x53F0;&#x7684;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;&#xFF0C;&#x652F;&#x6301;&#x57FA;&#x4E8E;Python&#x7684;&#x63D2;&#x4EF6;&#x3002;Sublime Text &#x662F;&#x4E13;&#x6709;&#x8F6F;&#x4EF6;&#xFF08;&#x610F;&#x5473;&#x7740;&#x5728;&#x4F7F;&#x7528;&#x3001;&#x4FEE;&#x6539;&#x4E0A;&#x6709;&#x6240;&#x9650;&#x5236;&#xFF09;&#xFF0C;&#x53EF;&#x901A;&#x8FC7;&#x5305;&#xFF08;Package&#xFF09;&#x6269;&#x5145;&#x672C;&#x8EAB;&#x7684;&#x529F;&#x80FD;&#x3002;&#x5927;&#x591A;&#x6570;&#x7684;&#x5305;&#x4F7F;&#x7528;&#x81EA;&#x7531;&#x8F6F;&#x4EF6;&#x6388;&#x6743;&#x53D1;&#x5E03;&#xFF0C;&#x5E76;&#x7531;&#x793E;&#x533A;&#x5EFA;&#x7F6E;&#x7EF4;&#x62A4;&#x3002;Sublime Text &#x7531; Jon Skinner &#x5F00;&#x53D1;&#x4E0E;&#x7EF4;&#x62A4;&#xFF0C;&#x521D;&#x59CB;&#x7248;&#x672C;&#x4E8E; 2008 &#x5E74;&#x53D1;&#x5E03;&#xFF0C;&#x76EE;&#x524D;&#x6700;&#x65B0;&#x7684;&#x7248;&#x672C;&#x662F; Sublime Text 3&#x3002;</p>
+<p>&#x82F1;&#x6587; <code>Sublime</code> &#x610F;&#x4E3A;&#x201C;&#x5353;&#x8D8A;&#x7684;&#xFF0C;&#x4EE4;&#x4EBA;&#x60CA;&#x53F9;&#x7684;&#x201D;&#x3002;&#x6B63;&#x5982;&#x5176;&#x540D;&#xFF0C;Sublime Text &#x6709;&#x7740;&#x8BB8;&#x591A;&#x8BA9;&#x4EBA;&#x559C;&#x6B22;&#x7684;&#x529F;&#x80FD;&#xFF1A;</p>
+<ul>
+<li>&#x201C;Goto Anything&#x201D;&#x529F;&#x80FD;&#xFF1A;&#x53EF;&#x5FEB;&#x901F;&#x8DF3;&#x81F3;&#x6587;&#x4EF6;&#x3001;&#x7B26;&#x53F7;&#x6216;&#x884C;&#x6570;</li>
+<li>&#x201C;Command Palette&#x201D;&#x529F;&#x80FD;&#xFF1A;&#x5F39;&#x6027;&#x5FEB;&#x6377;&#x952E;&#x529F;&#x80FD;</li>
+<li>&#x591A;&#x884C;&#x7F16;&#x8F91;&#xFF1A;&#x7528;&#x6237;&#x53EF;&#x4E00;&#x6B21;&#x9009;&#x62E9;&#x591A;&#x884C;&#x5E76;&#x8FDB;&#x884C;&#x540C;&#x6B65;&#x7F16;&#x8F91;&#x3002;</li>
+<li>&#x57FA;&#x4E8E; Python &#x8BED;&#x8A00;&#x7684;&#x5916;&#x6302; API</li>
+<li>&#x9488;&#x5BF9;&#x4E2A;&#x522B;&#x9879;&#x76EE;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x7F16;&#x8F91;&#x5668;&#x8BBE;&#x7F6E;</li>
+<li>&#x901A;&#x8FC7; JSON &#x6587;&#x4EF6;&#x81EA;&#x5B9A;&#x4E49;&#x8BBE;&#x7F6E;&#x503C;</li>
+<li>&#x591A;&#x9762;&#x677F;&#x7F16;&#x8F91;</li>
+<li>&#x9AD8;&#x6027;&#x80FD;</li>
+<li>&#x8DE8;&#x5E73;&#x53F0;&#xFF08;Windows&#x3001;Linux &#x548C; Mac OS X&#xFF09;</li>
+<li>&#x4EE3;&#x7801;&#x6458;&#x8981;&#xFF1A;&#x7528;&#x6237;&#x53EF;&#x66FF;&#x5E38;&#x7528;&#x7684;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x6307;&#x5B9A;&#x5173;&#x952E;&#x5B57;&#x5FEB;&#x901F;&#x63D2;&#x5165;&#x3002;</li>
+</ul>
+<p>&#x5728;&#x5B98;&#x7F51;&#x53EF;&#x4EE5;&#x4E0B;&#x8F7D;&#x6700;&#x65B0;&#x7684;&#x7A0B;&#x5E8F;&#x3002;&#x5BF9;&#x4E8E; Mac &#x7CFB;&#x7EDF;&#xFF0C;&#x5B89;&#x88C5;&#x540E;&#x521B;&#x5EFA;&#x4E0B;&#x9762;&#x7684;&#x6587;&#x4EF6;&#x8FDE;&#x63A5;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x5730;&#x4F7F;&#x7528;&#x5FEB;&#x6377;&#x547D;&#x4EE4;&#x542F;&#x52A8; Sublime Text&#x3002;&#x5176;&#x5B98;&#x7F51;&#x7684;&#x8BF4;&#x660E;&#x6709;&#x70B9;&#x7455;&#x75B5;&#xFF0C;&#x8FD9;&#x91CC;&#x5EFA;&#x8BAE;&#x53C2;&#x8003; Olivier Lacan<sup>[8]</sup>&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x65E2;&#x5C06;&#x5FEB;&#x6377;&#x547D;&#x4EE4;&#xFF08;symlink&#xFF09;&#x653E;&#x4E8E; <code>/usr/local/bin</code> &#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x800C;&#x975E; <code>~/bin</code> &#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x56E0;&#x4E3A;&#x524D;&#x8005;&#x662F; OS X &#x7CFB;&#x7EDF;&#x7684;&#x9ED8;&#x8BA4;&#x53EF;&#x6267;&#x884C;&#x7A0B;&#x5E8F;&#x7684;&#x52A0;&#x8F7D;&#x76EE;&#x5F55;&#xFF08;<code>$PATH</code>&#x91CC;&#x9ED8;&#x8BA4;&#x6709; <code>/usr/local/bin</code> &#x800C;&#x6CA1;&#x6709; <code>~/bin</code>&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#x521B;&#x5EFA; symlink</span>
+$ ln <span class="hljs-_">-s</span> <span class="hljs-string">&quot;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&quot;</span> \
+/usr/<span class="hljs-built_in">local</span>/bin/subl
+
+<span class="hljs-comment"># &#x4F7F;&#x7528; subl &#x6253;&#x5F00;&#x6587;&#x4EF6;&#x3001;&#x76EE;&#x5F55;</span>
+$ subl .
+</code></pre>
+<p>&#x653E;&#x5230; <code>/usr/local/bin</code> &#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x4E5F;&#x66F4;&#x7B26;&#x5408; FHS&#xFF08;Filesystem Hierarchy Standard
+&#xFF0C;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5C42;&#x7EA7;&#x7ED3;&#x6784;&#x6807;&#x51C6;&#xFF09;<sup>[10]</sup>&#x7684;&#x5EFA;&#x8BAE;&#xFF0C;&#x5373; <code>/usr/local</code> &#x76EE;&#x5F55;&#x9002;&#x5408;&#x5B58;&#x653E;&#x7CFB;&#x7EDF;&#x7BA1;&#x7406;&#x5458;&#x5728;&#x672C;&#x673A;&#x81EA;&#x884C;&#x5B89;&#x88C5;&#x7684;&#x8F6F;&#x4EF6;&#x3002;</p>
+<p><strong>&#x5173;&#x4E8E; <code>symlink</code></strong></p>
+<p>&#x672F;&#x8BED; <code>symlink</code> &#x7684;&#x5168;&#x79F0;&#x662F; <code>symbolic link</code>&#xFF0C;&#x5373;&#x201C;&#x7B26;&#x53F7;&#x94FE;&#x63A5;&#x201D;&#xFF0C;&#x6216;&#x6240;&#x8C13;&#x7684;&#x201C;&#x8F6F;&#x94FE;&#x63A5;&#x201D;&#xFF08;<code>soft link</code>&#xFF09;&#xFF0C;&#x662F;&#x6307;&#x67D0;&#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;&#x5305;&#x542B;&#x6307;&#x5411;&#x5176;&#x4ED6;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#x7684;&#x5730;&#x5740;&#x3002;&#x8F6F;&#x94FE;&#x63A5;&#x5728; 1978 &#x5E74;&#x7684;&#x5C0F;&#x578B;&#x673A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x91CC;&#xFF08;&#x5982; DEC&#xFF09;&#x5C31;&#x5F97;&#x5230;&#x4E86;&#x5B9E;&#x73B0;&#xFF0C;&#x5982;&#x4ECA;&#x5DF2;&#x88AB;&#x5217;&#x5165;&#x5230; POSIX &#x6807;&#x51C6;&#x4E2D;&#x3002;&#x56E0;&#x6B64;&#x6240;&#x6709;&#x7684;&#x7C7B; UNIX &#x7CFB;&#x7EDF;&#xFF0C;&#x5982; FreeBSD&#x3001;Linux&#x3001;Mac OS X&#xFF0C;&#x90FD;&#x652F;&#x6301;&#x6B64;&#x7279;&#x6027;&#xFF1B;Windows &#x7CFB;&#x7EDF;&#x4E0B;&#x7C7B;&#x4F3C;&#x7684;&#x529F;&#x80FD;&#x662F;&#x201C;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;&#x201D;&#x3002;<sup>[9]</sup></p>
+<p>&#x8FDE;&#x63A5;&#x6587;&#x4EF6;&#x7684;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x5C5E;&#x6027;&#x6807;&#x5FD7;&#x4E3A;<code>[l]</code>&#xFF0C;&#x5982;&#x679C;&#x50CF;&#x4E0A;&#x9762;&#x90A3;&#x6837;&#x8F6F;&#x8FDE;&#x63A5; subl&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x5176;&#x5C5E;&#x6027;&#xFF1A;</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">cd</span> /usr/<span class="hljs-built_in">local</span>/bin
+$ ls <span class="hljs-_">-l</span>
+<span class="hljs-comment"># &#x7B2C;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x4E3A; l</span>
+lrwxr-xr-x  1 zilong  admin  62  4 20 22:09 subl -&gt; /Applications/Sublime Text.app/Contents/SharedSupport/bin/subl
+</code></pre>
+<p>&#x4E0E;&#x8F6F;&#x94FE;&#x63A5;&#x76F8;&#x5BF9;&#x7684;&#x662F;&#x786C;&#x94FE;&#x63A5;&#x3002;&#x4E8C;&#x8005;&#x7684;&#x6700;&#x5927;&#x533A;&#x522B;&#x5728;&#x4E8E;&#xFF0C;&#x786C;&#x94FE;&#x63A5;&#x4E0E;&#x88AB;&#x94FE;&#x63A5;&#x7684;&#x6587;&#x4EF6;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684; inode &#x53F7;&#xFF0C;&#x800C;&#x8F6F;&#x94FE;&#x63A5;&#x672C;&#x8EAB;&#x6709;&#x81EA;&#x5DF1;&#x7684; inode &#x53F7;&#x4E14;&#x4E0E;&#x88AB;&#x94FE;&#x63A5;&#x7684;&#x6587;&#x4EF6;&#x7684; inode &#x53F7;&#x4E0D;&#x540C;&#x3002;</p>
+<h2 id="vim">Vim</h2>
+<p><img src="../images/vim-logo.png" style="width: 120px;" class="fl"></p>
+<p>Vim &#x662F;&#x4ECE; vi&#xFF08;visual editor &#x7684;&#x7F29;&#x5199;&#xFF0C;Bill Joy &#x53D1;&#x660E;&#xFF09; &#x53D1;&#x5C55;&#x51FA;&#x6765;&#x7684;&#x4E00;&#x4E2A;&#x5177;&#x6709; TUI&#xFF08;Text User Interface&#xFF0C;&#x6587;&#x672C;&#x7528;&#x6237;&#x754C;&#x9762;&#xFF0C;&#x4E0E; GUI&#xFF0C;&#x5373;&#x56FE;&#x5F62;&#x7528;&#x6237;&#x754C;&#x9762;&#x76F8;&#x5BF9;&#x5E94;&#xFF09;&#x7684;&#x7F16;&#x8F91;&#x5668;&#x3002;Vi &#x662F;&#x6240;&#x6709;&#x7684;&#x7C7B; UNIX &#x7CFB;&#x7EDF;&#x90FD;&#x4F1A;&#x5185;&#x7F6E;&#x5B89;&#x88C5;&#x7684;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;&#xFF0C;&#x800C;&#x4E14;&#x76F8;&#x5F53;&#x591A;&#x7684;&#x8F6F;&#x4EF6;&#x7684;&#x7F16;&#x8F91;&#x63A5;&#x53E3;&#x90FD;&#x4F1A;&#x4E3B;&#x52A8;&#x8C03;&#x7528; vi&#x3002;Vim &#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x662F; vi &#x7684;&#x5347;&#x7EA7;&#x7248;&#xFF0C;&#x5176;&#x4EE3;&#x7801;&#x8865;&#x5168;&#x3001;&#x7F16;&#x8BD1;&#x53CA;&#x9519;&#x8BEF;&#x8DF3;&#x8F6C;&#x7B49;&#x65B9;&#x4FBF;&#x7F16;&#x7A0B;&#x7684;&#x529F;&#x80FD;&#x7279;&#x522B;&#x4E30;&#x5BCC;&#xFF0C;&#x5728;&#x7A0B;&#x5E8F;&#x5458;&#x4E2D;&#x88AB;&#x5E7F;&#x6CDB;&#x4F7F;&#x7528;&#x3002;Vim &#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#x7531;&#x5E03;&#x83B1;&#x59C6;&#xB7;&#x7C73;&#x52D2;&#xFF08;Bram Moolenaar&#xFF09;&#x5728; 1991 &#x5E74;&#x53D1;&#x5E03;&#xFF0C;&#x6E90;&#x7801;&#x4E3B;&#x8981;&#x7531; C &#x8BED;&#x8A00;&#x5199;&#x6210;&#x3002;Vim &#x6700;&#x521D;&#x7684;&#x7B80;&#x79F0;&#x662F; Vi IMitation&#xFF0C;&#x968F;&#x7740;&#x529F;&#x80FD;&#x7684;&#x4E0D;&#x65AD;&#x589E;&#x52A0;&#xFF0C;&#x6B63;&#x5F0F;&#x540D;&#x79F0;&#x6539;&#x6210;&#x4E86; Vi IMproved&#x3002;&#x73B0;&#x5728;&#x662F;&#x5728;&#x5F00;&#x653E;&#x6E90;&#x4EE3;&#x7801;&#x65B9;&#x5F0F;&#x4E0B;&#x53D1;&#x884C;&#x7684;&#x81EA;&#x7531;&#x8F6F;&#x4EF6;&#x3002;<sup>[4]</sup></p>
+<p>Vim &#x5BF9;&#x91CD;&#x590D;&#x6027;&#x64CD;&#x4F5C;&#x8FDB;&#x884C;&#x4E86;&#x5F88;&#x597D;&#x7684;&#x4F18;&#x5316;&#x3002;&#x201C;&#x5BF9;&#x4E8E; Vim &#x9AD8;&#x624B;&#x6765;&#x8BF4;&#xFF0C;Vim &#x80FD;&#x4EE5;&#x601D;&#x8003;&#x7684;&#x901F;&#x5EA6;&#x7F16;&#x8F91;&#x6587;&#x672C;&#x201D;&#xFF0C;&#x8FD9;&#x662F;&#x5BF9; Vim &#x6700;&#x6D41;&#x884C;&#x7684;&#x63CF;&#x8FF0;&#x3002;&#x5373;&#x4FBF;&#x4E0D;&#x628A;&#x5B83;&#x4F5C;&#x4E3A;&#x81EA;&#x5DF1;&#x7684;&#x5E38;&#x7528;&#x7F16;&#x8F91;&#x5668;&#xFF0C;&#x5728;&#x767B;&#x5F55;&#x5230;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x7684;&#x65F6;&#x5019;&#xFF0C;Vim &#x5F88;&#x53EF;&#x80FD;&#x5C31;&#x662F;&#x4F60;&#x552F;&#x4E00;&#x53EF;&#x7528;&#x7684;&#x7F16;&#x8F91;&#x5668;&#x3002;&#x6240;&#x4EE5;&#xFF0C;Vim &#x5E94;&#x5F53;&#x4F5C;&#x4E3A;&#x524D;&#x7AEF;&#x7A0B;&#x5E8F;&#x5458;&#x7684;&#x5FC5;&#x5907;&#x6280;&#x80FD;&#x4E4B;&#x4E00;&#x3002;</p>
+<p>MacOS X &#x548C; Linux &#x7CFB;&#x7EDF;&#x90FD;&#x9884;&#x88C5;&#x4E86;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x5F00;&#x7BB1;&#x5373;&#x7528;&#x7684;&#x8F7B;&#x91CF;&#x7EA7; Vim&#x3002;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8F93;&#x5165; <code>vim</code> &#x547D;&#x4EE4;&#x67E5;&#x770B;&#x5F53;&#x524D;&#x6240;&#x7528; Vim &#x7684;&#x7248;&#x672C;&#x3002;&#x5F53;&#x524D;&#x7684;&#x6700;&#x65B0;&#x7248;&#x672C;&#x662F;7.4&#xFF0C;&#x5982;&#x679C;&#x8981;&#x60F3;&#x83B7;&#x5F97;&#x66F4;&#x591A;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x6700;&#x597D;&#x8FD8;&#x662F;&#x91CD;&#x65B0;&#x5B89;&#x88C5;&#x4E00;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># Mac OS X</span>
+$ brew install vim
+
+<span class="hljs-comment"># Linux Ubuntu</span>
+$ sudo apt-get update
+$ sudo apt-get install vim
+</code></pre>
+<p>Vim &#x6709;&#x56DB;&#x79CD;&#x5E38;&#x89C1;&#x6A21;&#x5F0F;&#xFF08;mode&#xFF09;&#xFF0C;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x5373;&#x4FBF;&#x76F8;&#x540C;&#x7684;&#x6309;&#x952E;&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<ul>
+<li>&#x666E;&#x901A;&#x6A21;&#x5F0F;&#x2014;&#x2014;Vim &#x7684;&#x9ED8;&#x8BA4;&#x72B6;&#x6001;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x9AD8;&#x6548;&#x7387;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x6309;&#x4E0B; <code>dd</code>&#xFF08;&#x4E24;&#x6B21; <code>d</code>&#xFF09;&#x952E;&#x53EF;&#x4EE5;&#x5220;&#x6389;&#x4E00;&#x884C;&#x6587;&#x672C;&#x3002;</li>
+<li>&#x6587;&#x672C;&#x63D2;&#x5165;&#x6A21;&#x5F0F;&#x2014;&#x2014;&#x4E00;&#x79CD;&#x6240;&#x89C1;&#x5373;&#x6240;&#x5F97;&#x7684;&#x72B6;&#x6001;&#x3002;&#x5728;&#x666E;&#x901A;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x6309; <code>i</code>&#x3001;<code>a</code>&#x3001;<code>A</code> &#x7B49;&#x952E;&#x5747;&#x53EF;&#x8FDB;&#x5165;&#x63D2;&#x5165;&#x6A21;&#x5F0F;&#xFF1B;&#x800C;&#x6309; <code>esc</code> &#x952E;&#xFF0C;&#x6216;&#x8005;&#x6309;&#x7EC4;&#x5408;&#x952E; <code>ctrl</code> + <code>[</code> &#x5219;&#x53EF;&#x4EE5;&#x9000;&#x51FA;&#x63D2;&#x5165;&#x6A21;&#x5F0F;&#xFF0C;&#x56DE;&#x5230;&#x666E;&#x901A;&#x6A21;&#x5F0F;&#x3002;</li>
+<li>&#x53EF;&#x89C6;&#x6A21;&#x5F0F;&#x2014;&#x2014;&#x53EF;&#x89C6;&#x6A21;&#x5F0F;&#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x9009;&#x4E2D;&#x4E00;&#x5757;&#x6587;&#x672C;&#x533A;&#x57DF;&#x5E76;&#x5728;&#x5176;&#x4E0A;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x3002;</li>
+<li>&#x547D;&#x4EE4;&#x884C;&#x6A21;&#x5F0F;&#x2014;&#x2014;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x6A21;&#x5F0F;&#x4E2D;&#x53EF;&#x4EE5;&#x8F93;&#x5165;&#x4F1A;&#x88AB;&#x89E3;&#x91CA;&#x5E76;&#x6267;&#x884C;&#x7684;&#x6587;&#x672C;&#x3002;&#x4F8B;&#x5982;&#x6267;&#x884C;&#x547D;&#x4EE4;&#xFF08;&quot;:&quot;&#x952E;&#xFF09;&#xFF0C;&#x641C;&#x7D22;&#xFF08;&quot;/&quot;&#x548C;&quot;?&quot;&#x952E;&#xFF09;&#x6216;&#x8005;&#x8FC7;&#x6EE4;&#x547D;&#x4EE4;&#xFF08;&quot;!&quot;&#x952E;&#xFF09;&#x3002;</li>
+</ul>
+<h2 id="emacs">Emacs</h2>
+<p><img src="../images/emacs-logo.png" style="width: 120px;" class="fl"></p>
+<p>Emacs &#x610F;&#x4E3A; Editing MACros&#xFF0C;&#x5373;&#x5B8F;&#x7F16;&#x8F91;&#x3002;Emacs &#x5728; 1970 &#x5E74;&#x4EE3;&#x8BDE;&#x751F;&#x4E8E; MIT &#x4EBA;&#x5DE5;&#x667A;&#x80FD;&#x5B9E;&#x9A8C;&#x5BA4;&#xFF08;MIT AI Lab&#xFF09;&#xFF0C;&#x6E90;&#x7801;&#x4E3B;&#x8981;&#x662F;&#x4F7F;&#x7528; ELisp &#x5199;&#x6210;&#x3002;Emacs &#x4E0D;&#x4EC5;&#x4EC5;&#x662F;&#x4E00;&#x4E2A;&#x7F16;&#x8F91;&#x5668;&#xFF0C;&#x5B83;&#x672C;&#x8D28;&#x4E0A;&#x662F;&#x4E00;&#x4E2A;&#x96C6;&#x6210;&#x73AF;&#x5883;&#xFF0C;&#x8FDB;&#x5165;&#x5230;&#x7F16;&#x8F91;&#x5668;&#x540E;&#xFF0C;&#x7528;&#x6237;&#x4F1A;&#x611F;&#x89C9;&#x5982;&#x540C;&#x8FDB;&#x5165;&#x4E86;&#x4E00;&#x4E2A;&#x529F;&#x80FD;&#x5B8C;&#x5907;&#x7684;&#x5B50;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E2D;&#x53BB;&#xFF0C;&#x56E0;&#x4E3A;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x8FD9;&#x91CC;&#x6536;&#x53D1;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x3001;&#x901A;&#x8FC7; Telnet &#x767B;&#x5F55;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x3001;&#x4E0A; Twitter&#x3001;&#x73A9;&#x6E38;&#x620F;&#x4EE5;&#x53CA;&#x6D4F;&#x89C8;&#x7F51;&#x7AD9;&#x7B49;&#x7B49;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x4E00;&#x4E2A;&#x6D41;&#x884C;&#x7684;&#x7B11;&#x8BDD;&#x58F0;&#x79F0; Emacs &#x662F;&#x4E00;&#x4E2A;&#x4F2A;&#x88C5;&#x6210;&#x7F16;&#x8F91;&#x5668;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x3002;</p>
+<p>Emacs &#x88AB;&#x8BBE;&#x8BA1;&#x4E3A;&#x53EF;&#x7F16;&#x7A0B;&#x7684;&#x7F16;&#x8F91;&#x5668;&#xFF0C;&#x8BBE;&#x8BA1;&#x8005;&#x8D4B;&#x4E88;&#x4E86;&#x5B83;&#x53EF;&#x4EE5;&#x9A71;&#x52A8;&#x5176;&#x4ED6;&#x5DE5;&#x5177;&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x7ED3;&#x679C;&#x5C31;&#x662F; Emacs &#x652F;&#x6301;&#x5728;&#x4E00;&#x4E2A;&#x5171;&#x4EAB;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x73AF;&#x5883;&#x4E2D;&#x5904;&#x7406;&#x6240;&#x6709;&#x7684;&#x6587;&#x672C;&#x64CD;&#x4F5C;&#x2014;&#x2014;&#x6587;&#x4EF6;&#x3001;&#x90AE;&#x4EF6;&#x3001;&#x65B0;&#x95FB;&#x3001;&#x8C03;&#x8BD5;&#x7B26;&#x53F7;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x7528;&#x4F5C;&#x4EFB;&#x4F55;&#x62E5;&#x6709;&#x4EA4;&#x4E92;&#x6587;&#x672C;&#x754C;&#x9762;&#x547D;&#x4EE4;&#x7684;&#x5B9A;&#x5236;&#x524D;&#x7AEF;&#x3002;Emacs &#x529F;&#x80FD;&#x4E30;&#x5BCC;&#xFF0C;&#x4E5F;&#x610F;&#x5473;&#x7740;&#x5E9E;&#x5927;&#x81C3;&#x80BF;&#xFF0C;&#x542F;&#x52A8;&#x901A;&#x5E38;&#x8F83;&#x6162;&#x3002;&#x8BBE;&#x8BA1;&#x8005;&#x5E0C;&#x671B;&#x7528;&#x6237;&#x53EF;&#x80FD;&#x4E00;&#x65E6;&#x8FDB;&#x5165; Emacs&#xFF0C;&#x5C31;&#x4E0D;&#x4F1A;&#x518D;&#x9000;&#x51FA;&#x5B83;&#x3002;</p>
+<p>&#x6CE8;&#xFF1A;&#x5728; Unix &#x6587;&#x5316;&#x91CC;&#xFF0C;Emacs &#x662F;&#x7A0B;&#x5E8F;&#x5458;&#x4EEC;&#x5173;&#x4E8E;&#x7F16;&#x8F91;&#x5668;&#x4E4B;&#x6218;&#x7684;&#x4E24;&#x5927;&#x4E3B;&#x89D2;&#x4E4B;&#x4E00;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x4E3B;&#x89D2;&#x5C31;&#x662F;&#x4E0A;&#x9762;&#x63D0;&#x5230;&#x7684; Vim/vi&#x3002;</p>
+<p>Mac OS &#x81EA;&#x5E26;&#x4E00;&#x4E2A; GNU Emacs&#xFF0C;&#x5728;&#x7EC8;&#x7AEF;&#x91CC;&#x8F93;&#x5165; <code>emacs</code> &#x547D;&#x4EE4;&#x5E76;&#x56DE;&#x8F66;&#xFF0C;&#x5373;&#x53EF;&#x8FDB;&#x5165;&#x8BE5;&#x7A0B;&#x5E8F;&#x7684;&#x754C;&#x9762;&#x3002;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; Homebrew &#x91CD;&#x65B0;&#x5B89;&#x88C5;&#x6216;&#x5347;&#x7EA7; Emacs&#xFF1A;</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#x5B89;&#x88C5;</span>
+brew install emacs --with-cocoa
+
+<span class="hljs-comment"># &#x5347;&#x7EA7;</span>
+brew upgrade emacs
+
+<span class="hljs-comment"># &#x542F;&#x52A8; GNU Emacs</span>
+emacs
+</code></pre>
+<p>Emacs &#x7684;&#x5165;&#x95E8;&#x53C2;&#x8003;&#x4E66;&#x662F;&#x300A;Learning GNU Emacs&#x300B;&#xFF08;[&#x7F8E;] Debra Cameron &#x8457;&#xFF09;&#x3002;</p>
+<h2 id="vscode">VSCode</h2>
+<p>VSCode &#x5168;&#x79F0; Visual Studio Code&#xFF0C;&#x4E8E; 2016 &#x5E74;&#x6B63;&#x5F0F;&#x53D1;&#x5E03;&#x3002;&#x5FAE;&#x8F6F;&#x5728;&#x4E92;&#x8054;&#x7F51;&#x6D6A;&#x6F6E;&#x4E2D;&#x66FE;&#x4E00;&#x5EA6;&#x88AB;&#x5927;&#x5BB6;&#x9057;&#x5FD8;&#xFF0C;&#x8FD1;&#x4E9B;&#x5E74;&#x5219;&#x5341;&#x5206;&#x70ED;&#x8877;&#x4E8E;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#x3002;&#x4E0D;&#x4F46;&#x5F00;&#x6E90;&#x4E86;&#x81EA;&#x5BB6;&#x6700;&#x65B0;&#x7684;&#x6D4F;&#x89C8;&#x5668; Edge &#x7684;&#x6240;&#x6709;&#x4EE3;&#x7801;&#xFF0C;&#x8FD8;&#x7CBE;&#x5FC3;&#x6253;&#x9020;&#x4E86; VSCode &#x8FD9;&#x6837;&#x4E00;&#x6B3E;&#x975E;&#x5E38;&#x9002;&#x5408;&#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x7684;&#x7F16;&#x8F91;&#x5668;&#x3002;&#x4E0E; Sublime Text&#x3001;Vim &#x76F8;&#x6BD4;&#xFF0C;VSCode &#x662F;&#x7ECF;&#x5178;&#x7684;&#x96C6;&#x6210;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF08;IDE&#xFF09;&#xFF0C;&#x9664;&#x4E86;&#x5E38;&#x89C4;&#x7684;&#x8BED;&#x6CD5;&#x5206;&#x6790;&#x3001;&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;&#xFF0C;&#x5B83;&#x8FD8;&#x6709;&#x8FD9;&#x4E9B;&#x7279;&#x6027;&#xFF1A;</p>
+<ol>
+<li>&#x50CF; C/C++ &#x7684;&#x5F00;&#x53D1;&#x73AF;&#x5883; Visual Studio &#x90A3;&#x6837;&#x5728;&#x7F16;&#x8F91;&#x5668;&#x5185;&#x8C03;&#x8BD5; Node.js &#x4EE3;&#x7801;</li>
+<li>&#x5185;&#x5D4C;&#x4E86;&#x4E00;&#x4E2A;&#x7EC8;&#x7AEF;</li>
+</ol>
+<p>&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5728; VSCode &#x4E2D;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x542F;&#x52A8;&#x811A;&#x672C;&#xFF08;&#x5728; <code>.vscode/launch.json</code> &#x4E2D;&#x6307;&#x5B9A;&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x76F8;&#x5173;&#x7684; JS &#x6E90;&#x6587;&#x4EF6;&#x4E0A;&#x9762;&#x76F4;&#x63A5;&#x6253;&#x65AD;&#x70B9;&#xFF0C;&#x542F;&#x52A8;&#x8C03;&#x8BD5;<sup>[7]</sup>&#x3002;&#x4F8B;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x7B2C;&#x56DB;&#x884C;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x65AD;&#x70B9;&#xFF0C;&#x7136;&#x540E;&#x542F;&#x52A8;&#x8C03;&#x8BD5;&#xFF0C;VSCode &#x5C31;&#x4F1A;&#x6267;&#x884C;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x65AD;&#x70B9;&#x5904;&#x505C;&#x4E0B;&#xFF0C;&#x6B64;&#x65F6;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x5730;&#x67E5;&#x770B;&#x53D8;&#x91CF;&#x503C;&#x3001;&#x8C03;&#x7528;&#x5806;&#x6808;&#x7B49;&#x4FE1;&#x606F;&#xFF1A;</p>
+<p><img src="../images/vscode-debug-node-1.png"></p>
+<h2 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h2>
+<ol>
+<li><a href="http://www.sublimetext.com/" target="_blank">Sublime Text &#x5B98;&#x7F51;</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Sublime_Text" target="_blank">Sublime Text | wikipedia</a></li>
+<li><a href="https://www.vim.org/" target="_blank">Vim &#x5B98;&#x7F51;</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/Vim" target="_blank">Vim | wikipedia</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/Emacs" target="_blank">Emacs | wikipedia</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Visual_Studio_Code" target="_blank">VSCode | wikipedia</a></li>
+<li><a href="https://code.visualstudio.com/docs/nodejs/nodejs-debugging" target="_blank">Node.js Debugging in VS Code</a></li>
+<li><a href="https://olivierlacan.com/posts/launch-sublime-text-3-from-the-command-line/" target="_blank">Olivier Lacan, Launch Sublime Text 3 from the command line</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Symbolic_link" target="_blank">Symbolic link | wikipedia</a></li>
+<li><a href="http://www.pathname.com/fhs/" target="_blank">FHS</a></li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="3-node-and-npm.html" class="navigation navigation-prev " aria-label="Previous page: Node.js环境">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../part-2/" class="navigation navigation-next " aria-label="Next page: 第二部分 工程化实践">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"编辑器","level":"2.7.4","depth":2,"next":{"title":"第二部分 工程化实践","level":"3.1","depth":1,"path":"part-2/index.md","ref":"part-2/index.md","articles":[]},"previous":{"title":"Node.js环境","level":"2.7.3","depth":2,"path":"part-1/welcome-on-board/3-node-and-npm.md","ref":"part-1/welcome-on-board/3-node-and-npm.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/common.css","pdf":"styles/common.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":13,"fontFamily":"Arial","paperSize":"b5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":50,"left":50,"top":45,"bottom":45}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Web前端工程化与组件化开发实践","gitbook":"*"},"file":{"path":"part-1/welcome-on-board/4-code-editors.md","mtime":"2018-08-14T05:26:31.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-25T11:26:55.644Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1474 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>电脑、操作系统 · Web前端工程化与组件化开发实践</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/common.css">
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2-terminals.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../part-0/0-cover.html">
+            
+                <a href="../../part-0/0-cover.html">
+            
+                    
+                    著作权声明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../part-0/1-about-author.html">
+            
+                <a href="../../part-0/1-about-author.html">
+            
+                    
+                    作者介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../part-0/2-pre.html">
+            
+                <a href="../../part-0/2-pre.html">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    第一部分 基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../chapter-1-intro/1-web前端简史.html">
+            
+                <a href="../chapter-1-intro/1-web前端简史.html">
+            
+                    
+                    第1章 Web前端简史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../chapter-2-http/">
+            
+                <a href="../chapter-2-http/">
+            
+                    
+                    第2章 HTTP与HTTP服务简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../chapter-2-http/1-http.html">
+            
+                <a href="../chapter-2-http/1-http.html">
+            
+                    
+                    HTTP简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../chapter-2-http/2-http-servers.html">
+            
+                <a href="../chapter-2-http/2-http-servers.html">
+            
+                    
+                    HTTP服务简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../chapter-2-http/3-http-proxies.html">
+            
+                <a href="../chapter-2-http/3-http-proxies.html">
+            
+                    
+                    HTTP抓包与调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../chapter-html/">
+            
+                <a href="../chapter-html/">
+            
+                    
+                    第3章 HTML简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../chapter-3-js/">
+            
+                <a href="../chapter-3-js/">
+            
+                    
+                    第4章 JavaScript简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../chapter-3-js/01-language-features.html">
+            
+                <a href="../chapter-3-js/01-language-features.html">
+            
+                    
+                    语言特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../chapter-3-js/02-js-engine.html">
+            
+                <a href="../chapter-3-js/02-js-engine.html">
+            
+                    
+                    JavaScript引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../chapter-3-js/03-js-future.html">
+            
+                <a href="../chapter-3-js/03-js-future.html">
+            
+                    
+                    展望
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../chapter-4-webfe-apps/">
+            
+                <a href="../chapter-4-webfe-apps/">
+            
+                    
+                    第5章 前端可以做什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第6章 Welcome on Board
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.7.1" data-path="1-computer-and-os.html">
+            
+                <a href="1-computer-and-os.html">
+            
+                    
+                    电脑、操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="2-terminals.html">
+            
+                <a href="2-terminals.html">
+            
+                    
+                    Mac终端与常用命令行工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="3-node-and-npm.html">
+            
+                <a href="3-node-and-npm.html">
+            
+                    
+                    Node.js环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="4-code-editors.html">
+            
+                <a href="4-code-editors.html">
+            
+                    
+                    编辑器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../part-2/">
+            
+                <a href="../../part-2/">
+            
+                    
+                    第二部分 工程化实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../part-2/chapter-0-git-and-vcs/">
+            
+                <a href="../../part-2/chapter-0-git-and-vcs/">
+            
+                    
+                    第7章 版本控制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../../part-2/chapter-0-git-and-vcs/01-using-git.html">
+            
+                <a href="../../part-2/chapter-0-git-and-vcs/01-using-git.html">
+            
+                    
+                    用Git进行版本控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../../part-2/chapter-0-git-and-vcs/02-git-hooks.html">
+            
+                <a href="../../part-2/chapter-0-git-and-vcs/02-git-hooks.html">
+            
+                    
+                    Git钩子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../../part-2/chapter-0-git-and-vcs/03-git-workflow.html">
+            
+                <a href="../../part-2/chapter-0-git-and-vcs/03-git-workflow.html">
+            
+                    
+                    Git工作流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../../part-2/chapter-0-git-and-vcs/04-server-side-git.html">
+            
+                <a href="../../part-2/chapter-0-git-and-vcs/04-server-side-git.html">
+            
+                    
+                    服务器端Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../part-2/chapter-1-模块系统/section-1-概述.html">
+            
+                <a href="../../part-2/chapter-1-模块系统/section-1-概述.html">
+            
+                    
+                    第8章 模块系统
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../../part-2/chapter-1-模块系统/section-2-刀耕火种时代.html">
+            
+                <a href="../../part-2/chapter-1-模块系统/section-2-刀耕火种时代.html">
+            
+                    
+                    刀耕火种时代
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../../part-2/chapter-1-模块系统/section-3-common-js.html">
+            
+                <a href="../../part-2/chapter-1-模块系统/section-3-common-js.html">
+            
+                    
+                    CommonJS模块系统与Node.js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../../part-2/chapter-1-模块系统/section-4-amd.html">
+            
+                <a href="../../part-2/chapter-1-模块系统/section-4-amd.html">
+            
+                    
+                    AMD模块系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="../../part-2/chapter-1-模块系统/section-5-umd.html">
+            
+                <a href="../../part-2/chapter-1-模块系统/section-5-umd.html">
+            
+                    
+                    UMD模块系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5" data-path="../../part-2/chapter-1-模块系统/section-6-esm.html">
+            
+                <a href="../../part-2/chapter-1-模块系统/section-6-esm.html">
+            
+                    
+                    ECMAScript模块系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../../part-2/chapter-3-js-parsers/">
+            
+                <a href="../../part-2/chapter-3-js-parsers/">
+            
+                    
+                    第9章 JavaScript解析器及应用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="../../part-2/chapter-3-js-parsers/1-js-parser.html">
+            
+                <a href="../../part-2/chapter-3-js-parsers/1-js-parser.html">
+            
+                    
+                    JavaScript解析器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2" data-path="../../part-2/chapter-3-js-parsers/2-babel.html">
+            
+                <a href="../../part-2/chapter-3-js-parsers/2-babel.html">
+            
+                    
+                    Babel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.3" data-path="../../part-2/chapter-3-js-parsers/3-eslint.html">
+            
+                <a href="../../part-2/chapter-3-js-parsers/3-eslint.html">
+            
+                    
+                    ESLint
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../../part-2/chapter-2-前端资源构建/">
+            
+                <a href="../../part-2/chapter-2-前端资源构建/">
+            
+                    
+                    第10章 前端资源构建
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.5.1" data-path="../../part-2/chapter-2-前端资源构建/02-css-processors.html">
+            
+                <a href="../../part-2/chapter-2-前端资源构建/02-css-processors.html">
+            
+                    
+                    CSS预处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.2" data-path="../../part-2/chapter-2-前端资源构建/03-img-processing.html">
+            
+                <a href="../../part-2/chapter-2-前端资源构建/03-img-processing.html">
+            
+                    
+                    图片处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.3" data-path="../../part-2/chapter-2-前端资源构建/04-gulp.html">
+            
+                <a href="../../part-2/chapter-2-前端资源构建/04-gulp.html">
+            
+                    
+                    Gulp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.4" data-path="../../part-2/chapter-2-前端资源构建/05-webpack.html">
+            
+                <a href="../../part-2/chapter-2-前端资源构建/05-webpack.html">
+            
+                    
+                    Webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.5" data-path="../../part-2/chapter-2-前端资源构建/06-practice-usage.html">
+            
+                <a href="../../part-2/chapter-2-前端资源构建/06-practice-usage.html">
+            
+                    
+                    前端资源构建系统演进示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../../part-2/chapter-4-debug/">
+            
+                <a href="../../part-2/chapter-4-debug/">
+            
+                    
+                    第11章 开发与调试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.1" data-path="../../part-2/chapter-4-debug/1-browser-debug.html">
+            
+                <a href="../../part-2/chapter-4-debug/1-browser-debug.html">
+            
+                    
+                    浏览器基本通用调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2" data-path="../../part-2/chapter-4-debug/2-xcode-simulator.html">
+            
+                <a href="../../part-2/chapter-4-debug/2-xcode-simulator.html">
+            
+                    
+                    XCode Simulator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.3" data-path="../../part-2/chapter-4-debug/3-nodejs-debug.html">
+            
+                <a href="../../part-2/chapter-4-debug/3-nodejs-debug.html">
+            
+                    
+                    调试 NodeJS 程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.4" data-path="../../part-2/chapter-4-debug/4-mobile-web-debug.html">
+            
+                <a href="../../part-2/chapter-4-debug/4-mobile-web-debug.html">
+            
+                    
+                    移动端 Web 页面调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../../part-2/chapter-5-test/">
+            
+                <a href="../../part-2/chapter-5-test/">
+            
+                    
+                    第12章 前端测试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.7.1" data-path="../../part-2/chapter-5-test/01-unit-test.html">
+            
+                <a href="../../part-2/chapter-5-test/01-unit-test.html">
+            
+                    
+                    JavaScript单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7.2" data-path="../../part-2/chapter-5-test/02-browser-compatibility.html">
+            
+                <a href="../../part-2/chapter-5-test/02-browser-compatibility.html">
+            
+                    
+                    浏览器兼容性测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7.3" data-path="../../part-2/chapter-5-test/03-components-test.html">
+            
+                <a href="../../part-2/chapter-5-test/03-components-test.html">
+            
+                    
+                    Web组件的单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../part-3/">
+            
+                <a href="../../part-3/">
+            
+                    
+                    第三部分 组件化开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../part-3/chapter-2-amd-jquery/">
+            
+                <a href="../../part-3/chapter-2-amd-jquery/">
+            
+                    
+                    第14章 面向对象的组件化开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../../part-3/chapter-3-web-components/">
+            
+                <a href="../../part-3/chapter-3-web-components/">
+            
+                    
+                    第15章 web components技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="../../part-3/chapter-3-web-components/article-1-custom-elements.html">
+            
+                <a href="../../part-3/chapter-3-web-components/article-1-custom-elements.html">
+            
+                    
+                    自定义元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2" data-path="../../part-3/chapter-3-web-components/article-2-shadow-dom.html">
+            
+                <a href="../../part-3/chapter-3-web-components/article-2-shadow-dom.html">
+            
+                    
+                    Shadow DOM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3" data-path="../../part-3/chapter-3-web-components/article-3-template.html">
+            
+                <a href="../../part-3/chapter-3-web-components/article-3-template.html">
+            
+                    
+                    HTML template
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.4" data-path="../../part-3/chapter-3-web-components/article-4-html-import.html">
+            
+                <a href="../../part-3/chapter-3-web-components/article-4-html-import.html">
+            
+                    
+                    HTML Import
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../../part-3/chapter-4-polymer/">
+            
+                <a href="../../part-3/chapter-4-polymer/">
+            
+                    
+                    第16章 Polymer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../../part-3/chapter-5-react/">
+            
+                <a href="../../part-3/chapter-5-react/">
+            
+                    
+                    第17章 React
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.5.1" data-path="../../part-3/chapter-5-react/1-get-started.html">
+            
+                <a href="../../part-3/chapter-5-react/1-get-started.html">
+            
+                    
+                    基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.2" data-path="../../part-3/chapter-5-react/2-virtual-dom.html">
+            
+                <a href="../../part-3/chapter-5-react/2-virtual-dom.html">
+            
+                    
+                    虚拟DOM原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.3" data-path="../../part-3/chapter-5-react/3-message-among-components.html">
+            
+                <a href="../../part-3/chapter-5-react/3-message-among-components.html">
+            
+                    
+                    组件间通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.4" data-path="../../part-3/chapter-5-react/4-ssr.html">
+            
+                <a href="../../part-3/chapter-5-react/4-ssr.html">
+            
+                    
+                    服务端渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.5" data-path="../../part-3/chapter-5-react/5-react-and-fp.html">
+            
+                <a href="../../part-3/chapter-5-react/5-react-and-fp.html">
+            
+                    
+                    React与函数式编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../../part-3/chapter-6-vue/">
+            
+                <a href="../../part-3/chapter-6-vue/">
+            
+                    
+                    第18章 Vue
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.6.1" data-path="../../part-3/chapter-6-vue/1-basic-demo.html">
+            
+                <a href="../../part-3/chapter-6-vue/1-basic-demo.html">
+            
+                    
+                    基本使用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.2" data-path="../../part-3/chapter-6-vue/2-vue-concepts-and-priciples.html">
+            
+                <a href="../../part-3/chapter-6-vue/2-vue-concepts-and-priciples.html">
+            
+                    
+                    Vue 的关键概念与原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.3" data-path="../../part-3/chapter-6-vue/3-single-file-components.html">
+            
+                <a href="../../part-3/chapter-6-vue/3-single-file-components.html">
+            
+                    
+                    单文件组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.4" data-path="../../part-3/chapter-6-vue/4-build-vue.html">
+            
+                <a href="../../part-3/chapter-6-vue/4-build-vue.html">
+            
+                    
+                    Vue构建示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="../../part-3/chapter-7-miniprogram/">
+            
+                <a href="../../part-3/chapter-7-miniprogram/">
+            
+                    
+                    第19章 微信小程序组件化开发实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../../part-4/">
+            
+                <a href="../../part-4/">
+            
+                    
+                    第20章 前端开发中的常见话题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../../part-4/01-标准库.html">
+            
+                <a href="../../part-4/01-标准库.html">
+            
+                    
+                    标准库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../../part-4/02-编码规范.html">
+            
+                <a href="../../part-4/02-编码规范.html">
+            
+                    
+                    编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../../part-4/03-重构.html">
+            
+                <a href="../../part-4/03-重构.html">
+            
+                    
+                    重构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="../../part-4/04-fe-self-learning.html">
+            
+                <a href="../../part-4/04-fe-self-learning.html">
+            
+                    
+                    前端程序员的自我成长
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../../part-5/">
+            
+                <a href="../../part-5/">
+            
+                    
+                    附录
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1" data-path="../../part-5/02-about-web-browsers.html">
+            
+                <a href="../../part-5/02-about-web-browsers.html">
+            
+                    
+                    Web 浏览器工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2" data-path="../../part-5/03-lambda-calculus.html">
+            
+                <a href="../../part-5/03-lambda-calculus.html">
+            
+                    
+                    Lambda 演算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.3" data-path="../../part-5/04-immutable-data.html">
+            
+                <a href="../../part-5/04-immutable-data.html">
+            
+                    
+                    不可变数据（Immutable Data）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../../part-6-ref/">
+            
+                <a href="../../part-6-ref/">
+            
+                    
+                    参考资料
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >电脑、操作系统</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7535;&#x8111;">&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&amp;&#x7535;&#x8111;</h2>
+<p>&#x5728;&#x8FDB;&#x884C;&#x5404;&#x79CD;&#x7F16;&#x7A0B;&#x6D3B;&#x52A8;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x8BA8;&#x8BBA;&#x4E00;&#x4E0B;&#x4E00;&#x5207;&#x5E94;&#x7528;&#x8F6F;&#x4EF6;&#x8FD0;&#x884C;&#x7684;&#x201C;&#x5927;&#x73AF;&#x5883;&#x201D;&#x2014;&#x2014;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x3002;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x5B9A;&#x4E49;&#x53EF;&#x4EE5;&#x4ECE;&#x4E24;&#x4E2A;&#x65B9;&#x5411;&#x6765;&#x7406;&#x89E3;&#x3002;&#x4E00;&#x4E2A;&#x662F;&#x81EA;&#x9876;&#x5411;&#x4E0B;&#xFF0C;&#x7AD9;&#x5728;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x89D2;&#x5EA6;&#x8BB2;&#xFF0C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8D1F;&#x8D23;&#x9690;&#x85CF;&#x786C;&#x4EF6;&#x7684;&#x5404;&#x79CD;&#x4E11;&#x964B;&#x63A5;&#x53E3;&#xFF0C;&#x5411;&#x4E0A;&#x63D0;&#x4F9B;&#x7ED9;&#x7A0B;&#x5E8F;&#x91CF;&#x5316;&#x3001;&#x4F18;&#x96C5;&#x3001;&#x4E00;&#x81F4;&#x7684;&#x62BD;&#x8C61;&#xFF1B;&#x53E6;&#x4E00;&#x4E2A;&#x89D2;&#x5EA6;&#x662F;&#x81EA;&#x5E95;&#x5411;&#x4E0A;&#xFF0C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8D1F;&#x8D23;&#x5728;&#x76F8;&#x4E92;&#x7ADE;&#x4E89;&#x7684;&#x7A0B;&#x5E8F;&#x4E4B;&#x95F4;&#x6709;&#x5E8F;&#x5730;&#x63A7;&#x5236;&#x5BF9;&#x5904;&#x7406;&#x5668;&#x3001;&#x5B58;&#x50A8;&#x5668;&#x4EE5;&#x53CA;&#x5176;&#x4ED6;I/O&#x63A5;&#x53E3;&#x8BBE;&#x5907;&#x7684;&#x8D44;&#x6E90;&#x5206;&#x914D;&#xFF0C;&#x5373;&#x8C03;&#x5EA6;&#x8005;&#x3002;</p>
+<figure>
+<img src="../images/kernel_layout.png" style="width: 200px;">
+<figcaption>&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5185;&#x6838;&#x5728;&#x73B0;&#x4EE3;&#x8BA1;&#x7B97;&#x673A;&#x4F53;&#x7CFB;&#x4E2D;&#x7684;&#x5C42;&#x6B21;&#xFF0C;&#x4ECB;&#x4E8E;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E0E;&#x786C;&#x4EF6;&#x4E4B;&#x95F4;&#x3002;</figcaption>  
+</figure>
+
+<h3 id="&#x4E2A;&#x4EBA;&#x8BA1;&#x7B97;&#x673A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;">&#x4E2A;&#x4EBA;&#x8BA1;&#x7B97;&#x673A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</h3>
+<p>&#x76EE;&#x524D;&#xFF0C;&#x5728;&#x4E2A;&#x4EBA;&#x8BA1;&#x7B97;&#x673A;&#x9886;&#x57DF;&#x4E3B;&#x8981;&#x5B58;&#x5728;&#x7740;&#x4E09;&#x5927;&#x7C7B;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF1A;</p>
+<p><img src="../images/three-os-logos.png" style="width: 55%;"></p>
+<p>&#x5728;&#x77E5;&#x540D;&#x7684;&#x5E94;&#x7528;&#x7EDF;&#x8BA1;&#x7F51;&#x7AD9; <a href="https://netmarketshare.com/" target="_blank">https://netmarketshare.com/</a> &#x4E0A;&#x9762;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4E2A;&#x4EBA; PC/&#x7B14;&#x8BB0;&#x672C;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x4E3B;&#x8981;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x5E02;&#x573A;&#x5360;&#x6709;&#x7387;&#xFF08;&#x622A;&#x6B62;&#x5230;2018&#x5E74;6&#x6708;&#xFF09;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</th>
+<th style="text-align:right">&#x5360;&#x6709;&#x7387;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Windows</td>
+<td style="text-align:right">88.40%</td>
+</tr>
+<tr>
+<td style="text-align:center">Mac OS</td>
+<td style="text-align:right">8.90%</td>
+</tr>
+<tr>
+<td style="text-align:center">Linux</td>
+<td style="text-align:right">2.24%</td>
+</tr>
+<tr>
+<td style="text-align:center">Chrome OS</td>
+<td style="text-align:right">0.32%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Linux</strong></p>
+<p>Linux &#x662F; UNIX &#x9635;&#x8425;&#x91CC;&#x7684;&#x4F7C;&#x4F7C;&#x8005;&#xFF0C;&#x867D;&#x7136;&#x5176;&#x65E9;&#x671F;&#x662F;&#x201C;&#x5BC4;&#x751F;&#x201D;&#x5728; Minux &#x4E0A;&#x9762;&#xFF0C;&#x4F46;&#x5176;&#x5F00;&#x53D1;&#x4E0E;&#x540E;&#x7EED;&#x7684;&#x6F14;&#x8FDB;&#x5374;&#x5E76;&#x4E0D;&#x5305;&#x542B;&#x4EFB;&#x4F55;&#x6765;&#x81EA;&#x539F;&#x59CB; Unix &#x6E90;&#x7801;&#x6811;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x800C;&#x662F;&#x57FA;&#x4E8E; POSIX &#x6807;&#x51C6;&#xFF08;Portable Operating System Interface&#xFF0C;&#x53EF;&#x79FB;&#x690D;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x63A5;&#x53E3;&#xFF09;&#x5B9E;&#x73B0;&#xFF0C;&#x8FD9;&#x4F7F;&#x5F97; Linux &#x4E0E; Unix &#x6709;&#x7740;&#x975E;&#x5E38;&#x76F8;&#x4F3C;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5F88;&#x5BB9;&#x6613;&#x5728;&#x4E24;&#x4E2A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E4B;&#x95F4;&#x79FB;&#x690D;&#x3002;&#x4ECE; 1991 &#x5E74; 9 &#x6708;&#x53D1;&#x5E03; 0.01 &#x7248;&#x672C;&#x4EE5;&#x6765;&#xFF0C;&#x6797;&#x7EB3;&#x65AF;&#x4E00;&#x76F4;&#x4E3B;&#x5BFC;&#x7740; Linux &#x5185;&#x6838;&#x7684;&#x5F00;&#x53D1;&#x3002;Linux &#x662F;&#x4E00;&#x6B3E;&#x5F00;&#x6E90;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x610F;&#x5473;&#x7740;&#x4EFB;&#x4F55;&#x4EBA;&#x90FD;&#x53EF;&#x4EE5;&#x514D;&#x8D39;&#x83B7;&#x53D6;&#x6E90;&#x4EE3;&#x7801;&#x4E0E;&#x4F7F;&#x7528;&#xFF08;&#x5728; GPL &#x534F;&#x8BAE;&#x6240;&#x7EA6;&#x5B9A;&#x7684;&#x65B9;&#x5F0F;&#xFF09;&#x3002;Linux &#x7684;&#x540E;&#x671F;&#x5F00;&#x53D1;&#x4E5F;&#x662F;&#x8FC4;&#x4ECA;&#x4E3A;&#x6B62;&#x89C4;&#x6A21;&#x6700;&#x5927;&#x7684;&#x5F00;&#x6E90;&#x534F;&#x4F5C;&#x9879;&#x76EE;&#x3002;&#x5982;&#x4ECA;&#xFF0C;&#x6797;&#x7EB3;&#x65AF;&#xFF08;Linus Torvalds&#xFF09;&#x751A;&#x81F3;&#x5C06; Linux &#x5185;&#x6838;&#x6E90;&#x7801;&#x540C;&#x6B65;&#x5230;&#x4E86; Github &#x7F51;&#x7AD9;&#x4E0A;<sup>[5]</sup>&#xFF0C;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x8BFB;&#x8005;&#x53EF;&#x4EE5;&#x53BB;&#x9605;&#x8BFB;&#x4E00;&#x4E0B;&#x6E90;&#x4EE3;&#x7801;&#x3002;&#x540C; UNIX &#x4E00;&#x6837;&#xFF0C;Linux &#x662F;&#x7531;&#x7A0B;&#x5E8F;&#x5458;&#x8BBE;&#x8BA1;&#x7684;&#xFF0C;&#x4E5F;&#x662F;&#x7ED9;&#x7A0B;&#x5E8F;&#x5458;&#x4F7F;&#x7528;&#x7684;&#x3002;Linux &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4F7F;&#x7528;&#x65B9;&#x9762;&#x7684;&#x4ECB;&#x7ECD;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x300A;&#x9E1F;&#x54E5;&#x7684; Linux &#x79C1;&#x623F;&#x83DC;&#xFF1A;&#x57FA;&#x7840;&#x5B66;&#x4E60;&#x7BC7;&#xFF08;&#x7B2C;&#x4E09;&#x7248;&#xFF09;&#x300B;&#xFF0C;&#x8FD9;&#x5927;&#x6982;&#x662F;&#x6700;&#x9002;&#x5408;&#x5165;&#x95E8;&#x8005;&#x7684;&#x8BFB;&#x7269;&#x4E86;&#x3002;</p>
+<p><strong>MacOS X</strong></p>
+<p>MacOS X &#x4F7F;&#x7528;&#x4E86;&#x5361;&#x5185;&#x57FA;&#x6885;&#x9686;&#x5927;&#x5B66;&#x7684; Accetta &#x7B49;&#x4EBA;&#x7814;&#x53D1;&#x7684; Mach &#x5185;&#x6838;&#xFF08;&#x5C5E;&#x4E8E;&#x5FAE;&#x5185;&#x6838;&#xFF0C;Linux &#x5219;&#x91C7;&#x7528;&#x4E86;&#x5B8F;&#x5185;&#x6838;&#x65B9;&#x6848;&#xFF09;&#x3002;&#x4E4B;&#x540E;&#xFF0C;&#x7531;&#x4E8E;&#x4E54;&#x5E03;&#x65AF;&#x62DB;&#x5B89;&#x6797;&#x7EB3;&#x65AF;&#x6765;&#x505A; MacOS X &#x7684;&#x8BA1;&#x5212;&#x5BA3;&#x544A;&#x5931;&#x8D25;&#xFF0C;&#x53EA;&#x5F97;&#x8BF7; FreeBSD &#x7684;&#x53D1;&#x8D77;&#x4EBA;&#x4E4B;&#x4E00; &#x4E54;&#x4E39;&#xB7;&#x54C8;&#x4F2F;&#x5FB7;&#x5E26;&#x9886;&#x56E2;&#x961F;&#x5F00;&#x53D1;&#x5E95;&#x5C42;&#x5185;&#x6838; Darwin&#xFF08;&#x6DF7;&#x5408;&#x4E86; Mach &#x5185;&#x6838;&#x4E0E; BSD &#x6280;&#x672F;&#xFF09;&#x3002;</p>
+<p><strong>Microsoft Windows</strong></p>
+<figure class="fr" style="width: 300px;">
+<img src="../images/os-windows1.0.png">
+<figcaption>Windows 1.0 &#x7684;&#x56FE;&#x5F62;&#x754C;&#x9762;</figcaption>
+</figure>
+
+<p>&#x4ECE;&#x8BDE;&#x751F;&#x4E4B;&#x521D;&#xFF0C;&#x5FAE;&#x8F6F;&#x516C;&#x53F8;&#x7684; Windows &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5C31;&#x4E00;&#x76F4;&#x575A;&#x5B88;&#x7740;&#x7528;&#x6237;&#x56FE;&#x5F62;&#x754C;&#x9762;&#x8FD9;&#x4E00;&#x8BBE;&#x8BA1;&#x539F;&#x5219;&#x3002;&#x53D1;&#x5E03;&#x4E8E; 1985 &#x5E74; 11 &#x6708;&#x7684; Windows 1.0 &#x7248;&#x672C;&#x5E76;&#x975E;&#x4E25;&#x683C;&#x610F;&#x4E49;&#x4E0A;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x5B83;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;&#x4F3C; Shell &#x7684;&#x7A0B;&#x5E8F;&#xFF0C;&#x5305;&#x88C5;&#x5728;&#x91CC;&#x9762;&#x7684;&#x662F; MS-DOS&#xFF08;Microsoft Disk Operating System&#xFF09;&#xFF0C;&#x5F53;&#x65F6;&#x7684;&#x5BA3;&#x4F20;&#x540D;&#x5B57;&#x53EB;&#x505A; MS-DOS Executive&#x3002;MS-DOS &#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x5FAE;&#x8F6F;&#x4ECE;&#x4E00;&#x5BB6;&#x540D;&#x4E3A;&#x897F;&#x96C5;&#x56FE;&#x8BA1;&#x7B97;&#x673A;&#x4EA7;&#x54C1;&#xFF08;Seatle Computer Producst&#xFF09;&#x7684;&#x672C;&#x5730;&#x516C;&#x53F8;&#x4E70;&#x6765;&#x540E;&#xFF0C;&#x518D;&#x79FB;&#x690D;&#x5230; IBM PC &#x540E;&#x7684;&#x4EA7;&#x7269;&#x3002;Windows 1.0 &#x5305;&#x62EC;&#x65F6;&#x949F;&#x3001;&#x65E5;&#x5386;&#x3001;&#x8BA1;&#x7B97;&#x5668;&#x3001;&#x8BB0;&#x4E8B;&#x672C;&#x3001;&#x7EC8;&#x7AEF;&#x3001;&#x526A;&#x5207;&#x677F;&#x7B49;&#x7EC4;&#x4EF6;&#x3002;</p>
+<p>&#x4E0D;&#x8FC7;&#xFF0C;&#x5728; 80 &#x5E74;&#x4EE3;&#x672B;&#xFF0C;&#x5FAE;&#x8F6F;&#x610F;&#x8BC6;&#x5230;&#x4E0D;&#x80FD;&#x518D;&#x5F00;&#x53D1;&#x4EE5; MS-DOS &#x4E3A;&#x6838;&#x5FC3;&#x7684;&#x7CFB;&#x7EDF;&#x4E86;&#xFF0C;&#x51B3;&#x5B9A;&#x5F00;&#x53D1;&#x65B0;&#x7684;&#x5185;&#x6838;&#xFF0C;&#x5373;&#x540E;&#x6765;&#x7684; Windows NT&#xFF08;NT &#x662F; New Technology &#x7684;&#x610F;&#x601D;&#xFF09;&#x3002;&#x73B0;&#x5728;&#x5E02;&#x9762;&#x4E0A;&#x5E38;&#x89C1;&#x7684; Windows 10/8/7/XP &#x7B49;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x90FD;&#x662F;&#x57FA;&#x4E8E; Windows NT &#x7684;&#x3002;Windows NT &#x7CFB;&#x7EDF;&#x6700;&#x5F00;&#x59CB;&#x7528;&#x4E8E;&#x5DE5;&#x4F5C;&#x7AD9;&#x7535;&#x8111;&#x4EE5;&#x53CA;&#x670D;&#x52A1;&#x5668;&#x7535;&#x8111;&#x3002;&#x540E;&#x6765;&#x9010;&#x6E10;&#x5360;&#x636E;&#x4E86;&#x4E2A;&#x4EBA;&#x8BA1;&#x7B97;&#x673A;&#x5E02;&#x573A;&#x3002;Windows NT &#x6700;&#x5F00;&#x59CB;&#x8BA1;&#x5212;&#x540C;&#x65F6;&#x652F;&#x6301;&#x4E09;&#x5927;&#x7C7B;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x63A5;&#x53E3;&#xFF0C;&#x5373; Windows API&#xFF0C;POSIX &#x548C; OS/2 API&#x3002;&#x4F46;&#x540E;&#x6765;&#x4E8B;&#x4E0E;&#x613F;&#x8FDD;&#xFF0C;POSIX &#x548C; OS/2 API &#x5728; Windows XP &#x7CFB;&#x7EDF;&#x5F00;&#x59CB;&#xFF0C;&#x9010;&#x6E10;&#x4E0D;&#x88AB;&#x652F;&#x6301;&#x3002;&#x5BF9; POSIX &#x6807;&#x51C6;&#x7684;&#x65E0;&#x89C6;&#xFF0C;&#x9020;&#x6210;&#x4E86; Windows &#x7CFB;&#x5217;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E0E; Linux/Unix &#x7CFB;&#x7EDF;&#x4E4B;&#x95F4;&#x7684;&#x8F6F;&#x4EF6;&#x4E0D;&#x517C;&#x5BB9;&#x3002;</p>
+<h3 id="&#x670D;&#x52A1;&#x5668;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;">&#x670D;&#x52A1;&#x5668;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</h3>
+<p>&#x987E;&#x540D;&#x601D;&#x4E49;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5C31;&#x662F;&#x8FD0;&#x884C;&#x5728;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x3002;&#x7528;&#x4F5C;&#x670D;&#x52A1;&#x5668;&#x7684;&#x673A;&#x5668;&#x53EF;&#x4EE5;&#x662F;&#x5927;&#x578B;&#x7684;&#x4E2A;&#x4EBA;&#x8BA1;&#x7B97;&#x673A;&#xFF08;&#x73B0;&#x5728;&#x6BD4;&#x8F83;&#x6D41;&#x884C;&#x7684;&#x65B9;&#x6848;&#xFF09;&#x3001;&#x5DE5;&#x4F5C;&#x7AD9;&#xFF0C;&#x751A;&#x81F3;&#x662F;&#x5927;&#x578B;&#x673A;&#x3002;&#x670D;&#x52A1;&#x5668;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5BF9;&#x7A33;&#x5B9A;&#x6027;&#x3001;&#x5B89;&#x5168;&#x6027;&#x3001;&#x6027;&#x80FD;&#x6709;&#x7740;&#x66F4;&#x9AD8;&#x7684;&#x8981;&#x6C42;&#x3002;&#x5E38;&#x89C1;&#x7684;&#x670D;&#x52A1;&#x5668;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5305;&#x62EC; Solaris&#x3001;FreeBSD&#x3001;Linux &#x548C; Windows Server &#x7CFB;&#x5217;&#x3002;</p>
+<h3 id="&#x9009;&#x54EA;&#x4E2A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF1F;">&#x9009;&#x54EA;&#x4E2A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF1F;</h3>
+<p>&#x4E0D;&#x5F97;&#x4E0D;&#x8BF4;&#xFF0C;Windows &#x7CFB;&#x7EDF;&#x5728;&#x5546;&#x4E1A;&#x4E0A;&#x6709;&#x7740;&#x5DE8;&#x5927;&#x7684;&#x6210;&#x529F;&#x3002;&#x4F46;&#x662F;&#x5BF9;&#x4E8E; Web &#x7A0B;&#x5E8F;&#x5458;&#x4EEC;&#x6765;&#x8BF4;&#xFF0C;Windows &#x901A;&#x5E38;&#x5E76;&#x4E0D;&#x662F;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x7684;&#x9996;&#x9009;&#xFF08;&#x5FAE;&#x8F6F;&#x5458;&#x5DE5;&#x53EF;&#x80FD;&#x9664;&#x5916;&#xFF09;&#x3002;Eric S. Raymond &#x5728;&#x81EA;&#x5DF1;&#x7684;&#x8457;&#x4F5C;&#x300A;UNIX &#x7F16;&#x7A0B;&#x827A;&#x672F;&#x300B;&#x4E2D;&#x63D0;&#x5230;&#x4E86;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5BF9;&#x4F7F;&#x7528;&#x8005;&#x7684;&#x5F71;&#x54CD;&#xFF1A;</p>
+<blockquote>
+<p>&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x8BBE;&#x8BA1;&#x6709;&#x6240;&#x4E0D;&#x540C;&#xFF0C;&#x9020;&#x5C31;&#x4E86;&#x8BE5;&#x7CFB;&#x7EDF;&#x4E0B;&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x5927;&#x5927;&#x5C0F;&#x5C0F;&#x3001;&#x65B9;&#x65B9;&#x9762;&#x9762;&#x7684;&#x98CE;&#x683C;&#x3002;&#x2026;&#x2026;&#x603B;&#x7684;&#x6765;&#x8BF4;&#xFF0C;&#x4E0E;&#x4E0D;&#x540C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x76F8;&#x5173;&#x7684;&#x8BBE;&#x8BA1;&#x548C;&#x7F16;&#x7A0B;&#x98CE;&#x683C;&#x53EF;&#x4EE5;&#x8FFD;&#x6EAF;&#x51FA;&#x4E09;&#x4E2A;&#x6E90;&#x5934;&#xFF1A;</p>
+<ul>
+<li>&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8BBE;&#x8BA1;&#x8005;&#x7684;&#x610F;&#x56FE;</li>
+<li>&#x6210;&#x672C;&#x548C;&#x7F16;&#x7A0B;&#x73AF;&#x5883;&#x7684;&#x9650;&#x5236;&#x5BF9;&#x8BBE;&#x8BA1;&#x7684;&#x5747;&#x8861;&#x5F71;&#x54CD;</li>
+<li>&#x6587;&#x5316;&#x968F;&#x673A;&#x6F02;&#x79FB;&#xFF0C;&#x4F20;&#x7EDF;&#x65E0;&#x975E;&#x5C31;&#x662F;&#x5148;&#x5165;&#x4E3A;&#x4E3B;</li>
+</ul>
+</blockquote>
+<p>&#x4E0D;&#x540C;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5B58;&#x5728;&#x7684;&#x7EAF;&#x7528;&#x6237;&#x8F6C;&#x53D8;&#x4E3A;&#x5F00;&#x53D1;&#x8005;&#x7684;&#x95E8;&#x69DB;&#x6709;&#x6240;&#x4E0D;&#x540C;&#x3002;Unix &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x90FD;&#x4F1A;&#x9ED8;&#x8BA4;&#x5B89;&#x88C5;&#x7F16;&#x8BD1;&#x5668;&#x548C;&#x811A;&#x672C;&#x5DE5;&#x5177;&#xFF0C;&#x5E76;&#x4E14;&#x9ED8;&#x8BA4;&#x5C31;&#x662F;&#xFF08;&#x6216;&#x8005;&#x53EF;&#x4EE5;&#x968F;&#x65F6;&#x5207;&#x6362;&#x5230;&#xFF09;&#x547D;&#x4EE4;&#x884C;&#x754C;&#x9762;&#xFF08;CLI&#xFF0C;Command Line Interface&#xFF09;&#x3002;CLI &#x5177;&#x6709;&#x9AD8;&#x5EA6;&#x7684;&#x811A;&#x672C;&#x5316;&#x80FD;&#x529B;&#xFF0C;&#x5B83;&#x4EEC;&#x5F88;&#x5BB9;&#x6613;&#x5C31;&#x80FD;&#x652F;&#x6301;&#x7A0B;&#x5E8F;&#x7684;&#x642D;&#x914D;&#xFF0C;&#x76F8;&#x6BD4;&#x975E;&#x6280;&#x672F;&#x7528;&#x6237;&#x559C;&#x7231;&#x7684; GUI&#xFF0C;&#x901A;&#x5E38;&#x66F4;&#x7B80;&#x6D01;&#x3001;&#x66F4;&#x6709;&#x8868;&#x73B0;&#x529B;&#x3002;&#x8BF8;&#x5982;&#x6B64;&#x7C7B;&#x7684;&#x7279;&#x70B9;&#xFF0C;&#x4F7F;&#x5F97;&#x4EBA;&#x4EEC;&#x5E38;&#x8BF4; Unix &#x662F;&#x7A0B;&#x5E8F;&#x5458;&#x5199;&#x7ED9;&#x7A0B;&#x5E8F;&#x5458;&#x7684;&#x3002;</p>
+<p>CLI &#x8FD8;&#x662F; GUI&#xFF1F;&#x521D;&#x5B66;&#x8005;&#x901A;&#x5E38;&#x503E;&#x5411;&#x4E8E;&#x9009;&#x62E9;&#x6613;&#x7528;&#x7684; GUI &#x4EA4;&#x4E92;&#x65B9;&#x5F0F;&#xFF0C;&#x800C;&#x8001;&#x624B;&#x5219;&#x4F1A;&#x8D8A;&#x6765;&#x8D8A;&#x613F;&#x610F;&#x5728; shell &#x4E2D;&#x8F93;&#x5165;&#x547D;&#x4EE4;&#x3002;GUI &#x7A0B;&#x5E8F;&#x9002;&#x5408;&#x5BF9;&#x5355;&#x4E00;&#x4EFB;&#x52A1;&#xFF0C;&#x8981;&#x6C42;&#x6240;&#x89C1;&#x5373;&#x6240;&#x5F97;&#xFF0C;&#x6216;&#x8005;&#x80FD;&#x591F;&#x65B9;&#x4FBF;&#x9884;&#x89C8;&#x7684;&#x573A;&#x666F;&#x3002;&#x4F8B;&#x5982;&#x5728;&#x56FE;&#x7247;&#x4E0A;&#x9762;&#x7F16;&#x8F91;&#x6587;&#x5B57;&#xFF0C;&#x6216;&#x8005;&#x7F16;&#x8F91;&#x4EE3;&#x7801;&#x3002;CLI &#x7A0B;&#x5E8F;&#x5219;&#x9002;&#x5408;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x6279;&#x5904;&#x7406;&#x3001;&#x811A;&#x672C;&#x5316;&#x3001;&#x81EA;&#x52A8;&#x5316;&#x7B49;&#x8F83;&#x591A;&#x91CD;&#x590D;&#x6027;&#x5DE5;&#x4F5C;&#x7684;&#x573A;&#x666F;&#x3002;1984 &#x5E74;&#x540E;&#x4EBA;&#x4EEC;&#x5BF9; GUI &#x5174;&#x8DA3;&#x7684;&#x7206;&#x53D1;&#xFF0C;&#x591A;&#x534A;&#x662F;&#x56E0;&#x4E3A;&#x5546;&#x4E1A;&#x6D88;&#x8D39;&#x7C7B;&#x8F6F;&#x4EF6;&#x7684;&#x5927;&#x89C4;&#x6A21;&#x51FA;&#x73B0;&#x3002;GUI &#x7684;&#x6613;&#x7528;&#x6027;&#x5438;&#x5F15;&#x4E86;&#x5927;&#x91CF;&#x7684;&#x521D;&#x5B66;&#x8005;&#x3002;&#x7136;&#x800C;&#x7A0B;&#x5E8F;&#x5458;&#x4E0D;&#x8BE5;&#x5C06;&#x81EA;&#x5DF1;&#x4E00;&#x76F4;&#x5B9A;&#x4F4D;&#x4E3A;&#x521D;&#x5B66;&#x8005;&#xFF0C;&#x8981;&#x53D8;&#x6210;&#x5728;&#x7535;&#x8111;&#x9762;&#x524D;&#x201C;&#x53D1;&#x53F7;&#x65BD;&#x4EE4;&#x201D;&#x7684;&#x90A3;&#x4E2A;&#x89D2;&#x8272;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6210;&#x4E3A; GUI &#x754C;&#x9762;&#x4E0A;&#x7684;&#x64CD;&#x4F5C;&#x5DE5;&#x3002;</p>
+<p>Windows &#x7CFB;&#x7EDF;&#x5728;&#x7F51;&#x7EDC;&#x652F;&#x6301;&#x65B9;&#x9762;&#x7684;&#x843D;&#x540E;&#xFF0C;&#x4EE5;&#x53CA;&#x7CFB;&#x7EDF;&#x5929;&#x7136;&#x7684;&#x5404;&#x79CD;&#x5F3A;&#x5236;&#x7EA6;&#x675F;&#xFF08;&#x4F8B;&#x5982; GUI &#x8FD0;&#x884C;&#x5728;&#x5185;&#x6838;&#x4E2D;&#x3001;&#x4E0D;&#x591F;&#x5B89;&#x5168;&#x7B49;&#x7B49;&#xFF09;&#xFF0C;&#x5BFC;&#x81F4; 2000 &#x5E74;&#x540E;&#xFF0C;&#x5176;&#x5728;&#x670D;&#x52A1;&#x5668;&#x64CD;&#x4F5C;&#x5E02;&#x573A;&#x9886;&#x57DF;&#x5B8C;&#x5168;&#x8F93;&#x7ED9;&#x4E86; Linux&#x3002;&#x8FD9;&#x4E5F;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x5F88;&#x591A; Web &#x5F00;&#x53D1;&#x8005;&#xFF08;Web &#x524D;&#x7AEF;&#x5DE5;&#x7A0B;&#x5E08;&#x4E5F;&#x4E0D;&#x4F8B;&#x5916;&#xFF09;&#x9009;&#x62E9;&#x5728; Lnix &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E0B;&#x8FDB;&#x884C;&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x5DE5;&#x4F5C;&#x3002;&#x9664;&#x4E86;&#x4E0A;&#x9762;&#x63D0;&#x5230;&#x7684;&#x90A3;&#x4E9B;&#x4F18;&#x70B9;&#xFF0C;&#x56E0;&#x4E3A;&#x7EDD;&#x5927;&#x90E8;&#x5206; Web &#x670D;&#x52A1;&#x662F;&#x7531;&#x8FD0;&#x884C;&#x4E86;&#x7C7B; Unix &#x7CFB;&#x7EDF;&#x7684;&#x670D;&#x52A1;&#x5668;&#x63D0;&#x4F9B;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5F00;&#x53D1;&#x65F6;&#x5982;&#x679C;&#x53EF;&#x4EE5;&#x4FDD;&#x6301;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x4E0E;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x7684;&#x4E00;&#x81F4;&#xFF0C;&#x53EF;&#x4EE5;&#x63D0;&#x524D;&#x89C4;&#x907F;&#x5F88;&#x591A;&#x95EE;&#x9898;&#x3002;</p>
+<p><strong>&#x603B;&#x800C;&#x8A00;&#x4E4B;&#xFF0C;&#x63A8;&#x8350;&#x8BFB;&#x8005;&#x5728; Unix &#x7CFB;&#x5217;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E0B;&#x7F16;&#x7A0B;&#xFF0C;&#x5305;&#x62EC; Linux&#x3001;MacOS X&#x3001;FreeBSD &#x7B49;&#xFF0C;&#x5176;&#x72EC;&#x7279;&#x7684;&#x7F16;&#x7A0B;&#x827A;&#x672F;&#x3001;&#x4F18;&#x96C5;&#x7684;&#x8BBE;&#x8BA1;&#x54F2;&#x5B66;&#xFF0C;&#x4F1A;&#x542F;&#x793A;&#x4F60;&#x5199;&#x51FA;&#x66F4;&#x597D;&#x7684;&#x8F6F;&#x4EF6;&#x3002;</strong></p>
+<h3 id="&#x5173;&#x4E8E;-posix">&#x5173;&#x4E8E; POSIX</h3>
+<p>&#x65E9;&#x671F; UNIX &#x7CFB;&#x7EDF;&#x7ECF;&#x5386;&#x4E86; BSD &#x4E0E; System &#x4E24;&#x4E2A;&#x7CFB;&#x7EDF;&#x7684;&#x5206;&#x6D41;&#x3002;&#x5404;&#x79CD;&#x975E;&#x6807;&#x51C6;&#x7684;&#x5B9E;&#x73B0;&#x7ED9;&#x8F6F;&#x4EF6;&#x4F9B;&#x5E94;&#x5546;&#x5E26;&#x6765;&#x5F88;&#x5927;&#x7684;&#x82E6;&#x607C;&#xFF1A;&#x65E2;&#x8981;&#x4FDD;&#x8BC1;&#x8F6F;&#x4EF6;&#x80FD;&#x591F;&#x5728; BSD &#x4E0A;&#x9762;&#x8FD0;&#x884C;&#xFF0C;&#x53C8;&#x8981;&#x786E;&#x4FDD; System V &#x4E0B;&#x4E5F;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#x3002;UNIX &#x4E16;&#x754C;&#x7684;&#x8FD9;&#x79CD;&#x5206;&#x88C2;&#x6781;&#x5927;&#x5730;&#x963B;&#x788D;&#x4E86; UNIX &#x7684;&#x5546;&#x4E1A;&#x6210;&#x529F;&#x3002;&#x4E8E;&#x662F;&#xFF0C;IEEE &#x53EC;&#x96C6;&#x4E86;&#x4E0A;&#x767E;&#x540D;&#x6765;&#x81EA;&#x4E1A;&#x754C;&#x3001;&#x5B66;&#x754C;&#x4EE5;&#x53CA;&#x653F;&#x5E9C;&#x7684;&#x4EBA;&#x5458;&#x6210;&#x7ACB;&#x4E86;&#x4E00;&#x4E2A;&#x6807;&#x51C6;&#x59D4;&#x5458;&#x4F1A;&#x3002;&#x540D;&#x5B57;&#x5C31;&#x53EB;&#x505A; POSIX&#x3002;&#x5728;&#x7ECF;&#x5386;&#x4E86;&#x591A;&#x6B21;&#x8BA8;&#x8BBA;&#x540E;&#xFF0C;POSIX &#x59D4;&#x5458;&#x4F1A;&#x5236;&#x5B9A;&#x4E86;&#x4E00;&#x4E2A;&#x6807;&#x51C6;&#xFF0C;&#x540D;&#x5B57;&#x4E3A; 1003.1&#xFF0C;&#x5B83;&#x89C4;&#x5B9A;&#x4E86;&#x6BCF;&#x4E00;&#x4E2A;&#x7B26;&#x5408;&#x6807;&#x51C6;&#x7684; UNIX &#x7CFB;&#x7EDF;&#x5FC5;&#x987B;&#x63D0;&#x4F9B;&#x7684;&#x5E93;&#x51FD;&#x6570;&#x3002;POSIX &#x7684;&#x610F;&#x4E49;&#x5C31;&#x5728;&#x4E8E;&#xFF1A;&#x4E00;&#x4E2A;&#x8F6F;&#x4EF6;&#x7ECF;&#x9500;&#x5546;&#x5199;&#x4E86;&#x4E00;&#x4E2A;&#x53EA;&#x8C03;&#x7528;&#x4E86;&#x7B26;&#x5408; 1003.1 &#x6807;&#x51C6;&#x51FD;&#x6570;&#x7684;&#x7A0B;&#x5E8F;&#xFF0C;&#x90A3;&#x4E48;&#x4ED6;&#x5C31;&#x53EF;&#x4EE5;&#x786E;&#x4FE1;&#x8FD9;&#x4E2A;&#x7A0B;&#x5E8F;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#x5728;&#x4EFB;&#x4F55;&#x4E00;&#x53F0;&#x6309;&#x7167;&#x6807;&#x51C6;&#x5B9E;&#x73B0;&#x7684; UNIX &#x7CFB;&#x7EDF;&#x4E0A;&#x3002;</p>
+<p>&#x6797;&#x7EB3;&#x65AF;&#x5728;&#x5199; Linux &#x5185;&#x6838;&#x65F6;&#xFF0C;&#x5C31;&#x610F;&#x8BC6;&#x5230;&#x4E86;&#x6807;&#x51C6;&#x7684;&#x91CD;&#x8981;&#x6027;&#x3002;1991 &#x5E74; 7 &#x6708; 3 &#x65E5;&#xFF0C;&#x6797;&#x7EB3;&#x65AF;&#x5728; MINIX &#x65B0;&#x95FB;&#x7EC4;&#x91CC;&#x53D1;&#x4E86;&#x4E2A;&#x5E16;&#x5B50;&#xFF0C;&#x5E0C;&#x671B;&#x6709;&#x4EBA;&#x80FD;&#x591F;&#x7ED9;&#x4ED6;&#x53D1;&#x4E00;&#x4EFD; POSIX &#x89C4;&#x5219;&#x6587;&#x4EF6;&#xFF1A;</p>
+<blockquote>
+<p>&#x5404;&#x4F4D;&#x7F51;&#x53CB;&#x5927;&#x5BB6;&#x597D;&#xFF01;
+&#x7531;&#x4E8E;&#x6211;&#x76EE;&#x524D;&#x6B63;&#x5728; Minix &#x7CFB;&#x7EDF;&#x4E0B;&#x505A;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#xFF0C;&#x6240;&#x4EE5;&#x5BF9; POSIX &#x6807;&#x51C6;&#x5B9A;&#x4E49;&#x5F88;&#x611F;&#x5174;&#x8DA3;&#x3002;&#x4E0D;&#x77E5;&#x9053;&#x6709;&#x6CA1;&#x6709;&#x4EBA;&#x80FD;&#x7ED9;&#x6211;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x6700;&#x65B0;&#x7248;&#x7684; POSIX &#x89C4;&#x5219;&#xFF08;&#x6700;&#x597D;&#x662F;&#x4EE5;&#x4E00;&#x79CD;&#x673A;&#x5668;&#x53EF;&#x8BFB;&#x7684;&#x683C;&#x5F0F;&#xFF09;&#xFF1F;&#x8981;&#x662F;&#x80FD;&#x6709; FTP &#x5730;&#x5740;&#x5C31;&#x66F4;&#x597D;&#x4E86;&#x3002;</p>
+</blockquote>
+<h3 id="&#x9009;&#x62E9;&#x7535;&#x8111;">&#x9009;&#x62E9;&#x7535;&#x8111;</h3>
+<p>&#x82F9;&#x679C;&#x7535;&#x8111;&#x56E0;&#x4E3A;&#x62E5;&#x6709;&#x6781;&#x4F73;&#x7684;&#x786C;&#x4EF6;&#x914D;&#x7F6E;&#xFF0C;&#x5E76;&#x4E14;&#x5176;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF; Darwin &#x662F; Unix &#x7684;&#x4E00;&#x4E2A;&#x53D1;&#x884C;&#x7248;&#xFF0C;Linux &#x7684;&#x7279;&#x70B9;&#x5B83;&#x57FA;&#x672C;&#x90FD;&#x5177;&#x5907;&#xFF0C;&#x6240;&#x4EE5;&#x6210;&#x4E3A;&#x4E86;&#x56FD;&#x5185;&#x4E0D;&#x5C11;&#x4E92;&#x8054;&#x7F51;&#x516C;&#x53F8;&#x7A0B;&#x5E8F;&#x5458;&#x7684;&#x6807;&#x914D;&#x3002;&#x5BF9;&#x4E8E;&#x4E2A;&#x4EBA;&#x6765;&#x8BF4;&#xFF0C;&#x5982;&#x679C;&#x9884;&#x7B97;&#x5145;&#x8DB3;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4E70;&#x53F0; Macintosh &#x7CFB;&#x5217;&#x7684;&#x7535;&#x8111;&#x3002;&#x5982;&#x679C;&#x4F60;&#x6CA1;&#x6709; Mac&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x5B89;&#x88C5;&#x4EFB;&#x4F55;&#x4E00;&#x6B3E;&#x4F60;&#x559C;&#x6B22;&#x7684;&#xFF08;&#x6216;&#x8005;&#x6709;&#x5174;&#x8DA3;&#x7684;&#xFF09; Linux &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x6BD5;&#x7ADF; Web &#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x5BF9;&#x8BA1;&#x7B97;&#x673A;&#x7684;&#x6027;&#x80FD;&#x8981;&#x6C42;&#x5E76;&#x4E0D;&#x9AD8;&#x3002;Ubuntu<sup>[2]</sup> &#x6709;&#x7740;&#x53CB;&#x597D;&#x7684;&#x754C;&#x9762;&#xFF0C;&#x901A;&#x5E38;&#x662F;&#x5165;&#x95E8;&#x8005;&#x7684;&#x9009;&#x62E9;&#xFF1B;&#x800C; CentOS<sup>[3]</sup> &#x7531;&#x4E8E;&#x5728;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x7684;&#x5E94;&#x7528;&#x66F4;&#x4E3A;&#x5E7F;&#x6CDB;&#xFF0C;&#x4E5F;&#x662F;&#x975E;&#x5E38;&#x9002;&#x5408;&#x5F00;&#x53D1;&#x8005;&#x5B89;&#x88C5;&#x7684;&#x7CFB;&#x7EDF;&#xFF1B;&#x4E00;&#x4E9B;&#x66F4;&#x4E3A;&#x8D44;&#x6DF1;&#x7684;&#x5F00;&#x53D1;&#x8005;&#x4F1A;&#x9009;&#x62E9; Arch Linux<sup>[4]</sup>&#xFF0C;&#x8BFB;&#x8005;&#x4E5F;&#x53EF;&#x4EE5;&#x6709;&#x4F59;&#x529B;&#x7684;&#x65F6;&#x5019;&#x6311;&#x6218;&#x4E00;&#x4E0B;&#x3002;</p>
+<p>&#x672C;&#x4E66;&#x6240;&#x6709;&#x7684;&#x4EE3;&#x7801;&#x3001;&#x547D;&#x4EE4;&#x90FD;&#x5728;&#x5B89;&#x88C5;&#x4E86; MacOS@10.12.6 &#x7684; Macbook Pro &#x673A;&#x5668;&#x4E0A;&#x9762;&#x6267;&#x884C;&#x901A;&#x8FC7;&#x3002;</p>
+<h3 id="&#x5173;&#x4E8E;&#x624B;&#x673A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;">&#x5173;&#x4E8E;&#x624B;&#x673A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</h3>
+<h3 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h3>
+<ol>
+<li>Eric S. Raymond. UNIX&#x7F16;&#x7A0B;&#x827A;&#x672F; [M]. &#x5317;&#x4EAC;: &#x7535;&#x5B50;&#x5DE5;&#x4E1A;&#x51FA;&#x7248;&#x793E;, 2012.</li>
+<li><a href="https://www.ubuntu.com/index_kylin" target="_blank">Ubuntu &#x5B98;&#x7F51;</a></li>
+<li><a href="https://www.centos.org/" target="_blank">Centos &#x5B98;&#x7F51;</a></li>
+<li><a href="https://www.archlinux.org/" target="_blank">Arch Linux &#x5B98;&#x7F51;</a></li>
+<li><a href="https://github.com/torvalds/linux" target="_blank">linux | github</a></li>
+<li>&#x5982;&#x679C;&#x60F3;&#x4E86;&#x89E3;&#x4E00;&#x4E0B; Linus &#x4E0E; Linux &#x7684;&#x7ECF;&#x5386;&#xFF0C;&#x53EF;&#x4EE5;&#x8BFB;&#x4E00;&#x4E0B;&#x4ED6; 2001 &#x5E74;&#x5199;&#x7684;&#x81EA;&#x4F20;&#x300A;&#x53EA;&#x662F;&#x4E3A;&#x4E86;&#x597D;&#x73A9;&#x300B;&#xFF08;<strong>Just for Fun</strong>&#xFF09;.</li>
+<li>Andrew S. Tanenbaum. &#x73B0;&#x4EE3;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF08;&#x7B2C;3&#x7248;&#xFF09;[M]. &#x5317;&#x4EAC;: &#x673A;&#x68B0;&#x5DE5;&#x4E1A;&#x51FA;&#x7248;&#x793E;, 2009.</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 第6章 Welcome on Board">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2-terminals.html" class="navigation navigation-next " aria-label="Next page: Mac终端与常用命令行工具">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"电脑、操作系统","level":"2.7.1","depth":2,"next":{"title":"Mac终端与常用命令行工具","level":"2.7.2","depth":2,"path":"part-1/welcome-on-board/2-terminals.md","ref":"part-1/welcome-on-board/2-terminals.md","articles":[]},"previous":{"title":"第6章 Welcome on Board","level":"2.7","depth":1,"path":"part-1/welcome-on-board/index.md","ref":"part-1/welcome-on-board/index.md","articles":[{"title":"电脑、操作系统","level":"2.7.1","depth":2,"path":"part-1/welcome-on-board/1-computer-and-os.md","ref":"part-1/welcome-on-board/1-computer-and-os.md","articles":[]},{"title":"Mac终端与常用命令行工具","level":"2.7.2","depth":2,"path":"part-1/welcome-on-board/2-terminals.md","ref":"part-1/welcome-on-board/2-terminals.md","articles":[]},{"title":"Node.js环境","level":"2.7.3","depth":2,"path":"part-1/welcome-on-board/3-node-and-npm.md","ref":"part-1/welcome-on-board/3-node-and-npm.md","articles":[]},{"title":"编辑器","level":"2.7.4","depth":2,"path":"part-1/welcome-on-board/4-code-editors.md","ref":"part-1/welcome-on-board/4-code-editors.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/common.css","pdf":"styles/common.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":13,"fontFamily":"Arial","paperSize":"b5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":50,"left":50,"top":45,"bottom":45}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Web前端工程化与组件化开发实践","gitbook":"*"},"file":{"path":"part-1/welcome-on-board/1-computer-and-os.md","mtime":"2018-10-09T09:51:49.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-25T11:26:55.644Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
