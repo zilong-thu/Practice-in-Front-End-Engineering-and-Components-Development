@@ -1,8 +1,6 @@
 #!/bin/bash
 
-nvm use;
-
-gitbook build ./src _book;
+gitbook build src _book;
 
 git checkout gh-pages;
 
@@ -12,6 +10,6 @@ git add --all;
 
 git commit -m 'publish book';
 
-git push origin gh-pages;
+git push origin gh-pages -f;
 
 git checkout master;
