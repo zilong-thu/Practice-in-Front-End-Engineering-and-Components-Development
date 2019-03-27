@@ -94,3 +94,4 @@
   * [Lambda 演算](part-5/03-lambda-calculus.md)
   * [不可变数据（Immutable Data）](part-5/04-immutable-data.md)
 * [参考资料](part-6-ref/index.md)
+* [关于本书的写作](part-5/about-writing-this-book.md)
