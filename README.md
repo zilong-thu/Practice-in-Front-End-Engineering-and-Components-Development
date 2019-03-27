@@ -2,9 +2,13 @@
 
 英文名：Practice in Front End Engineering and Components Development
 
-在线阅读地址：[https://borninsummer.com/Practice-in-Front-End-Engineering-and-Components-Development/](https://borninsummer.com/Practice-in-Front-End-Engineering-and-Components-Development/)
+## 在线阅读地址
 
-这里存放的是书籍的原始内容。
+[https://borninsummer.com/Practice-in-Front-End-Engineering-and-Components-Development/](https://borninsummer.com/Practice-in-Front-End-Engineering-and-Components-Development/)
+
+## Github 地址
+
+书籍的原始内容托管在 [Github](https://github.com/zilong-thu/Practice-in-Front-End-Engineering-and-Components-Development)。
 
 ## License & Copyright
 
