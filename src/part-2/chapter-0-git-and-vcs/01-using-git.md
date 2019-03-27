@@ -162,8 +162,10 @@ $ find .git/objects -type f
 
 ### 参考资料
 
-读者如果希望更深入地学习 Git 知识，那么 Scott Chacon 和 Ben Straub 所著的 Pro Git（2nd Edition, 2014）可能是目前最好的 Git 学习资料，任何人都可以在网上免费阅读此书：[https://git-scm.com/book/en/v2](https://git-scm.com/book/en/v2)。此外，乔恩·罗力格（Jon Loeliger）与马修·麦卡洛（Matthew McCullough）合著的《Git版本控制管理（第2版）》也不错<sup>[2]</sup>。
+读者如果希望更深入地学习 Git 知识，那么 Scott Chacon 和 Ben Straub 所著的 Pro Git（2nd Edition, 2014）可能是目前最好的 Git 学习资料，任何人都可以在网上免费阅读此书：[https://git-scm.com/book/en/v2](https://git-scm.com/book/en/v2)。*Pro Git* 的中译本《精通Git（第2版）》，也于 2017 年 9 月在国内出版了。
 
-1. [Git 官网](https://git-scm.com/)
+此外，乔恩·罗力格（Jon Loeliger）与马修·麦卡洛（Matthew McCullough）合著的《Git版本控制管理（第2版）》也不错<sup>[2]</sup>。
+
+1. [Git 官网：https://git-scm.com](https://git-scm.com/)
 2. Jon Leoliger, Matthew McCullough 著, 王迪, 丁彦 等译. Git 版本控制（第二版）[M]. 北京: 人民邮电出版社, 2015.
 3. Vincent Driessen. A successful Git branching model. http://nvie.com/posts/a-successful-git-branching-model/
