@@ -4,7 +4,11 @@
     "website": "styles/common.css",
     "pdf": "styles/common.css"
   },
-  "plugins": ["custom-js-css"],
+  "plugins": [
+    "-search",
+    "-lunr",
+    "custom-js-css"
+  ],
   "pluginsConfig": {
     "custom-js-css": {
       "js": [
