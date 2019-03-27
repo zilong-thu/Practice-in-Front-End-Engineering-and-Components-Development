@@ -24,7 +24,8 @@ p img {
   margin: 0 0 0.5em 1em;
 }
 
-img.round {
+img.round,
+img.rounded {
   border-radius: 5px;
 }
 
