@@ -20,6 +20,7 @@ const visitors = {
   ExportNamedDeclaration(node) {
     if (node.declaration.type === 'FunctionDeclaration') {
       console.log(`找到了一个 export 函数的语句，函数名称是：${node.declaration.id.name}`);
+      node.declaration.id.name = '$' + node.declaration.id.name;
     }
   }
 };
