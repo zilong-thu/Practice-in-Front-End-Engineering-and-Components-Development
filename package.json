@@ -1,0 +1,26 @@
+{
+  "name": "Practice-in-Front-End-Engineering-and-Components-Development",
+  "version": "1.0.0",
+  "description": "书名：Web前端工程化与组件化开发实践",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "s": "cd ./src && gitbook serve",
+    "c": "find ./src -type f -name \"*.md\" | xargs wc -m | grep total",
+    "init-hooks": "cp ./scripts/pre-commit.sh ./.git/hooks/pre-commit && chmod a+x ./.git/hooks/pre-commit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.oschina.net:zilong-thu/my-book-react-and-engineering.git"
+  },
+  "author": "zilong-thu",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "gitbook": "^3.2.3",
+    "husky": "^0.14.3"
+  }
+}
