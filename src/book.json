@@ -4,6 +4,14 @@
     "website": "styles/common.css",
     "pdf": "styles/common.css"
   },
+  "plugins": ["custom-js-css"],
+  "pluginsConfig": {
+    "custom-js-css": {
+      "js": [
+        "./js/index.js"
+      ]
+    }
+  },
   "pdf": {
     "fontSize": 13,
     "paperSize": "b5",
