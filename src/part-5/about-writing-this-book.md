@@ -4,20 +4,41 @@
 
 `./src` 目录为书籍内容的源文件。
 
-`./src/_book` 为 gitbook 编译后的文件所在目录，已经添加至 `.gitignore`。
+`_book/` 为 gitbook 编译后的文件所在目录，已经添加至 `.gitignore`。
 
-只需局部安装 `gitbook-cli` 即可：
+只需局部安装 `gitbook-cli` 即可（全局安装使用的话，也很方便）：
 
 ```bash
-# 目前使用的是 9.4.0 版本
+# 目前使用的是 9.7.0 版本
 $ nvm use
 $ npm install
 ```
 
-在 `src` 目录，启动书籍的编译服务：
+在项目根目录，启动书籍的编译服务：
 
 ```bash
-$ npx gitbook serve
+$ npx gitbook serve src
+```
+
+## 发布 HTML 版本
+
+首先要确保已经有了一个独立的分支 `gh-pages`，第一次执行了 gitbook build 之后，执行下面的命令来创建 `gh-pages` 分支：
+
+```bash
+$ gitbook build src _book
+# 创建 gh-pages 分支
+$ git checkout --orphan gh-pages
+$ git rm --cached -r .
+```
+
+只需要保留 `package.json`、`.gitignore` 等必要的文件就可以了。
+
+```bash
+$ git checkout gh-pages
+$ cp -r _book/* .
+$ git add --all
+$ git commit -m 'publish book'
+$ git push origin gh-pages
 ```
 
 ## 统计字数
