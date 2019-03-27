@@ -22,7 +22,9 @@ $ npx gitbook serve src
 
 ## 发布 HTML 版本
 
-首先要确保已经有了一个独立的分支 `gh-pages`，第一次执行了 gitbook build 之后，执行下面的命令来创建 `gh-pages` 分支：
+可以用 `gitbook build` 来生成静态网页版的书籍。
+
+首先要确保已经有了一个独立的分支 `gh-pages`。方法：第一次执行了 `gitbook build` 之后，执行下面的命令来创建 `gh-pages` 分支：
 
 ```bash
 $ gitbook build src _book
@@ -49,14 +51,14 @@ $ git push origin gh-pages
 $ find . -type f -name "*.md"  | xargs wc -m
 ```
 
-## 制作书籍
+## 制作PDF书籍
 
-可以用 `gitbook build` 来生成静态网页版的书籍。也可以使用命令行工具 `ebook-convert` 来编译为 PDF。
+除了发布 HTML 静态文件，也可以使用命令行工具 `ebook-convert` 来编译为 PDF。`ebook-convert` 是 Calibre 发布的一款开源工具。
 
-### ebook-convert
+<img src="./images/calibre-logo.png" class="round" />
 
-`ebook-convert` 是 Calibre 发布的一款开源工具。[官网](https://calibre-ebook.com)
+使用步骤：
 
-+ 下载 Calibre 并且安装，calibre-3.22.1
++ 下载 Calibre 并且安装，calibre-3.40.1，[下载地址：官网](https://calibre-ebook.com)
 + 软连接：`ln -s /Applications/calibre.app/Contents/MacOS/ebook-convert /usr/local/bin`
 + `gitbook pdf`
