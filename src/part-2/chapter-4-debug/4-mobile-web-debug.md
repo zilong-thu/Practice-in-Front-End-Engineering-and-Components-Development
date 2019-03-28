@@ -7,7 +7,7 @@
 
 Eruda 是一个专为手机网页前端设计的调试面板工具，类似 DevTools 的迷你版，其主要功能包括：捕获 console 日志、检查元素状态、捕获 XHR 请求、显示本地存储（localStorage）和 Cookie 信息等等。<sup>[1]</sup>
 
-<img src="./images/eruda.png" style="width: 80%;">
+<img src="./images/eruda.jpg" style="width: 80%;">
 
 有两种接入 Eruda 的方式，一种是最简单的，直接在 HTML 模板中用 `<script>` 元素引用其 CDN 库，然后调用 `eruda.init()` 方法来初始化：
 
