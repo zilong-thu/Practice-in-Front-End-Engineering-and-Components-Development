@@ -78,7 +78,7 @@ Chrome 浏览器的 Devtools 还可以调试安卓手机的系统浏览器页面
 <img src="./images/webview-debug-01.jpg" style="width: 60%;">
 
 <figure>
-<img src="./images/webview-debug-02.png" style="width: 85%;">
+<img src="./images/webview-debug-02.jpg" style="width: 85%;">
 <figcaption>通过 USB 调试安卓手机浏览器打开的页面（小米手机6，MIUI9.6）</figcaption>
 </figure>
 
