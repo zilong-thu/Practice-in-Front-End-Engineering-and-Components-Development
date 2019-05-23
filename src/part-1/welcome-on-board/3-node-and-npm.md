@@ -185,6 +185,22 @@ Mac 下可以通过 Homebrew 执行 `brew install yarn` 进行安装；如果已
 $ curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
 ```
 
+yarn 具有与 npm 类似的 API，下面列出了一些常见的用法：
+
+```bash
+# 安装某个包
+$ yarn add pkg_name
+
+# 移除某个包
+$ yarn remove pkg_name
+
+# 根据 package.json 来安装所有的包
+$ yarn
+
+# 全局安装某个包
+$ yarn global add pkg_name
+```
+
 ### Node.js 的设计缺陷
 
 2018年6月，Ryan Dahl 在柏林举办的欧洲 JavaScript 开发者大会上进行了主题为《Design Mistakes in Node》<sup>[7]</sup>的演讲，列举了自己认为 Node.js 的一些设计缺陷。总体而言，Node.js 早期的设计重心在于事件循环与异步I/O，并且解决得很不错。但是仍然遗留了其他方面的缺陷，主要是与“模块”“包”“依赖”等代码组织方式有关的，它们不约而同地导致了 Node.js 生态的一些混乱，提升了代码组织的复杂度，例如：
