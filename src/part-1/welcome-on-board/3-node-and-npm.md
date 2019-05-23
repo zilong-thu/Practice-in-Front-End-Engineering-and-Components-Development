@@ -179,7 +179,7 @@ $ npx create-react-app my-app
 
 NPM 并非唯一的 Node.js 包管理器，Facebook、Exponent、Google 与 Tilde 四家公司在 2016 年 11 月联合推出的 Yarn<sup>[6]</sup> 也是一款优秀的同类型开源工具。Yarn 会优先从本地的离线镜像（offline mirror）中获取包，并且采用多线程下载，因而相比传统的 npm 会有更快的速度。
 
-Mac 下可以通过 Homebrew 执行 `brew install yarn` 进行安装。官方还推荐通过下载其安装脚本的方式进行安装：
+Mac 下可以通过 Homebrew 执行 `brew install yarn` 进行安装；如果已经安装过了，则可以通过执行 `brew upgrade yarn` 进行升级。官方还推荐通过下载其安装脚本的方式直接安装 yarn 的最新版本（如果系统里已有 yarn，则此方法会用新版的直接覆盖之前的版本）：
 
 ```bash
 $ curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
