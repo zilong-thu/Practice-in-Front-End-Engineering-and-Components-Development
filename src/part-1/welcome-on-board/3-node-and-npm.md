@@ -188,6 +188,9 @@ $ curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
 yarn 具有与 npm 类似的 API，下面列出了一些常见的用法：
 
 ```bash
+# 查看当前使用的 yarn 版本
+$ yarn -v
+
 # 安装某个包
 $ yarn add pkg_name
 
