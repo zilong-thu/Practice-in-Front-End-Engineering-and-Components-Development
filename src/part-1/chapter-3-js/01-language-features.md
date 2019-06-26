@@ -1,6 +1,6 @@
 ## 语言特点
 
-JavaScript 是一门多范式语言，开发者可以使用命令式风格、面向对象风格以及函数式风格来组织源代码。在语言设计上，JavaScript 可谓集众家之所长：
+JavaScript 是一门多范式语言，开发者可以使用过程式风格、面向对象风格以及函数式风格来组织源代码。这一特点使得 JavaScript 能够被不同背景的开发人员所接受。在语言设计上，JavaScript 可谓集众家之所长：
 
 <img src="../images/js-origin.png" style="width: 60%;">
 
