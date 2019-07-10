@@ -171,13 +171,15 @@ $ npx create-react-app my-app
 `npx` 会自动下载 `create-react-app` 然后调用它，调用结束后再将其从系统中移除。
 
 
-### 其他包管理器
-
-**yarn**
+### Yarn
 
 <img src="../images/yarn-logo.png" class="fr" style="width: 100px;">
 
-NPM 并非唯一的 Node.js 包管理器，Facebook、Exponent、Google 与 Tilde 四家公司在 2016 年 11 月联合推出的 Yarn<sup>[6]</sup> 也是一款优秀的同类型开源工具。Yarn 会优先从本地的离线镜像（offline mirror）中获取包，并且采用多线程下载，因而相比传统的 npm 会有更快的速度。
+NPM 并非唯一的 Node.js 包管理器，Facebook、Exponent、Google 与 Tilde 四家公司在 2016 年 11 月联合推出的 Yarn<sup>[6]</sup> 也是一款优秀的同类型开源工具。Yarn 会优先从本地的离线镜像（offline mirror）中获取包，并且采用多线程下载，因而相比传统的 npm 会有更快的速度。具体来说，Yarn 有如下特性：
+
++ 快速：在系统中缓存所下载过的每一个包，因此当需要安装同一个包时，不需要从网络下载。
++ 可靠：为项目生成一个能够精确描述所依赖包版本的锁定文件（lockfile），通常名为 `yarn.lock`。
++ 安全：Yarn uses checksums to verify the integrity of every installed package before its code is executed.
 
 Mac 下可以通过 Homebrew 执行 `brew install yarn` 进行安装；如果已经安装过了，则可以通过执行 `brew upgrade yarn` 进行升级。官方还推荐通过下载其安装脚本的方式直接安装 yarn 的最新版本（如果系统里已有 yarn，则此方法会用新版的直接覆盖之前的版本）：
 
