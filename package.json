@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "s": "cd ./src && gitbook serve",
+    "s": "gitbook serve ./src",
     "c": "find ./src -type f -name \"*.md\" | xargs wc -m | grep total",
     "init-hooks": "cp ./scripts/pre-commit.sh ./.git/hooks/pre-commit && chmod a+x ./.git/hooks/pre-commit"
   },
@@ -18,7 +18,9 @@
   },
   "author": "zilong-thu",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "gitbook-cli": "^2.3.2"
+  },
   "devDependencies": {
     "gitbook": "^3.2.3",
     "husky": "^0.14.3"
