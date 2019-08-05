@@ -20,6 +20,16 @@ $ npm install
 $ npx gitbook serve src
 ```
 
+如果 `gitbook-cli` 命令找不到或者安装有问题，它会给出下面的常见提示：
+
+```
+You need to install "gitbook-cli" to have access to the gitbook command anywhere on your system.
+If you've installed this package globally, you need to uninstall it.
+>> Run "npm uninstall -g gitbook" then "npm install -g gitbook-cli"
+```
+
+此时按照它说的，卸载再重新安装即可。
+
 ## 发布 HTML 版本
 
 可以用 `gitbook build` 来生成静态网页版的书籍。
