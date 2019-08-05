@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./node_modules/.bin/gitbook build src _book;
+gitbook build src _book;
 
 git checkout gh-pages;
 
