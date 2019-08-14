@@ -16,6 +16,8 @@ $ xcode-select --install
 
 无论开发或者运维，亦或平时进行一些简单的任务，使用终端（Terminal）都比 GUI 界面程序高效得多。MacOS 虽然自带了一个终端，却并不好用，如果不借助于 Oh-my-zsh 这样的工具，甚至都无法进行文件名称补全提示。此外，MacOS 的终端也不支持窗口分隔为多面板（Split Panes）。
 
+<img src="../images/iterm2-logo.png" class="round fl" style="width: 100px;">
+
 怀着打造一个好用的 MacOS 终端的理念，Iterm2 诞生了，它是用 Objective-C 为主要编程语言开发的终端模拟程序（terminal emulator）。可以在其官网（[https://www.iterm2.com/](https://www.iterm2.com/)）方便地下载到安装包来进行安装。
 
 Iterm2 有许多方便的功能：
