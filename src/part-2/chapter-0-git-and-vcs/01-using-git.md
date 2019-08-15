@@ -65,6 +65,18 @@ $ git config
   --blob <数据对象 ID>   从给定的数据对象读取配置
 ```
 
+全局配置、局部配置在使用一台电脑对多个仓库开发的时候很有用，不同的仓库需要使用不同的 git 账号进行提交（以便留下准确的提交信息），于是就可以分仓库配置用户名、邮箱。
+
+```
+# 全局配置一个默认的用户名、邮箱
+$ git config user.name "zilong-thu"
+$ git config user.email "809052335@qq.com"
+
+# 而在目录 A 下面则配置该仓库特有的用户名与邮箱
+$ git config user.name "王子龙"
+$ git config user.email "wangzilong26@gmail.com"
+```
+
 **字符集设置**
 
 对于日常使用中文的开发者来说，很可能自己的项目中存在一些包含中文字符的文件或目录。而 Git 的默认设置下，运行 `git status` 这样的命令，会将这些文件显示为转义后的效果：
