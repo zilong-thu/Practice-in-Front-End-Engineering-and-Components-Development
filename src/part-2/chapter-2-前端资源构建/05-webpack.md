@@ -55,6 +55,10 @@ JavaScript 模块的依赖分析是 webpack 的核心流程之一。
 
 ## 常见的 loaders
 
+### 如何实现一个 loader
+
+参考 Webpack 官网 [Writing a Loader](https://webpack.js.org/contribute/writing-a-loader/)。Loader 的本质是一个函数，Webpack 会在解析到匹配的文件时调用这个函数去加载文件内容。
+
 ## 常见的插件
 
 **HtmlWebpackPlugin**
