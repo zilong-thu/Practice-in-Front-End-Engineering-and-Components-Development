@@ -11,6 +11,7 @@
 ```bash
 # 目前使用的是 9.7.0 版本
 $ nvm use
+$ npm install -g gitbook-cli
 $ npm install
 ```
 
@@ -18,6 +19,8 @@ $ npm install
 
 ```bash
 $ npx gitbook serve src
+# 或者使用已经在 package.json 里面定义好了的命令：
+$ npm run s
 ```
 
 如果 `gitbook-cli` 命令找不到或者安装有问题，它会给出下面的常见提示：

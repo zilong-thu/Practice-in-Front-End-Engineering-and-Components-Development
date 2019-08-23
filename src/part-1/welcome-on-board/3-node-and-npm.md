@@ -117,7 +117,17 @@ $ npm ls -g --depth=0
 /Users/wzl/.nvm/versions/node/v9.7.0/lib
 ├── gitbook-cli@2.3.2
 └── npm@5.6.0
+
+# 查看某个包的详情
+$ npm view <package-name>[@<version>] [<field>[.<subfield>]...]
+# 如果是在某个项目下查看某个包，会显示已经安装的那个包的一部分信息。
+# 例如已经安装了 lodash@4.17.15 的项目中运行 npm view lodash
+
+# 指定包的版本可以查看特定包的信息：
+$ npm view lodash@latest
 ```
+
+<img src="../images/npm-view-01.png" style="width: 500px;" class="round" />
 
 #### scripts
 
