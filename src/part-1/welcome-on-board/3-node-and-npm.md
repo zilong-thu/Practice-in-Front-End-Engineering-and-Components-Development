@@ -125,6 +125,9 @@ $ npm view <package-name>[@<version>] [<field>[.<subfield>]...]
 
 # 指定包的版本可以查看特定包的信息：
 $ npm view lodash@latest
+
+# 查看某个包的所有历史版本
+$ npm view lodash versions
 ```
 
 <img src="../images/npm-view-01.png" style="width: 500px;" class="round" />
