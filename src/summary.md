@@ -57,6 +57,7 @@
   * [调试 NodeJS 程序](part-2/chapter-5-debug/3-nodejs-debug.md)
   * [移动端 Web 页面调试](part-2/chapter-5-debug/4-mobile-web-debug.md)
   * [HTTP抓包、代理工具](part-2/chapter-5-debug/5-http-proxy.md)
+  * [HTTP客户端工具](part-2/chapter-5-debug/5-http-proxy.md)
 * [第13章 前端测试](part-2/chapter-6-test/index.md)
   * [JavaScript单元测试](part-2/chapter-6-test/01-unit-test.md)
   * [浏览器兼容性测试](part-2/chapter-6-test/02-browser-compatibility.md)

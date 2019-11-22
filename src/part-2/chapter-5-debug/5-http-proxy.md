@@ -6,10 +6,11 @@
 
 如果只是希望代理 Chrome 浏览器的请求，例如希望能够自动将所有的发往 `a.test.com/pages` 的请求代理到本地 `localhost:3000`，那么可以使用 Chrome 扩展工具来完成。这里推荐使用 SwitchyOmega。SwitchyOmega 是一款开源自由软件（[代码地址](https://github.com/FelisCatus/SwitchyOmega)），使用 GNU General Public License 版本 3 及以上授权。
 
-<img src="./images/switchy-omega-01.png" class="rounded" />
-
+<img src="./images/switchy-omega-01.png" class="rounded" style="width: 460px;" />
 
 ## Charles
+
+[Charles](https://www.charlesproxy.com/) 是一款收费的 HTTP 代理工具，在 Windows/Mac/Linux 三个平台下都有对应的安装包。
 
 ## Fiddler
 
