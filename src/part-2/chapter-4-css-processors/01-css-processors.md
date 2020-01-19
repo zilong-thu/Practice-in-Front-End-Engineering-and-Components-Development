@@ -187,7 +187,21 @@ html {
 }
 ```
 
-Sass 有一个小问题：它的 `@import` 会原封不动地把子文件内容替换过来。如果子文件中包含路径，则结果上来看，类似采用了动态上下文，而非更常见的词法作用域。留意上面的代码，在 `./icons/index.scss` 文件中，`url(./success.png)` 是指定了同一目录下的图片；而编译后的 `output.css` 文件里，这个值没有发生变化，`.my-icon-success` 在使用时，就会因找不到该图片而报 404 错误。Less 等工具也有类似的问题。这样有时候不便于重构以及维护。不过，在基于 webpack 的构建流中，这个问题一般可以通过 `loaders` 来解决。
+Sass 有一个小问题：它的 `@import` 会原封不动地把子文件内容替换过来。如果子文件中包含路径，则结果上来看，类似采用了动态上下文，而非更常见的词法作用域。留意上面的代码，在 `./icons/index.scss` 文件中，`url(./success.png)` 是指定了同一目录下的图片；而编译后的 `output.css` 文件里，这个值没有发生变化，`.my-icon-success` 在使用时，就会因找不到该图片而报 404 错误。Less 等工具也有类似的问题。这样有时候不便于重构以及维护。不过，在基于 webpack 的构建流中，这个问题一般可以通过 `resolve-url-loader` 这样的工具来解决。
+
+---------------------
+
+**Resolve URL Loader**
+
+[npm 地址](https://www.npmjs.com/package/resolve-url-loader)
+
+这是一个 webpack loader，用于在 CSS 源文件中重写 `url()` 声明的路径。例如，假设项目的部分目录与文件结构如下表所示：
+
+<img src="./images/resolve-url-loader-demo-1.png" style="width: 400px;">
+
+在文件 `src/index.scss` 中，Sass 会尝试去寻找 `src/bar.png`，而我们实际上是希望它总是相对于 `_foo.scss` 去寻找图片，即应该解析为 `src/features/bar.png`。resolve-url-loader 就可以解决这个问题。
+
+---------------------
 
 **混合（Mixins）**
 
