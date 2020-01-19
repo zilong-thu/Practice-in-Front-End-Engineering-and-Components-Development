@@ -19,7 +19,8 @@
   "author": "zilong-thu",
   "license": "ISC",
   "dependencies": {
-    "gitbook-cli": "^2.3.2"
+    "gitbook-cli": "^2.3.2",
+    "gitbook-plugin-custom-js-css": "0.0.1"
   },
   "devDependencies": {
     "gitbook": "^3.2.3",
