@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "acorn": "^5.6.2",
+    "acorn": "^5.7.4",
     "uglify-js": "^3.4.0"
   }
 }
