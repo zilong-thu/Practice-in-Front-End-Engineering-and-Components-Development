@@ -73,7 +73,6 @@ var bar = React.createElement(
 
 > 这个规范（指 JSX）并不打算去遵循任何 XML 或者 HTML 规范。JSX 是作为 ECMAScript 的一种特性来设计的。只是为了让大家便于上手，才设计得为 XML 语法风格。<sup>[3]</sup>
 
-
 ## 参考资料
 
 
