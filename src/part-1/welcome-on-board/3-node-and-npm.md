@@ -219,6 +219,42 @@ $ yarn
 $ yarn global add pkg_name
 ```
 
+`yarn` 有一个很好用的 API，即 `yarn why`，可以帮助我们分析一个包在当前项目中被什么所依赖。举个例子：
+
+```bash
+$ yarn why lodash
+
+yarn why v1.16.0
+[1/4] 🤔  Why do we have the module "lodash"...?
+[2/4] 🚚  Initialising dependency graph...
+[3/4] 🔍  Finding dependency...
+[4/4] 🚡  Calculating file sizes...
+=> Found "lodash@4.17.11"
+info Has been hoisted to "lodash"
+info Reasons this module exists
+   - Hoisted from "gitbook#cheerio#lodash"
+   - Hoisted from "gitbook#gitbook-asciidoc#lodash"
+   - Hoisted from "gitbook#i18n-t#lodash"
+   - Hoisted from "gitbook#gitbook-markdown#lodash"
+   - Hoisted from "form-data#async#lodash"
+   - Hoisted from "gitbook#gitbook-markdown#gitbook-html#lodash"
+info Disk size without dependencies: "4.86MB"
+info Disk size with unique dependencies: "4.86MB"
+info Disk size with transitive dependencies: "4.86MB"
+info Number of shared dependencies: 0
+=> Found "gitbook-cli#lodash@4.17.4"
+info This module exists because "gitbook-cli" depends on it.
+info Disk size without dependencies: "4.86MB"
+info Disk size with unique dependencies: "4.86MB"
+info Disk size with transitive dependencies: "4.86MB"
+info Number of shared dependencies: 0
+# 省略一部分...
+✨  Done in 0.85s.
+```
+
+从它的分析结果来看，`lodash` 被多个包声明为依赖，因此被安装在了当前项目中。
+
+
 ### Node.js 的设计缺陷
 
 2018年6月，Ryan Dahl 在柏林举办的欧洲 JavaScript 开发者大会上进行了主题为《Design Mistakes in Node》<sup>[7]</sup>的演讲，列举了自己认为 Node.js 的一些设计缺陷。总体而言，Node.js 早期的设计重心在于事件循环与异步I/O，并且解决得很不错。但是仍然遗留了其他方面的缺陷，主要是与“模块”“包”“依赖”等代码组织方式有关的，它们不约而同地导致了 Node.js 生态的一些混乱，提升了代码组织的复杂度，例如：
