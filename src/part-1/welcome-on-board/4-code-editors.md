@@ -115,7 +115,13 @@ VSCode 全称 Visual Studio Code，于 2016 年正式发布。微软在互联网
 
 用户可以在 VSCode 中指定一个启动脚本（在 `.vscode/launch.json` 中指定），然后在相关的 JS 源文件上面直接打断点，启动调试<sup>[7]</sup>。例如下面的代码，我们在第四行添加了一个断点，然后启动调试，VSCode 就会执行这个文件，然后在断点处停下，此时可以方便地查看变量值、调用堆栈等信息：
 
-<img src="../images/vscode-debug-node-1.png">
+<img src="../images/vscode-debug-node-1.png" />
+
+### 设置 `code` 命令
+
+VSCode 在安装时会询问是否需要注册一个全局的命令 `code`，同意的话就可以在终端里任何时候调用 `code` 来打开当前或某个目录了。如果当时没有勾选，也可以打开 VSCode，按下快捷键 `Command` + `Shift` + `p`，然后输入 `Shell Command`，选择 `Shell Command: Install 'code' command in PATH`，如下图所示：
+
+<img src="../images/vscode-shell-command.png" />
 
 
 ## 参考资料
