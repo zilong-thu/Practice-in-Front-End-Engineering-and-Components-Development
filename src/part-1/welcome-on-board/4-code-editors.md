@@ -125,6 +125,10 @@ VSCode 在安装时会询问是否需要注册一个全局的命令 `code`，同
 
 ### VSCode 的常用插件
 
+#### 通用系列
+
++ Git Blame
+
 ## 参考资料
 
 1. [Sublime Text 官网](http://www.sublimetext.com/)
