@@ -30,7 +30,7 @@
     "koa": "^2.5.0",
     "koa-static": "^4.0.2",
     "lodash": "^4.17.5",
-    "madge": "^3.0.1",
+    "madge": "^4.0.1",
     "style-loader": "^0.21.0",
     "toast2": "^2.1.0",
     "uglify-js": "^3.3.20",
