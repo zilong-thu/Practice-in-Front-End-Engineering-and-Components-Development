@@ -14,4 +14,4 @@
 
 本书采用[署名-非商业性使用-禁止演绎 4.0 国际](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh)协议进行开源写作。
 
-© 2017-2019 王子龙
+© 2017-2021 王子龙
