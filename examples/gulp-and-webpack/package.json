@@ -16,7 +16,7 @@
   "devDependencies": {
     "copy-dir": "^0.3.0",
     "fs-extra": "^5.0.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-clean-css": "^3.9.3",
     "gulp-less": "^4.0.0",
     "gulp-uglify": "^3.0.0",
