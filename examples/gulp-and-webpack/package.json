@@ -21,17 +21,17 @@
     "gulp-less": "^4.0.0",
     "gulp-uglify": "^3.0.0",
     "less": "^3.0.1",
-    "webpack": "^4.12.2"
+    "webpack": "^5.75.0"
   },
   "dependencies": {
     "acorn": "^5.7.4",
-    "css-loader": "^0.28.11",
+    "css-loader": "^6.7.3",
     "jquery": "^3.3.1",
     "koa": "^2.5.0",
     "koa-static": "^4.0.2",
     "lodash": "^4.17.5",
     "madge": "^3.0.1",
-    "style-loader": "^0.21.0",
+    "style-loader": "^3.3.1",
     "toast2": "^2.1.0",
     "uglify-js": "^3.3.20",
     "underscore": "^1.8.3",
